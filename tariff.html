@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials (REVISED for consistency) -->
+    <!-- SEO Essentials -->
     <title>Room Tariff | Official Rates at Surya Plaza Hotel, Sahibganj</title>
     <meta name="description" content="View the official room tariff for Surya Plaza Hotel. Find transparent pricing for all our room types, meal plans, and additional services.">
     <link rel="canonical" href="https://suryaplazahotels.com/tariff">
 
-    <!-- Social Media Meta Tags (Added for consistency) -->
+    <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Room Tariff | Official Rates at Surya Plaza Hotel, Sahibganj">
     <meta property="og:description" content="View the official room tariff for Surya Plaza Hotel. Find transparent pricing for all our room types and meal plans.">
-    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image-tariff.jpg"> <!-- Assumes a specific OG image exists -->
+    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image-tariff.jpg">
     <meta property="og:url" content="https://suryaplazahotels.com/tariff">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -29,7 +29,7 @@
       })();
     </script>
 
-    <!-- Favicon (REVISED to use absolute paths) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
@@ -41,14 +41,84 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <!-- Main & FAQ Stylesheets -->
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/faq.css">
+
+    <!-- REVISION: Added internal style block for unstyled elements -->
+    <style>
+        .addon-card {
+            background-color: var(--background-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem 1.75rem;
+            text-align: center;
+        }
+        .addon-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .addon-card .price {
+            font-size: 1.75rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 1rem 0 0.25rem;
+        }
+    </style>
+
+    <!-- REVISION: Added comprehensive JSON-LD Schema for ItemList and FAQs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "name": "Room Tariff",
+          "url": "https://suryaplazahotels.com/tariff",
+          "mainEntity": {
+            "@type": "ItemList",
+            "name": "Room Rates at Surya Plaza Hotel",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "item": { "@type": "HotelRoom", "name": "Club Comfort Room", "url": "https://suryaplazahotels.com/rooms/club-comfort-room", "offers": [ { "@type": "Offer", "name": "Single Occupancy", "price": "1599", "priceCurrency": "INR" }, { "@type": "Offer", "name": "Double Occupancy", "price": "2099", "priceCurrency": "INR" } ] } },
+              { "@type": "ListItem", "position": 2, "item": { "@type": "HotelRoom", "name": "Deluxe Balcony Room", "url": "https://suryaplazahotels.com/rooms/deluxe-balcony-room", "offers": [ { "@type": "Offer", "name": "Single Occupancy", "price": "1899", "priceCurrency": "INR" }, { "@type": "Offer", "name": "Double Occupancy", "price": "2399", "priceCurrency": "INR" } ] } },
+              { "@type": "ListItem", "position": 3, "item": { "@type": "HotelRoom", "name": "Executive Balcony Room", "url": "https://suryaplazahotels.com/rooms/executive-balcony-room", "offers": [ { "@type": "Offer", "name": "Single Occupancy", "price": "2199", "priceCurrency": "INR" }, { "@type": "Offer", "name": "Double Occupancy", "price": "2699", "priceCurrency": "INR" } ] } },
+              { "@type": "ListItem", "position": 4, "item": { "@type": "HotelRoom", "name": "Junior Balcony Suite", "url": "https://suryaplazahotels.com/rooms/junior-balcony-suite", "offers": [ { "@type": "Offer", "name": "Single Occupancy", "price": "2699", "priceCurrency": "INR" }, { "@type": "Offer", "name": "Double Occupancy", "price": "3199", "priceCurrency": "INR" } ] } },
+              { "@type": "ListItem", "position": 5, "item": { "@type": "HotelRoom", "name": "Two-Bedroom Premium Suite", "url": "https://suryaplazahotels.com/rooms/two-bedroom-premium-suite", "offers": { "@type": "Offer", "name": "Rate for up to 4 guests", "price": "3999", "priceCurrency": "INR" } } },
+              { "@type": "ListItem", "position": 6, "item": { "@type": "HotelRoom", "name": "Family Apartment with Kitchen", "url": "https://suryaplazahotels.com/rooms/family-apartment", "offers": { "@type": "Offer", "name": "Rate for up to 4 guests", "price": "4999", "priceCurrency": "INR" } } }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Are the listed room rates inclusive of taxes?",
+              "acceptedAnswer": { "text": "No, the room rates shown are exclusive of applicable government taxes. The final amount, including GST, will be displayed during the booking process." }
+            },
+            {
+              "@type": "Question",
+              "name": "What does a 'Room Only (EP)' rate mean?",
+              "acceptedAnswer": { "text": "'Room Only' or 'European Plan (EP)' means the tariff includes only the cost of the accommodation. All meals and other services are charged separately. You can add one of our meal plans for an additional cost." }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I get the best available rate?",
+              "acceptedAnswer": { "text": "For the best available rates and exclusive offers, we always recommend booking directly through our official website. This ensures you get the most up-to-date pricing and transparent terms." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
 </head>
 <body>
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
+    <!-- START: Consistent Header -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
@@ -95,46 +165,46 @@
                     <button data-toggle-target="#tariffGrid" data-toggle-class="show-double">Double Occupancy</button>
                 </div>
 
+                <!-- REVISION: Updated prices to match booking form and added image optimization -->
                 <div class="grid-3-col" id="tariffGrid">
-                    <!-- REVISED: All cards use consistent structure and absolute paths -->
                     <div class="tariff-card" data-animate>
-                        <img src="/assets/images/rooms/room-club-comfort-bed.webp" alt="Club Comfort Room">
+                        <img src="/assets/images/rooms/room-club-comfort-bed-900w.webp" srcset="/assets/images/rooms/room-club-comfort-bed-600w.webp 600w, /assets/images/rooms/room-club-comfort-bed-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Club Comfort Room">
                         <div class="tariff-card-content">
                             <h4>Club Comfort Room</h4>
                             <p>An efficient and comfortable space, ideal for solo travellers seeking value.</p>
-                            <div class="tariff-price"><span class="price-single">₹2099</span><span class="price-double">₹2099</span><small> / night + taxes</small></div>
+                            <div class="tariff-price"><span class="price-single">₹1599</span><span class="price-double">₹2099</span><small> / night + taxes</small></div>
                             <div class="tariff-card-actions"><a href="/rooms/club-comfort-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
                         </div>
                     </div>
                     <div class="tariff-card" data-animate style="--animation-delay: 0.1s;">
-                        <img src="/assets/images/rooms/room-deluxe-balcony-bed-main.webp" alt="Deluxe Balcony Room">
+                        <img src="/assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp" srcset="/assets/images/rooms/room-deluxe-balcony-bed-main-600w.webp 600w, /assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Deluxe Balcony Room">
                         <div class="tariff-card-content">
                             <h4>Deluxe Balcony Room</h4>
                             <p>Features a private balcony, offering a perfect spot to unwind and enjoy the air.</p>
-                            <div class="tariff-price"><span class="price-single">₹2399</span><span class="price-double">₹2399</span><small> / night + taxes</small></div>
+                            <div class="tariff-price"><span class="price-single">₹1899</span><span class="price-double">₹2399</span><small> / night + taxes</small></div>
                             <div class="tariff-card-actions"><a href="/rooms/deluxe-balcony-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
                         </div>
                     </div>
                     <div class="tariff-card" data-animate style="--animation-delay: 0.2s;">
-                        <img src="/assets/images/rooms/room-executive-balcony-sofa.webp" alt="Executive Balcony Room">
+                        <img src="/assets/images/rooms/room-executive-balcony-sofa-900w.webp" srcset="/assets/images/rooms/room-executive-balcony-sofa-600w.webp 600w, /assets/images/rooms/room-executive-balcony-sofa-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Executive Balcony Room">
                         <div class="tariff-card-content">
                             <h4>Executive Balcony Room</h4>
                             <p>A larger space complete with a comfortable sofa area for extra relaxation.</p>
-                            <div class="tariff-price"><span class="price-single">₹2699</span><span class="price-double">₹2699</span><small> / night + taxes</small></div>
+                            <div class="tariff-price"><span class="price-single">₹2199</span><span class="price-double">₹2699</span><small> / night + taxes</small></div>
                             <div class="tariff-card-actions"><a href="/rooms/executive-balcony-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
                         </div>
                     </div>
                     <div class="tariff-card" data-animate>
-                        <img src="/assets/images/rooms/room-junior-suite-seating.webp" alt="Junior Balcony Suite">
+                        <img src="/assets/images/rooms/room-junior-suite-seating-900w.webp" srcset="/assets/images/rooms/room-junior-suite-seating-600w.webp 600w, /assets/images/rooms/room-junior-suite-seating-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Junior Balcony Suite">
                         <div class="tariff-card-content">
                             <h4>Junior Balcony Suite</h4>
                             <p>Offers an extra living area, providing a perfect blend of luxury and space.</p>
-                             <div class="tariff-price"><span class="price-single">₹3199</span><span class="price-double">₹3199</span><small> / night + taxes</small></div>
+                             <div class="tariff-price"><span class="price-single">₹2699</span><span class="price-double">₹3199</span><small> / night + taxes</small></div>
                             <div class="tariff-card-actions"><a href="/rooms/junior-balcony-suite" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
                         </div>
                     </div>
                     <div class="tariff-card" data-animate style="--animation-delay: 0.1s;">
-                        <img src="/assets/images/rooms/room-two-bedroom-suite-living-area.webp" alt="Two-Bedroom Premium Suite">
+                        <img src="/assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp" srcset="/assets/images/rooms/room-two-bedroom-suite-living-area-600w.webp 600w, /assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Two-Bedroom Premium Suite">
                         <div class="tariff-card-content">
                             <h4>Two-Bedroom Premium Suite</h4>
                             <p>Ideal for groups, offering two bedrooms, a drawing room, and river views.</p>
@@ -143,7 +213,7 @@
                         </div>
                     </div>
                     <div class="tariff-card" data-animate style="--animation-delay: 0.2s;">
-                        <img src="/assets/images/rooms/room-family-apartment-kitchen.webp" alt="Family Apartment with Kitchen">
+                        <img src="/assets/images/rooms/room-family-apartment-kitchen-900w.webp" srcset="/assets/images/rooms/room-family-apartment-kitchen-600w.webp 600w, /assets/images/rooms/room-family-apartment-kitchen-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Family Apartment with Kitchen">
                         <div class="tariff-card-content">
                             <h4>Family Apartment with Kitchen</h4>
                             <p>The ultimate choice for extended stays, with a full kitchen and panoramic views.</p>
@@ -155,7 +225,7 @@
             </div>
         </section>
 
-        <section class="about-section"> <!-- Changed background class for consistency -->
+        <section class="about-section">
             <div class="container">
                 <div data-animate>
                     <h2 class="section-title text-center">Meal Plans & Extra Person Charges</h2>
@@ -169,64 +239,46 @@
             </div>
         </section>
 
+        <!-- REVISION: Added new reusable FAQ Section -->
+        <section class="faq-section commitment-section">
+            <div class="container" data-animate>
+                <h2 class="section-title text-center">Tariff Information</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1"><span>Are the listed room rates inclusive of taxes?</span><span class="faq-icon" aria-hidden="true"></span></button>
+                        <div class="faq-answer" id="faq-answer-1"><p>No, the room rates shown are exclusive of applicable government taxes. The final amount, including GST, will be displayed during the booking process.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2"><span>What does a 'Room Only (EP)' rate mean?</span><span class="faq-icon" aria-hidden="true"></span></button>
+                        <div class="faq-answer" id="faq-answer-2"><p>'Room Only' or 'European Plan (EP)' means the tariff includes only the cost of the accommodation. All meals and other services are charged separately. You can add one of our meal plans for an additional cost.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3"><span>How can I get the best available rate?</span><span class="faq-icon" aria-hidden="true"></span></button>
+                        <div class="faq-answer" id="faq-answer-3"><p>For the best available rates and exclusive offers, we always recommend booking directly through our official website. This ensures you get the most up-to-date pricing and transparent terms.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- START: REVISED AND CONSISTENT FOOTER -->
+    <!-- START: Consistent FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main">
-                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
-                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
-                    </a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Hotel</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about">Our Story</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/events">Events & Banquets</a></li>
-                        <li><a href="/attractions">Local Attractions</a></li>
-                        <li><a href="/blog">Our Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Accommodations</h4>
-                    <ul class="footer-links">
-                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
-                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
-                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
-                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
-                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
-                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Restaurants</h4>
-                    <ul class="footer-links">
-                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
-                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
-                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
-                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
-                    </ul>
-                </div>
+                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
-                <nav class="footer-legal-links">
-                    <a href="/terms">Terms</a>
-                    <a href="/privacy-policy">Privacy</a>
-                    <a href="/cancellation-policy">Cancellation</a>
-                    <a href="/shipping-policy">Shipping</a>
-                </nav>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
-    <!-- END: REVISED AND CONSISTENT FOOTER -->
+    <!-- END: Consistent FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
     <script src="/script.js" defer></script>
+    <script src="/faq.js" defer></script>
 </body>
 </html>

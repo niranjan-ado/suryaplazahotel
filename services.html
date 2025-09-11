@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials (REVISED for consistency) -->
+    <!-- SEO Essentials -->
     <title>Our Services | Surya Plaza Hotel, Sahibganj</title>
     <meta name="description" content="Explore the wide range of services at Surya Plaza Hotel, including free Wi-Fi, 24/7 power backup, in-room dining, event planning, and travel assistance.">
     <link rel="canonical" href="https://suryaplazahotels.com/services">
 
-    <!-- Social Media Meta Tags (Added for consistency) -->
+    <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Our Services | Surya Plaza Hotel, Sahibganj">
     <meta property="og:description" content="Explore our range of services, including free Wi-Fi, 24/7 power backup, in-room dining, and more.">
     <meta property="og:image" content="https://suryaplazahotels.com/assets/images/header-services-reception.webp">
@@ -29,7 +29,7 @@
       })();
     </script>
 
-    <!-- Favicon (REVISED to use absolute paths) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
@@ -41,14 +41,67 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <!-- Main & FAQ Stylesheets -->
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/faq.css">
+
+    <!-- REVISION: Added internal style block for hero text contrast -->
+    <style>
+        .page-header .hero-title,
+        .page-header .section-subtitle {
+            color: var(--text-light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <!-- REVISION: Added comprehensive JSON-LD Schema for ItemList and FAQs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ItemList",
+          "name": "Services at Surya Plaza Hotel",
+          "description": "A list of services and amenities available to guests at Surya Plaza Hotel.",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "Free High-Speed Wi-Fi", "description": "Complimentary high-speed internet access throughout the hotel." } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "24/7 Power Backup", "description": "Reliable and uninterrupted power supply." } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "24/7 In-Room Dining", "provider": { "@type": "FoodService" }, "description": "Gourmet meals delivered to your room around the clock." } },
+            { "@type": "ListItem", "position": 4, "item": { "@type": "Service", "name": "Laundry Service", "description": "Professional laundry and dry-cleaning services." } },
+            { "@type": "ListItem", "position": 5, "item": { "@type": "Service", "name": "Travel & Concierge", "description": "Assistance with car rentals, local sightseeing, and airport/station transfers." } },
+            { "@type": "ListItem", "position": 6, "item": { "@type": "Service", "name": "Daily Housekeeping", "description": "Impeccable cleanliness and sanitization for your peace of mind." } }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Do you offer parking for guests?",
+              "acceptedAnswer": { "text": "Yes, we provide complimentary and secure on-site parking for all our guests. You can rest assured that your vehicle is safe throughout your stay." }
+            },
+            {
+              "@type": "Question",
+              "name": "Is early check-in or late check-out available?",
+              "acceptedAnswer": { "text": "Early check-in and late check-out are subject to availability. We recommend contacting our front desk in advance to make a request, and we will do our best to accommodate your schedule." }
+            },
+            {
+              "@type": "Question",
+              "name": "Are your restaurants open to non-resident guests?",
+              "acceptedAnswer": { "text": "Absolutely. We welcome both hotel guests and non-resident visitors to dine at our acclaimed restaurants, Moti Mahal and Jackson Diner. We recommend making a reservation, especially for dinner or on weekends." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
 </head>
 <body>
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
+    <!-- START: Consistent Header -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
@@ -97,72 +150,57 @@
             </div>
         </section>
         
-        <section id="services-list" class="about-section"> <!-- Changed background class for consistency -->
+        <section id="services-list" class="about-section">
             <div class="container">
                 
                 <div class="service-category" data-animate>
                     <h3 class="section-title text-center">For Your Comfort & Convenience</h3>
                     <div class="feature-grid">
-                        <div class="feature-item">
-                            <span class="material-icons-outlined">wifi</span>
-                            <div><h4>Free High-Speed Wi-Fi</h4><p class="text-muted">Stay connected effortlessly throughout the hotel premises.</p></div>
-                        </div>
-                        <div class="feature-item">
-                            <span class="material-icons-outlined">power</span>
-                            <div><h4>24/7 Power Backup</h4><p class="text-muted">Enjoy an uninterrupted stay with our reliable power supply.</p></div>
-                        </div>
-                        <div class="feature-item">
-                            <span class="material-icons-outlined">ac_unit</span>
-                            <div><h4>Individual Climate Control</h4><p class="text-muted">Adjust the AC in your room to your personal comfort level.</p></div>
-                        </div>
-                        <div class="feature-item">
-                            <span class="material-icons-outlined">cleaning_services</span>
-                            <div><h4>Daily Housekeeping</h4><p class="text-muted">Impeccable cleanliness and sanitization for your peace of mind.</p></div>
-                        </div>
-                        <div class="feature-item">
-                            <span class="material-icons-outlined">local_laundry_service</span>
-                            <div><h4>Laundry Service</h4><p class="text-muted">Professional laundry and dry-cleaning to keep you looking your best.</p></div>
-                        </div>
-                         <div class="feature-item">
-                            <span class="material-icons-outlined">king_bed</span>
-                            <div><h4>Extra Bedding on Request</h4><p class="text-muted">We provide extra bedding for additional guests as needed.</p></div>
-                        </div>
+                        <div class="feature-item"><span class="material-icons-outlined">wifi</span><div><h4>Free High-Speed Wi-Fi</h4><p class="text-muted">Stay connected effortlessly throughout the hotel premises.</p></div></div>
+                        <div class="feature-item"><span class="material-icons-outlined">power</span><div><h4>24/7 Power Backup</h4><p class="text-muted">Enjoy an uninterrupted stay with our reliable power supply.</p></div></div>
+                        <div class="feature-item"><span class="material-icons-outlined">ac_unit</span><div><h4>Individual Climate Control</h4><p class="text-muted">Adjust the AC in your room to your personal comfort level.</p></div></div>
+                        <div class="feature-item"><span class="material-icons-outlined">cleaning_services</span><div><h4>Daily Housekeeping</h4><p class="text-muted">Impeccable cleanliness and sanitization for your peace of mind.</p></div></div>
+                        <div class="feature-item"><span class="material-icons-outlined">local_laundry_service</span><div><h4>Laundry Service</h4><p class="text-muted">Professional laundry and dry-cleaning to keep you looking your best.</p></div></div>
+                         <div class="feature-item"><span class="material-icons-outlined">king_bed</span><div><h4>Extra Bedding on Request</h4><p class="text-muted">We provide extra bedding for additional guests as needed.</p></div></div>
                     </div>
                 </div>
 
                 <div class="service-category" data-animate>
                     <h3 class="section-title text-center">Dining & Culinary</h3>
                     <div class="feature-grid">
-                        <div class="feature-item">
-                            <span class="material-icons-outlined">room_service</span>
-                            <div><h4>24/7 In-Room Dining</h4><p class="text-muted">Enjoy delicious meals in the comfort and privacy of your room.</p></div>
-                        </div>
-                        <div class="feature-item">
-                            <span class="material-icons-outlined">restaurant</span>
-                            <div><h4>On-Site Restaurants</h4><p class="text-muted">Choose fine dining at Moti Mahal or casual fare at Jackson Diner.</p></div>
-                        </div>
-                        <div class="feature-item">
-                            <span class="material-icons-outlined">menu_book</span>
-                            <div><h4>Special Dietary Meals</h4><p class="text-muted">Our chefs are happy to cater to your dietary needs upon request.</p></div>
-                        </div>
+                        <div class="feature-item"><span class="material-icons-outlined">room_service</span><div><h4>24/7 In-Room Dining</h4><p class="text-muted">Enjoy delicious meals in the comfort and privacy of your room.</p></div></div>
+                        <div class="feature-item"><span class="material-icons-outlined">restaurant</span><div><h4>On-Site Restaurants</h4><p class="text-muted">Choose fine dining at Moti Mahal or casual fare at Jackson Diner.</p></div></div>
+                        <div class="feature-item"><span class="material-icons-outlined">menu_book</span><div><h4>Special Dietary Meals</h4><p class="text-muted">Our chefs are happy to cater to your dietary needs upon request.</p></div></div>
                     </div>
                 </div>
 
                 <div class="service-category" data-animate>
                     <h3 class="section-title text-center">Travel & Concierge</h3>
                      <div class="feature-grid">
-                        <div class="feature-item">
-                            <span class="material-icons-outlined">airport_shuttle</span>
-                            <div><h4>Pick-up and Drop-off</h4><p class="text-muted">We can arrange transportation to and from the railway station or airport.</p></div>
-                        </div>
-                        <div class="feature-item">
-                            <span class="material-icons-outlined">directions_car</span>
-                            <div><h4>Car Rental Assistance</h4><p class="text-muted">Explore the city at your own pace with our car rental services.</p></div>
-                        </div>
-                        <div class="feature-item">
-                            <span class="material-icons-outlined">tour</span>
-                            <div><h4>Local Sightseeing</h4><p class="text-muted">Let us help you discover the best attractions in and around Sahibganj.</p></div>
-                        </div>
+                        <div class="feature-item"><span class="material-icons-outlined">airport_shuttle</span><div><h4>Pick-up and Drop-off</h4><p class="text-muted">We can arrange transportation to and from the railway station or airport.</p></div></div>
+                        <div class="feature-item"><span class="material-icons-outlined">directions_car</span><div><h4>Car Rental Assistance</h4><p class="text-muted">Explore the city at your own pace with our car rental services.</p></div></div>
+                        <div class="feature-item"><span class="material-icons-outlined">tour</span><div><h4>Local Sightseeing</h4><p class="text-muted">Let us help you discover the best attractions in and around Sahibganj.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVISION: Added new reusable FAQ Section -->
+        <section class="faq-section commitment-section">
+            <div class="container" data-animate>
+                <h2 class="section-title text-center">Your Questions, Answered</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1"><span>Do you offer parking for guests?</span><span class="faq-icon" aria-hidden="true"></span></button>
+                        <div class="faq-answer" id="faq-answer-1"><p>Yes, we provide complimentary and secure on-site parking for all our guests. You can rest assured that your vehicle is safe throughout your stay.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2"><span>Is early check-in or late check-out available?</span><span class="faq-icon" aria-hidden="true"></span></button>
+                        <div class="faq-answer" id="faq-answer-2"><p>Early check-in and late check-out are subject to availability. We recommend contacting our front desk in advance to make a request, and we will do our best to accommodate your schedule.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3"><span>Are your restaurants open to non-resident guests?</span><span class="faq-icon" aria-hidden="true"></span></button>
+                        <div class="faq-answer" id="faq-answer-3"><p>Absolutely. We welcome both hotel guests and non-resident visitors to dine at our acclaimed restaurants, Moti Mahal and Jackson Diner. We recommend making a reservation, especially for dinner or on weekends.</p></div>
                     </div>
                 </div>
             </div>
@@ -178,62 +216,23 @@
 
     </main>
 
-    <!-- START: REVISED AND CONSISTENT FOOTER -->
+    <!-- START: Consistent FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main">
-                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
-                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
-                    </a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Hotel</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about">Our Story</a></li>
-                        <li><a href="/services" class="active">Services</a></li>
-                        <li><a href="/events">Events & Banquets</a></li>
-                        <li><a href="/attractions">Local Attractions</a></li>
-                        <li><a href="/blog">Our Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Accommodations</h4>
-                    <ul class="footer-links">
-                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
-                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
-                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
-                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
-                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
-                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Restaurants</h4>
-                    <ul class="footer-links">
-                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
-                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
-                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
-                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
-                    </ul>
-                </div>
+                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services" class="active">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
-                <nav class="footer-legal-links">
-                    <a href="/terms">Terms</a>
-                    <a href="/privacy-policy">Privacy</a>
-                    <a href="/cancellation-policy">Cancellation</a>
-                    <a href="/shipping-policy">Shipping</a>
-                </nav>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
-    <!-- END: REVISED AND CONSISTENT FOOTER -->
+    <!-- END: Consistent FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
     <script src="/script.js" defer></script>
+    <script src="/faq.js" defer></script>
 </body>
 </html>

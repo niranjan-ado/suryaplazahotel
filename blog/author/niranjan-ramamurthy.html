@@ -35,6 +35,52 @@
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
+
+    <!-- REVISION: Added internal style for author image -->
+    <style>
+        .author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem auto;
+            border: 4px solid var(--border-color);
+            box-shadow: 0 4px 15px var(--card-shadow-color);
+        }
+    </style>
+
+    <!-- REVISION: Added comprehensive JSON-LD Schema for the Author Profile Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Niranjan Ramamurthy",
+        "jobTitle": "Digital Marketing & Content Strategist",
+        "description": "With a background in digital marketing and content strategy that began in the early 2000s, Niranjan brings a data-driven yet creative approach to storytelling. His work focuses on using high-fidelity photography and clear, helpful content to bridge the gap between a guest's online research and their real-world experience at our hotel.",
+        "image": "https://suryaplazahotels.com/assets/images/blog/author-niranjan-ramamurthy.webp",
+        "url": "https://suryaplazahotels.com/blog/author/niranjan-ramamurthy",
+        "sameAs": [
+          "https://www.linkedin.com/in/niranjan-ramamurthy/",
+          "https://adostrophe.com/"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Adostrophe"
+        }
+      },
+      "about": {
+        "@type": "ItemList",
+        "name": "Articles by Niranjan Ramamurthy",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "url": "https://suryaplazahotels.com/blog/post-1", "name": "A Weekend Guide to Sahibganj's Hidden Gems" },
+          { "@type": "ListItem", "position": 2, "url": "https://suryaplazahotels.com/blog/post-2", "name": "The Story of Butter Chicken: A Moti Mahal Signature" },
+          { "@type": "ListItem", "position": 3, "url": "https://suryaplazahotels.com/blog/post-3", "name": "Designing for Your Comfort: The Making of Our Suites" }
+        ]
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -81,8 +127,10 @@
 
         <section id="author-bio">
             <div class="container">
-                <!-- REVISED: Replaced two-column grid with a single-column, quote-focused layout -->
                 <div class="author-bio-content text-center" data-animate>
+                    <!-- REVISION: Added author profile image. Please upload an image to this path. -->
+                    <img src="/assets/images/blog/author-niranjan-ramamurthy.webp" alt="Profile photo of Niranjan Ramamurthy." class="author-image">
+
                     <blockquote class="author-feature-quote">
                         “My passion lies at the intersection of technology and hospitality. It’s about more than just building a website; it’s about capturing the soul of a place like Surya Plaza Hotel—translating the warmth of its service and the beauty of Sahibganj into a digital experience that helps you, our guest, discover what makes this place special.”
                     </blockquote>
@@ -101,31 +149,23 @@
                     <h2 class="section-title text-center">Articles by Niranjan</h2>
                 </div>
                 <div class="grid-3-col" data-animate>
+                    <!-- REVISION: Added srcset and sizes to all blog card images -->
                     <article class="blog-card">
                         <a href="/blog/post-1" aria-label="Read more about A Weekend Guide to Sahibganj's Hidden Gems">
-                            <div class="blog-card-image"><img src="/assets/images/blog/blog-ganges-view.webp" alt="A scenic view of the River Ganges at Sahibganj." loading="lazy"></div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Local Guides</span>
-                                <h3>A Weekend Guide to Sahibganj's Hidden Gems</h3>
-                            </div>
+                            <div class="blog-card-image"><img src="/assets/images/blog/blog-ganges-view-800w.webp" srcset="/assets/images/blog/blog-ganges-view-400w.webp 400w, /assets/images/blog/blog-ganges-view-800w.webp 800w" sizes="(max-width: 992px) 50vw, 33vw" alt="A scenic view of the River Ganges at Sahibganj." loading="lazy"></div>
+                            <div class="blog-card-content"><span class="blog-category">Local Guides</span><h3>A Weekend Guide to Sahibganj's Hidden Gems</h3></div>
                         </a>
                     </article>
                     <article class="blog-card">
                         <a href="/blog/post-2" aria-label="Read more about The Story of Butter Chicken: A Moti Mahal Signature">
-                            <div class="blog-card-image"><img src="/assets/images/blog/blog-butter-chicken-dish.webp" alt="A delicious dish from Moti Mahal restaurant." loading="lazy"></div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Hotel Dining</span>
-                                <h3>The Story of Butter Chicken</h3>
-                            </div>
+                            <div class="blog-card-image"><img src="/assets/images/blog/blog-butter-chicken-dish-800w.webp" srcset="/assets/images/blog/blog-butter-chicken-dish-400w.webp 400w, /assets/images/blog/blog-butter-chicken-dish-800w.webp 800w" sizes="(max-width: 992px) 50vw, 33vw" alt="A delicious dish from Moti Mahal restaurant." loading="lazy"></div>
+                            <div class="blog-card-content"><span class="blog-category">Hotel Dining</span><h3>The Story of Butter Chicken</h3></div>
                         </a>
                     </article>
                     <article class="blog-card">
                          <a href="/blog/post-3" aria-label="Read more about Designing for Your Comfort: The Making of Our Suites">
-                            <div class="blog-card-image"><img src="/assets/images/blog/blog-premium-suite-bedroom.webp" alt="Luxurious bedding in a Premium Suite." loading="lazy"></div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Hotel Experience</span>
-                                <h3>The Making of Our Suites</h3>
-                            </div>
+                            <div class="blog-card-image"><img src="/assets/images/blog/blog-premium-suite-bedroom-800w.webp" srcset="/assets/images/blog/blog-premium-suite-bedroom-400w.webp 400w, /assets/images/blog/blog-premium-suite-bedroom-800w.webp 800w" sizes="(max-width: 992px) 50vw, 33vw" alt="Luxurious bedding in a Premium Suite." loading="lazy"></div>
+                            <div class="blog-card-content"><span class="blog-category">Hotel Experience</span><h3>The Making of Our Suites</h3></div>
                         </a>
                     </article>
                 </div>
@@ -141,55 +181,15 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main">
-                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
-                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
-                    </a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Hotel</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about">Our Story</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/events">Events & Banquets</a></li>
-                        <li><a href="/attractions">Local Attractions</a></li>
-                        <li><a href="/blog">Our Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Accommodations</h4>
-                    <ul class="footer-links">
-                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
-                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
-                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
-                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
-                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
-                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Restaurants</h4>
-                    <ul class="footer-links">
-                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
-                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
-                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
-                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
-                    </ul>
-                </div>
+                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
-                <nav class="footer-legal-links">
-                    <a href="/terms">Terms</a>
-                    <a href="/privacy-policy">Privacy</a>
-                    <a href="/cancellation-policy">Cancellation</a>
-                    <a href="/shipping-policy">Shipping</a>
-                </nav>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
-    <!-- END: Consistent Footer -->
+    <!-- END: Consistent FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     

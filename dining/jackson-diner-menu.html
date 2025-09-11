@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials (REVISED for consistency) -->
+    <!-- SEO Essentials -->
     <title>Menu - Jackson Diner by Moti Mahal | Surya Plaza Hotel</title>
     <meta name="description" content="Explore the menu of Jackson Diner, our rooftop restaurant. Featuring gourmet burgers, thin-crust pizzas, artisanal pastas, sandwiches, and signature mocktails.">
     <link rel="canonical" href="https://suryaplazahotels.com/dining/jackson-diner-menu">
 
-    <!-- Social Media Meta Tags (Added for consistency) -->
+    <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Menu - Jackson Diner by Moti Mahal | Surya Plaza Hotel">
     <meta property="og:description" content="Explore the menu of Jackson Diner, featuring gourmet burgers, thin-crust pizzas, artisanal pastas, and more.">
-    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/dining/og-image-jd-menu.jpg"> <!-- Assumes a specific OG image exists -->
+    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/dining/og-image-jd-menu.jpg">
     <meta property="og:url" content="https://suryaplazahotels.com/dining/jackson-diner-menu">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -29,7 +29,7 @@
       })();
     </script>
 
-    <!-- Favicon (REVISED to use absolute paths) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
@@ -41,14 +41,84 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
+
+    <!-- REVISION: Added internal style block for hero text contrast -->
+    <style>
+        .page-header .hero-title,
+        .page-header .section-subtitle,
+        .menu-page-header .hero-subtitle {
+            color: var(--text-light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <!-- REVISION: Added comprehensive JSON-LD Schema for the Menu -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Jackson Diner by Moti Mahal",
+      "servesCuisine": ["Pizza", "Pasta", "Burgers", "Continental"],
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Main Menu",
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "Beverages",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Virgin Mojito", "description": "Choice of Mint, Green Apple, Mango, Pineapple, Orange, etc.", "offers": { "@type": "Offer", "price": "129", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Fruit Punch", "description": "Mixed fruit juice, vanilla ice cream, and fresh fruits.", "offers": { "@type": "Offer", "price": "149", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Thick Shakes", "description": "Choice of Oreo, Kitkat, Nutella, or Brownie.", "offers": { "@type": "Offer", "price": "159", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Cold Coffee with Ice Cream", "offers": { "@type": "Offer", "price": "139", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Cold Coffee without Ice Cream", "offers": { "@type": "Offer", "price": "119", "priceCurrency": "INR" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Continental Starters",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Herb Crusted Fried Chicken", "description": "Crispy fried chicken marinated in a fermented spiced batter.", "offers": { "@type": "Offer", "price": "329", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "BBQ Chicken Wings", "description": "Chicken wings grilled and tossed with our signature BBQ sauce.", "offers": { "@type": "Offer", "price": "319", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Panko Fish Finger", "description": "Fresh water fish fingers with spices & lime, coated with panko crumbs.", "offers": { "@type": "Offer", "price": "349", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Peri Peri Mozzarella Cheese Finger", "description": "Crumb fried Peri Peri flavoured mozzarella cheese strips.", "offers": { "@type": "Offer", "price": "279", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Cheese Corn Croquettes", "description": "Processed cheese & fresh American corn kernels mixed with spices, deep fried.", "offers": { "@type": "Offer", "price": "259", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Loaded Cheesy Fries", "description": "French fries loaded with cheese sauce and toppings.", "offers": { "@type": "Offer", "price": "229", "priceCurrency": "INR" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Burgers & Pizza",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Crunchy Chicken Burger", "description": "Crispy fried chicken with caramelised onion, tomatoes, lettuce & cheese. Served with fries.", "offers": { "@type": "Offer", "price": "299", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Tandoori Chicken Tikka Pizza", "description": "Thin crust pizza topped with shredded chicken tikka & mozzarella.", "offers": { "@type": "Offer", "price": "399", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Veggie Burger", "description": "Crispy fried vegetable patty with tomatoes, cucumber, cheese & lettuce. Served with fries.", "offers": { "@type": "Offer", "price": "249", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Farm House Pizza", "description": "Thin crust pizza topped with exotic vegetables, corn kernels & mozzarella.", "offers": { "@type": "Offer", "price": "349", "priceCurrency": "INR" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Pasta",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Pollo Con Fungi (Alfredo)", "description": "Grilled chicken & mushroom in a creamy Alfredo sauce. Choice of Penne or Spaghetti.", "offers": { "@type": "Offer", "price": "399", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Bolognese", "description": "Classic minced mutton with a rich tomato sauce. Choice of Penne or Spaghetti.", "offers": { "@type": "Offer", "price": "429", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Alfredo (Veg)", "description": "Exotic vegetables tossed in a classic creamy Alfredo sauce. Choice of Penne or Spaghetti.", "offers": { "@type": "Offer", "price": "349", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Classic Arrabiata", "description": "A spicy and tangy tomato sauce with garlic & pepperoncini. Choice of Penne or Spaghetti.", "offers": { "@type": "Offer", "price": "349", "priceCurrency": "INR" } }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
+
 </head>
-<body class="menu-page"> <!-- Added class for page-specific styling -->
+<body class="menu-page">
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
+    <!-- START: Consistent Header -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
@@ -81,7 +151,7 @@
 
     <main id="main-content">
 
-        <header class="page-header menu-page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/dining/header-jackson-diner-bar.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/dining/header-dining-decor-1800w.webp');">
             <div class="container" data-animate>
                 <p class="section-subtitle">Casual Rooftop Dining</p>
                 <h1 class="hero-title">Jackson Diner Menu</h1>
@@ -108,119 +178,40 @@
         <div class="container menu-container">
             <div id="menu-content" class="menu-content-grid" data-filter-show="all">
                 
-                <section id="beverages" class="menu-section" data-animate>
-                    <h2 class="menu-section-title">Beverages</h2>
-                    <div class="menu-category-group">
-                        <div class="menu-grid">
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>VIRGIN MOJITO</h4><span class="price">₹129</span></div><p class="menu-item-desc">Choice of Mint, Green Apple, Mango, Pineapple, Orange, etc.</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>FRUIT PUNCH</h4><span class="price">₹149</span></div><p class="menu-item-desc">Mixed fruit juice, vanilla ice cream, and fresh fruits.</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>THICK SHAKES</h4><span class="price">₹159</span></div><p class="menu-item-desc">Choice of Oreo, Kitkat, Nutella, or Brownie.</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>COLD COFFEE</h4><span class="price">₹139 / 119</span></div><p class="menu-item-desc">With or Without Ice Cream.</p></div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="starters" class="menu-section" data-animate>
-                    <h2 class="menu-section-title">Continental Starters</h2>
-                    <div class="non-veg-section menu-category-group">
-                        <h3 class="menu-sub-title">Non-Vegetarian</h3>
-                        <div class="menu-grid">
-                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>HERB CRUSTED FRIED CHICKEN</h4><span class="price">₹329</span></div><p class="menu-item-desc">Crispy fried chicken marinated in a fermented spiced batter.</p></div>
-                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>BBQ CHICKEN WINGS</h4><span class="price">₹319</span></div><p class="menu-item-desc">Chicken wings grilled and tossed with our signature BBQ sauce.</p></div>
-                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>PANKO FISH FINGER</h4><span class="price">₹349</span></div><p class="menu-item-desc">Fresh water fish fingers with spices & lime, coated with panko crumbs.</p></div>
-                        </div>
-                    </div>
-                    <div class="veg-section menu-category-group">
-                        <h3 class="menu-sub-title">Vegetarian</h3>
-                         <div class="menu-grid">
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>PERI PERI MOZZARELLA CHEESE FINGER</h4><span class="price">₹279</span></div><p class="menu-item-desc">Crumb fried Peri Peri flavoured mozzarella cheese strips.</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>CHEESE CORN CROQUETTES</h4><span class="price">₹259</span></div><p class="menu-item-desc">Processed cheese & fresh American corn kernels mixed with spices, deep fried.</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>LOADED CHEESY FRIES</h4><span class="price">₹229</span></div><p class="menu-item-desc">French fries loaded with cheese sauce and toppings.</p></div>
-                        </div>
-                    </div>
-                </section>
-                
-                 <section id="burgers-pizza" class="menu-section" data-animate>
-                    <h2 class="menu-section-title">Burgers & Pizza</h2>
-                    <div class="menu-category-group">
-                        <div class="menu-grid">
-                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>CRUNCHY CHICKEN BURGER</h4><span class="price">₹299</span></div><p class="menu-item-desc">Crispy fried chicken with caramelised onion, tomatoes, lettuce & cheese. Served with fries.</p></div>
-                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>TANDOORI CHICKEN TIKKA PIZZA</h4><span class="price">₹399</span></div><p class="menu-item-desc">Thin crust pizza topped with shredded chicken tikka & mozzarella.</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>VEGGIE BURGER</h4><span class="price">₹249</span></div><p class="menu-item-desc">Crispy fried vegetable patty with tomatoes, cucumber, cheese & lettuce. Served with fries.</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>FARM HOUSE PIZZA</h4><span class="price">₹349</span></div><p class="menu-item-desc">Thin crust pizza topped with exotic vegetables, corn kernels & mozzarella.</p></div>
-                        </div>
-                    </div>
-                </section>
-                
-                <section id="pasta" class="menu-section" data-animate>
-                    <h2 class="menu-section-title">Pasta</h2>
-                    <div class="menu-category-group">
-                        <p class="text-center" style="margin-top: -1rem; margin-bottom: 2rem;">Choice of Penne or Spaghetti. All pastas are served with garlic bread.</p>
-                        <div class="menu-grid">
-                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>POLLO CON FUNGI (ALFREDO)</h4><span class="price">₹399</span></div><p class="menu-item-desc">Grilled chicken & mushroom in a creamy Alfredo sauce.</p></div>
-                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>BOLOGNESE</h4><span class="price">₹429</span></div><p class="menu-item-desc">Classic minced mutton with a rich tomato sauce.</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>ALFREDO</h4><span class="price">₹349</span></div><p class="menu-item-desc">Exotic vegetables tossed in a classic creamy Alfredo sauce.</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>CLASSIC ARRABIATA</h4><span class="price">₹349</span></div><p class="menu-item-desc">A spicy and tangy tomato sauce with garlic & pepperoncini.</p></div>
-                        </div>
-                    </div>
-                </section>
+                <section id="beverages" class="menu-section" data-animate><h2 class="menu-section-title">Beverages</h2><div class="menu-category-group"><div class="menu-grid"><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>VIRGIN MOJITO</h4><span class="price">₹129</span></div><p class="menu-item-desc">Choice of Mint, Green Apple, Mango, Pineapple, Orange, etc.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>FRUIT PUNCH</h4><span class="price">₹149</span></div><p class="menu-item-desc">Mixed fruit juice, vanilla ice cream, and fresh fruits.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>THICK SHAKES</h4><span class="price">₹159</span></div><p class="menu-item-desc">Choice of Oreo, Kitkat, Nutella, or Brownie.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>COLD COFFEE</h4><span class="price">₹139 / 119</span></div><p class="menu-item-desc">With or Without Ice Cream.</p></div></div></div></section>
+                <section id="starters" class="menu-section" data-animate><h2 class="menu-section-title">Continental Starters</h2><div class="non-veg-section menu-category-group"><h3 class="menu-sub-title">Non-Vegetarian</h3><div class="menu-grid"><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>HERB CRUSTED FRIED CHICKEN</h4><span class="price">₹329</span></div><p class="menu-item-desc">Crispy fried chicken marinated in a fermented spiced batter.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>BBQ CHICKEN WINGS</h4><span class="price">₹319</span></div><p class="menu-item-desc">Chicken wings grilled and tossed with our signature BBQ sauce.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>PANKO FISH FINGER</h4><span class="price">₹349</span></div><p class="menu-item-desc">Fresh water fish fingers with spices & lime, coated with panko crumbs.</p></div></div></div><div class="veg-section menu-category-group"><h3 class="menu-sub-title">Vegetarian</h3><div class="menu-grid"><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>PERI PERI MOZZARELLA CHEESE FINGER</h4><span class="price">₹279</span></div><p class="menu-item-desc">Crumb fried Peri Peri flavoured mozzarella cheese strips.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>CHEESE CORN CROQUETTES</h4><span class="price">₹259</span></div><p class="menu-item-desc">Processed cheese & fresh American corn kernels mixed with spices, deep fried.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>LOADED CHEESY FRIES</h4><span class="price">₹229</span></div><p class="menu-item-desc">French fries loaded with cheese sauce and toppings.</p></div></div></div></section>
+                <section id="burgers-pizza" class="menu-section" data-animate><h2 class="menu-section-title">Burgers & Pizza</h2><div class="menu-category-group"><div class="menu-grid"><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>CRUNCHY CHICKEN BURGER</h4><span class="price">₹299</span></div><p class="menu-item-desc">Crispy fried chicken with caramelised onion, tomatoes, lettuce & cheese. Served with fries.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>TANDOORI CHICKEN TIKKA PIZZA</h4><span class="price">₹399</span></div><p class="menu-item-desc">Thin crust pizza topped with shredded chicken tikka & mozzarella.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>VEGGIE BURGER</h4><span class="price">₹249</span></div><p class="menu-item-desc">Crispy fried vegetable patty with tomatoes, cucumber, cheese & lettuce. Served with fries.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>FARM HOUSE PIZZA</h4><span class="price">₹349</span></div><p class="menu-item-desc">Thin crust pizza topped with exotic vegetables, corn kernels & mozzarella.</p></div></div></div></section>
+                <section id="pasta" class="menu-section" data-animate><h2 class="menu-section-title">Pasta</h2><div class="menu-category-group"><p class="text-center" style="margin-top: -1rem; margin-bottom: 2rem;">Choice of Penne or Spaghetti. All pastas are served with garlic bread.</p><div class="menu-grid"><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>POLLO CON FUNGI (ALFREDO)</h4><span class="price">₹399</span></div><p class="menu-item-desc">Grilled chicken & mushroom in a creamy Alfredo sauce.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>BOLOGNESE</h4><span class="price">₹429</span></div><p class="menu-item-desc">Classic minced mutton with a rich tomato sauce.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>ALFREDO</h4><span class="price">₹349</span></div><p class="menu-item-desc">Exotic vegetables tossed in a classic creamy Alfredo sauce.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>CLASSIC ARRABIATA</h4><span class="price">₹349</span></div><p class="menu-item-desc">A spicy and tangy tomato sauce with garlic & pepperoncini.</p></div></div></div></section>
             </div>
         </div>
+
+        <!-- REVISION: Added final CTA section for consistency -->
+        <section class="direct-booking-section" data-animate>
+            <div class="container">
+                <p class="section-subtitle">Plan Your Visit</p>
+                <h2 class="section-title">Table Reservations & Enquiries</h2>
+                <p>Contact our team directly for table bookings at our rooftop diner.</p>
+                <div class="cta-actions">
+                    <a href="tel:+919264197988" class="button-secondary" aria-label="Call for table reservations"><span class="material-icons-outlined">call</span><span>Call for Reservations</span></a>
+                    <a href="mailto:mmttsahibganj@gmail.com" class="button-secondary" aria-label="Email our dining team"><span class="material-icons-outlined">email</span><span>Email Us</span></a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- START: REVISED AND CONSISTENT FOOTER -->
+    <!-- START: Consistent FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main">
-                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
-                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
-                    </a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Hotel</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about">Our Story</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/events">Events & Banquets</a></li>
-                        <li><a href="/attractions">Local Attractions</a></li>
-                        <li><a href="/blog">Our Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Accommodations</h4>
-                    <ul class="footer-links">
-                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
-                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
-                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
-                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
-                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
-                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Restaurants</h4>
-                    <ul class="footer-links">
-                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
-                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
-                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
-                        <li><a href="/dining/jackson-diner-menu" class="active">Jackson Diner Menu</a></li>
-                    </ul>
-                </div>
+                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu" class="active">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
-                <nav class="footer-legal-links">
-                    <a href="/terms">Terms</a>
-                    <a href="/privacy-policy">Privacy</a>
-                    <a href="/cancellation-policy">Cancellation</a>
-                    <a href="/shipping-policy">Shipping</a>
-                </nav>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
-    <!-- END: REVISED AND CONSISTENT FOOTER -->
+    <!-- END: Consistent FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     

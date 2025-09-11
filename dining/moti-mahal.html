@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials (REVISED for consistency) -->
+    <!-- SEO Essentials -->
     <title>Moti Mahal Tandoori Trail | Surya Plaza Hotel, Sahibganj</title>
     <meta name="description" content="Discover the legacy of Butter Chicken and Dal Makhani. Experience authentic North Indian, Mughlai, and Tandoori cuisine in an elegant fine-dining setting.">
     <link rel="canonical" href="https://suryaplazahotels.com/dining/moti-mahal">
 
-    <!-- Social Media Meta Tags (Added for consistency) -->
+    <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Moti Mahal Tandoori Trail | Surya Plaza Hotel, Sahibganj">
     <meta property="og:description" content="Discover the legacy of Butter Chicken. Experience authentic North Indian, Mughlai, and Tandoori cuisine.">
-    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-seating.webp">
+    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-seating-900w.webp">
     <meta property="og:url" content="https://suryaplazahotels.com/dining/moti-mahal">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -29,7 +29,7 @@
       })();
     </script>
 
-    <!-- Favicon (REVISED to use absolute paths) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
@@ -41,14 +41,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
+
+    <style>
+        .page-header .hero-title,
+        .page-header .section-subtitle {
+            color: var(--text-light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <!-- REVISION: Updated schema to include all gallery images -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Moti Mahal Tandoori Trail",
+      "description": "Located within Surya Plaza Hotel, Moti Mahal brings an authentic taste of North Indian, Mughlai, and Tandoori cuisine to Sahibganj. Part of the iconic brand famous for introducing Butter Chicken and Dal Makhani to the world.",
+      "image": [
+        "https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-seating-900w.webp",
+        "https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-tandoori-platter-900w.webp",
+        "https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-butter-chicken-900w.webp",
+        "https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-interior-ambience-900w.webp",
+        "https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-mutton-biryani-900w.webp"
+      ],
+      "url": "https://suryaplazahotels.com/dining/moti-mahal",
+      "telephone": "+919264197988",
+      "servesCuisine": [
+        "North Indian",
+        "Mughlai",
+        "Tandoori",
+        "Chinese"
+      ],
+      "menu": "https://suryaplazahotels.com/dining/moti-mahal-menu",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Opp Ray Bahadur Building, J.N Roy Road",
+        "addressLocality": "Sahibganj",
+        "addressRegion": "Jharkhand",
+        "postalCode": "816109",
+        "addressCountry": "IN"
+      },
+      "parentOrganization": {
+        "@type": "Hotel",
+        "name": "Surya Plaza Hotel",
+        "url": "https://suryaplazahotels.com/"
+      }
+    }
+    </script>
+
 </head>
 <body>
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
+    <!-- START: Consistent Header -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
@@ -81,7 +130,7 @@
 
     <main id="main-content">
 
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/dining/header-dining-decor.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/dining/header-dining-decor-1800w.webp');">
             <div class="container" data-animate>
                 <p class="section-subtitle">A Royal Culinary Experience</p>
                 <h1 class="hero-title">Moti Mahal Tandoori Trail</h1>
@@ -97,49 +146,43 @@
                         <p>Part of the iconic Moti Mahal brand, famous for introducing Butter Chicken and Dal Makhani to the world, we continue a tradition of culinary excellence. Indulge in a rich and aromatic selection of dishes, all prepared with the freshest ingredients.</p>
                     </div>
                     <div data-animate style="--animation-delay: 0.1s;">
-                        <img src="/assets/images/dining/dining-moti-mahal-seating.webp" alt="An elegantly set table at Moti Mahal restaurant." width="600" height="450" loading="lazy" class="rounded-image-shadow">
+                        <img src="/assets/images/dining/dining-moti-mahal-seating-900w.webp" 
+                             srcset="/assets/images/dining/dining-moti-mahal-seating-600w.webp 600w, /assets/images/dining/dining-moti-mahal-seating-900w.webp 900w"
+                             sizes="(max-width: 768px) 90vw, 450px"
+                             alt="An elegantly set table at Moti Mahal restaurant." 
+                             loading="lazy" class="rounded-image-shadow">
                     </div>
                 </div>
             </div>
         </section>
         
-        <section id="features" class="about-section"> <!-- Changed background class for consistency -->
+        <section id="features" class="about-section">
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Why Dine With Us?</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <span class="material-icons-outlined">history_edu</span>
-                        <div>
-                            <h4>Legendary Culinary Heritage</h4>
-                            <p class="text-muted">Part of the iconic brand famous for inventing Butter Chicken and Dal Makhani.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="material-icons-outlined">outdoor_grill</span>
-                        <div>
-                            <h4>Authentic Tandoori Delights</h4>
-                            <p class="text-muted">Dishes cooked to perfection in traditional clay ovens for a unique, smoky flavor.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="material-icons-outlined">restaurant</span>
-                        <div>
-                            <h4>Royal Mughlai Experience</h4>
-                            <p class="text-muted">A rich and aromatic selection of curries and slow-cooked biryanis.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="material-icons-outlined">celebration</span>
-                        <div>
-                            <h4>Elegant Ambience</h4>
-                            <p class="text-muted">A sophisticated yet cozy setting, perfect for any occasion.</p>
-                        </div>
-                    </div>
+                <!-- REVISION: Changed class to 'grid-4-col' for correct layout -->
+                <div class="grid-4-col">
+                    <div class="feature-item"><span class="material-icons-outlined">history_edu</span><div><h4>Legendary Culinary Heritage</h4><p class="text-muted">Part of the iconic brand famous for inventing Butter Chicken and Dal Makhani.</p></div></div>
+                    <div class="feature-item"><span class="material-icons-outlined">outdoor_grill</span><div><h4>Authentic Tandoori Delights</h4><p class="text-muted">Dishes cooked to perfection in traditional clay ovens for a unique, smoky flavor.</p></div></div>
+                    <div class="feature-item"><span class="material-icons-outlined">restaurant</span><div><h4>Royal Mughlai Experience</h4><p class="text-muted">A rich and aromatic selection of curries and slow-cooked biryanis.</p></div></div>
+                    <div class="feature-item"><span class="material-icons-outlined">celebration</span><div><h4>Elegant Ambience</h4><p class="text-muted">A sophisticated yet cozy setting, perfect for any occasion.</p></div></div>
                 </div>
             </div>
         </section>
 
-        <section class="parallax-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/images/dining/parallax-family-dining.webp');" data-animate>
+        <!-- REVISION: Added new gallery section -->
+        <section id="gallery">
+            <div class="container">
+                <div data-animate>
+                    <h2 class="section-title text-center">Restaurant Gallery</h2>
+                </div>
+                <div class="grid-2-col">
+                    <img src="/assets/images/dining/dining-moti-mahal-family-900w.webp" srcset="/assets/images/dining/dining-moti-mahal-family-600w.webp 600w, /assets/images/dining/dining-moti-mahal-family-900w.webp 900w" sizes="(max-width: 768px) 90vw, 580px" alt="Family moments at Moti Mahal." class="rounded-image-shadow" data-animate style="--animation-delay: 0.1s;" loading="lazy">
+                    <img src="/assets/images/dining/dining-moti-mahal-interior-ambience-900w.webp" srcset="/assets/images/dining/dining-moti-mahal-interior-ambience-600w.webp 600w, /assets/images/dining/dining-moti-mahal-interior-ambience-900w.webp 900w" sizes="(max-width: 768px) 90vw, 580px" alt="The elegant and warm interior ambience of Moti Mahal, perfect for family dining." class="rounded-image-shadow" data-animate loading="lazy">                    
+                </div>
+            </div>
+        </section>
+
+        <section class="parallax-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/images/dining/parallax-family-dining-1800w.webp');" data-animate>
             <div class="container">
                 <h2 class="section-title">The ultimate destination for lovers of North Indian and Mughlai cuisine.</h2>
                 <a href="/dining/moti-mahal-menu" class="button-primary large">Explore Our Full Menu</a>
@@ -152,22 +195,10 @@
                     <h2 class="section-title text-center">Our Signature Dishes</h2>
                 </div>
                 <div class="grid-2-col">
-                    <div class="dish-card" data-animate>
-                        <h4>Butter Chicken (Murgh Makhani)</h4>
-                        <p class="text-muted">Our signature dish. Tender tandoori chicken simmered in a creamy, tomato-based gravy that originated from our kitchens.</p>
-                    </div>
-                    <div class="dish-card" data-animate style="--animation-delay: 0.1s;">
-                        <h4>Dal Makhani</h4>
-                        <p class="text-muted">Black lentils and kidney beans, slow-cooked for hours with butter and cream to achieve a rich, velvety texture.</p>
-                    </div>
-                    <div class="dish-card" data-animate>
-                        <h4>Tandoori Chicken</h4>
-                        <p class="text-muted">A classic preparation where chicken is marinated in yogurt and spices, then cooked in a tandoor for a smoky, succulent flavor.</p>
-                    </div>
-                    <div class="dish-card" data-animate style="--animation-delay: 0.1s;">
-                        <h4>Mutton Rogan Josh</h4>
-                        <p class="text-muted">A flavorful curry with tender mutton pieces cooked in a rich, aromatic gravy, known for its deep red color.</p>
-                    </div>
+                    <div class="dish-card" data-animate><h4>Butter Chicken (Murgh Makhani)</h4><p class="text-muted">Our signature dish. Tender tandoori chicken simmered in a creamy, tomato-based gravy that originated from our kitchens.</p></div>
+                    <div class="dish-card" data-animate style="--animation-delay: 0.1s;"><h4>Dal Makhani</h4><p class="text-muted">Black lentils and kidney beans, slow-cooked for hours with butter and cream to achieve a rich, velvety texture.</p></div>
+                    <div class="dish-card" data-animate><h4>Tandoori Chicken</h4><p class="text-muted">A classic preparation where chicken is marinated in yogurt and spices, then cooked in a tandoor for a smoky, succulent flavor.</p></div>
+                    <div class="dish-card" data-animate style="--animation-delay: 0.1s;"><h4>Mutton Rogan Josh</h4><p class="text-muted">A flavorful curry with tender mutton pieces cooked in a rich, aromatic gravy, known for its deep red color.</p></div>
                 </div>
                  <div class="section-cta" data-animate>
                     <a href="/dining/moti-mahal-menu" class="button-secondary">View The Complete Menu</a>
@@ -180,7 +211,7 @@
                 <p class="section-subtitle">Plan Your Meal</p>
                 <h2 class="section-title">Table Reservations & Enquiries</h2>
                 <p>Contact our dining team directly for table bookings, special requests, or to enquire about our menus.</p>
-                <div class="hero-actions">
+                <div class="cta-actions">
                     <a href="tel:+919264197988" class="button-secondary" aria-label="Call for table reservations"><span class="material-icons-outlined">call</span><span>Call for Reservations</span></a>
                     <a href="mailto:mmttsahibganj@gmail.com" class="button-secondary" aria-label="Email our dining team"><span class="material-icons-outlined">email</span><span>Email Us</span></a>
                 </div>
@@ -188,59 +219,19 @@
         </section>
     </main>
 
-    <!-- START: REVISED AND CONSISTENT FOOTER -->
+    <!-- START: Consistent FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main">
-                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
-                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
-                    </a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Hotel</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about">Our Story</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/events">Events & Banquets</a></li>
-                        <li><a href="/attractions">Local Attractions</a></li>
-                        <li><a href="/blog">Our Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Accommodations</h4>
-                    <ul class="footer-links">
-                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
-                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
-                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
-                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
-                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
-                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Restaurants</h4>
-                    <ul class="footer-links">
-                        <li><a href="/dining/moti-mahal" class="active">Moti Mahal</a></li>
-                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
-                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
-                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
-                    </ul>
-                </div>
+                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal" class="active">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
-                <nav class="footer-legal-links">
-                    <a href="/terms">Terms</a>
-                    <a href="/privacy-policy">Privacy</a>
-                    <a href="/cancellation-policy">Cancellation</a>
-                    <a href="/shipping-policy">Shipping</a>
-                </nav>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
-    <!-- END: REVISED AND CONSISTENT FOOTER -->
+    <!-- END: Consistent FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     

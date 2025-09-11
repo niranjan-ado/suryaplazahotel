@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials (REVISED for consistency) -->
+    <!-- SEO Essentials -->
     <title>Menu - Moti Mahal Tandoori Trail | Surya Plaza Hotel</title>
     <meta name="description" content="Explore the full menu of Moti Mahal Tandoori Trail, featuring our legendary Tandoori Starters, Butter Chicken, Dal Makhani, Biryanis, and Chinese Specialties.">
     <link rel="canonical" href="https://suryaplazahotels.com/dining/moti-mahal-menu">
 
-    <!-- Social Media Meta Tags (Added for consistency) -->
+    <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Menu - Moti Mahal Tandoori Trail | Surya Plaza Hotel">
     <meta property="og:description" content="Explore the full menu of Moti Mahal, featuring our legendary Tandoori Starters, Butter Chicken, and more.">
-    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/dining/og-image-menu.jpg"> <!-- Assumes a specific OG image exists -->
+    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/dining/og-image-menu.jpg">
     <meta property="og:url" content="https://suryaplazahotels.com/dining/moti-mahal-menu">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -29,7 +29,7 @@
       })();
     </script>
 
-    <!-- Favicon (REVISED to use absolute paths) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
@@ -41,14 +41,85 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
+
+    <!-- REVISION: Added internal style block for hero text contrast -->
+    <style>
+        .page-header .hero-title,
+        .page-header .section-subtitle,
+        .menu-page-header .hero-subtitle { /* hero-subtitle is used here instead of page-header */
+            color: var(--text-light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <!-- REVISION: Added comprehensive JSON-LD Schema for the Menu -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Moti Mahal Tandoori Trail",
+      "servesCuisine": ["North Indian", "Mughlai", "Tandoori"],
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Main Menu",
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "Beverages",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Naughty Cola", "description": "Cola – spice mix – lime juice", "offers": { "@type": "Offer", "price": "89", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Virgin Mojito", "description": "Choice of Mint, Green Apple, Mango, etc.", "offers": { "@type": "Offer", "price": "129", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Fruit Punch", "description": "Mixed fruit juice - vanilla ice cream - fresh fruits", "offers": { "@type": "Offer", "price": "149", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Thick Shakes", "description": "Oreo / Kitkat / Nutella / Brownie", "offers": { "@type": "Offer", "price": "159", "priceCurrency": "INR" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Soups",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "Taimoori Shorba (Chicken)", "description": "Chicken broth with Indian spices and black pepper.", "offers": { "@type": "Offer", "price": "159", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Taimoori Shorba (Veg)", "description": "Vegetable broth with Indian spices and black pepper.", "offers": { "@type": "Offer", "price": "139", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Manchow Soup (Chicken)", "description": "Chinese chicken broth with garlic, soy & chilli, served with crispy noodles.", "offers": { "@type": "Offer", "price": "159", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Manchow Soup (Veg)", "description": "Chinese vegetable broth with garlic, soy & chilli, served with crispy noodles.", "offers": { "@type": "Offer", "price": "139", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Cream of Chicken", "description": "Chicken broth cooked with spices & finished with cream.", "offers": { "@type": "Offer", "price": "169", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Cream of Tomato", "description": "Tomato broth cooked with spices & finished with cream.", "offers": { "@type": "Offer", "price": "149", "priceCurrency": "INR" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Tandoori Starters",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "The Original Tandoori Chicken", "description": "Invented by our founder, Sh. Kundan Lal Gujral.", "offers": [{ "@type": "Offer", "name": "Half", "price": "279", "priceCurrency": "INR" }, { "@type": "Offer", "name": "Full", "price": "479", "priceCurrency": "INR" }] },
+              { "@type": "MenuItem", "name": "Murgh Malai Tikka", "description": "Chicken boneless marinated with cream, cashew & spices.", "offers": { "@type": "Offer", "price": "309", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Mutton Seekh Kebab", "description": "Our signature recipe of minced mutton with spices, skewered & cooked in tandoor.", "offers": { "@type": "Offer", "price": "339", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Tandoori Paneer Tikka", "description": "Cottage cheese marinated with yoghurt & Indian spices.", "offers": { "@type": "Offer", "price": "279", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Dahi Ke Seekh Kebab", "description": "Hung yoghurt mixed with cottage cheese and spices, skewered & cooked in tandoor.", "offers": { "@type": "Offer", "price": "259", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Malai Soya Chaap", "description": "Soybean chaap marinated with cream, cashew & spices.", "offers": { "@type": "Offer", "price": "259", "priceCurrency": "INR" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Main Course",
+            "hasMenuItem": [
+              { "@type": "MenuItem", "name": "The Original Butter Chicken", "description": "Our invention. Tandoori chicken cooked in tomato gravy, finished with cream & butter.", "offers": { "@type": "Offer", "price": "349", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Mutton Roganjosh", "description": "An all-time favourite mutton preparation from Kashmir.", "offers": { "@type": "Offer", "price": "369", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "The Original Butter Paneer", "description": "Invented by our founder. Cottage cheese cooked in our signature tomato gravy.", "offers": { "@type": "Offer", "price": "309", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "Kesari Malai Kofta", "description": "Cottage cheese dumplings in a creamy cashew gravy, flavoured with saffron.", "offers": { "@type": "Offer", "price": "289", "priceCurrency": "INR" } },
+              { "@type": "MenuItem", "name": "The Original Dal Makhani", "description": "Our invention. A mix of lentils cooked overnight on the tandoor, finished with cream & butter.", "offers": { "@type": "Offer", "price": "259", "priceCurrency": "INR" } }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
 </head>
-<body class="menu-page"> <!-- Added class for page-specific styling -->
+<body class="menu-page">
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
+    <!-- START: Consistent Header -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
@@ -80,7 +151,8 @@
     <!-- END: Consistent Header -->
 
     <main id="main-content">
-        <header class="page-header menu-page-header">
+        <!-- REVISION: Replaced menu-page-header with page-header for consistency and added background image -->
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/dining/parallax-diner-counter-1800w.webp');">
             <div class="container" data-animate>
                 <p class="section-subtitle">A Culinary Legacy</p>
                 <h1 class="hero-title">Moti Mahal Tandoori Trail Menu</h1>
@@ -109,123 +181,55 @@
                 
                 <section id="beverages" class="menu-section" data-animate>
                     <h2 class="menu-section-title">Beverages</h2>
-                    <div class="menu-category-group">
-                        <div class="menu-grid">
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>NAUGHTY COLA</h4><span class="price">₹89</span></div><p class="menu-item-desc">Cola – spice mix – lime juice</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>VIRGIN MOJITO</h4><span class="price">₹129</span></div><p class="menu-item-desc">Choice of Mint, Green Apple, Mango, etc.</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>FRUIT PUNCH</h4><span class="price">₹149</span></div><p class="menu-item-desc">Mixed fruit juice - vanilla ice cream - fresh fruits</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>THICK SHAKES</h4><span class="price">₹159</span></div><p class="menu-item-desc">Oreo / Kitkat / Nutella / Brownie</p></div>
-                        </div>
-                    </div>
+                    <div class="menu-category-group"><div class="menu-grid"><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>NAUGHTY COLA</h4><span class="price">₹89</span></div><p class="menu-item-desc">Cola – spice mix – lime juice</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>VIRGIN MOJITO</h4><span class="price">₹129</span></div><p class="menu-item-desc">Choice of Mint, Green Apple, Mango, etc.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>FRUIT PUNCH</h4><span class="price">₹149</span></div><p class="menu-item-desc">Mixed fruit juice - vanilla ice cream - fresh fruits</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>THICK SHAKES</h4><span class="price">₹159</span></div><p class="menu-item-desc">Oreo / Kitkat / Nutella / Brownie</p></div></div></div>
                 </section>
 
                 <section id="soups" class="menu-section" data-animate>
                     <h2 class="menu-section-title">Soups</h2>
-                    <div class="menu-category-group">
-                        <div class="menu-grid">
-                            <div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>TAIMOORI SHORBA</h4><span class="price">₹159 / 139</span></div><p class="menu-item-desc">Chicken or veg broth with Indian spices and black pepper.</p></div>
-                            <div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>MANCHOW SOUP</h4><span class="price">₹159 / 139</span></div><p class="menu-item-desc">Chinese chicken or veg broth with garlic, soy & chilli, served with crispy noodles.</p></div>
-                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>CREAM OF CHICKEN</h4><span class="price">₹169</span></div><p class="menu-item-desc">Chicken broth cooked with spices & finished with cream.</p></div>
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>CREAM OF TOMATO</h4><span class="price">₹149</span></div><p class="menu-item-desc">Tomato broth cooked with spices & finished with cream.</p></div>
-                        </div>
-                    </div>
+                    <div class="menu-category-group"><div class="menu-grid"><div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>TAIMOORI SHORBA</h4><span class="price">₹159 / 139</span></div><p class="menu-item-desc">Chicken or veg broth with Indian spices and black pepper.</p></div><div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>MANCHOW SOUP</h4><span class="price">₹159 / 139</span></div><p class="menu-item-desc">Chinese chicken or veg broth with garlic, soy & chilli, served with crispy noodles.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>CREAM OF CHICKEN</h4><span class="price">₹169</span></div><p class="menu-item-desc">Chicken broth cooked with spices & finished with cream.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>CREAM OF TOMATO</h4><span class="price">₹149</span></div><p class="menu-item-desc">Tomato broth cooked with spices & finished with cream.</p></div></div></div>
                 </section>
 
                 <section id="starters" class="menu-section" data-animate>
                     <h2 class="menu-section-title">Tandoori Starters</h2>
-                    <div class="non-veg-section menu-category-group">
-                        <h3 class="menu-sub-title">Non-Vegetarian</h3>
-                        <div class="menu-grid">
-                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>THE ORIGINAL TANDOORI CHICKEN</h4><span class="price">₹279 / 479</span></div><p class="menu-item-desc">Half / Full. Invented by our founder, Sh. Kundan Lal Gujral.</p></div>
-                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>MURGH MALAI TIKKA</h4><span class="price">₹309</span></div><p class="menu-item-desc">Chicken boneless marinated with cream, cashew & spices.</p></div>
-                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>MUTTON SEEKH KEBAB</h4><span class="price">₹339</span></div><p class="menu-item-desc">Our signature recipe of minced mutton with spices, skewered & cooked in tandoor.</p></div>
-                        </div>
-                    </div>
-                    <div class="veg-section menu-category-group">
-                        <h3 class="menu-sub-title">Vegetarian</h3>
-                         <div class="menu-grid">
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>TANDOORI PANEER TIKKA</h4><span class="price">₹279</span></div><p class="menu-item-desc">Cottage cheese marinated with yoghurt & Indian spices.</p></div>
-                             <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>DAHI KE SEEKH KEBAB</h4><span class="price">₹259</span></div><p class="menu-item-desc">Hung yoghurt mixed with cottage cheese and spices, skewered & cooked in tandoor.</p></div>
-                             <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>MALAI SOYA CHAAP</h4><span class="price">₹259</span></div><p class="menu-item-desc">Soybean chaap marinated with cream, cashew & spices.</p></div>
-                        </div>
-                    </div>
+                    <div class="non-veg-section menu-category-group"><h3 class="menu-sub-title">Non-Vegetarian</h3><div class="menu-grid"><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>THE ORIGINAL TANDOORI CHICKEN</h4><span class="price">₹279 / 479</span></div><p class="menu-item-desc">Half / Full. Invented by our founder, Sh. Kundan Lal Gujral.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>MURGH MALAI TIKKA</h4><span class="price">₹309</span></div><p class="menu-item-desc">Chicken boneless marinated with cream, cashew & spices.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>MUTTON SEEKH KEBAB</h4><span class="price">₹339</span></div><p class="menu-item-desc">Our signature recipe of minced mutton with spices, skewered & cooked in tandoor.</p></div></div></div>
+                    <div class="veg-section menu-category-group"><h3 class="menu-sub-title">Vegetarian</h3><div class="menu-grid"><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>TANDOORI PANEER TIKKA</h4><span class="price">₹279</span></div><p class="menu-item-desc">Cottage cheese marinated with yoghurt & Indian spices.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>DAHI KE SEEKH KEBAB</h4><span class="price">₹259</span></div><p class="menu-item-desc">Hung yoghurt mixed with cottage cheese and spices, skewered & cooked in tandoor.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>MALAI SOYA CHAAP</h4><span class="price">₹259</span></div><p class="menu-item-desc">Soybean chaap marinated with cream, cashew & spices.</p></div></div></div>
                 </section>
 
                 <section id="main-course" class="menu-section" data-animate>
                     <h2 class="menu-section-title">Main Course</h2>
-                     <div class="non-veg-section menu-category-group">
-                        <h3 class="menu-sub-title">Non-Vegetarian</h3>
-                        <div class="menu-grid">
-                             <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>THE ORIGINAL BUTTER CHICKEN</h4><span class="price">₹349</span></div><p class="menu-item-desc">Our invention. Tandoori chicken cooked in tomato gravy, finished with cream & butter.</p></div>
-                             <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>MUTTON ROGANJOSH</h4><span class="price">₹369</span></div><p class="menu-item-desc">An all-time favourite mutton preparation from Kashmir.</p></div>
-                        </div>
-                    </div>
-                     <div class="veg-section menu-category-group">
-                        <h3 class="menu-sub-title">Vegetarian</h3>
-                         <div class="menu-grid">
-                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>THE ORIGINAL BUTTER PANEER</h4><span class="price">₹309</span></div><p class="menu-item-desc">Invented by our founder. Cottage cheese cooked in our signature tomato gravy.</p></div>
-                             <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>KESARI MALAI KOFTA</h4><span class="price">₹289</span></div><p class="menu-item-desc">Cottage cheese dumplings in a creamy cashew gravy, flavoured with saffron.</p></div>
-                             <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>THE ORIGINAL DAL MAKHANI</h4><span class="price">₹259</span></div><p class="menu-item-desc">Our invention. A mix of lentils cooked overnight on the tandoor, finished with cream & butter.</p></div>
-                        </div>
-                    </div>
+                     <div class="non-veg-section menu-category-group"><h3 class="menu-sub-title">Non-Vegetarian</h3><div class="menu-grid"><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>THE ORIGINAL BUTTER CHICKEN</h4><span class="price">₹349</span></div><p class="menu-item-desc">Our invention. Tandoori chicken cooked in tomato gravy, finished with cream & butter.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>MUTTON ROGANJOSH</h4><span class="price">₹369</span></div><p class="menu-item-desc">An all-time favourite mutton preparation from Kashmir.</p></div></div></div>
+                     <div class="veg-section menu-category-group"><h3 class="menu-sub-title">Vegetarian</h3><div class="menu-grid"><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>THE ORIGINAL BUTTER PANEER</h4><span class="price">₹309</span></div><p class="menu-item-desc">Invented by our founder. Cottage cheese cooked in our signature tomato gravy.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>KESARI MALAI KOFTA</h4><span class="price">₹289</span></div><p class="menu-item-desc">Cottage cheese dumplings in a creamy cashew gravy, flavoured with saffron.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>THE ORIGINAL DAL MAKHANI</h4><span class="price">₹259</span></div><p class="menu-item-desc">Our invention. A mix of lentils cooked overnight on the tandoor, finished with cream & butter.</p></div></div></div>
                 </section>
             </div>
         </div>
+
+        <!-- REVISION: Added final CTA section for consistency -->
+        <section class="direct-booking-section" data-animate>
+            <div class="container">
+                <p class="section-subtitle">Plan Your Meal</p>
+                <h2 class="section-title">Table Reservations & Enquiries</h2>
+                <p>Contact our dining team directly for table bookings, special requests, or to enquire about our menus.</p>
+                <div class="cta-actions">
+                    <a href="tel:+919264197988" class="button-secondary" aria-label="Call for table reservations"><span class="material-icons-outlined">call</span><span>Call for Reservations</span></a>
+                    <a href="mailto:mmttsahibganj@gmail.com" class="button-secondary" aria-label="Email our dining team"><span class="material-icons-outlined">email</span><span>Email Us</span></a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- START: REVISED AND CONSISTENT FOOTER -->
+    <!-- START: Consistent FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main">
-                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
-                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
-                    </a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Hotel</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about">Our Story</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/events">Events & Banquets</a></li>
-                        <li><a href="/attractions">Local Attractions</a></li>
-                        <li><a href="/blog">Our Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Accommodations</h4>
-                    <ul class="footer-links">
-                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
-                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
-                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
-                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
-                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
-                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Restaurants</h4>
-                    <ul class="footer-links">
-                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
-                        <li><a href="/dining/moti-mahal-menu" class="active">Moti Mahal Menu</a></li>
-                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
-                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
-                    </ul>
-                </div>
+                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu" class="active">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
-                <nav class="footer-legal-links">
-                    <a href="/terms">Terms</a>
-                    <a href="/privacy-policy">Privacy</a>
-                    <a href="/cancellation-policy">Cancellation</a>
-                    <a href="/shipping-policy">Shipping</a>
-                </nav>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
-    <!-- END: REVISED AND CONSISTENT FOOTER -->
+    <!-- END: Consistent FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     

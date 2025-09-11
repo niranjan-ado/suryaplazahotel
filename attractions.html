@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials (REVISED for consistency) -->
+    <!-- SEO Essentials -->
     <title>Local Attractions | Places to Visit in Sahibganj, Jharkhand</title>
     <meta name="description" content="Discover the best places to visit near Surya Plaza Hotel, including Moti Jharna waterfall, Shivgadi Dham temple, historical monuments, and the scenic Sahibganj Ghati.">
     <link rel="canonical" href="https://suryaplazahotels.com/attractions">
 
-    <!-- Social Media Meta Tags (Added for consistency) -->
+    <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Local Attractions | Places to Visit in Sahibganj, Jharkhand">
     <meta property="og:description" content="Discover the best places to visit near Surya Plaza Hotel, from scenic waterfalls to historical monuments.">
     <meta property="og:image" content="https://suryaplazahotels.com/assets/images/header-attractions-ganges-view.webp">
@@ -29,7 +29,7 @@
       })();
     </script>
 
-    <!-- Favicon (REVISED to use absolute paths) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
@@ -41,14 +41,103 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <!-- Main & FAQ Stylesheets -->
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/faq.css">
+
+    <!-- REVISION: Added internal style block for hero text, cards, and categories -->
+    <style>
+        .page-header .hero-title,
+        .page-header .section-subtitle {
+            color: var(--text-light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .attraction-card {
+            background-color: var(--background-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .attraction-card h4 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+        .attraction-card p { flex-grow: 1; }
+        .attraction-card .distance {
+            margin-top: 1.5rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .attraction-category {
+            margin-bottom: 5rem;
+        }
+        .attraction-category:last-of-type {
+            margin-bottom: 0;
+        }
+        .attraction-category h3 {
+            margin-bottom: 3rem;
+        }
+    </style>
+
+    <!-- REVISION: Added comprehensive JSON-LD Schema for ItemList and FAQs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ItemList",
+          "name": "Local Attractions in Sahibganj",
+          "description": "A list of notable tourist attractions, historical monuments, temples, and landmarks in and around Sahibganj, Jharkhand.",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "item": { "@type": "TouristAttraction", "name": "Moti Jharna Waterfall", "description": "A scenic waterfall in the Rajmahal hills, known for its natural beauty." } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "TouristAttraction", "name": "Shivgadi Dham", "description": "A revered Lord Shiva temple located inside a cave." } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "TouristAttraction", "name": "Sahibganj Ghati", "description": "A well-known river port on the banks of the Ganga River with historical significance." } },
+            { "@type": "ListItem", "position": 4, "item": { "@type": "TouristAttraction", "name": "Akbari Masjid", "description": "One of the oldest mosques in the region, representing Mughal-era architecture." } },
+            { "@type": "ListItem", "position": 5, "item": { "@type": "TouristAttraction", "name": "Singhi Dalan", "description": "One of the principal remaining sections of Sultan Shah Shuja’s palace." } },
+            { "@type": "ListItem", "position": 6, "item": { "@type": "TouristAttraction", "name": "Baradari", "description": "A palace with 12 doors that was once the residence of a confidant of Emperor Akbar." } },
+            { "@type": "ListItem", "position": 7, "item": { "@type": "TouristAttraction", "name": "Bindabasini Temple", "description": "An ancient Shaktipeeth temple dedicated to the Tridevi." } },
+            { "@type": "ListItem", "position": 8, "item": { "@type": "TouristAttraction", "name": "Jama Masjid, Rajmahal", "description": "Built by Man Singh in the same style as the Delhi Jama Masjid." } },
+            { "@type": "ListItem", "position": 9, "item": { "@type": "TouristAttraction", "name": "Rani Sati Dadi Mandir", "description": "A revered Hindu temple dedicated to Rani Sati Dadi, symbolizing feminine bravery." } },
+            { "@type": "ListItem", "position": 10, "item": { "@type": "TouristAttraction", "name": "Bhagwa Kuan", "description": "A historical well built in 1815 during the British Raj." } },
+            { "@type": "ListItem", "position": 11, "item": { "@type": "TouristAttraction", "name": "Chowk Bazar", "description": "A vibrant and bustling marketplace in the heart of Sahibganj." } },
+            { "@type": "ListItem", "position": 12, "item": { "@type": "TouristAttraction", "name": "Sahibganj Science Centre", "description": "Features interactive exhibits, 3D printing, robotics, and local Jurassic-era fossils." } }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Sahibganj famous for?",
+              "acceptedAnswer": { "text": "Sahibganj is famous for its unique blend of natural beauty and historical significance. It is known for attractions like the scenic Moti Jharna waterfall, the sacred Shivgadi Dham cave temple, and its historic port on the banks of the River Ganges. The area is also notable for its Jurassic-era fossils." }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the best time to visit Sahibganj?",
+              "acceptedAnswer": { "text": "The best time to visit Sahibganj is during the winter months, from October to March. The weather during this period is pleasant and ideal for sightseeing and exploring the local attractions." }
+            },
+            {
+              "@type": "Question",
+              "name": "How many days are enough for a trip to Sahibganj?",
+              "acceptedAnswer": { "text": "A trip of 2 to 3 days is generally sufficient to explore the main attractions of Sahibganj and the surrounding Rajmahal hills at a comfortable pace. Our hotel's central location makes it an ideal base for your exploration." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
 </head>
 <body>
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
+    <!-- START: Consistent Header -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
@@ -62,7 +151,6 @@
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <!-- NOTE: You may need JS to add 'active' class to an 'Attractions' link if it exists in the main nav -->
                     </ul>
                     <div class="nav-menu-book-btn-wrapper">
                         <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary nav-menu-book-btn">Book Now</a>
@@ -82,34 +170,22 @@
 
     <main id="main-content">
 
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/header-attractions-ganges-view.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/header-attractions-ganges-view-1800w.webp');">
             <div class="container" data-animate>
                 <p class="section-subtitle">Explore Sahibganj</p>
                 <h1 class="hero-title">Local Attractions</h1>
             </div>
         </header>
         
-        <section id="featured-attractions" class="about-section"> <!-- Changed background class for consistency -->
+        <section id="featured-attractions" class="about-section">
             <div class="container">
                 <div data-animate>
                     <h2 class="section-title text-center">Top Places to Visit</h2>
                 </div>
                  <div class="grid-3-col">
-                    <div class="attraction-card" data-animate>
-                        <h4>Moti Jharna Waterfall</h4>
-                        <p>A scenic and popular waterfall in the Rajmahal hills, known for its natural beauty and lush green surroundings, with water falling over two ledges of rock.</p>
-                        <div class="distance"><span class="material-icons-outlined">directions_car</span> 34 min drive (14 km)</div>
-                    </div>
-                    <div class="attraction-card" data-animate style="--animation-delay: 0.1s;">
-                        <h4>Shivgadi Dham</h4>
-                        <p>A revered Lord Shiva temple located inside a cave, where water from the mountain drips continuously onto the Shiva Lingam. A major site for devotees.</p>
-                        <div class="distance"><span class="material-icons-outlined">directions_car</span> 1 hr 24 min drive (58.6 km)</div>
-                    </div>
-                    <div class="attraction-card" data-animate style="--animation-delay: 0.2s;">
-                        <h4>Sahibganj Ghati</h4>
-                        <p>A well-known river port on the banks of the Ganga River, offering beautiful scenic views. It has historical significance as a major transportation and trade hub.</p>
-                        <div class="distance"><span class="material-icons-outlined">directions_car</span> 5 min drive (1.4 km)</div>
-                    </div>
+                    <div class="attraction-card" data-animate><h4 >Moti Jharna Waterfall</h4><p>A scenic and popular waterfall in the Rajmahal hills, known for its natural beauty and lush green surroundings, with water falling over two ledges of rock.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 34 min drive (14 km)</div></div>
+                    <div class="attraction-card" data-animate style="--animation-delay: 0.1s;"><h4>Shivgadi Dham</h4><p>A revered Lord Shiva temple located inside a cave, where water from the mountain drips continuously onto the Shiva Lingam. A major site for devotees.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 hr 24 min drive (58.6 km)</div></div>
+                    <div class="attraction-card" data-animate style="--animation-delay: 0.2s;"><h4>Sahibganj Ghati</h4><p>A well-known river port on the banks of the Ganga River, offering beautiful scenic views. It has historical significance as a major transportation and trade hub.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 5 min drive (1.4 km)</div></div>
                 </div>
             </div>
         </section>
@@ -145,6 +221,27 @@
             </div>
         </section>
         
+        <!-- REVISION: Added new reusable FAQ Section -->
+        <section class="faq-section commitment-section">
+            <div class="container" data-animate>
+                <h2 class="section-title text-center">Visitor Information</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1"><span>What is Sahibganj famous for?</span><span class="faq-icon" aria-hidden="true"></span></button>
+                        <div class="faq-answer" id="faq-answer-1"><p>Sahibganj is famous for its unique blend of natural beauty and historical significance. It is known for attractions like the scenic Moti Jharna waterfall, the sacred Shivgadi Dham cave temple, and its historic port on the banks of the River Ganges. The area is also notable for its Jurassic-era fossils.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2"><span>What is the best time to visit Sahibganj?</span><span class="faq-icon" aria-hidden="true"></span></button>
+                        <div class="faq-answer" id="faq-answer-2"><p>The best time to visit Sahibganj is during the winter months, from October to March. The weather during this period is pleasant and ideal for sightseeing and exploring the local attractions.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3"><span>How many days are enough for a trip to Sahibganj?</span><span class="faq-icon" aria-hidden="true"></span></button>
+                        <div class="faq-answer" id="faq-answer-3"><p>A trip of 2 to 3 days is generally sufficient to explore the main attractions of Sahibganj and the surrounding Rajmahal hills at a comfortable pace. Our hotel's central location makes it an ideal base for your exploration.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="final-cta-section">
             <div class="container text-center" data-animate>
                 <h2 class="section-title">Your Base for Exploration</h2>
@@ -155,62 +252,23 @@
 
     </main>
 
-    <!-- START: REVISED AND CONSISTENT FOOTER -->
+    <!-- START: Consistent FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main">
-                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
-                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
-                    </a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Hotel</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about">Our Story</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/events">Events & Banquets</a></li>
-                        <li><a href="/attractions" class="active">Local Attractions</a></li>
-                        <li><a href="/blog">Our Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Accommodations</h4>
-                    <ul class="footer-links">
-                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
-                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
-                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
-                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
-                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
-                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Restaurants</h4>
-                    <ul class="footer-links">
-                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
-                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
-                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
-                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
-                    </ul>
-                </div>
+                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions" class="active">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
-                <nav class="footer-legal-links">
-                    <a href="/terms">Terms</a>
-                    <a href="/privacy-policy">Privacy</a>
-                    <a href="/cancellation-policy">Cancellation</a>
-                    <a href="/shipping-policy">Shipping</a>
-                </nav>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
-    <!-- END: REVISED AND CONSISTENT FOOTER -->
+    <!-- END: Consistent FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
     <script src="/script.js" defer></script>
+    <script src="/faq.js" defer></script>
 </body>
 </html>

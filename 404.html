@@ -36,6 +36,41 @@
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
+
+    <!-- REVISION: Added internal styles for the final CTA section and site credit -->
+    <style>
+        .final-cta-section {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        .dark-theme .final-cta-section {
+            color: #0d1117;
+        }
+        .final-cta-section .section-title {
+            color: inherit;
+        }
+        .final-cta-section .button-secondary.button-outline-light {
+            color: var(--text-light);
+            border-color: var(--text-light);
+            background-color: transparent;
+        }
+        .final-cta-section .button-secondary.button-outline-light:hover {
+            background-color: var(--text-light);
+            color: var(--primary-color);
+            border-color: var(--text-light);
+        }
+        .site-credit {
+            background-color: var(--background-surface);
+            padding: 2rem 0;
+            margin-top: -6rem;
+            padding-top: 8rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .site-credit p {
+            margin-bottom: 0.5rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -98,33 +133,9 @@
                     <h2 class="section-title text-center">Or, Feel Free to Browse Our Latest Stories</h2>
                 </div>
                 <div class="grid-3-col" data-animate>
-                    <article class="blog-card">
-                        <a href="/blog/post-1" aria-label="Read more about A Weekend Guide to Sahibganj's Hidden Gems">
-                            <div class="blog-card-image"><img src="/assets/images/blog/blog-ganges-view.webp" alt="A scenic view of the River Ganges at Sahibganj." loading="lazy"></div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Local Guides</span>
-                                <h3>A Weekend Guide to Sahibganj's Hidden Gems</h3>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="blog-card">
-                        <a href="/blog/post-2" aria-label="Read more about The Story of Butter Chicken: A Moti Mahal Signature">
-                            <div class="blog-card-image"><img src="/assets/images/blog/blog-butter-chicken-dish.webp" alt="A delicious dish from Moti Mahal restaurant." loading="lazy"></div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Hotel Dining</span>
-                                <h3>The Story of Butter Chicken</h3>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="blog-card">
-                         <a href="/blog/post-3" aria-label="Read more about Designing for Your Comfort: The Making of Our Suites">
-                            <div class="blog-card-image"><img src="/assets/images/blog/blog-premium-suite-bedroom.webp" alt="Luxurious bedding in a Premium Suite." loading="lazy"></div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Hotel Experience</span>
-                                <h3>The Making of Our Suites</h3>
-                            </div>
-                        </a>
-                    </article>
+                    <article class="blog-card"><a href="/blog/post-1" aria-label="Read more about A Weekend Guide to Sahibganj's Hidden Gems"><div class="blog-card-image"><img src="/assets/images/blog/blog-ganges-view-800w.webp" srcset="/assets/images/blog/blog-ganges-view-400w.webp 400w, /assets/images/blog/blog-ganges-view-800w.webp 800w" sizes="(max-width: 992px) 50vw, 33vw" alt="A scenic view of the River Ganges at Sahibganj." loading="lazy"></div><div class="blog-card-content"><span class="blog-category">Local Guides</span><h3>A Weekend Guide to Sahibganj's Hidden Gems</h3></div></a></article>
+                    <article class="blog-card"><a href="/blog/post-2" aria-label="Read more about The Story of Butter Chicken: A Moti Mahal Signature"><div class="blog-card-image"><img src="/assets/images/blog/blog-butter-chicken-dish-800w.webp" srcset="/assets/images/blog/blog-butter-chicken-dish-400w.webp 400w, /assets/images/blog/blog-butter-chicken-dish-800w.webp 800w" sizes="(max-width: 992px) 50vw, 33vw" alt="A delicious dish from Moti Mahal restaurant." loading="lazy"></div><div class="blog-card-content"><span class="blog-category">Hotel Dining</span><h3>The Story of Butter Chicken</h3></div></a></article>
+                    <article class="blog-card"><a href="/blog/post-3" aria-label="Read more about Designing for Your Comfort: The Making of Our Suites"><div class="blog-card-image"><img src="/assets/images/blog/blog-premium-suite-bedroom-800w.webp" srcset="/assets/images/blog/blog-premium-suite-bedroom-400w.webp 400w, /assets/images/blog/blog-premium-suite-bedroom-800w.webp 800w" sizes="(max-width: 992px) 50vw, 33vw" alt="Luxurious bedding in a Premium Suite." loading="lazy"></div><div class="blog-card-content"><span class="blog-category">Hotel Experience</span><h3>The Making of Our Suites</h3></div></a></article>
                 </div>
             </div>
         </section>
@@ -133,12 +144,7 @@
             <div class="container text-center" data-animate>
                  <h2 class="section-title">Still can't find what you're looking for?</h2>
                  <p class="text-muted" style="margin-top: -1.5rem;">Try a search, or choose one of our main pages below.</p>
-                 <div class="search-form-wrapper">
-                    <form role="search">
-                        <input type="search" placeholder="Search our site..." aria-label="Search">
-                        <button type="submit" class="button-primary">Search</button>
-                    </form>
-                 </div>
+                 <div class="search-form-wrapper"><form role="search" method="GET" action="/search"><input type="search" name="q" placeholder="Search our site..." aria-label="Search"><button type="submit" class="button-primary">Search</button></form></div>
                  <p style="font-size: 0.9rem;"><strong>P.S.</strong> We've automatically logged this missing page, and our engineers will look into it. Thanks for helping us improve!</p>
             </div>
         </section>
@@ -146,26 +152,10 @@
         <section id="quick-links" class="about-section">
             <div class="container">
                 <div class="grid-4-col">
-                    <a href="/" class="quick-link-card" data-animate>
-                        <span class="material-icons-outlined">home</span>
-                        <h4>Homepage</h4>
-                        <p>Return to the start.</p>
-                    </a>
-                     <a href="/rooms" class="quick-link-card" data-animate style="--animation-delay: 0.1s;">
-                        <span class="material-icons-outlined">king_bed</span>
-                        <h4>Our Rooms</h4>
-                        <p>Explore all accommodations.</p>
-                    </a>
-                     <a href="/dining" class="quick-link-card" data-animate style="--animation-delay: 0.2s;">
-                        <span class="material-icons-outlined">restaurant</span>
-                        <h4>Dining Options</h4>
-                        <p>View our restaurants.</p>
-                    </a>
-                     <a href="/events" class="quick-link-card" data-animate style="--animation-delay: 0.3s;">
-                        <span class="material-icons-outlined">celebration</span>
-                        <h4>Events & Banquets</h4>
-                        <p>Plan your perfect event.</p>
-                    </a>
+                    <a href="/" class="quick-link-card" data-animate><span class="material-icons-outlined">home</span><h3>Homepage</h3><p>Return to the start.</p></a>
+                    <a href="/rooms" class="quick-link-card" data-animate style="--animation-delay: 0.1s;"><span class="material-icons-outlined">king_bed</span><h3>Our Rooms</h3><p>Explore all accommodations.</p></a>
+                    <a href="/dining" class="quick-link-card" data-animate style="--animation-delay: 0.2s;"><span class="material-icons-outlined">restaurant</span><h3>Dining Options</h3><p>View our restaurants.</p></a>
+                    <a href="/contact" class="quick-link-card" data-animate style="--animation-delay: 0.3s;"><span class="material-icons-outlined">email</span><h3>Contact Us</h3><p>Get in touch directly.</p></a>
                 </div>
             </div>
         </section>
@@ -173,17 +163,18 @@
         <section class="final-cta-section">
             <div class="container text-center" data-animate>
                 <h2 class="section-title">If all else fails, we're here to help directly!</h2>
-                <div class="hero-actions">
-                    <a href="tel:+919264197986" class="button-secondary large button-outline-light"><span class="material-icons-outlined">call</span>&nbsp;Call Us</a>
-                    <a href="mailto:sbg.suryaplaza@gmail.com" class="button-secondary large button-outline-light"><span class="material-icons-outlined">email</span>&nbsp;Email Us</a>
-                    <a href="https://wa.me/919264197986" class="button-secondary large button-outline-light" target="_blank" rel="noopener"><span class="material-icons-outlined">whatsapp</span>&nbsp;WhatsApp</a>
+                <!-- REVISION: Corrected class and removed &nbsp; -->
+                <div class="cta-actions">
+                    <a href="tel:+919264197986" class="button-secondary large button-outline-light"><span class="material-icons-outlined">call</span>Call Us</a>
+                    <a href="mailto:sbg.suryaplaza@gmail.com" class="button-secondary large button-outline-light"><span class="material-icons-outlined">email</span>Email Us</a>
+                    
                 </div>
             </div>
         </section>
 
         <div class="site-credit">
             <div class="container text-center">
-                <p>This website was proudly built and is managed by <a href="https://adostrophe.com/" target="_blank" rel="noopener dofollow">adostrophe.com</a>.</p>
+                <p>This website was built and is managed by <a href="https://adostrophe.com/" target="_blank" rel="noopener dofollow">adostrophe.com</a>.</p>
                 <p>To report a bug or technical issue, please email <a href="mailto:info@adostrophe.com">info@adostrophe.com</a>.</p>
             </div>
         </div>
@@ -193,52 +184,12 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main">
-                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
-                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
-                    </a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Hotel</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about">Our Story</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/events">Events & Banquets</a></li>
-                        <li><a href="/attractions">Local Attractions</a></li>
-                        <li><a href="/blog">Our Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Accommodations</h4>
-                    <ul class="footer-links">
-                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
-                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
-                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
-                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
-                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
-                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Restaurants</h4>
-                    <ul class="footer-links">
-                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
-                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
-                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
-                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
-                    </ul>
-                </div>
+                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
-                <nav class="footer-legal-links">
-                    <a href="/terms">Terms</a>
-                    <a href="/privacy-policy">Privacy</a>
-                    <a href="/cancellation-policy">Cancellation</a>
-                    <a href="/shipping-policy">Shipping</a>
-                </nav>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
     <!-- END: Consistent Footer -->
