@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
     
-    // REVISION: Moved the faqAccordionHandler to the correct scope, outside of mobileNavHandler.
     const faqAccordionHandler = () => {
         const faqItems = document.querySelectorAll('.faq-item');
         if (faqItems.length === 0) return;

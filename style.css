@@ -105,6 +105,8 @@ section { padding: 6rem 0; }
 .hamburger-button.is-open .icon-menu { opacity: 0; transform: translate(-50%, -50%) rotate(90deg) scale(0.5); }
 .hamburger-button.is-open .icon-close { opacity: 1; transform: translate(-50%, -50%) rotate(0deg) scale(1); }
 .hamburger-button.is-open { color: var(--text-dark) !important; }
+/* REVISION 3: Added specific rule for hamburger icon in dark mode */
+.dark-theme .hamburger-button.is-open { color: var(--text-light) !important; }
 .mobile-menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 998; opacity: 0; visibility: hidden; transition: opacity 0.4s; }
 .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
 .nav-menu-book-btn-wrapper { display: none; }
@@ -132,7 +134,13 @@ section { padding: 6rem 0; }
 .card-content h3, .room-card-content h3, .blog-card-content h3, .info-card-content h3, .tariff-card-content h4 { font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-dark); transition: color var(--transition-speed) ease; }
 .card:hover h3, .room-card:hover h3, .blog-card:hover h3, .info-card:hover h3, .tariff-card:hover h4 { color: var(--primary-color); }
 .card-content p, .room-card-content p, .tariff-card-content p { flex-grow: 1; margin-bottom: 1rem; }
-.card-actions, .room-card-actions, .info-card-actions, .tariff-card-actions { margin-top: auto; display: flex; gap: 1rem; }
+/* REVISION 1: Added padding-top to create space above buttons in all cards */
+.card-actions, .room-card-actions, .info-card-actions, .tariff-card-actions { 
+    margin-top: auto; 
+    padding-top: 1rem; 
+    display: flex; 
+    gap: 1rem; 
+}
 .card-actions .button-primary, .card-actions .button-secondary, .room-card-actions .button-primary, .room-card-actions .button-secondary, .info-card-actions .button-primary, .info-card-actions .button-secondary, .tariff-card-actions .button-primary, .tariff-card-actions .button-secondary { flex: 1; padding: 12px 16px; font-size: 0.9rem; }
 .info-card-actions .button-primary:only-child { flex: none; width: 100%; }
 
@@ -176,7 +184,14 @@ section { padding: 6rem 0; }
 .hero-section { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/assets/images/hero-facade-evening-1800w.webp'); background-size: cover; background-position: center; color: var(--text-light); text-align: center; display: flex; align-items: center; justify-content: center; height: 100svh; padding-top: var(--header-height); }
 .hero-title { text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 .hero-subtitle { font-size: 1.25rem; max-width: 600px; margin: 1rem auto 0; opacity: 0.9; }
-.hero-actions { margin-top: 2.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+/* REVISION 2: Combined .hero-actions and .cta-actions to share styles */
+.hero-actions, .cta-actions { 
+    margin-top: 2.5rem; 
+    display: flex; 
+    justify-content: center; 
+    gap: 1rem; 
+    flex-wrap: wrap; 
+}
 .hero-actions .button-secondary { color: var(--text-light); border-color: var(--text-light); }
 .hero-actions .button-secondary:hover { background-color: var(--text-light); color: var(--text-dark); }
 .about-section { background-color: var(--background-surface); }
@@ -352,6 +367,76 @@ section { padding: 6rem 0; }
 .quick-link-card p { color: var(--text-muted); }
 .quick-link-card:hover h4 { color: var(--primary-color); }
 
+/* --- FAQ Accordion --- */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+}
+.faq-item:first-of-type {
+    border-top: 1px solid var(--border-color);
+}
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 1.5rem 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 1rem;
+}
+.faq-question:hover span:first-child {
+    color: var(--primary-color);
+}
+.faq-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+.faq-icon::before,
+.faq-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+.faq-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.faq-icon::before {
+    transform: translate(-50%, -50%);
+}
+.faq-question.active .faq-icon::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding-bottom 0.4s ease-out;
+}
+.faq-answer p {
+    color: var(--text-muted);
+    padding: 0 0.5rem;
+    line-height: 1.7;
+}
+.faq-question.active + .faq-answer {
+    padding-bottom: 1.5rem;
+}
+
 /* ---
 MEDIA QUERIES
 --- */
@@ -371,6 +456,10 @@ MEDIA QUERIES
     .nav-links { flex-direction: column; align-items: flex-start; gap: 0; margin-top: 4rem; }
     .nav-links li { width: 100%; }
     .nav-links a { display: block; width: 100%; padding: 1rem 2rem; font-size: 1.2rem; }
+    /* REVISION 4: Specific rule for mobile nav link color in dark mode */
+    :root.dark-theme .nav-links-wrapper.active .nav-links a {
+        color: var(--text-light); /* Forces text to be light grey */
+    }
     .nav-links a:hover { background-color: var(--border-color); color: var(--primary-hover); }
     .nav-menu-book-btn-wrapper { display: block; padding: 0 1.5rem 1rem; }
     .nav-menu-book-btn { width: 100%; text-align: center; font-size: 1.1rem; }
@@ -526,74 +615,4 @@ BLOG POST PAGE (2025-09-11)
 }
 .dark-theme .post-share-links a:hover {
     color: #0d1117;
-}
-
-/* --- FAQ Accordion --- */
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-.faq-item {
-    border-bottom: 1px solid var(--border-color);
-}
-.faq-item:first-of-type {
-    border-top: 1px solid var(--border-color);
-}
-.faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    text-align: left;
-    padding: 1.5rem 0.5rem;
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    background: none;
-    border: none;
-    cursor: pointer;
-    gap: 1rem;
-}
-.faq-question:hover span:first-child {
-    color: var(--primary-color);
-}
-.faq-icon {
-    position: relative;
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-}
-.faq-icon::before,
-.faq-icon::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 18px;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: transform 0.3s ease;
-}
-.faq-icon::after {
-    transform: translate(-50%, -50%) rotate(90deg);
-}
-.faq-icon::before {
-    transform: translate(-50%, -50%);
-}
-.faq-question.active .faq-icon::after {
-    transform: translate(-50%, -50%) rotate(0deg);
-}
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out, padding-bottom 0.4s ease-out;
-}
-.faq-answer p {
-    color: var(--text-muted);
-    padding: 0 0.5rem;
-    line-height: 1.7;
-}
-.faq-question.active + .faq-answer {
-    padding-bottom: 1.5rem;
 }
