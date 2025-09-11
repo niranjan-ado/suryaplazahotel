@@ -135,6 +135,40 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- NEW: Blog Post Pages -->
+    <url>
+        <loc>https://suryaplazahotels.com/blog/post-1</loc>
+        <lastmod>2025-09-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://suryaplazahotels.com/blog/post-2</loc>
+        <lastmod>2025-09-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://suryaplazahotels.com/blog/post-3</loc>
+        <lastmod>2025-09-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://suryaplazahotels.com/blog/post-4</loc>
+        <lastmod>2025-09-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- NEW: Blog Author Page -->
+    <url>
+        <loc>https://suryaplazahotels.com/blog/author/niranjan-ramamurthy</loc>
+        <lastmod>2025-09-11</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
     <!-- Legal Pages (Lower Priority) -->
     <url>
         <loc>https://suryaplazahotels.com/cancellation-policy</loc>

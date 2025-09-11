@@ -770,3 +770,246 @@ BLOG LISTING PAGE (2025-09-11)
         padding: 2rem 1.5rem;
     }
 }
+
+/*
+---
+SERVICES PAGE (2025-09-11)
+---
+*/
+
+/* 
+ * Adds spacing between the service category groups.
+ */
+.service-category {
+    margin-bottom: 5rem;
+}
+
+.service-category:last-of-type {
+    margin-bottom: 0;
+}
+
+/*
+---
+TARIFF PAGE (2025-09-11)
+---
+*/
+
+/* --- Content Toggle Buttons --- */
+.content-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    background-color: var(--background-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    padding: 6px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content-toggle button {
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.content-toggle button.active {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    box-shadow: 0 4px 10px -2px var(--card-shadow-hover);
+}
+.dark-theme .content-toggle button.active {
+    color: #0d1117;
+}
+
+/* --- Tariff Price Toggling Logic --- */
+.tariff-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.tariff-price small {
+    font-size: 0.9rem;
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: var(--text-muted);
+}
+.tariff-price .price-double {
+    display: none;
+}
+#tariffGrid.show-double .tariff-price .price-single {
+    display: none;
+}
+#tariffGrid.show-double .tariff-price .price-double {
+    display: inline;
+}
+
+/*
+---
+404 PAGE (2025-09-11)
+---
+*/
+
+/* --- Responsive Video Wrapper --- */
+.video-responsive-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px var(--card-shadow-color);
+}
+.video-responsive-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- Search Form --- */
+.search-form-wrapper {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+.search-form-wrapper form {
+    display: flex;
+    gap: 1rem;
+}
+.search-form-wrapper input[type="search"] {
+    flex-grow: 1;
+    padding: 14px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.search-form-wrapper input[type="search"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 25%, transparent);
+}
+
+/* --- Quick Link Cards --- */
+.quick-link-card {
+    display: block;
+    text-decoration: none;
+    background-color: var(--background-surface);
+    padding: 2.5rem 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.quick-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--card-shadow-hover);
+}
+.quick-link-card .material-icons-outlined {
+    font-size: 2.75rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.quick-link-card h4 {
+    color: var(--text-dark);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.quick-link-card p {
+    color: var(--text-muted);
+}
+.quick-link-card:hover h4 {
+    color: var(--primary-color);
+}
+
+/* --- Site Credit Section --- */
+.site-credit {
+    padding: 2.5rem 0;
+    background-color: var(--background-surface);
+    font-size: 0.9rem;
+}
+.site-credit p {
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+.site-credit p:last-child {
+    margin-bottom: 0;
+}
+
+
+/*
+---
+BLOG AUTHOR PAGE (2025-09-11)
+---
+*/
+
+/* Container for the single-column bio */
+.author-bio-content {
+    max-width: 800px;
+    margin: 0 auto; /* Center the content block */
+}
+
+/* Large, prominent quote to replace the image */
+.author-feature-quote {
+    font-size: clamp(1.5rem, 3vw, 2rem); /* Responsive font size */
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding: 0 2rem;
+    color: var(--text-dark);
+}
+
+/* Decorative quotation marks */
+.author-feature-quote::before,
+.author-feature-quote::after {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    color: var(--primary-color);
+    opacity: 0.1;
+    position: absolute;
+    line-height: 1;
+}
+
+.author-feature-quote::before {
+    content: '“';
+    top: -1rem;
+    left: -1rem;
+}
+
+.author-feature-quote::after {
+    content: '”';
+    bottom: -3rem;
+    right: -1rem;
+}
+
+/* Styling for the new text-based LinkedIn link */
+.author-connect-link {
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+/* Original author-quote style (still used on some pages) */
+.author-quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--primary-color);
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+}
