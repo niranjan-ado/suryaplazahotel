@@ -1,0 +1,9 @@
+# This file is currently configured to block ALL search engines.
+# This is ideal for a development or staging environment.
+# To allow search engines to crawl the site, see the instructions below.
+
+User-agent: *
+Disallow: /
+
+# Sitemap location (good practice to keep this)
+Sitemap: https://www.suryaplazahotels.com/sitemap.xml

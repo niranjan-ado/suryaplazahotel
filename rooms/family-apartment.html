@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Essentials -->
+    <title>Family Apartment with Kitchen | Surya Plaza Hotel, Sahibganj</title>
+    <meta name="description" content="The perfect choice for extended stays. Our 800 sqft Family Apartment features two bedrooms, a full kitchen, and panoramic river and hill views.">
+    <link rel="canonical" href="https://www.suryaplazahotels.com/rooms/family-apartment.html">
+
+    <!-- SCRIPT TO PREVENT THEME FLASH -->
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('theme');
+          if (theme === 'dark-theme') {
+            document.documentElement.classList.add('dark-theme');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Favicon (paths updated with ../) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+    
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Main Stylesheet (path updated with ../) -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- INTERNAL STYLES FOR ROOM DETAIL PAGE (SHARED TEMPLATE) -->
+    <style>
+        /* --- Layout --- */
+        .room-detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1.25fr;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        /* --- Gallery --- */
+        .gallery-main-image img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+        .gallery-thumbnails {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-thumbnails img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+        .gallery-thumbnails img:hover {
+            transform: scale(1.05);
+            border-color: var(--primary-color);
+        }
+
+        /* --- Room Info & Booking Widget --- */
+        .room-info h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .booking-widget {
+            position: sticky;
+            top: 120px; /* Header height + spacing */
+            background-color: var(--background-surface);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+        .booking-widget .price { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+        .booking-widget .price span { font-size: 2.25rem; font-weight: 700; color: var(--primary-color); display: block; }
+        .booking-widget .button-primary { width: 100%; margin-top: 1.5rem; }
+
+        /* --- Key Facts --- */
+        .room-key-facts { display: flex; gap: 2rem; justify-content: space-around; margin: 2rem 0; padding: 1.5rem 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); flex-wrap: wrap; text-align: center; }
+        .key-fact-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+        .key-fact-item .material-icons-outlined { color: var(--primary-color); font-size: 2rem; }
+        .key-fact-item span:last-child { font-weight: 600; font-family: var(--font-heading); }
+
+        /* --- Other Sections --- */
+        .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; list-style: none; padding: 0; }
+        .amenities-grid li { display: flex; align-items: center; gap: 0.75rem; }
+        .amenities-grid .material-icons-outlined { color: var(--primary-color); }
+        .other-rooms-section { background-color: var(--background-surface); }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 992px) {
+            .room-detail-layout { grid-template-columns: 1fr; }
+            .booking-widget { position: static; /* Unstick the widget on mobile */ }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+    <!-- START: Consistent Header (Paths Updated) -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="../index.html" class="logo" aria-label="Surya Plaza Hotel Homepage">
+                    <img src="../assets/images/logo-dark.svg" alt="Surya Plaza Hotel Logo" width="180" height="50" id="main-logo">
+                </a>
+                <div class="nav-links-wrapper" id="nav-links-menu">
+                    <ul class="nav-links">
+                        <li><a href="../index.html" id="first-menu-link">Home</a></li>
+                        <li><a href="../rooms.html" class="active">Rooms</a></li>
+                        <li><a href="../dining.html">Dining</a></li>
+                        <li><a href="../events.html">Events</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                    <div class="nav-menu-book-btn-wrapper">
+                        <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary nav-menu-book-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle-button" id="theme-toggle" aria-label="Toggle light/dark theme"><span class="material-icons-outlined">light_mode</span></button>
+                    <button class="hamburger-button" id="hamburger-button" aria-label="Open menu" aria-controls="nav-links-menu" aria-expanded="false">
+                        <span class="material-icons-outlined icon-menu">menu</span>
+                        <span class="material-icons-outlined icon-close">close</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- END: Consistent Header -->
+
+    <main id="main-content">
+
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/images/rooms/room-family-apartment-living-area.webp');">
+            <div class="container" data-animate>
+                <h1 class="hero-title">Family Apartment with Kitchen</h1>
+                <p class="hero-subtitle">Your ultimate home away from home, with space and amenities for everyone.</p>
+            </div>
+        </header>
+
+        <section id="room-detail-content">
+            <div class="container">
+                <div class="room-detail-layout">
+                    <!-- Left Side: Gallery & Description -->
+                    <div class="room-gallery-description" data-animate>
+                        <div class="room-gallery">
+                            <div class="gallery-main-image">
+                                <img id="main-gallery-image" src="../assets/images/rooms/room-family-apartment-living-area-900w.webp" alt="Main view of the Family Apartment's spacious living and dining area." loading="eager">
+                            </div>
+                            <div class="gallery-thumbnails">
+                                <img src="../assets/images/rooms/room-family-apartment-living-area-600w.webp" alt="Spacious living and dining area in the Family Apartment." loading="lazy">
+                                <img src="../assets/images/rooms/room-family-apartment-kitchen-600w.webp" alt="The fully equipped modern kitchen in the Family Apartment." loading="lazy">
+                                <img src="../assets/images/rooms/room-family-apartment-bedrooms-600w.webp" alt="View of the comfortable and private connected bedrooms." loading="lazy">
+                                <img src="../assets/images/rooms/room-family-apartment-balcony-view-600w.webp" alt="Bedroom view showing balcony access and the serene River Ganges." loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="room-key-facts">
+                            <div class="key-fact-item"><span class="material-icons-outlined">square_foot</span><span>800 sq. ft.</span></div>
+                            <div class="key-fact-item"><span class="material-icons-outlined">people</span><span>Up to 6 Guests</span></div>
+                            <div class="key-fact-item"><span class="material-icons-outlined">kitchen</span><span>Full Kitchen</span></div>
+                            <div class="key-fact-item"><span class="material-icons-outlined">landscape</span><span>Panoramic Views</span></div>
+                        </div>
+
+                        <h2>Maximum Space, Comfort & Convenience</h2>
+                        <p>Our Family Apartment is the ultimate choice for extended stays or families seeking the comforts of home. This expansive 800 sqft apartment includes two private bedrooms, a separate drawing room with a sofa cum bed, and the unparalleled convenience of a fully equipped kitchen. Enjoy breathtaking panoramic views of the River Ganges and the surrounding hills from your two private balconies.</p>
+                    </div>
+                    
+                    <!-- Right Side: Booking Widget -->
+                    <aside class="room-info" data-animate style="--animation-delay: 0.1s;">
+                         <div class="booking-widget">
+                            <div class="price">Starts from <span>₹4999</span> / night</div>
+                            <p>Taxes applicable as per government norms.</p>
+                            <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary">Check Availability & Book</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="room-amenities" class="other-rooms-section">
+            <div class="container" data-animate>
+                <h2 class="section-title text-center">Apartment Amenities</h2>
+                <ul class="amenities-grid">
+                    <li><span class="material-icons-outlined">kitchen</span> Full Kitchen</li>
+                    <li><span class="material-icons-outlined">bed</span> Two Private Bedrooms</li>
+                    <li><span class="material-icons-outlined">living</span> Separate Drawing Room</li>
+                    <li><span class="material-icons-outlined">balcony</span> Two Private Balconies</li>
+                    <li><span class="material-icons-outlined">water</span> River & Hill Views</li>
+                    <li><span class="material-icons-outlined">ac_unit</span> Air Conditioning</li>
+                    <li><span class="material-icons-outlined">tv</span> 32" LED Television</li>
+                    <li><span class="material-icons-outlined">wifi</span> High-Speed Wi-Fi</li>
+                    <li><span class="material-icons-outlined">weekend</span> Sofa Cum Bed</li>
+                    <li><span class="material-icons-outlined">shower</span> Attached Bathroom</li>
+                    <li><span class="material-icons-outlined">soap</span> Complimentary Toiletries</li>
+                    <li><span class="material-icons-outlined">room_service</span> 24-hour Room Service</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="other-rooms">
+            <div class="container" data-animate>
+                <h2 class="section-title text-center">Explore Other Accommodations</h2>
+                <div class="grid-3-col">
+                    <article class="room-card">
+                        <a href="executive-balcony-room.html"><img src="../assets/images/rooms/room-executive-balcony-sofa.webp" alt="Executive Balcony Room" loading="lazy"></a>
+                        <div class="room-card-content"><a href="executive-balcony-room.html"><h3>Executive Balcony Room</h3></a><p>A larger space with a comfortable sofa seating area.</p></div>
+                    </article>
+                    <article class="room-card">
+                        <a href="junior-balcony-suite.html"><img src="../assets/images/rooms/room-junior-suite-seating.webp" alt="Junior Balcony Suite" loading="lazy"></a>
+                        <div class="room-card-content"><a href="junior-balcony-suite.html"><h3>Junior Balcony Suite</h3></a><p>Offers an extra living area for a blend of luxury and space.</p></div>
+                    </article>
+                     <article class="room-card">
+                        <a href="two-bedroom-premium-suite.html"><img src="../assets/images/rooms/room-two-bedroom-suite-living-area.webp" alt="Two-Bedroom Premium Suite" loading="lazy"></a>
+                        <div class="room-card-content"><a href="two-bedroom-premium-suite.html"><h3>Two-Bedroom Premium Suite</h3></a><p>Ideal for groups, offering two bedrooms and river views.</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- START: Consistent Footer (Paths Updated) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col-main"><img src="../assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"><p>Experience the perfect blend of comfort, care, and hospitality. Your ideal choice for business and leisure in Sahibganj.</p></div>
+                <div class="footer-col-links"><h3>Quick Links</h3><ul class="footer-links"><li><a href="../about.html">About Us</a></li><li><a href="../rooms.html">Rooms & Suites</a></li><li><a href="../dining.html">Dining</a></li><li><a href="../events.html">Events</a></li><li><a href="../blog.html">Blog</a></li></ul></div>
+                <div class="footer-col-contact"><h3>Contact Us</h3><address class="footer-contact-info"><p><span class="material-icons-outlined">location_on</span> <span>Opp Ray Bahadur Building, J.N Roy Road, Sahibganj, Jharkhand 816109</span></p><p><span class="material-icons-outlined">call</span><a href="tel:+919264197986">+91 9264197986</a></p><p><span class="material-icons-outlined">directions</span><a href="https://maps.app.goo.gl/QJFVN7XUenr81ci86" target="_blank" rel="noopener">Get Directions</a></p></address></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms & Conditions</a></nav></div>
+        </div>
+    </footer>
+    <!-- END: Consistent Footer -->
+
+    <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
+    
+    <!-- Main external script for global functionality -->
+    <script src="../script.js" defer></script>
+
+    <!-- INTERNAL JAVASCRIPT FOR ROOM GALLERY -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const roomGalleryHandler = () => {
+                const mainImage = document.getElementById('main-gallery-image');
+                const thumbnails = document.querySelectorAll('.gallery-thumbnails img');
+                if (!mainImage || thumbnails.length === 0) return;
+                thumbnails.forEach(thumb => {
+                    new Image().src = thumb.src; // Preload images
+                    thumb.addEventListener('click', (e) => {
+                        const clickedThumbSrc = e.target.src;
+                        if (mainImage.src !== clickedThumbSrc) {
+                            mainImage.src = clickedThumbSrc;
+                            mainImage.alt = e.target.alt;
+                        }
+                    });
+                });
+            };
+            roomGalleryHandler();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Essentials -->
+    <title>Menu - Moti Mahal Tandoori Trail | Surya Plaza Hotel</title>
+    <meta name="description" content="Explore the full menu of Moti Mahal Tandoori Trail, featuring our legendary Tandoori Starters, Butter Chicken, Dal Makhani, Biryanis, and Chinese Specialties.">
+    <link rel="canonical" href="https://www.suryaplazahotels.com/dining/moti-mahal-menu.html">
+
+    <!-- SCRIPT TO PREVENT THEME FLASH -->
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('theme');
+          if (theme === 'dark-theme') {
+            document.documentElement.classList.add('dark-theme');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Favicon (paths updated) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+    
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Main Stylesheet (path updated) -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- INTERNAL STYLES FOR MENU PAGE (REFINED) -->
+    <style>
+        html { scroll-padding-top: 150px; }
+        .main-header { z-index: 1001; }
+
+        /* --- Page Header --- */
+        .menu-page-header {
+            padding: 5rem 0;
+            text-align: center;
+            background-color: var(--background-surface);
+            margin-top: var(--header-height);
+        }
+
+        /* --- Sticky Navigation & Filtering --- */
+        .menu-nav-sticky {
+            position: sticky;
+            top: var(--header-height);
+            z-index: 1000;
+            background-color: var(--header-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+        .menu-nav-container { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; }
+        .menu-category-nav { display: flex; gap: 2rem; overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none; }
+        .menu-category-nav::-webkit-scrollbar { display: none; }
+        .menu-category-nav a {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--text-muted);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid transparent;
+            transition: color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+        }
+        .menu-category-nav a:hover, .menu-category-nav a.active {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        .menu-filter { display: flex; gap: 0.75rem; }
+        .menu-filter button {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            color: var(--text-muted);
+            transition: all var(--transition-speed) ease;
+        }
+        .menu-filter button:hover { border-color: var(--primary-color); color: var(--primary-color); }
+        .menu-filter button.active { background-color: var(--primary-color); color: var(--text-light); border-color: var(--primary-color); }
+        .dark-theme .menu-filter button.active { color: #0d1117; }
+
+        /* --- Menu Layout (Redesigned for Figma Quality) --- */
+        .menu-container { padding: 5rem 0; }
+        .menu-section { margin-bottom: 4rem; }
+        .menu-section-title { text-align: center; margin-bottom: 3rem; }
+        .menu-category-group {
+            background-color: var(--background-surface);
+            padding: 2rem 2.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            margin-bottom: 2.5rem;
+        }
+        .menu-sub-title { color: var(--primary-color); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); font-size: 1.5rem; }
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .menu-item { padding-bottom: 1.25rem; }
+        .menu-grid > .menu-item { border-bottom: 1px solid var(--border-color); }
+        .menu-grid > .menu-item:last-child, 
+        .menu-grid > .menu-item:nth-last-child(2):nth-child(odd) {
+             border-bottom: none; /* Remove border from last item(s) */
+        }
+        .menu-item-header { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 0.25rem; align-items: baseline; }
+        .menu-item-header h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 700; color: var(--text-dark); }
+        .menu-item-header .price { font-weight: 700; font-family: var(--font-heading); color: var(--primary-color); white-space: nowrap; font-size: 1.1rem; }
+        .menu-item-desc { color: var(--text-muted); font-size: 0.9rem; }
+        
+        /* --- Filtering Logic --- */
+        [data-filter-show="veg"] .menu-item:not([data-category~="veg"]),
+        [data-filter-show="non-veg"] .menu-item:not([data-category~="non-veg"]) { display: none; }
+        [data-filter-show="veg"] .non-veg-section,
+        [data-filter-show="non-veg"] .veg-section { display: none; }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            html { scroll-padding-top: 135px; }
+            .menu-nav-container { flex-direction: column; gap: 1rem; align-items: stretch; padding: 1rem; }
+            .menu-category-nav { justify-content: space-between; }
+            .menu-filter { justify-content: center; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .menu-grid > .menu-item:nth-last-child(2):nth-child(odd) { border-bottom: 1px solid var(--border-color); }
+            .menu-category-group { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+    <!-- START: Consistent Header (Paths Updated) -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="../index.html" class="logo" aria-label="Surya Plaza Hotel Homepage">
+                    <img src="../assets/images/logo-dark.svg" alt="Surya Plaza Hotel Logo" width="180" height="50" id="main-logo">
+                </a>
+                <div class="nav-links-wrapper" id="nav-links-menu">
+                    <ul class="nav-links">
+                        <li><a href="../index.html" id="first-menu-link">Home</a></li>
+                        <li><a href="../rooms.html">Rooms</a></li>
+                        <li><a href="../dining.html" class="active">Dining</a></li>
+                        <li><a href="../events.html">Events</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                    <div class="nav-menu-book-btn-wrapper">
+                        <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary nav-menu-book-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle-button" id="theme-toggle" aria-label="Toggle light/dark theme"><span class="material-icons-outlined">light_mode</span></button>
+                    <button class="hamburger-button" id="hamburger-button" aria-label="Open menu" aria-controls="nav-links-menu" aria-expanded="false">
+                        <span class="material-icons-outlined icon-menu">menu</span>
+                        <span class="material-icons-outlined icon-close">close</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- END: Consistent Header -->
+
+    <main id="main-content">
+        <header class="page-header menu-page-header">
+            <div class="container" data-animate>
+                <p class="section-subtitle">A Culinary Legacy</p>
+                <h1 class="hero-title">Moti Mahal Tandoori Trail Menu</h1>
+                <p class="hero-subtitle">Discover the authentic flavors that have defined North Indian cuisine for a century.</p>
+            </div>
+        </header>
+
+        <nav class="menu-nav-sticky">
+            <div class="container menu-nav-container">
+                <div class="menu-category-nav">
+                    <a href="#beverages" class="active">Beverages</a>
+                    <a href="#soups">Soups</a>
+                    <a href="#starters">Starters</a>
+                    <a href="#main-course">Main Course</a>
+                </div>
+                <div class="menu-filter">
+                    <button data-filter="all" class="active" aria-label="Show all menu items"><span class="material-icons-outlined">restaurant</span> All</button>
+                    <button data-filter="veg" aria-label="Show vegetarian items only"><span class="material-icons-outlined">eco</span> Veg</button>
+                    <button data-filter="non-veg" aria-label="Show non-vegetarian items only"><span class="material-icons-outlined">egg</span> Non-Veg</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container menu-container">
+            <div id="menu-content" class="menu-content-grid" data-filter-show="all">
+                
+                <section id="beverages" class="menu-section" data-animate>
+                    <h2 class="menu-section-title">Beverages</h2>
+                    <div class="menu-category-group">
+                        <div class="menu-grid">
+                            <!-- FIXED: data-category is now "veg non-veg" for neutral items -->
+                            <div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>NAUGHTY COLA</h4><span class="price">₹89</span></div><p class="menu-item-desc">Cola – spice mix – lime juice</p></div>
+                            <div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>VIRGIN MOJITO</h4><span class="price">₹129</span></div><p class="menu-item-desc">Choice of Mint, Green Apple, Mango, etc.</p></div>
+                            <div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>FRUIT PUNCH</h4><span class="price">₹149</span></div><p class="menu-item-desc">Mixed fruit juice - vanilla ice cream - fresh fruits</p></div>
+                            <div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>THICK SHAKES</h4><span class="price">₹159</span></div><p class="menu-item-desc">Oreo / Kitkat / Nutella / Brownie</p></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="soups" class="menu-section" data-animate>
+                    <h2 class="menu-section-title">Soups</h2>
+                    <div class="menu-category-group">
+                        <div class="menu-grid">
+                            <div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>TAIMOORI SHORBA</h4><span class="price">₹159 / 139</span></div><p class="menu-item-desc">Chicken or veg broth with Indian spices and black pepper.</p></div>
+                            <div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>MANCHOW SOUP</h4><span class="price">₹159 / 139</span></div><p class="menu-item-desc">Chinese chicken or veg broth with garlic, soy & chilli, served with crispy noodles.</p></div>
+                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>CREAM OF CHICKEN</h4><span class="price">₹169</span></div><p class="menu-item-desc">Chicken broth cooked with spices & finished with cream.</p></div>
+                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>CREAM OF TOMATO</h4><span class="price">₹149</span></div><p class="menu-item-desc">Tomato broth cooked with spices & finished with cream.</p></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="starters" class="menu-section" data-animate>
+                    <h2 class="menu-section-title">Tandoori Starters</h2>
+                    <div class="non-veg-section menu-category-group">
+                        <h3 class="menu-sub-title">Non-Vegetarian</h3>
+                        <div class="menu-grid">
+                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>THE ORIGINAL TANDOORI CHICKEN</h4><span class="price">₹279 / 479</span></div><p class="menu-item-desc">Half / Full. Invented by our founder, Sh. Kundan Lal Gujral.</p></div>
+                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>MURGH MALAI TIKKA</h4><span class="price">₹309</span></div><p class="menu-item-desc">Chicken boneless marinated with cream, cashew & spices.</p></div>
+                            <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>MUTTON SEEKH KEBAB</h4><span class="price">₹339</span></div><p class="menu-item-desc">Our signature recipe of minced mutton with spices, skewered & cooked in tandoor.</p></div>
+                        </div>
+                    </div>
+                    <div class="veg-section menu-category-group">
+                        <h3 class="menu-sub-title">Vegetarian</h3>
+                         <div class="menu-grid">
+                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>TANDOORI PANEER TIKKA</h4><span class="price">₹279</span></div><p class="menu-item-desc">Cottage cheese marinated with yoghurt & Indian spices.</p></div>
+                             <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>DAHI KE SEEKH KEBAB</h4><span class="price">₹259</span></div><p class="menu-item-desc">Hung yoghurt mixed with cottage cheese and spices, skewered & cooked in tandoor.</p></div>
+                             <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>MALAI SOYA CHAAP</h4><span class="price">₹259</span></div><p class="menu-item-desc">Soybean chaap marinated with cream, cashew & spices.</p></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="main-course" class="menu-section" data-animate>
+                    <h2 class="menu-section-title">Main Course</h2>
+                     <div class="non-veg-section menu-category-group">
+                        <h3 class="menu-sub-title">Non-Vegetarian</h3>
+                        <div class="menu-grid">
+                             <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>THE ORIGINAL BUTTER CHICKEN</h4><span class="price">₹349</span></div><p class="menu-item-desc">Our invention. Tandoori chicken cooked in tomato gravy, finished with cream & butter.</p></div>
+                             <div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>MUTTON ROGANJOSH</h4><span class="price">₹369</span></div><p class="menu-item-desc">An all-time favourite mutton preparation from Kashmir.</p></div>
+                        </div>
+                    </div>
+                     <div class="veg-section menu-category-group">
+                        <h3 class="menu-sub-title">Vegetarian</h3>
+                         <div class="menu-grid">
+                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>THE ORIGINAL BUTTER PANEER</h4><span class="price">₹309</span></div><p class="menu-item-desc">Invented by our founder. Cottage cheese cooked in our signature tomato gravy.</p></div>
+                             <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>KESARI MALAI KOFTA</h4><span class="price">₹289</span></div><p class="menu-item-desc">Cottage cheese dumplings in a creamy cashew gravy, flavoured with saffron.</p></div>
+                             <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>THE ORIGINAL DAL MAKHANI</h4><span class="price">₹259</span></div><p class="menu-item-desc">Our invention. A mix of lentils cooked overnight on the tandoor, finished with cream & butter.</p></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- START: Consistent Footer (Paths Updated) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col-main"><img src="../assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"><p>Experience the perfect blend of comfort, care, and hospitality. Your ideal choice for business and leisure in Sahibganj.</p></div>
+                <div class="footer-col-links"><h3>Quick Links</h3><ul class="footer-links"><li><a href="../about.html">About Us</a></li><li><a href="../rooms.html">Rooms & Suites</a></li><li><a href="../dining.html">Dining</a></li><li><a href="../events.html">Events</a></li><li><a href="../blog.html">Blog</a></li></ul></div>
+                <div class="footer-col-contact"><h3>Contact Us</h3><address class="footer-contact-info"><p><span class="material-icons-outlined">location_on</span> <span>Opp Ray Bahadur Building, J.N Roy Road, Sahibganj, Jharkhand 816109</span></p><p><span class="material-icons-outlined">call</span><a href="tel:+919264197986">+91 9264197986</a></p><p><span class="material-icons-outlined">directions</span><a href="https://maps.app.goo.gl/QJFVN7XUenr81ci86" target="_blank" rel="noopener">Get Directions</a></p></address></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms & Conditions</a></nav></div>
+        </div>
+    </footer>
+    <!-- END: Consistent Footer -->
+
+    <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
+    
+    <!-- Main external script for global functionality -->
+    <script src="../script.js" defer></script>
+
+    <!-- INTERNAL JAVASCRIPT FOR MENU PAGE -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // --- Handler for Menu Filtering ---
+            const menuFilterHandler = () => {
+                const filterButtons = document.querySelectorAll('.menu-filter [data-filter]');
+                const menuContent = document.getElementById('menu-content');
+                if (!filterButtons.length || !menuContent) return;
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const filterValue = button.dataset.filter;
+                        menuContent.dataset.filterShow = filterValue;
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                    });
+                });
+            };
+
+            // --- Handler for Sticky Nav Scrolling & Active State ---
+            const stickyNavHandler = () => {
+                const navLinks = document.querySelectorAll('.menu-category-nav a');
+                const sections = document.querySelectorAll('.menu-section');
+                if (!navLinks.length || !sections.length) return;
+                
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            targetSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                });
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute('id');
+                            const activeLink = document.querySelector(`.menu-category-nav a[href="#${id}"]`);
+                            
+                            navLinks.forEach(link => link.classList.remove('active'));
+                            if (activeLink) {
+                                activeLink.classList.add('active');
+                            }
+                        }
+                    });
+                }, { rootMargin: "-40% 0px -60% 0px" });
+
+                sections.forEach(section => observer.observe(section));
+            };
+
+            // Initialize page-specific scripts
+            menuFilterHandler();
+            stickyNavHandler();
+        });
+    </script>
+</body>
+</html>
