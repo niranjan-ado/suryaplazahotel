@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials (REVISED for consistency) -->
+    <!-- SEO Essentials -->
     <title>Club Comfort Room | Surya Plaza Hotel, Sahibganj</title>
     <meta name="description" content="Ideal for solo travelers, our Club Comfort Room offers a 150 sqft space with a comfortable double bed, work desk, and all essential amenities for a pleasant stay.">
     <link rel="canonical" href="https://suryaplazahotels.com/rooms/club-comfort-room">
 
-    <!-- Social Media Meta Tags (Added for consistency) -->
+    <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Club Comfort Room | Surya Plaza Hotel, Sahibganj">
     <meta property="og:description" content="Ideal for solo travelers, our Club Comfort Room offers a 150 sqft space with all essential amenities.">
     <meta property="og:image" content="https://suryaplazahotels.com/assets/images/rooms/room-club-comfort-bed-900w.webp">
@@ -29,7 +29,7 @@
       })();
     </script>
 
-    <!-- Favicon (REVISED to use absolute paths) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
@@ -41,14 +41,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
+
+    <!-- REVISION: Added internal style block for hero text contrast -->
+    <style>
+        .page-header .hero-title,
+        .page-header .hero-subtitle {
+            color: var(--text-light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <!-- REVISION: Added comprehensive JSON-LD Schema for the Hotel Room -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HotelRoom",
+      "name": "Club Comfort Room",
+      "description": "Perfect for the individual traveler or a couple, our Club Comfort Room offers a relaxing 150 sq. ft. retreat. This room features a comfortable double bed and is equipped with all the essentials for a pleasant stay, including a dedicated work desk for productivity and complimentary high-speed Wi-Fi.",
+      "image": [
+        "https://suryaplazahotels.com/assets/images/rooms/room-club-comfort-bed-900w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/room-club-comfort-bathroom-600w.webp"
+       ],
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": "150",
+        "unitCode": "FTS"
+      },
+      "numberOfRooms": "1",
+      "occupancy": {
+        "@type": "QuantitativeValue",
+        "minValue": "1",
+        "maxValue": "2",
+        "unitText": "persons"
+      },
+      "bed": {
+        "@type": "BedDetails",
+        "typeOfBed": "DoubleBed",
+        "numberOfBeds": "1"
+      },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Air Conditioning" },
+        { "@type": "LocationFeatureSpecification", "name": "32\" LED Television" },
+        { "@type": "LocationFeatureSpecification", "name": "High-Speed Wi-Fi" },
+        { "@type": "LocationFeatureSpecification", "name": "Work Desk & Chair" },
+        { "@type": "LocationFeatureSpecification", "name": "Mini Fridge" },
+        { "@type": "LocationFeatureSpecification", "name": "Attached Bathroom" }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "2099",
+        "priceCurrency": "INR"
+      },
+      "containedIn": {
+        "@type": "Hotel",
+        "name": "Surya Plaza Hotel",
+        "url": "https://suryaplazahotels.com/"
+      }
+    }
+    </script>
+
 </head>
 <body>
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
+    <!-- START: Consistent Header -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
@@ -81,7 +140,7 @@
 
     <main id="main-content">
 
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/images/rooms/room-club-comfort-bed.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/images/rooms/room-club-comfort-bed-900w.webp');">
             <div class="container" data-animate>
                 <h1 class="hero-title">Club Comfort Room</h1>
                 <p class="hero-subtitle">An efficient and comfortable space designed for the modern traveler.</p>
@@ -100,7 +159,7 @@
                             <div class="gallery-thumbnails">
                                 <img src="/assets/images/rooms/room-club-comfort-bed-600w.webp" alt="View of the Club Comfort Room bed and decor." loading="lazy">
                                 <img src="/assets/images/rooms/room-club-comfort-bathroom-600w.webp" alt="View of the attached private bathroom for the Club Comfort Room." loading="lazy">
-                                <img src="/assets/images/rooms/bathroom-shower-sink-600w.webp" alt="A clean and modern bathroom sink and shower area." loading="lazy">
+                                <img src="/assets/images/rooms/room-club-comfort-bathroom-sink-600w.webp" alt="A clean and modern bathroom sink and shower area." loading="lazy">
                             </div>
                         </div>
 
@@ -126,7 +185,7 @@
             </div>
         </section>
 
-        <section id="room-amenities" class="about-section"> <!-- Changed background class for consistency -->
+        <section id="room-amenities" class="about-section">
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Room Amenities</h2>
                 <ul class="amenities-grid">
@@ -150,25 +209,25 @@
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Explore Other Accommodations</h2>
                 <div class="grid-3-col">
-                    <!-- REVISED: Links are now clean and absolute -->
+                    <!-- REVISION: Cleaned up links and added srcset for consistency -->
                     <article class="room-card">
-                         <a href="/rooms/deluxe-balcony-room"><img src="/assets/images/rooms/room-deluxe-balcony-bed-main.webp" alt="Deluxe Balcony Room" loading="lazy"></a>
-                        <div class="room-card-content"><a href="/rooms/deluxe-balcony-room"><h3>Deluxe Balcony Room</h3></a><p>Features a private balcony, offering a perfect spot to unwind.</p></div>
+                         <a href="/rooms/deluxe-balcony-room"><img src="/assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp" srcset="/assets/images/rooms/room-deluxe-balcony-bed-main-600w.webp 600w, /assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Deluxe Balcony Room" loading="lazy"></a>
+                        <div class="room-card-content"><h3>Deluxe Balcony Room</h3><p>Features a private balcony, offering a perfect spot to unwind.</p></div>
                     </article>
                     <article class="room-card">
-                        <a href="/rooms/executive-balcony-room"><img src="/assets/images/rooms/room-executive-balcony-sofa.webp" alt="Executive Balcony Room" loading="lazy"></a>
-                        <div class="room-card-content"><a href="/rooms/executive-balcony-room"><h3>Executive Balcony Room</h3></a><p>A larger space with a comfortable sofa seating area.</p></div>
+                        <a href="/rooms/executive-balcony-room"><img src="/assets/images/rooms/room-executive-balcony-sofa-600w.webp" srcset="/assets/images/rooms/room-executive-balcony-sofa-600w.webp 600w, /assets/images/rooms/room-executive-balcony-sofa-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Executive Balcony Room" loading="lazy"></a>
+                        <div class="room-card-content"><h3>Executive Balcony Room</h3><p>A larger space with a comfortable sofa seating area.</p></div>
                     </article>
                     <article class="room-card">
-                        <a href="/rooms/junior-balcony-suite"><img src="/assets/images/rooms/room-junior-suite-seating.webp" alt="Junior Balcony Suite" loading="lazy"></a>
-                        <div class="room-card-content"><a href="/rooms/junior-balcony-suite"><h3>Junior Balcony Suite</h3></a><p>Offers an extra living area for a blend of luxury and space.</p></div>
+                        <a href="/rooms/junior-balcony-suite"><img src="/assets/images/rooms/room-junior-suite-seating-900w.webp" srcset="/assets/images/rooms/room-junior-suite-seating-600w.webp 600w, /assets/images/rooms/room-junior-suite-seating-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Junior Balcony Suite" loading="lazy"></a>
+                        <div class="room-card-content"><h3>Junior Balcony Suite</h3><p>Offers an extra living area for a blend of luxury and space.</p></div>
                     </article>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- START: REVISED AND CONSISTENT FOOTER -->
+    <!-- START: Consistent FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
@@ -220,7 +279,7 @@
             </div>
         </div>
     </footer>
-    <!-- END: REVISED AND CONSISTENT FOOTER -->
+    <!-- END: Consistent FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
