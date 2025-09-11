@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials (REVISED for consistency) -->
+    <!-- SEO Essentials -->
     <title>Our Rooms & Suites | Surya Plaza Hotel, Sahibganj</title>
     <meta name="description" content="Explore our range of accommodations, from comfortable Club Rooms to spacious Family Apartments with kitchens. Find the perfect room for your stay in Sahibganj.">
     <link rel="canonical" href="https://suryaplazahotels.com/rooms">
 
-    <!-- Social Media Meta Tags (REVISED for consistency) -->
+    <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Our Rooms & Suites | Surya Plaza Hotel, Sahibganj">
     <meta property="og:description" content="Explore our range of accommodations, from cozy rooms to expansive family suites.">
     <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image-rooms.jpg">
@@ -28,10 +28,10 @@
       })();
     </script>
     
-    <!-- Favicon (REVISED to use absolute paths) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets-optimized/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets-optimized/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
     <!-- Google Fonts & Icons -->
@@ -40,13 +40,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
+
+    <!-- =============================================================== -->
+    <!-- START: Page-Specific Internal Style Override                    -->
+    <!-- This CSS block forces the header text to be light on this page  -->
+    <!-- only, ensuring contrast against the dark background image.      -->
+    <!-- =============================================================== -->
+    <style>
+        .page-header .hero-title,
+        .page-header .hero-subtitle {
+            color: var(--text-light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    <!-- =============================================================== -->
+    <!-- END: Page-Specific Internal Style Override                      -->
+    <!-- =============================================================== -->
 </head>
 <body>
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
+    <!-- START: Consistent Header -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
@@ -79,16 +95,17 @@
 
     <main id="main-content">
 
-        <header class="page-header">
+        <!-- The background image is now safe to use with the text override -->
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/rooms/room-junior-suite-seating-900w.webp');">
             <div class="container" data-animate>
                 <h1 class="hero-title">Our Accommodations</h1>
                 <p class="hero-subtitle">Find the perfect space for your stay, from cozy rooms for solo travelers to expansive suites for the whole family.</p>
             </div>
         </header>
 
+        <!-- (Rest of the page content remains unchanged) -->
         <section id="room-listings" class="room-listing-section">
             <div class="container">
-                <!-- REVISED: Room listing grid now uses a standard 2-column grid and absolute image paths -->
                 <div class="grid-2-col">
                     
                     <article class="room-listing-card" data-animate>
@@ -100,7 +117,7 @@
                         </a>
                         <div class="room-listing-card-content">
                             <div class="room-listing-card-header">
-                                <a href="/rooms/club-comfort-room"><h3>Club Comfort Room</h3></a>
+                                <h3>Club Comfort Room</h3>
                                 <div class="room-card-price">from <span>₹2099</span></div>
                             </div>
                             <p class="room-description">An efficient 150 sqft space, ideal for solo travellers seeking value and convenience.</p>
@@ -124,7 +141,7 @@
                         </a>
                         <div class="room-listing-card-content">
                             <div class="room-listing-card-header">
-                                <a href="/rooms/deluxe-balcony-room"><h3>Deluxe Balcony Room</h3></a>
+                                <h3>Deluxe Balcony Room</h3>
                                 <div class="room-card-price">from <span>₹2399</span></div>
                             </div>
                             <p class="room-description">A 180 sqft room featuring a private balcony, offering a perfect spot to unwind.</p>
@@ -141,14 +158,14 @@
 
                     <article class="room-listing-card" data-animate>
                         <a href="/rooms/executive-balcony-room" aria-label="View details for the Executive Balcony Room">
-                            <img src="/assets/images/rooms/room-executive-balcony-sofa-900w.webp"
-                                 srcset="/assets/images/rooms/room-executive-balcony-sofa-600w.webp 600w, /assets/images/rooms/room-executive-balcony-sofa-900w.webp 900w"
+                            <img src="/assets/images/rooms/room-executive-balcony-sofa-600w.webp"
+                                 srcset="/assets/images/rooms/room-executive-balcony-sofa-600w.webp 600w, /assets/images/rooms/room-executive-balcony-sofa-600w.webp 600w"
                                  sizes="(max-width: 768px) 100vw, 50vw"
                                  alt="Spacious Executive Balcony Room with a plush bed and elegant decor." loading="lazy" decoding="async">
                         </a>
                         <div class="room-listing-card-content">
                              <div class="room-listing-card-header">
-                                <a href="/rooms/executive-balcony-room"><h3>Executive Balcony Room</h3></a>
+                                <h3>Executive Balcony Room</h3>
                                 <div class="room-card-price">from <span>₹2699</span></div>
                             </div>
                             <p class="room-description">A larger 220 sqft space complete with a comfortable sofa seating area for extra relaxation.</p>
@@ -172,7 +189,7 @@
                         </a>
                         <div class="room-listing-card-content">
                             <div class="room-listing-card-header">
-                                <a href="/rooms/junior-balcony-suite"><h3>Junior Balcony Suite</h3></a>
+                                <h3>Junior Balcony Suite</h3>
                                 <div class="room-card-price">from <span>₹3199</span></div>
                             </div>
                             <p class="room-description">Offers an extra living area in a 234 sqft layout, providing a perfect blend of luxury and space.</p>
@@ -189,14 +206,14 @@
 
                     <article class="room-listing-card" data-animate>
                         <a href="/rooms/two-bedroom-premium-suite" aria-label="View details for the Two-Bedroom Premium Suite">
-                            <img src="/assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp"
-                                 srcset="/assets/images/rooms/room-two-bedroom-suite-living-area-600w.webp 600w, /assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp 900w"
+                            <img src="/assets/images/rooms/room-two-bedroom-suite-bed-1-600w.webp"
+                                 srcset="/assets/images/rooms/room-two-bedroom-suite-bed-1-600w.webp 600w, /assets/images/rooms/room-two-bedroom-suite-bed-1-600w.webp 600w"
                                  sizes="(max-width: 768px) 100vw, 50vw"
                                  alt="Spacious and modern living area of the Two-Bedroom Premium Suite." loading="lazy" decoding="async">
                         </a>
                         <div class="room-listing-card-content">
                             <div class="room-listing-card-header">
-                                <a href="/rooms/two-bedroom-premium-suite"><h3>Two-Bedroom Premium Suite</h3></a>
+                                <h3>Two-Bedroom Premium Suite</h3>
                                 <div class="room-card-price">from <span>₹3999</span></div>
                             </div>
                             <p class="room-description">A 700 sqft suite ideal for groups, offering two bedrooms, a drawing room, and river views.</p>
@@ -213,14 +230,14 @@
 
                     <article class="room-listing-card" data-animate style="--animation-delay: 0.1s;">
                         <a href="/rooms/family-apartment" aria-label="View details for the Family Apartment with Kitchen">
-                            <img src="/assets/images/rooms/room-family-apartment-kitchen-900w.webp"
-                                 srcset="/assets/images/rooms/room-family-apartment-kitchen-600w.webp 600w, /assets/images/rooms/room-family-apartment-kitchen-900w.webp 900w"
+                            <img src="/assets/images/rooms/room-family-apartment-living-area-900w.webp"
+                                 srcset="/assets/images/rooms/room-family-apartment-living-area-600w.webp 600w, /assets/images/rooms/room-family-apartment-living-area-900w.webp 900w"
                                  sizes="(max-width: 768px) 100vw, 50vw"
                                  alt="A spacious Family Apartment with a full kitchen." loading="lazy" decoding="async">
                         </a>
                         <div class="room-listing-card-content">
                             <div class="room-listing-card-header">
-                                <a href="/rooms/family-apartment"><h3>Family Apartment with Kitchen</h3></a>
+                                <h3>Family Apartment with Kitchen</h3>
                                 <div class="room-card-price">from <span>₹4999</span></div>
                             </div>
                             <p class="room-description">An expansive 800 sqft apartment, perfect for extended stays with a full kitchen and panoramic views.</p>
@@ -238,22 +255,21 @@
             </div>
         </section>
 
-        <!-- NOTE: The 'direct-booking-section' styles are not in the provided CSS, you may need to add them -->
         <section class="direct-booking-section" data-animate>
             <div class="container text-center">
                 <p class="section-subtitle">Personalized Service</p>
                 <h2 class="section-title">Enquiries & Group Bookings</h2>
                 <p>Contact our reservations team directly for personal assistance, special requests, or bookings for large groups.</p>
-                <div class="hero-actions">
-                    <a href="tel:+919264197986" class="button-secondary" aria-label="Call our reservation team"><span class="material-icons-outlined">call</span>&nbsp;Call Us</a>
-                    <a href="mailto:sbg.suryaplaza@gmail.com" class="button-secondary" aria-label="Email our reservation team"><span class="material-icons-outlined">email</span>&nbsp;Email Us</a>
+                <div class="cta-actions">
+                    <a href="tel:+919264197986" class="button-secondary" aria-label="Call our reservation team"><span class="material-icons-outlined">call</span>Call Us</a>
+                    <a href="mailto:sbg.suryaplaza@gmail.com" class="button-secondary" aria-label="Email our reservation team"><span class="material-icons-outlined">email</span>Email Us</a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- START: REVISED AND CONSISTENT FOOTER -->
+    <!-- START: Consistent FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
@@ -305,11 +321,10 @@
             </div>
         </div>
     </footer>
-    <!-- END: REVISED AND CONSISTENT FOOTER -->
+    <!-- END: Consistent FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
-    <!-- Using the definitive, external script file with an absolute path -->
     <script src="/script.js" defer></script>
 </body>
 </html>

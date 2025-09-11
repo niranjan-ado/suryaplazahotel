@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials (REVISED for consistency) -->
+    <!-- SEO Essentials -->
     <title>About Us | The Story of Surya Plaza Hotel, Sahibganj</title>
     <meta name="description" content="Learn about Surya Plaza Hotel, our commitment to comfort, culinary excellence, and sophisticated hospitality in the heart of Sahibganj.">
     <link rel="canonical" href="https://suryaplazahotels.com/about">
 
-    <!-- Social Media Meta Tags (Added for consistency) -->
+    <!-- Social Media Meta Tags -->
     <meta property="og:title" content="About Us | The Story of Surya Plaza Hotel, Sahibganj">
     <meta property="og:description" content="Learn about our commitment to comfort, culinary excellence, and sophisticated hospitality.">
-    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image-about.jpg"> <!-- Assumes a specific OG image exists -->
+    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image-about.jpg">
     <meta property="og:url" content="https://suryaplazahotels.com/about">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -29,7 +29,7 @@
       })();
     </script>
 
-    <!-- Favicon (REVISED to use absolute paths) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
@@ -41,14 +41,83 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
+
+    <!-- Page-Specific Internal Styles (Hero Text, Map) -->
+    <style>
+        .page-header .hero-title,
+        .page-header .section-subtitle {
+            color: var(--text-light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .map-container {
+            overflow: hidden; border-radius: var(--border-radius); aspect-ratio: 16 / 9;
+            box-shadow: 0 8px 25px var(--card-shadow-color); margin-top: 2rem;
+        }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
+        .location-address {
+            margin-top: 1.5rem; padding: 1.5rem; background-color: var(--background-surface);
+            border: 1px solid var(--border-color); border-radius: var(--border-radius); font-weight: 600;
+        }
+    </style>
+
+    <!-- SEO Schemas (AboutPage, Hotel, FAQPage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "AboutPage",
+          "url": "https://suryaplazahotels.com/about",
+          "name": "About Us | The Story of Surya Plaza Hotel, Sahibganj",
+          "mainEntity": {
+             "@type": "FAQPage",
+             "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Your story mentions the hotel is run by a family of doctors. What does this mean for me as a guest?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "It means that a culture of meticulous care and hygiene is at the core of our operations. Inspired by medical precision, we uphold an exceptional standard of cleanliness and attention to detail, ensuring a safe, comfortable, and genuinely caring environment for all our guests."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "I'm traveling for business. What room do you recommend?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "For our business travelers, we highly recommend the Executive Balcony Room. It provides a larger 220 sqft space complete with a dedicated work desk and a comfortable sofa seating area, offering the perfect environment to be productive and to unwind after a busy day."
+                    }
+                }
+             ]
+          }
+        },
+        {
+          "@type": "Hotel",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/",
+          "telephone": "+919264197986",
+          "priceRange": "₹₹",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Opp Ray Bahadur Building, J.N Roy Road",
+            "addressLocality": "Sahibganj",
+            "addressRegion": "Jharkhand",
+            "postalCode": "816109",
+            "addressCountry": "IN"
+          }
+        }
+      ]
+    }
+    </script>
+
 </head>
 <body>
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
+    <!-- START: Consistent Header -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
@@ -62,7 +131,6 @@
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <!-- NOTE: You may need JS to add 'active' class to an 'About' link if it exists in the main nav -->
                     </ul>
                     <div class="nav-menu-book-btn-wrapper">
                         <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary nav-menu-book-btn">Book Now</a>
@@ -82,7 +150,7 @@
 
     <main id="main-content">
 
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/about-header-facade.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/header-contact-facade-1800w.webp');">
             <div class="container" data-animate>
                 <p class="section-subtitle">A Legacy of Comfort & Excellence</p>
                 <h1 class="hero-title">About Surya Plaza Hotel</h1>
@@ -98,7 +166,7 @@
                         <p>Our professional team is dedicated to delivering a warm ambiance and an array of thoughtful touches, ensuring every guest experiences the comforts of home with the sophistication of contemporary hospitality.</p>
                     </div>
                     <div class="showcase-image" data-animate style="--animation-delay: 0.1s;">
-                        <img src="/assets/images/about-reception-desk.webp" alt="Elegant reception area of Surya Plaza Hotel with a welcoming front desk." width="600" height="450" loading="lazy" class="rounded-image-shadow">
+                        <img src="/assets/images/about-reception-desk-900w.webp" alt="Elegant reception area of Surya Plaza Hotel with a welcoming front desk." width="600" height="450" loading="lazy" class="rounded-image-shadow">
                     </div>
                 </div>
             </div>
@@ -107,36 +175,21 @@
         <section id="commitment" class="commitment-section">
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Our Commitment to You</h2>
-                <div class="commitment-grid">
-                    <div class="commitment-item">
-                        <span class="material-icons-outlined">hotel</span>
-                        <h4>Spacious Comfort</h4>
-                        <p class="text-muted">We believe in providing ample space, from rooms with private balconies to expansive family apartments with full kitchens.</p>
-                    </div>
-                    <div class="commitment-item">
-                        <span class="material-icons-outlined">restaurant_menu</span>
-                        <h4>Culinary Excellence</h4>
-                        <p class="text-muted">Home to the famous Moti Mahal restaurant, we offer legendary Indian cuisine that delights the senses.</p>
-                    </div>
-                    <div class="commitment-item">
-                        <span class="material-icons-outlined">location_on</span>
-                        <h4>Prime Central Location</h4>
-                        <p class="text-muted">Our strategic location provides seamless access to the railway station, markets, and key local landmarks.</p>
-                    </div>
-                     <div class="commitment-item">
-                        <span class="material-icons-outlined">support_agent</span>
-                        <h4>Personalized Service</h4>
-                        <p class="text-muted">From 24/7 room service to individual climate control, every detail is crafted to cater to your personal comfort.</p>
-                    </div>
+                <div class="grid-4-col">
+                    <div class="commitment-item"><span class="material-icons-outlined">hotel</span><h4>Spacious Comfort</h4><p class="text-muted">We believe in providing ample space, from rooms with private balconies to expansive family apartments with full kitchens.</p></div>
+                    <div class="commitment-item"><span class="material-icons-outlined">restaurant_menu</span><h4>Culinary Excellence</h4><p class="text-muted">Home to the famous Moti Mahal restaurant, we offer legendary Indian cuisine that delights the senses.</p></div>
+                    <div class="commitment-item"><span class="material-icons-outlined">location_on</span><h4>Prime Central Location</h4><p class="text-muted">Our strategic location provides seamless access to the railway station, markets, and key local landmarks.</p></div>
+                     <div class="commitment-item"><span class="material-icons-outlined">support_agent</span><h4>Personalized Service</h4><p class="text-muted">From 24/7 room service to individual climate control, every detail is crafted to cater to your personal comfort.</p></div>
                 </div>
             </div>
         </section>
 
+        <!-- REVISION: Added the missing <div class="container"> wrapper -->
         <section id="experience-showcase">
             <div class="container">
                 <div class="showcase-grid">
                     <div class="showcase-image" data-animate>
-                        <img src="/assets/images/rooms/room-executive-balcony-bed.webp" alt="A plush and comfortable bed in an Executive Balcony Room." width="600" height="450" loading="lazy" class="rounded-image-shadow">
+                        <img src="/assets/images/rooms/room-executive-balcony-bed-main-900w.webp" alt="A plush and comfortable bed in an Executive Balcony Room." width="600" height="450" loading="lazy" class="rounded-image-shadow">
                     </div>
                     <div class="showcase-text" data-animate style="--animation-delay: 0.1s;">
                         <p class="section-subtitle">Your Private Sanctuary</p>
@@ -148,7 +201,7 @@
                 
                 <div class="showcase-grid reversed">
                      <div class="showcase-image" data-animate>
-                        <img src="/assets/images/dining/dining-moti-mahal-tables.webp" alt="Elegant table setting at Moti Mahal Tandoori Trail restaurant." width="600" height="450" loading="lazy" class="rounded-image-shadow">
+                        <img src="/assets/images/dining/dining-moti-mahal-tables-900w.webp" alt="Elegant table setting at Moti Mahal Tandoori Trail restaurant." width="600" height="450" loading="lazy" class="rounded-image-shadow">
                     </div>
                     <div class="showcase-text" data-animate style="--animation-delay: 0.1s;">
                         <p class="section-subtitle">A Culinary Journey</p>
@@ -160,7 +213,7 @@
 
                 <div class="showcase-grid">
                     <div class="showcase-image" data-animate>
-                        <img src="/assets/images/events/events-pearl-banquet-cluster.webp" alt="The Pearl Banquet Hall set up for a corporate event." width="600" height="450" loading="lazy" class="rounded-image-shadow">
+                        <img src="/assets/images/events/events-pearl-banquet-cluster-900w.webp" alt="The Pearl Banquet Hall set up for a corporate event." width="600" height="450" loading="lazy" class="rounded-image-shadow">
                     </div>
                     <div class="showcase-text" data-animate style="--animation-delay: 0.1s;">
                         <p class="section-subtitle">Celebrate in Style</p>
@@ -172,6 +225,43 @@
             </div>
         </section>
 
+        <section class="faq-section commitment-section">
+            <div class="container" data-animate>
+                <h2 class="section-title text-center">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                            <span>Your story mentions the hotel is run by a family of doctors. What does this mean for me as a guest?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-1">
+                            <p>It means that a culture of meticulous care and hygiene is at the core of our operations. Inspired by medical precision, we uphold an exceptional standard of cleanliness and attention to detail, ensuring a safe, comfortable, and genuinely caring environment for all our guests.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                            <span>I'm traveling for business. What room do you recommend?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-2">
+                            <p>For our business travelers, we highly recommend the Executive Balcony Room. It provides a larger 220 sqft space complete with a dedicated work desk and a comfortable sofa seating area, offering the perfect environment to be productive and to unwind after a busy day.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="location-map">
+            <div class="container text-center" data-animate>
+                <h2 class="section-title">Find Us</h2>
+                <p>We are conveniently located on J.N Roy Road, easily accessible from all major transport hubs in Sahibganj.</p>
+                <div class="location-address">Opp Ray Bahadur Building, J.N Roy Road, Sahibganj, Jharkhand 816109</div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.7412889247903!2d87.62789517479828!3d25.245637329738067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fa998a3e57abf7%3A0x49c5121bd30cc91f!2sSurya%20Plaza%20Hotel%20Sahibganj%20Jharkhand!5e0!3m2!1sen!2sin!4v1757606016668!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Map location of Surya Plaza Hotel"></iframe>
+                </div>
+            </div>
+        </section>
+
         <section class="final-cta-section">
             <div class="container text-center" data-animate>
                 <h2 class="section-title">Experience the Surya Plaza Difference</h2>
@@ -179,62 +269,21 @@
                 <a href="https://bookings.suryaplazahotels.com" target="_blank" rel="noopener" class="button-primary large">Book Your Stay Now</a>
             </div>
         </section>
-
     </main>
 
-    <!-- START: REVISED AND CONSISTENT FOOTER -->
+    <!-- START: Consistent FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main">
-                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
-                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
-                    </a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Hotel</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about" class="active">Our Story</a></li> <!-- Added 'active' class -->
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/events">Events & Banquets</a></li>
-                        <li><a href="/attractions">Local Attractions</a></li>
-                        <li><a href="/blog">Our Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Accommodations</h4>
-                    <ul class="footer-links">
-                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
-                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
-                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
-                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
-                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
-                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Restaurants</h4>
-                    <ul class="footer-links">
-                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
-                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
-                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
-                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
-                    </ul>
-                </div>
+                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about" class="active">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
-                <nav class="footer-legal-links">
-                    <a href="/terms">Terms</a>
-                    <a href="/privacy-policy">Privacy</a>
-                    <a href="/cancellation-policy">Cancellation</a>
-                    <a href="/shipping-policy">Shipping</a>
-                </nav>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
-    <!-- END: REVISED AND CONSISTENT FOOTER -->
+    <!-- END: Consistent FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     

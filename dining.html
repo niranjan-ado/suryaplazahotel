@@ -37,18 +37,40 @@
     
     <!-- Google Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
     <!-- Main Stylesheet (REVISED to use absolute path) -->
     <link rel="stylesheet" href="/style.css">
+
+    <!-- =============================================================== -->
+    <!-- START: Page-Specific Internal Style Overrides                   -->
+    <!-- Contains fixes for card button margin and hero text contrast.   -->
+    <!-- =============================================================== -->
+    <style>
+        /* 1. Adds top margin to the card buttons to prevent them from touching the text. */
+        .info-card-actions {
+            margin-top: 1.5rem;
+        }
+
+        /* 2. Forces the header text to be light and adds a shadow for readability. */
+        .page-header .hero-title,
+        .page-header .hero-subtitle {
+            color: var(--text-light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    <!-- =============================================================== -->
+    <!-- END: Page-Specific Internal Style Overrides                     -->
+    <!-- =============================================================== -->
+
 </head>
 <body>
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
+    <!-- START: Consistent Header -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
@@ -81,7 +103,7 @@
 
     <main id="main-content">
 
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/dining/header-dining-decor.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/dining/header-dining-decor-1800w.webp');">
             <div class="container" data-animate>
                 <h1 class="hero-title">A Culinary Journey</h1>
                 <p class="hero-subtitle">Discover exceptional dining experiences to suit every taste and occasion, right here at Surya Plaza Hotel.</p>
@@ -90,18 +112,17 @@
 
         <section id="dining-options">
             <div class="container">
-                <!-- REVISED: Grid now uses absolute image paths and clean links -->
                 <div class="grid-3-col">
                     
                     <article class="info-card" data-animate>
                         <a href="/dining/moti-mahal" aria-label="Learn more about Moti Mahal">
-                             <img src="/assets/images/dining/dining-moti-mahal-experience-900w.webp" 
-                                 srcset="/assets/images/dining/dining-moti-mahal-experience-600w.webp 600w, /assets/images/dining/dining-moti-mahal-experience-900w.webp 900w"
+                             <img src="/assets/images/dining/dining-moti-mahal-seating-900w.webp" 
+                                 srcset="/assets/images/dining/dining-moti-mahal-seating-600w.webp 600w, /assets/images/dining/dining-moti-mahal-seating-900w.webp 900w"
                                  sizes="(max-width: 992px) 50vw, 33vw"
                                  alt="Elegant dining area of Moti Mahal Tandoori Trail." loading="lazy" decoding="async">
                         </a>
                         <div class="info-card-content">
-                            <a href="/dining/moti-mahal"><h3>Moti Mahal Tandoori Trail</h3></a>
+                            <h3>Moti Mahal Tandoori Trail</h3>
                             <p>Our fine dining restaurant serves legendary Indian, Tandoori & Chinese cuisine. Discover award-winning recipes and timeless flavors in an elegant atmosphere.</p>
                             <div class="info-card-actions">
                                 <a href="/dining/moti-mahal" class="button-secondary">Learn More</a>
@@ -118,7 +139,7 @@
                                  alt="Vibrant and modern atmosphere at Jackson Diner's bar." loading="lazy" decoding="async">
                         </a>
                         <div class="info-card-content">
-                            <a href="/dining/jackson-diner"><h3>Jackson Diner by Moti Mahal</h3></a>
+                            <h3>Jackson Diner by Moti Mahal</h3>
                             <p>A casual rooftop restaurant offering gourmet mocktails, shakes, pizzas, and pastas in a warm and comfortable ambience with great views.</p>
                             <div class="info-card-actions">
                                 <a href="/dining/jackson-diner" class="button-secondary">Learn More</a>
@@ -129,13 +150,13 @@
 
                     <article class="info-card" data-animate style="--animation-delay: 0.2s;">
                         <a href="/dining/in-room-dining" aria-label="Explore In-Room Dining options">
-                            <img src="/assets/images/rooms/room-family-apartment-sofa-900w.webp" 
-                                 srcset="/assets/images/rooms/room-family-apartment-sofa-600w.webp 600w, /assets/images/rooms/room-family-apartment-sofa-900w.webp 900w"
+                            <img src="/assets/images/rooms/room-family-apartment-living-area-900w.webp" 
+                                 srcset="/assets/images/rooms/room-family-apartment-living-area-600w.webp 600w, /assets/images/rooms/room-family-apartment-living-area-900w.webp 900w"
                                  sizes="(max-width: 992px) 50vw, 33vw"
                                  alt="A comfortable suite seating area, perfect for in-room dining." loading="lazy" decoding="async">
                         </a>
                         <div class="info-card-content">
-                            <a href="/dining/in-room-dining"><h3>In-Room Dining</h3></a>
+                            <h3>In-Room Dining</h3>
                             <p>Enjoy a wide range of delectable choices from our restaurant menus, delivered directly to the comfort and privacy of your room, 24/7.</p>
                             <div class="info-card-actions">
                                 <a href="/dining/in-room-dining" class="button-primary">Explore Options</a>
@@ -146,13 +167,12 @@
             </div>
         </section>
 
-        <!-- REVISED: CTA section updated to use consistent classes for button visibility and alignment -->
         <section class="direct-booking-section" data-animate>
             <div class="container">
                 <p class="section-subtitle">Plan Your Meal</p>
                 <h2 class="section-title">Table Reservations & Enquiries</h2>
                 <p>Contact our dining team directly for table bookings, special requests, or to enquire about our menus.</p>
-                <div class="hero-actions">
+                <div class="cta-actions">
                     <a href="tel:+919264197988" class="button-secondary" aria-label="Call for table reservations"><span class="material-icons-outlined">call</span><span>Call for Reservations</span></a>
                     <a href="mailto:mmttsahibganj@gmail.com" class="button-secondary" aria-label="Email our dining team"><span class="material-icons-outlined">email</span><span>Email Us</span></a>
                 </div>
@@ -161,7 +181,7 @@
 
     </main>
 
-    <!-- START: REVISED AND CONSISTENT FOOTER -->
+    <!-- START: Consistent FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
@@ -213,11 +233,10 @@
             </div>
         </div>
     </footer>
-    <!-- END: REVISED AND CONSISTENT FOOTER -->
+    <!-- END: Consistent FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
-    <!-- Using the definitive, external script file with an absolute path -->
     <script src="/script.js" defer></script>
 </body>
 </html>

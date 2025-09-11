@@ -66,6 +66,33 @@ document.addEventListener("DOMContentLoaded", () => {
             handleFocusTrap(e);
         });
     };
+    
+    // REVISION: Moved the faqAccordionHandler to the correct scope, outside of mobileNavHandler.
+    const faqAccordionHandler = () => {
+        const faqItems = document.querySelectorAll('.faq-item');
+        if (faqItems.length === 0) return;
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            // Ensure both question and answer elements exist before adding listener
+            if (question && answer) {
+                question.addEventListener('click', () => {
+                    const isActive = question.classList.contains('active');
+
+                    question.classList.toggle('active');
+                    if (question.classList.contains('active')) {
+                        question.setAttribute('aria-expanded', 'true');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        question.setAttribute('aria-expanded', 'false');
+                        answer.style.maxHeight = null;
+                    }
+                });
+            }
+        });
+    };
 
     const themeToggleHandler = () => {
         if (!themeToggleButton) return;
@@ -249,6 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
         roomGalleryHandler();
         menuFilterHandler();
         stickyNavHandler();
+        faqAccordionHandler();
     };
 
     init();

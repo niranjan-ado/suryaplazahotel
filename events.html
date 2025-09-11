@@ -4,18 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials (REVISED for consistency) -->
+    <!-- SEO Essentials -->
     <title>Events & Banquets | Pearl Banquet Hall at Surya Plaza Hotel</title>
     <meta name="description" content="Host your perfect event at the Pearl Banquet Hall. Our versatile 1500 sq ft venue is ideal for weddings, conferences, and parties for 30-150 guests in Sahibganj.">
     <link rel="canonical" href="https://suryaplazahotels.com/events">
 
-    <!-- Social Media Meta Tags (Added for consistency) -->
+    <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Events & Banquets | Pearl Banquet Hall at Surya Plaza Hotel">
     <meta property="og:description" content="Host your perfect event at our versatile 1500 sq ft Pearl Banquet Hall.">
-    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image-events.jpg"> <!-- Assumes a specific OG image exists -->
+    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image-events.jpg">
     <meta property="og:url" content="https://suryaplazahotels.com/events">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EventVenue",
+      "name": "The Pearl Banquet Hall",
+      "description": "A versatile 1500 sq ft venue ideal for weddings, conferences, and parties for 30-150 guests.",
+      "parentOrganization": {
+        "@type": "Hotel",
+        "name": "Surya Plaza Hotel",
+        "url": "https://suryaplazahotels.com/"
+      },
+      "url": "https://suryaplazahotels.com/events",
+      "image": "https://suryaplazahotels.com/assets/images/events/events-pearl-banquet-cluster-900w.webp",
+      "telephone": "+919264197989",
+      "maximumAttendeeCapacity": 150
+    }
+    </script>
 
     <!-- SCRIPT TO PREVENT THEME FLASH -->
     <script>
@@ -29,7 +48,7 @@
       })();
     </script>
 
-    <!-- Favicon (REVISED to use absolute paths) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
@@ -41,14 +60,120 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <!-- Main Stylesheet (RESTORED) -->
     <link rel="stylesheet" href="/style.css">
+        <style>
+        .page-header .hero-title,
+        .page-header .section-subtitle {
+            color: var(--text-light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <!-- =============================================================== -->
+    <!-- START: Internal CSS for Gallery & Lightbox ONLY                 -->
+    <!-- These styles are specific to the gallery and won't conflict     -->
+    <!-- with your external style.css file.                              -->
+    <!-- =============================================================== -->
+    <style>
+        /* --- Gallery Grid Styling --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-grid a {
+            display: block;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .gallery-grid a:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        .gallery-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease-in-out;
+        }
+        .gallery-grid a:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* --- Lightbox Styling --- */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            padding: 1rem;
+        }
+        .lightbox-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .lightbox-image {
+            max-width: 90vw;
+            max-height: 90vh;
+            display: block;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .lightbox-overlay.active .lightbox-image {
+            transform: scale(1);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            line-height: 1;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+        .lightbox-close:hover {
+            opacity: 1;
+        }
+
+        /* --- Style for Renamed CTA Class --- */
+        /* Assuming a similar structure exists in style.css for .hero-actions, */
+        /* this ensures the renamed class also works. If not, this adds the style. */
+        .cta-actions {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+    </style>
+    <!-- =============================================================== -->
+    <!-- END: Internal CSS for Gallery                                   -->
+    <!-- =============================================================== -->
 </head>
 <body>
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
+    <!-- START: Consistent Header -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
@@ -80,8 +205,7 @@
     <!-- END: Consistent Header -->
 
     <main id="main-content">
-
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/events/events-pearl-banquet-buffet-counter.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/events/events-pearl-banquet-buffet-counter-1800w.webp');">
             <div class="container" data-animate>
                 <p class="section-subtitle">Celebrate in Style</p>
                 <h1 class="hero-title">The Pearl Banquet Hall</h1>
@@ -97,44 +221,20 @@
                         <p>It is a versatile venue with modern amenities and a stylish setting, spanning 1500 sq. ft. with a flexible capacity for 30 to 150 guests. Whether you are planning a wedding, reception, business conference, or birthday party, we provide the perfect backdrop and impeccable service for your elegant event.</p>
                     </div>
                     <div data-animate style="--animation-delay: 0.1s;">
-                        <img src="/assets/images/events/events-pearl-banquet-cluster.webp" alt="Pearl Banquet hall set up in a cluster formation for a corporate event." class="rounded-image-shadow">
+                        <img src="/assets/images/events/events-pearl-banquet-cluster-900w.webp" alt="Pearl Banquet hall set up in a cluster formation for a corporate event." class="rounded-image-shadow">
                     </div>
                 </div>
             </div>
         </section>
         
-        <section id="features" class="about-section"> <!-- Changed to about-section for background color consistency -->
+        <section id="features" class="about-section">
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Why Choose The Pearl?</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <span class="material-icons-outlined">fullscreen</span>
-                        <div>
-                            <h4>Spacious & Versatile</h4>
-                            <p class="text-muted">A 1500 sq. ft. multi-functional space that can be adapted to your event's needs.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="material-icons-outlined">groups</span>
-                        <div>
-                            <h4>Flexible Capacity</h4>
-                            <p class="text-muted">Comfortably accommodates intimate gatherings of 30 up to larger events of 150 guests.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="material-icons-outlined">celebration</span>
-                        <div>
-                            <h4>All Occasions Welcome</h4>
-                            <p class="text-muted">Ideal for weddings, receptions, corporate meetings, and social parties.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="material-icons-outlined">settings_suggest</span>
-                        <div>
-                            <h4>Modern Amenities</h4>
-                            <p class="text-muted">Equipped with the necessary facilities to ensure your event runs smoothly.</p>
-                        </div>
-                    </div>
+                <div class="grid-4-col">
+                    <div class="feature-item"><span class="material-icons-outlined">fullscreen</span><div><h4>Spacious & Versatile</h4><p class="text-muted">A 1500 sq. ft. multi-functional space that can be adapted to your event's needs.</p></div></div>
+                    <div class="feature-item"><span class="material-icons-outlined">groups</span><div><h4>Flexible Capacity</h4><p class="text-muted">Comfortably accommodates intimate gatherings of 30 up to larger events of 150 guests.</p></div></div>
+                    <div class="feature-item"><span class="material-icons-outlined">celebration</span><div><h4>All Occasions Welcome</h4><p class="text-muted">Ideal for weddings, receptions, corporate meetings, and social parties.</p></div></div>
+                    <div class="feature-item"><span class="material-icons-outlined">settings_suggest</span><div><h4>Modern Amenities</h4><p class="text-muted">Equipped with the necessary facilities to ensure your event runs smoothly.</p></div></div>
                 </div>
             </div>
         </section>
@@ -145,90 +245,103 @@
                     <h2 class="section-title text-center">Venue Gallery</h2>
                 </div>
                 <div class="gallery-grid">
-                    <a href="/assets/images/events/events-pearl-banquet-stage.webp" data-animate><img src="/assets/images/events/events-pearl-banquet-stage.webp" alt="A decorated stage setup in the Pearl Banquet hall." loading="lazy"></a>
-                    <a href="/assets/images/events/events-pearl-banquet-space.webp" data-animate style="--animation-delay: 0.1s;"><img src="/assets/images/events/events-pearl-banquet-space.webp" alt="A wide view showing the spacious layout of the Pearl Banquet hall." loading="lazy"></a>
-                    <a href="/assets/images/events/events-pearl-banquet-buffet.webp" data-animate style="--animation-delay: 0.2s;"><img src="/assets/images/events/events-pearl-banquet-buffet.webp" alt="An elegant buffet spread ready for guests in the Pearl Banquet hall." loading="lazy"></a>
+                    <a href="/assets/images/events/events-pearl-banquet-stage-900w.webp" data-animate><img src="/assets/images/events/events-pearl-banquet-stage-900w.webp" alt="A decorated stage setup in the Pearl Banquet hall." loading="lazy"></a>
+                    <a href="/assets/images/events/events-pearl-banquet-space-900w.webp" data-animate style="--animation-delay: 0.1s;"><img src="/assets/images/events/events-pearl-banquet-space-900w.webp" alt="A wide view showing the spacious layout of the Pearl Banquet hall." loading="lazy"></a>
+                    <a href="/assets/images/events/events-pearl-banquet-buffet-900w.webp" data-animate style="--animation-delay: 0.2s;"><img src="/assets/images/events/events-pearl-banquet-buffet-900w.webp" alt="An elegant buffet spread ready for guests in the Pearl Banquet hall." loading="lazy"></a>
                 </div>
             </div>
         </section>
 
-        <!-- REVISED: CTA section updated to use consistent classes for button visibility and alignment -->
         <section class="direct-booking-section" data-animate>
             <div class="container">
                 <p class="section-subtitle">Let's Get Started</p>
                 <h2 class="section-title">Plan Your Event</h2>
                 <p>Contact our dedicated events team to discuss your requirements, explore our packages, or schedule a visit to the venue.</p>
-                <div class="hero-actions">
-                    <a href="tel:+919264197989" class="button-secondary" aria-label="Call the Event Manager">
-                        <span class="material-icons-outlined">call</span>
-                        <span>Call Event Manager</span>
-                    </a>
-                    <a href="mailto:mmttsahibganj@gmail.com" class="button-secondary" aria-label="Email the Event Manager">
-                        <span class="material-icons-outlined">email</span>
-                        <span>Email Us</span>
-                    </a>
+                <!-- Renamed class from hero-actions to cta-actions for better semantics -->
+                <div class="cta-actions">
+                    <a href="tel:+919264197989" class="button-secondary" aria-label="Call the Event Manager"><span class="material-icons-outlined">call</span><span>Call Event Manager</span></a>
+                    <a href="mailto:mmttsahibganj@gmail.com" class="button-secondary" aria-label="Email the Event Manager"><span class="material-icons-outlined">email</span><span>Email Us</span></a>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- START: REVISED AND CONSISTENT FOOTER -->
+    <!-- START: Consistent FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main">
-                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
-                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
-                    </a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Hotel</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about">Our Story</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/events">Events & Banquets</a></li>
-                        <li><a href="/attractions">Local Attractions</a></li>
-                        <li><a href="/blog">Our Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Accommodations</h4>
-                    <ul class="footer-links">
-                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
-                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
-                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
-                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
-                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
-                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Restaurants</h4>
-                    <ul class="footer-links">
-                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
-                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
-                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
-                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
-                    </ul>
-                </div>
+                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
-                <nav class="footer-legal-links">
-                    <a href="/terms">Terms</a>
-                    <a href="/privacy-policy">Privacy</a>
-                    <a href="/cancellation-policy">Cancellation</a>
-                    <a href="/shipping-policy">Shipping</a>
-                </nav>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
-    <!-- END: REVISED AND CONSISTENT FOOTER -->
+    <!-- END: Consistent FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
+    <!-- HTML for the Lightbox (hidden by default) -->
+    <div class="lightbox-overlay" id="lightbox-overlay">
+        <button class="lightbox-close" aria-label="Close image view">&times;</button>
+        <img src="" alt="" class="lightbox-image" id="lightbox-image">
+    </div>
+
+    <!-- Main External Script (RESTORED) -->
     <script src="/script.js" defer></script>
+
+    <!-- =============================================================== -->
+    <!-- START: Internal JavaScript for Gallery Lightbox ONLY            -->
+    <!-- This script adds the pop-up functionality to the gallery. It    -->
+    <!-- runs alongside your main script.js file.                        -->
+    <!-- =============================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryLinks = document.querySelectorAll('.gallery-grid a');
+            const lightboxOverlay = document.getElementById('lightbox-overlay');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCloseBtn = document.querySelector('.lightbox-close');
+
+            if (galleryLinks.length > 0 && lightboxOverlay) {
+                
+                const openLightbox = (e) => {
+                    e.preventDefault();
+                    const imageLink = e.currentTarget;
+                    const imageUrl = imageLink.getAttribute('href');
+                    const imageAlt = imageLink.querySelector('img').getAttribute('alt');
+
+                    lightboxImage.setAttribute('src', imageUrl);
+                    lightboxImage.setAttribute('alt', imageAlt);
+                    lightboxOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                };
+
+                const closeLightbox = () => {
+                    lightboxOverlay.classList.remove('active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                };
+                
+                galleryLinks.forEach(link => {
+                    link.addEventListener('click', openLightbox);
+                });
+
+                lightboxCloseBtn.addEventListener('click', closeLightbox);
+                lightboxOverlay.addEventListener('click', (e) => {
+                    if (e.target === lightboxOverlay) { // Close only if clicking the background
+                        closeLightbox();
+                    }
+                });
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
+                        closeLightbox();
+                    }
+                });
+            }
+        });
+    </script>
+    <!-- =============================================================== -->
+    <!-- END: Internal JavaScript for Gallery                            -->
+    <!-- =============================================================== -->
 </body>
 </html>
