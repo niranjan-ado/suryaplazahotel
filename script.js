@@ -75,11 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const question = item.querySelector('.faq-question');
             const answer = item.querySelector('.faq-answer');
 
-            // Ensure both question and answer elements exist before adding listener
             if (question && answer) {
                 question.addEventListener('click', () => {
-                    const isActive = question.classList.contains('active');
-
                     question.classList.toggle('active');
                     if (question.classList.contains('active')) {
                         question.setAttribute('aria-expanded', 'true');
@@ -207,13 +204,27 @@ document.addEventListener("DOMContentLoaded", () => {
         const mainImage = document.getElementById('main-gallery-image');
         const thumbnails = document.querySelectorAll('.gallery-thumbnails img');
         if (!mainImage || thumbnails.length === 0) return;
+        
         thumbnails[0].classList.add('active');
+        
         thumbnails.forEach(thumb => {
             thumb.addEventListener('click', (e) => {
                 const clickedThumb = e.target;
-                if (mainImage.src === clickedThumb.src) return;
-                mainImage.src = clickedThumb.src;
+                
+                // REVISION: Use the data-large-src attribute for the new URL
+                const newImageUrl = clickedThumb.dataset.largeSrc || clickedThumb.src;
+
+                // Prevent reload if the same image is clicked
+                if (mainImage.src.includes(newImageUrl)) return;
+
+                mainImage.src = newImageUrl;
                 mainImage.alt = clickedThumb.alt;
+                
+                // Update srcset if it exists on the main image
+                if (mainImage.srcset) {
+                    mainImage.srcset = newImageUrl;
+                }
+                
                 thumbnails.forEach(t => t.classList.remove('active'));
                 clickedThumb.classList.add('active');
             });
