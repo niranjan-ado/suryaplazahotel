@@ -44,7 +44,6 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- REVISION: Added internal style block for hero text contrast -->
     <style>
         .page-header .hero-title,
         .page-header .hero-subtitle {
@@ -53,7 +52,7 @@
         }
     </style>
 
-    <!-- REVISION: Added comprehensive JSON-LD Schema for the Hotel Room -->
+    <!-- REVISION: Updated schema to include all 5 gallery images -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -61,9 +60,11 @@
       "name": "Executive Balcony Room",
       "description": "Our spacious 220 sq. ft. Executive Room offers a premium stay, perfect for travelers desiring extra room to stretch out and relax. Step out onto your private balcony and enjoy the view. The room is thoughtfully furnished with a comfortable sofa, providing an additional area for lounging or informal meetings.",
       "image": [
-        "https://suryaplazahotels.com/assets/images/rooms/room-executive-balcony-bed-main-900w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-executive-balcony-sofa-600w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-executive-balcony-space-600w.webp"
+        "https://suryaplazahotels.com/assets/images/rooms/room-executive-balcony-bed-main-1200w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/room-executive-balcony-sofa-1200w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/room-executive-balcony-space-1200w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/room-executive-balcony-desk-1200w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/bathroom-wc-geyser-1200w.webp"
        ],
       "floorSize": {
         "@type": "QuantitativeValue",
@@ -140,7 +141,7 @@
 
     <main id="main-content">
 
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/images/rooms/room-executive-balcony-bed-main-900w.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/images/rooms/room-executive-balcony-bed-main-1200w.webp');">
             <div class="container" data-animate>
                 <h1 class="hero-title">Executive Balcony Room</h1>
                 <p class="hero-subtitle">Spacious, stylish, and superior comfort for the discerning traveler.</p>
@@ -154,12 +155,23 @@
                     <div class="room-gallery-description" data-animate>
                         <div class="room-gallery">
                             <div class="gallery-main-image">
-                                <img id="main-gallery-image" src="/assets/images/rooms/room-executive-balcony-bed-main-900w.webp" alt="Main view of the Executive Balcony Room showing the king-size bed and decor." loading="eager">
+                                <!-- REVISION: Added srcset and sizes for responsive, high-resolution main image -->
+                                <img id="main-gallery-image" 
+                                     src="/assets/images/rooms/room-executive-balcony-bed-main-900w.webp"
+                                     srcset="/assets/images/rooms/room-executive-balcony-bed-main-600w.webp 600w,
+                                             /assets/images/rooms/room-executive-balcony-bed-main-900w.webp 900w,
+                                             /assets/images/rooms/room-executive-balcony-bed-main-1200w.webp 1200w"
+                                     sizes="(max-width: 768px) 90vw, (max-width: 1200px) 55vw, 710px"
+                                     alt="Main view of the Executive Balcony Room showing the king-size bed and decor." 
+                                     loading="eager" fetchpriority="high">
                             </div>
+                            <!-- REVISION: Expanded to 5 thumbnails with data-large-src attributes -->
                             <div class="gallery-thumbnails">
-                                <img src="/assets/images/rooms/room-executive-balcony-bed-main-600w.webp" alt="View of the king-size bed and decor in the Executive room." loading="lazy">
-                                <img src="/assets/images/rooms/room-executive-balcony-sofa-600w.webp" alt="Sofa seating area with a view from the balcony." loading="lazy">
-                                <img src="/assets/images/rooms/room-executive-balcony-space-600w.webp" alt="View showing the spacious layout of the Executive Room." loading="lazy">
+                                <img src="/assets/images/rooms/room-executive-balcony-bed-main-600w.webp" data-large-src="/assets/images/rooms/room-executive-balcony-bed-main-1200w.webp" alt="View of the king-size bed and decor in the Executive room." loading="lazy">
+                                <img src="/assets/images/rooms/room-executive-balcony-bed-2-600w.webp" data-large-src="/assets/images/rooms/room-executive-balcony-bed-2-1200w.webp" alt="View of the king-size bed and decor in the Executive room." loading="lazy">
+                                <img src="/assets/images/rooms/room-executive-balcony-space-600w.webp" data-large-src="/assets/images/rooms/room-executive-balcony-space-1200w.webp" alt="View showing the spacious layout of the Executive Room." loading="lazy">
+                                <img src="/assets/images/rooms/room-executive-balcony-desk-600w.webp" data-large-src="/assets/images/rooms/room-executive-balcony-desk-1200w.webp" alt="Dedicated work desk area in the Executive Room." loading="lazy">
+                                <img src="/assets/images/rooms/room-executive-balcony-space-2-600w.webp" data-large-src="/assets/images/rooms/room-executive-balcony-space-2-1200w.webp" alt="View showing the spacious layout of the Executive Room." loading="lazy">
                             </div>
                         </div>
 
@@ -206,11 +218,11 @@
             </div>
         </section>
 
+        <!-- REVISION: Expanded to show all 5 other room types -->
         <section id="other-rooms">
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Explore Other Accommodations</h2>
                 <div class="grid-3-col">
-                    <!-- REVISION: Cleaned up links and added srcset for consistency -->
                     <article class="room-card">
                          <a href="/rooms/club-comfort-room"><img src="/assets/images/rooms/room-club-comfort-bed-900w.webp" srcset="/assets/images/rooms/room-club-comfort-bed-600w.webp 600w, /assets/images/rooms/room-club-comfort-bed-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Club Comfort Room" loading="lazy"></a>
                         <div class="room-card-content"><h3>Club Comfort Room</h3><p>Our cozy and efficient room, perfect for solo travelers.</p></div>
@@ -223,6 +235,14 @@
                         <a href="/rooms/junior-balcony-suite"><img src="/assets/images/rooms/room-junior-suite-seating-900w.webp" srcset="/assets/images/rooms/room-junior-suite-seating-600w.webp 600w, /assets/images/rooms/room-junior-suite-seating-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Junior Balcony Suite" loading="lazy"></a>
                         <div class="room-card-content"><h3>Junior Balcony Suite</h3><p>Offers an extra living area for a blend of luxury and space.</p></div>
                     </article>
+                    <article class="room-card">
+                        <a href="/rooms/two-bedroom-premium-suite"><img src="/assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp" srcset="/assets/images/rooms/room-two-bedroom-suite-living-area-600w.webp 600w, /assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Two-Bedroom Premium Suite" loading="lazy"></a>
+                        <div class="room-card-content"><h3>Two-Bedroom Premium Suite</h3><p>Ideal for groups, offering two bedrooms and river views.</p></div>
+                    </article>
+                    <article class="room-card">
+                        <a href="/rooms/family-apartment"><img src="/assets/images/rooms/room-family-apartment-living-area-900w.webp" srcset="/assets/images/rooms/room-family-apartment-living-area-600w.webp 600w, /assets/images/rooms/room-family-apartment-living-area-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Family Apartment with Kitchen" loading="lazy"></a>
+                        <div class="room-card-content"><h3>Family Apartment with Kitchen</h3><p>The ultimate choice for extended stays with two bedrooms.</p></div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -233,52 +253,12 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main">
-                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
-                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
-                    </a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Hotel</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about">Our Story</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/events">Events & Banquets</a></li>
-                        <li><a href="/attractions">Local Attractions</a></li>
-                        <li><a href="/blog">Our Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Accommodations</h4>
-                    <ul class="footer-links">
-                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
-                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
-                        <li><a href="/rooms/executive-balcony-room" class="active">Executive Balcony Room</a></li>
-                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
-                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
-                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Restaurants</h4>
-                    <ul class="footer-links">
-                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
-                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
-                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
-                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
-                    </ul>
-                </div>
+                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room" class="active">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
-                <nav class="footer-legal-links">
-                    <a href="/terms">Terms</a>
-                    <a href="/privacy-policy">Privacy</a>
-                    <a href="/cancellation-policy">Cancellation</a>
-                    <a href="/shipping-policy">Shipping</a>
-                </nav>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
     <!-- END: Consistent FOOTER -->

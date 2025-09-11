@@ -44,7 +44,6 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- REVISION: Added internal style block for hero text contrast -->
     <style>
         .page-header .hero-title,
         .page-header .hero-subtitle {
@@ -53,7 +52,7 @@
         }
     </style>
 
-    <!-- REVISION: Added comprehensive JSON-LD Schema for the Hotel Room -->
+    <!-- REVISION: Updated schema to include all 9 gallery images -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -61,10 +60,15 @@
       "name": "Family Apartment with Kitchen",
       "description": "Our Family Apartment is the ultimate choice for extended stays or families seeking the comforts of home. This expansive 800 sqft apartment includes two private bedrooms, a separate drawing room with a sofa cum bed, and the unparalleled convenience of a fully equipped kitchen. Enjoy breathtaking panoramic views of the River Ganges and the surrounding hills from your two private balconies.",
       "image": [
-        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-living-area-900w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-kitchen-600w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-bedrooms-600w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-balcony-view-600w.webp"
+        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-living-area-1200w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-kitchen-1200w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-sofa-cum-bed-1200w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-connected-living-kitchen-1200w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-bedroom-1-1200w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-bedroom-2-1200w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-connected-bedrooms-1200w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-bedroom-balcony-1200w.webp",
+        "https://suryaplazahotels.com/assets/images/rooms/bathroom-shower-sink-1200w.webp"
        ],
       "floorSize": {
         "@type": "QuantitativeValue",
@@ -88,7 +92,6 @@
         { "@type": "LocationFeatureSpecification", "name": "Separate Drawing Room" },
         { "@type": "LocationFeatureSpecification", "name": "Two Private Balconies" },
         { "@type": "LocationFeatureSpecification", "name": "Panoramic River & Hill Views" },
-        { "@type": "LocationFeatureSpecification", "name": "Air Conditioning" },
         { "@type": "LocationFeatureSpecification", "name": "Sofa Cum Bed" }
       ],
       "offers": {
@@ -142,7 +145,7 @@
 
     <main id="main-content">
 
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/images/rooms/room-family-apartment-living-area-900w.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/images/rooms/room-family-apartment-living-area-1200w.webp');">
             <div class="container" data-animate>
                 <h1 class="hero-title">Family Apartment with Kitchen</h1>
                 <p class="hero-subtitle">Your ultimate home away from home, with space and amenities for everyone.</p>
@@ -156,13 +159,27 @@
                     <div class="room-gallery-description" data-animate>
                         <div class="room-gallery">
                             <div class="gallery-main-image">
-                                <img id="main-gallery-image" src="/assets/images/rooms/room-family-apartment-living-area-900w.webp" alt="Main view of the Family Apartment's spacious living and dining area." loading="eager">
+                                <!-- REVISION: Added srcset and sizes for responsive, high-resolution main image -->
+                                <img id="main-gallery-image" 
+                                     src="/assets/images/rooms/room-family-apartment-living-area-900w.webp"
+                                     srcset="/assets/images/rooms/room-family-apartment-living-area-600w.webp 600w,
+                                             /assets/images/rooms/room-family-apartment-living-area-900w.webp 900w,
+                                             /assets/images/rooms/room-family-apartment-living-area-1200w.webp 1200w"
+                                     sizes="(max-width: 768px) 90vw, (max-width: 1200px) 55vw, 710px"
+                                     alt="Main view of the Family Apartment's spacious living and dining area." 
+                                     loading="eager" fetchpriority="high">
                             </div>
+                            <!-- REVISION: Expanded to 9 thumbnails with data-large-src attributes -->
                             <div class="gallery-thumbnails">
-                                <img src="/assets/images/rooms/room-family-apartment-living-area-600w.webp" alt="Spacious living and dining area in the Family Apartment." loading="lazy">
-                                <img src="/assets/images/rooms/room-family-apartment-kitchen-600w.webp" alt="The fully equipped modern kitchen in the Family Apartment." loading="lazy">
-                                <img src="/assets/images/rooms/room-family-apartment-bedrooms-600w.webp" alt="View of the comfortable and private connected bedrooms." loading="lazy">
-                                <img src="/assets/images/rooms/room-family-apartment-balcony-view-600w.webp" alt="Bedroom view showing balcony access and the serene River Ganges." loading="lazy">
+                                <img src="/assets/images/rooms/room-family-apartment-living-area-600w.webp" data-large-src="/assets/images/rooms/room-family-apartment-living-area-1200w.webp" alt="Spacious living and dining area in the Family Apartment." loading="lazy">
+                                <img src="/assets/images/rooms/room-family-apartment-kitchen-600w.webp" data-large-src="/assets/images/rooms/room-family-apartment-kitchen-1200w.webp" alt="The fully equipped modern kitchen in the Family Apartment." loading="lazy">
+                                <img src="/assets/images/rooms/room-family-apartment-connected-bedrooms-2-600w.webp" data-large-src="/assets/images/rooms/room-family-apartment-connected-bedrooms-2-1200w.webp" alt="View of the connected bedrooms, ideal for families." loading="lazy">
+                                <img src="/assets/images/rooms/room-family-apartment-connected-living-kitchen-600w.webp" data-large-src="/assets/images/rooms/room-family-apartment-connected-living-kitchen-1200w.webp" alt="View of the connected living area and kitchen, showing the open-plan space." loading="lazy">
+                                <img src="/assets/images/rooms/room-family-apartment-bedroom-1-600w.webp" data-large-src="/assets/images/rooms/room-family-apartment-bedroom-1-1200w.webp" alt="Well-appointed master bedroom in the Family Apartment." loading="lazy">
+                                <img src="/assets/images/rooms/room-family-apartment-bedroom-2-600w.webp" data-large-src="/assets/images/rooms/room-family-apartment-bedroom-2-1200w.webp" alt="Second private bedroom in the Family Apartment." loading="lazy">
+                                <img src="/assets/images/rooms/room-family-apartment-connected-bedrooms-600w.webp" data-large-src="/assets/images/rooms/room-family-apartment-connected-bedrooms-1200w.webp" alt="View of the connected bedrooms, ideal for families." loading="lazy">
+                                <img src="/assets/images/rooms/room-family-apartment-bedroom-balcony-600w.webp" data-large-src="/assets/images/rooms/room-family-apartment-bedroom-balcony-1200w.webp" alt="Bedroom with private balcony access and river view." loading="lazy">
+                                <img src="/assets/images/rooms/room-family-apartment-living-area-sofa-600w.webp" data-large-src="/assets/images/rooms/room-family-apartment-living-area-sofa-1200w.webp" alt="Spacious living and dining area in the Family Apartment." loading="lazy">
                             </div>
                         </div>
 
@@ -209,11 +226,19 @@
             </div>
         </section>
 
+        <!-- REVISION: Expanded to show all 5 other room types -->
         <section id="other-rooms">
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Explore Other Accommodations</h2>
                 <div class="grid-3-col">
-                    <!-- REVISION: Cleaned up links and added srcset for consistency -->
+                    <article class="room-card">
+                         <a href="/rooms/club-comfort-room"><img src="/assets/images/rooms/room-club-comfort-bed-900w.webp" srcset="/assets/images/rooms/room-club-comfort-bed-600w.webp 600w, /assets/images/rooms/room-club-comfort-bed-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Club Comfort Room" loading="lazy"></a>
+                        <div class="room-card-content"><h3>Club Comfort Room</h3><p>Our cozy and efficient room, perfect for solo travelers.</p></div>
+                    </article>
+                    <article class="room-card">
+                        <a href="/rooms/deluxe-balcony-room"><img src="/assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp" srcset="/assets/images/rooms/room-deluxe-balcony-bed-main-600w.webp 600w, /assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Deluxe Balcony Room" loading="lazy"></a>
+                        <div class="room-card-content"><h3>Deluxe Balcony Room</h3><p>Features a private balcony, offering a perfect spot to unwind.</p></div>
+                    </article>
                     <article class="room-card">
                         <a href="/rooms/executive-balcony-room"><img src="/assets/images/rooms/room-executive-balcony-sofa-900w.webp" srcset="/assets/images/rooms/room-executive-balcony-sofa-600w.webp 600w, /assets/images/rooms/room-executive-balcony-sofa-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Executive Balcony Room" loading="lazy"></a>
                         <div class="room-card-content"><h3>Executive Balcony Room</h3><p>A larger space with a comfortable sofa seating area.</p></div>
@@ -222,8 +247,8 @@
                         <a href="/rooms/junior-balcony-suite"><img src="/assets/images/rooms/room-junior-suite-seating-900w.webp" srcset="/assets/images/rooms/room-junior-suite-seating-600w.webp 600w, /assets/images/rooms/room-junior-suite-seating-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Junior Balcony Suite" loading="lazy"></a>
                         <div class="room-card-content"><h3>Junior Balcony Suite</h3><p>Offers an extra living area for a blend of luxury and space.</p></div>
                     </article>
-                     <article class="room-card">
-                        <a href="/rooms/two-bedroom-premium-suite"><img src="/assets/images/rooms/room-two-bedroom-suite-bed-1-600w.webp" srcset="/assets/images/rooms/room-two-bedroom-suite-bed-1-600w.webp 600w, /assets/images/rooms/room-two-bedroom-suite-bed-1-600w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Two-Bedroom Premium Suite" loading="lazy"></a>
+                    <article class="room-card">
+                        <a href="/rooms/two-bedroom-premium-suite"><img src="/assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp" srcset="/assets/images/rooms/room-two-bedroom-suite-living-area-600w.webp 600w, /assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Two-Bedroom Premium Suite" loading="lazy"></a>
                         <div class="room-card-content"><h3>Two-Bedroom Premium Suite</h3><p>Ideal for groups, offering two bedrooms and river views.</p></div>
                     </article>
                 </div>
@@ -236,52 +261,12 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main">
-                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
-                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
-                    </a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Hotel</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about">Our Story</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/events">Events & Banquets</a></li>
-                        <li><a href="/attractions">Local Attractions</a></li>
-                        <li><a href="/blog">Our Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Accommodations</h4>
-                    <ul class="footer-links">
-                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
-                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
-                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
-                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
-                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
-                        <li><a href="/rooms/family-apartment" class="active">Family Apartment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col-links">
-                    <h4>Our Restaurants</h4>
-                    <ul class="footer-links">
-                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
-                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
-                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
-                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
-                    </ul>
-                </div>
+                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment" class="active">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
-                <nav class="footer-legal-links">
-                    <a href="/terms">Terms</a>
-                    <a href="/privacy-policy">Privacy</a>
-                    <a href="/cancellation-policy">Cancellation</a>
-                    <a href="/shipping-policy">Shipping</a>
-                </nav>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
     <!-- END: Consistent FOOTER -->
