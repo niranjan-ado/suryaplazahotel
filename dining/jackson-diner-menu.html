@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials -->
+    <!-- SEO Essentials (REVISED for consistency) -->
     <title>Menu - Jackson Diner by Moti Mahal | Surya Plaza Hotel</title>
     <meta name="description" content="Explore the menu of Jackson Diner, our rooftop restaurant. Featuring gourmet burgers, thin-crust pizzas, artisanal pastas, sandwiches, and signature mocktails.">
-    <link rel="canonical" href="https://www.suryaplazahotels.com/dining/jackson-diner-menu.html">
+    <link rel="canonical" href="https://suryaplazahotels.com/dining/jackson-diner-menu">
+
+    <!-- Social Media Meta Tags (Added for consistency) -->
+    <meta property="og:title" content="Menu - Jackson Diner by Moti Mahal | Surya Plaza Hotel">
+    <meta property="og:description" content="Explore the menu of Jackson Diner, featuring gourmet burgers, thin-crust pizzas, artisanal pastas, and more.">
+    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/dining/og-image-jd-menu.jpg"> <!-- Assumes a specific OG image exists -->
+    <meta property="og:url" content="https://suryaplazahotels.com/dining/jackson-diner-menu">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- SCRIPT TO PREVENT THEME FLASH -->
     <script>
@@ -21,11 +29,11 @@
       })();
     </script>
 
-    <!-- Favicon (paths updated) -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+    <!-- Favicon (REVISED to use absolute paths) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
     <!-- Google Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,119 +41,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main Stylesheet (path updated) -->
-    <link rel="stylesheet" href="../style.css">
-
-    <!-- INTERNAL STYLES FOR MENU PAGE (SHARED TEMPLATE) -->
-    <style>
-        html { scroll-padding-top: 150px; }
-        .main-header { z-index: 1001; }
-        .menu-page-header {
-            padding: 5rem 0;
-            text-align: center;
-            margin-top: var(--header-height);
-            color: var(--text-light); /* Added for image background headers */
-        }
-        .menu-nav-sticky {
-            position: sticky;
-            top: var(--header-height);
-            z-index: 1000;
-            background-color: var(--header-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-        }
-        .menu-nav-container { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; }
-        .menu-category-nav { display: flex; gap: 2rem; overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none; }
-        .menu-category-nav::-webkit-scrollbar { display: none; }
-        .menu-category-nav a {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            color: var(--text-muted);
-            padding: 0.5rem 0;
-            border-bottom: 3px solid transparent;
-            transition: color var(--transition-speed) ease, border-color var(--transition-speed) ease;
-        }
-        .menu-category-nav a:hover, .menu-category-nav a.active {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        .menu-filter { display: flex; gap: 0.75rem; }
-        .menu-filter button {
-            background-color: transparent;
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            padding: 8px 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            font-family: var(--font-heading);
-            color: var(--text-muted);
-            transition: all var(--transition-speed) ease;
-        }
-        .menu-filter button:hover { border-color: var(--primary-color); color: var(--primary-color); }
-        .menu-filter button.active { background-color: var(--primary-color); color: var(--text-light); border-color: var(--primary-color); }
-        .dark-theme .menu-filter button.active { color: #0d1117; }
-        .menu-container { padding: 5rem 0; }
-        .menu-section { margin-bottom: 4rem; }
-        .menu-section-title { text-align: center; margin-bottom: 3rem; }
-        .menu-category-group {
-            background-color: var(--background-surface);
-            padding: 2rem 2.5rem;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            margin-bottom: 2.5rem;
-        }
-        .menu-sub-title { color: var(--primary-color); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); font-size: 1.5rem; }
-        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .menu-item { padding-bottom: 1.25rem; }
-        .menu-grid > .menu-item { border-bottom: 1px solid var(--border-color); }
-        .menu-grid > .menu-item:last-child, 
-        .menu-grid > .menu-item:nth-last-child(2):nth-child(odd) {
-             border-bottom: none;
-        }
-        .menu-item-header { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 0.25rem; align-items: baseline; }
-        .menu-item-header h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 700; color: var(--text-dark); }
-        .menu-item-header .price { font-weight: 700; font-family: var(--font-heading); color: var(--primary-color); white-space: nowrap; font-size: 1.1rem; }
-        .menu-item-desc { color: var(--text-muted); font-size: 0.9rem; }
-        
-        [data-filter-show="veg"] .menu-item:not([data-category~="veg"]),
-        [data-filter-show="non-veg"] .menu-item:not([data-category~="non-veg"]) { display: none; }
-        [data-filter-show="veg"] .non-veg-section,
-        [data-filter-show="non-veg"] .veg-section { display: none; }
-
-        @media (max-width: 768px) {
-            html { scroll-padding-top: 135px; }
-            .menu-nav-container { flex-direction: column; gap: 1rem; align-items: stretch; padding: 1rem; }
-            .menu-category-nav { justify-content: space-between; }
-            .menu-filter { justify-content: center; }
-            .menu-grid { grid-template-columns: 1fr; }
-            .menu-grid > .menu-item:nth-last-child(2):nth-child(odd) { border-bottom: 1px solid var(--border-color); }
-            .menu-category-group { padding: 1.5rem; }
-        }
-    </style>
+    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body class="menu-page"> <!-- Added class for page-specific styling -->
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (Paths Updated) -->
+    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
-                <a href="../index.html" class="logo" aria-label="Surya Plaza Hotel Homepage">
-                    <img src="../assets/images/logo-dark.svg" alt="Surya Plaza Hotel Logo" width="180" height="50" id="main-logo">
+                <a href="/" class="logo" aria-label="Surya Plaza Hotel Homepage">
+                    <img src="/assets/images/logo-dark.svg" alt="Surya Plaza Hotel Logo" width="180" height="50" id="main-logo">
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="../index.html" id="first-menu-link">Home</a></li>
-                        <li><a href="../rooms.html">Rooms</a></li>
-                        <li><a href="../dining.html" class="active">Dining</a></li>
-                        <li><a href="../events.html">Events</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/rooms">Rooms</a></li>
+                        <li><a href="/dining" class="active">Dining</a></li>
+                        <li><a href="/events">Events</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                     <div class="nav-menu-book-btn-wrapper">
                         <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary nav-menu-book-btn">Book Now</a>
@@ -165,7 +81,7 @@
 
     <main id="main-content">
 
-        <header class="page-header menu-page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/images/dining/header-jackson-diner-bar.webp');">
+        <header class="page-header menu-page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/dining/header-jackson-diner-bar.webp');">
             <div class="container" data-animate>
                 <p class="section-subtitle">Casual Rooftop Dining</p>
                 <h1 class="hero-title">Jackson Diner Menu</h1>
@@ -196,10 +112,10 @@
                     <h2 class="menu-section-title">Beverages</h2>
                     <div class="menu-category-group">
                         <div class="menu-grid">
-                            <div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>VIRGIN MOJITO</h4><span class="price">₹129</span></div><p class="menu-item-desc">Choice of Mint, Green Apple, Mango, Pineapple, Orange, etc.</p></div>
-                            <div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>FRUIT PUNCH</h4><span class="price">₹149</span></div><p class="menu-item-desc">Mixed fruit juice, vanilla ice cream, and fresh fruits.</p></div>
-                            <div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>THICK SHAKES</h4><span class="price">₹159</span></div><p class="menu-item-desc">Choice of Oreo, Kitkat, Nutella, or Brownie.</p></div>
-                            <div class="menu-item" data-category="veg non-veg"><div class="menu-item-header"><h4>COLD COFFEE</h4><span class="price">₹139 / 119</span></div><p class="menu-item-desc">With or Without Ice Cream.</p></div>
+                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>VIRGIN MOJITO</h4><span class="price">₹129</span></div><p class="menu-item-desc">Choice of Mint, Green Apple, Mango, Pineapple, Orange, etc.</p></div>
+                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>FRUIT PUNCH</h4><span class="price">₹149</span></div><p class="menu-item-desc">Mixed fruit juice, vanilla ice cream, and fresh fruits.</p></div>
+                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>THICK SHAKES</h4><span class="price">₹159</span></div><p class="menu-item-desc">Choice of Oreo, Kitkat, Nutella, or Brownie.</p></div>
+                            <div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>COLD COFFEE</h4><span class="price">₹139 / 119</span></div><p class="menu-item-desc">With or Without Ice Cream.</p></div>
                         </div>
                     </div>
                 </section>
@@ -248,74 +164,66 @@
                         </div>
                     </div>
                 </section>
-
             </div>
         </div>
     </main>
 
-    <!-- START: Consistent Footer (Paths Updated) -->
+    <!-- START: REVISED AND CONSISTENT FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main"><img src="../assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"><p>Experience the perfect blend of comfort, care, and hospitality. Your ideal choice for business and leisure in Sahibganj.</p></div>
-                <div class="footer-col-links"><h3>Quick Links</h3><ul class="footer-links"><li><a href="../about.html">About Us</a></li><li><a href="../rooms.html">Rooms & Suites</a></li><li><a href="../dining.html">Dining</a></li><li><a href="../events.html">Events</a></li><li><a href="../blog.html">Blog</a></li></ul></div>
-                <div class="footer-col-contact"><h3>Contact Us</h3><address class="footer-contact-info"><p><span class="material-icons-outlined">location_on</span> <span>Opp Ray Bahadur Building, J.N Roy Road, Sahibganj, Jharkhand 816109</span></p><p><span class="material-icons-outlined">call</span><a href="tel:+919264197986">+91 9264197986</a></p><p><span class="material-icons-outlined">directions</span><a href="https://maps.app.goo.gl/QJFVN7XUenr81ci86" target="_blank" rel="noopener">Get Directions</a></p></address></div>
+                <div class="footer-col-main">
+                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
+                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
+                    </a>
+                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
+                </div>
+                <div class="footer-col-links">
+                    <h4>Our Hotel</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">Our Story</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/events">Events & Banquets</a></li>
+                        <li><a href="/attractions">Local Attractions</a></li>
+                        <li><a href="/blog">Our Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-links">
+                    <h4>Accommodations</h4>
+                    <ul class="footer-links">
+                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
+                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
+                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
+                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
+                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
+                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-links">
+                    <h4>Our Restaurants</h4>
+                    <ul class="footer-links">
+                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
+                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
+                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
+                        <li><a href="/dining/jackson-diner-menu" class="active">Jackson Diner Menu</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms & Conditions</a></nav></div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
+                <nav class="footer-legal-links">
+                    <a href="/terms">Terms</a>
+                    <a href="/privacy-policy">Privacy</a>
+                    <a href="/cancellation-policy">Cancellation</a>
+                    <a href="/shipping-policy">Shipping</a>
+                </nav>
+            </div>
         </div>
     </footer>
-    <!-- END: Consistent Footer -->
+    <!-- END: REVISED AND CONSISTENT FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
-    <!-- Main external script for global functionality -->
-    <script src="../script.js" defer></script>
-
-    <!-- INTERNAL JAVASCRIPT FOR MENU PAGE -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const menuFilterHandler = () => {
-                const filterButtons = document.querySelectorAll('.menu-filter [data-filter]');
-                const menuContent = document.getElementById('menu-content');
-                if (!filterButtons.length || !menuContent) return;
-                filterButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const filterValue = button.dataset.filter;
-                        menuContent.dataset.filterShow = filterValue;
-                        filterButtons.forEach(btn => btn.classList.remove('active'));
-                        button.classList.add('active');
-                    });
-                });
-            };
-            const stickyNavHandler = () => {
-                const navLinks = document.querySelectorAll('.menu-category-nav a');
-                const sections = document.querySelectorAll('.menu-section');
-                if (!navLinks.length || !sections.length) return;
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const targetId = this.getAttribute('href');
-                        const targetSection = document.querySelector(targetId);
-                        if (targetSection) {
-                            targetSection.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    });
-                });
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const id = entry.target.getAttribute('id');
-                            const activeLink = document.querySelector(`.menu-category-nav a[href="#${id}"]`);
-                            navLinks.forEach(link => link.classList.remove('active'));
-                            if (activeLink) activeLink.classList.add('active');
-                        }
-                    });
-                }, { rootMargin: "-40% 0px -60% 0px" });
-                sections.forEach(section => observer.observe(section));
-            };
-            menuFilterHandler();
-            stickyNavHandler();
-        });
-    </script>
+    <script src="/script.js" defer></script>
 </body>
 </html>

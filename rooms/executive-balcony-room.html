@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials -->
+    <!-- SEO Essentials (REVISED for consistency) -->
     <title>Executive Balcony Room | Surya Plaza Hotel, Sahibganj</title>
     <meta name="description" content="Our spacious 220 sqft Executive Room features a double bed, private balcony, and a comfortable sofa area for a premium stay experience.">
-    <link rel="canonical" href="https://www.suryaplazahotels.com/rooms/executive-balcony-room.html">
+    <link rel="canonical" href="https://suryaplazahotels.com/rooms/executive-balcony-room">
+
+    <!-- Social Media Meta Tags (Added for consistency) -->
+    <meta property="og:title" content="Executive Balcony Room | Surya Plaza Hotel, Sahibganj">
+    <meta property="og:description" content="Our spacious 220 sqft Executive Room features a double bed, private balcony, and a comfortable sofa area.">
+    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/rooms/room-executive-balcony-bed-main-900w.webp">
+    <meta property="og:url" content="https://suryaplazahotels.com/rooms/executive-balcony-room">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- SCRIPT TO PREVENT THEME FLASH -->
     <script>
@@ -21,112 +29,39 @@
       })();
     </script>
 
-    <!-- Favicon (paths updated with ../) -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+    <!-- Favicon (REVISED to use absolute paths) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
     <!-- Google Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main Stylesheet (path updated with ../) -->
-    <link rel="stylesheet" href="../style.css">
-
-    <!-- INTERNAL STYLES FOR ROOM DETAIL PAGE (SHARED TEMPLATE) -->
-    <style>
-        /* --- Layout --- */
-        .room-detail-layout {
-            display: grid;
-            grid-template-columns: 2fr 1.25fr;
-            gap: 3rem;
-            align-items: flex-start;
-        }
-
-        /* --- Gallery --- */
-        .gallery-main-image img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-            border-radius: var(--border-radius);
-            margin-bottom: 1rem;
-        }
-        .gallery-thumbnails {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 1rem;
-        }
-        .gallery-thumbnails img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-            border-radius: 8px;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: border-color var(--transition-speed) ease, transform var(--transition-speed) ease;
-        }
-        .gallery-thumbnails img:hover {
-            transform: scale(1.05);
-            border-color: var(--primary-color);
-        }
-
-        /* --- Room Info & Booking Widget --- */
-        .room-info h2 { font-size: 2rem; margin-bottom: 1rem; }
-        .booking-widget {
-            position: sticky;
-            top: 120px; /* Header height + spacing */
-            background-color: var(--background-surface);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid var(--border-color);
-            margin-top: 2rem;
-        }
-        .booking-widget .price { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 0.5rem; }
-        .booking-widget .price span { font-size: 2.25rem; font-weight: 700; color: var(--primary-color); display: block; }
-        .booking-widget .button-primary { width: 100%; margin-top: 1.5rem; }
-
-        /* --- Key Facts --- */
-        .room-key-facts { display: flex; gap: 2rem; justify-content: space-around; margin: 2rem 0; padding: 1.5rem 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); flex-wrap: wrap; text-align: center; }
-        .key-fact-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-        .key-fact-item .material-icons-outlined { color: var(--primary-color); font-size: 2rem; }
-        .key-fact-item span:last-child { font-weight: 600; font-family: var(--font-heading); }
-
-        /* --- Other Sections --- */
-        .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; list-style: none; padding: 0; }
-        .amenities-grid li { display: flex; align-items: center; gap: 0.75rem; }
-        .amenities-grid .material-icons-outlined { color: var(--primary-color); }
-        .other-rooms-section { background-color: var(--background-surface); }
-
-        /* --- Responsive Adjustments --- */
-        @media (max-width: 992px) {
-            .room-detail-layout { grid-template-columns: 1fr; }
-            .booking-widget { position: static; /* Unstick the widget on mobile */ }
-        }
-    </style>
+    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
-    <!-- START: Consistent Header (Paths Updated) -->
+    <!-- START: Consistent Header (REVISED with clean, absolute links) -->
     <header class="main-header">
         <div class="container">
             <nav class="main-nav">
-                <a href="../index.html" class="logo" aria-label="Surya Plaza Hotel Homepage">
-                    <img src="../assets/images/logo-dark.svg" alt="Surya Plaza Hotel Logo" width="180" height="50" id="main-logo">
+                <a href="/" class="logo" aria-label="Surya Plaza Hotel Homepage">
+                    <img src="/assets/images/logo-dark.svg" alt="Surya Plaza Hotel Logo" width="180" height="50" id="main-logo">
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="../index.html" id="first-menu-link">Home</a></li>
-                        <li><a href="../rooms.html" class="active">Rooms</a></li>
-                        <li><a href="../dining.html">Dining</a></li>
-                        <li><a href="../events.html">Events</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/rooms" class="active">Rooms</a></li>
+                        <li><a href="/dining">Dining</a></li>
+                        <li><a href="/events">Events</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                     <div class="nav-menu-book-btn-wrapper">
                         <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary nav-menu-book-btn">Book Now</a>
@@ -146,7 +81,7 @@
 
     <main id="main-content">
 
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/images/rooms/room-executive-balcony-bed-main.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/images/rooms/room-executive-balcony-bed-main.webp');">
             <div class="container" data-animate>
                 <h1 class="hero-title">Executive Balcony Room</h1>
                 <p class="hero-subtitle">Spacious, stylish, and superior comfort for the discerning traveler.</p>
@@ -160,12 +95,12 @@
                     <div class="room-gallery-description" data-animate>
                         <div class="room-gallery">
                             <div class="gallery-main-image">
-                                <img id="main-gallery-image" src="../assets/images/rooms/room-executive-balcony-bed-main-900w.webp" alt="Main view of the Executive Balcony Room showing the king-size bed and decor." loading="eager">
+                                <img id="main-gallery-image" src="/assets/images/rooms/room-executive-balcony-bed-main-900w.webp" alt="Main view of the Executive Balcony Room showing the king-size bed and decor." loading="eager">
                             </div>
                             <div class="gallery-thumbnails">
-                                <img src="../assets/images/rooms/room-executive-balcony-bed-main-600w.webp" alt="View of the king-size bed and decor in the Executive room." loading="lazy">
-                                <img src="../assets/images/rooms/room-executive-balcony-sofa-600w.webp" alt="Sofa seating area with a view from the balcony." loading="lazy">
-                                <img src="../assets/images/rooms/room-executive-balcony-space-600w.webp" alt="View showing the spacious layout of the Executive Room." loading="lazy">
+                                <img src="/assets/images/rooms/room-executive-balcony-bed-main-600w.webp" alt="View of the king-size bed and decor in the Executive room." loading="lazy">
+                                <img src="/assets/images/rooms/room-executive-balcony-sofa-600w.webp" alt="Sofa seating area with a view from the balcony." loading="lazy">
+                                <img src="/assets/images/rooms/room-executive-balcony-space-600w.webp" alt="View showing the spacious layout of the Executive Room." loading="lazy">
                             </div>
                         </div>
 
@@ -192,7 +127,7 @@
             </div>
         </section>
 
-        <section id="room-amenities" class="other-rooms-section">
+        <section id="room-amenities" class="about-section">
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Room Amenities</h2>
                 <ul class="amenities-grid">
@@ -216,17 +151,18 @@
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Explore Other Accommodations</h2>
                 <div class="grid-3-col">
+                    <!-- REVISED: Links are now clean and absolute -->
                     <article class="room-card">
-                         <a href="club-comfort-room.html"><img src="../assets/images/rooms/room-club-comfort-bed.webp" alt="Club Comfort Room" loading="lazy"></a>
-                        <div class="room-card-content"><a href="club-comfort-room.html"><h3>Club Comfort Room</h3></a><p>Our cozy and efficient room, perfect for solo travelers.</p></div>
+                         <a href="/rooms/club-comfort-room"><img src="/assets/images/rooms/room-club-comfort-bed.webp" alt="Club Comfort Room" loading="lazy"></a>
+                        <div class="room-card-content"><a href="/rooms/club-comfort-room"><h3>Club Comfort Room</h3></a><p>Our cozy and efficient room, perfect for solo travelers.</p></div>
                     </article>
                     <article class="room-card">
-                        <a href="deluxe-balcony-room.html"><img src="../assets/images/rooms/room-deluxe-balcony-bed-main.webp" alt="Deluxe Balcony Room" loading="lazy"></a>
-                        <div class="room-card-content"><a href="deluxe-balcony-room.html"><h3>Deluxe Balcony Room</h3></a><p>Features a private balcony, offering a perfect spot to unwind.</p></div>
+                        <a href="/rooms/deluxe-balcony-room"><img src="/assets/images/rooms/room-deluxe-balcony-bed-main.webp" alt="Deluxe Balcony Room" loading="lazy"></a>
+                        <div class="room-card-content"><a href="/rooms/deluxe-balcony-room"><h3>Deluxe Balcony Room</h3></a><p>Features a private balcony, offering a perfect spot to unwind.</p></div>
                     </article>
                     <article class="room-card">
-                        <a href="junior-balcony-suite.html"><img src="../assets/images/rooms/room-junior-suite-seating.webp" alt="Junior Balcony Suite" loading="lazy"></a>
-                        <div class="room-card-content"><a href="junior-balcony-suite.html"><h3>Junior Balcony Suite</h3></a><p>Offers an extra living area for a blend of luxury and space.</p></div>
+                        <a href="/rooms/junior-balcony-suite"><img src="/assets/images/rooms/room-junior-suite-seating.webp" alt="Junior Balcony Suite" loading="lazy"></a>
+                        <div class="room-card-content"><a href="/rooms/junior-balcony-suite"><h3>Junior Balcony Suite</h3></a><p>Offers an extra living area for a blend of luxury and space.</p></div>
                     </article>
                 </div>
             </div>
@@ -234,44 +170,62 @@
 
     </main>
 
-    <!-- START: Consistent Footer (Paths Updated) -->
+    <!-- START: REVISED AND CONSISTENT FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main"><img src="../assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"><p>Experience the perfect blend of comfort, care, and hospitality. Your ideal choice for business and leisure in Sahibganj.</p></div>
-                <div class="footer-col-links"><h3>Quick Links</h3><ul class="footer-links"><li><a href="../about.html">About Us</a></li><li><a href="../rooms.html">Rooms & Suites</a></li><li><a href="../dining.html">Dining</a></li><li><a href="../events.html">Events</a></li><li><a href="../blog.html">Blog</a></li></ul></div>
-                <div class="footer-col-contact"><h3>Contact Us</h3><address class="footer-contact-info"><p><span class="material-icons-outlined">location_on</span> <span>Opp Ray Bahadur Building, J.N Roy Road, Sahibganj, Jharkhand 816109</span></p><p><span class="material-icons-outlined">call</span><a href="tel:+919264197986">+91 9264197986</a></p><p><span class="material-icons-outlined">directions</span><a href="https://maps.app.goo.gl/QJFVN7XUenr81ci86" target="_blank" rel="noopener">Get Directions</a></p></address></div>
+                <div class="footer-col-main">
+                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
+                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
+                    </a>
+                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
+                </div>
+                <div class="footer-col-links">
+                    <h4>Our Hotel</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">Our Story</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/events">Events & Banquets</a></li>
+                        <li><a href="/attractions">Local Attractions</a></li>
+                        <li><a href="/blog">Our Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-links">
+                    <h4>Accommodations</h4>
+                    <ul class="footer-links">
+                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
+                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
+                        <li><a href="/rooms/executive-balcony-room" class="active">Executive Balcony Room</a></li>
+                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
+                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
+                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-links">
+                    <h4>Our Restaurants</h4>
+                    <ul class="footer-links">
+                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
+                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
+                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
+                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms & Conditions</a></nav></div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
+                <nav class="footer-legal-links">
+                    <a href="/terms">Terms</a>
+                    <a href="/privacy-policy">Privacy</a>
+                    <a href="/cancellation-policy">Cancellation</a>
+                    <a href="/shipping-policy">Shipping</a>
+                </nav>
+            </div>
         </div>
     </footer>
-    <!-- END: Consistent Footer -->
+    <!-- END: REVISED AND CONSISTENT FOOTER -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
-    <!-- Main external script for global functionality -->
-    <script src="../script.js" defer></script>
-
-    <!-- INTERNAL JAVASCRIPT FOR ROOM GALLERY -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const roomGalleryHandler = () => {
-                const mainImage = document.getElementById('main-gallery-image');
-                const thumbnails = document.querySelectorAll('.gallery-thumbnails img');
-                if (!mainImage || thumbnails.length === 0) return;
-                thumbnails.forEach(thumb => {
-                    new Image().src = thumb.src; // Preload images
-                    thumb.addEventListener('click', (e) => {
-                        const clickedThumbSrc = e.target.src;
-                        if (mainImage.src !== clickedThumbSrc) {
-                            mainImage.src = clickedThumbSrc;
-                            mainImage.alt = e.target.alt;
-                        }
-                    });
-                });
-            };
-            roomGalleryHandler();
-        });
-    </script>
+    <script src="/script.js" defer></script>
 </body>
 </html>
