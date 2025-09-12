@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials -->
+    <!-- SEO Essentials (REVISED for consistency) -->
     <title>Dining Options | Surya Plaza Hotel | Moti Mahal & Jackson Diner</title>
     <meta name="description" content="Explore exceptional dining at Surya Plaza Hotel. From the legendary Indian cuisine of Moti Mahal Tandoori Trail to the casual rooftop Jackson Diner and convenient in-room dining.">
     <link rel="canonical" href="https://suryaplazahotels.com/dining">
 
-    <!-- Social Media Meta Tags -->
+    <!-- Social Media Meta Tags (Added for consistency) -->
     <meta property="og:title" content="Dining Options | Surya Plaza Hotel | Moti Mahal & Jackson Diner">
     <meta property="og:description" content="Explore exceptional dining at Surya Plaza Hotel, from fine dining to casual rooftop views.">
-    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image-dining.jpg">
+    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image-dining.jpg"> <!-- Assumes a specific OG image exists -->
     <meta property="og:url" content="https://suryaplazahotels.com/dining">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -29,7 +29,7 @@
       })();
     </script>
 
-    <!-- Favicon -->
+    <!-- Favicon (REVISED to use absolute paths) -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
@@ -41,57 +41,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main & FAQ Stylesheets -->
+    <!-- Main Stylesheet (REVISED to use absolute path) -->
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/faq.css">
 
-    <!-- Page-Specific Internal Styles (Hero Text) -->
+    <!-- =============================================================== -->
+    <!-- START: Page-Specific Internal Style Overrides                   -->
+    <!-- Contains fixes for card button margin and hero text contrast.   -->
+    <!-- =============================================================== -->
     <style>
+        /* 1. Adds top margin to the card buttons to prevent them from touching the text. */
+        .info-card-actions {
+            margin-top: 1.5rem;
+        }
+
+        /* 2. Forces the header text to be light and adds a shadow for readability. */
         .page-header .hero-title,
         .page-header .hero-subtitle {
             color: var(--text-light);
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
     </style>
+    <!-- =============================================================== -->
+    <!-- END: Page-Specific Internal Style Overrides                     -->
+    <!-- =============================================================== -->
 
-    <!-- REVISION: Added comprehensive JSON-LD Schema for the ItemList and FAQs -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "ItemList",
-          "name": "Dining Options at Surya Plaza Hotel",
-          "description": "An overview of the dining experiences available at our hotel.",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "item": { "@type": "Restaurant", "name": "Moti Mahal Tandoori Trail", "url": "https://suryaplazahotels.com/dining/moti-mahal", "image": "https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-seating-900w.webp", "description": "Our fine dining restaurant serves legendary Indian, Tandoori & Chinese cuisine in an elegant atmosphere." } },
-            { "@type": "ListItem", "position": 2, "item": { "@type": "Restaurant", "name": "Jackson Diner by Moti Mahal", "url": "https://suryaplazahotels.com/dining/jackson-diner", "image": "https://suryaplazahotels.com/assets/images/dining/dining-jackson-diner-bar-900w.webp", "description": "A casual rooftop restaurant offering gourmet mocktails, shakes, pizzas, and pastas with great views." } },
-            { "@type": "ListItem", "position": 3, "item": { "@type": "FoodService", "name": "In-Room Dining", "url": "https://suryaplazahotels.com/dining/in-room-dining", "image": "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-living-area-900w.webp", "description": "Enjoy delectable choices from our restaurant menus, delivered directly to your room, 24/7." } }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What are the timings for your restaurants?",
-              "acceptedAnswer": { "text": "Our fine-dining restaurant, Moti Mahal, and our rooftop restaurant, Jackson Diner, are both open for lunch and dinner. We also offer 24/7 in-room dining service for our resident guests." }
-            },
-            {
-              "@type": "Question",
-              "name": "Can non-resident guests dine at your restaurants?",
-              "acceptedAnswer": { "text": "Absolutely. We welcome both hotel guests and non-resident visitors to experience the culinary delights at Moti Mahal and Jackson Diner. We recommend making a reservation, especially on weekends." }
-            },
-            {
-              "@type": "Question",
-              "name": "What types of cuisine do you offer?",
-              "acceptedAnswer": { "text": "We offer a diverse range of culinary experiences. Moti Mahal is renowned for its authentic North Indian, Mughlai, and Tandoori cuisine. Jackson Diner offers a more casual menu featuring gourmet pizzas, pastas, burgers, and shakes." }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
 </head>
 <body>
 
@@ -142,40 +115,54 @@
                 <div class="grid-3-col">
                     
                     <article class="info-card" data-animate>
-                        <a href="/dining/moti-mahal" aria-label="Learn more about Moti Mahal"><img src="/assets/images/dining/dining-moti-mahal-seating-900w.webp" srcset="/assets/images/dining/dining-moti-mahal-seating-600w.webp 600w, /assets/images/dining/dining-moti-mahal-seating-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Elegant dining area of Moti Mahal Tandoori Trail." loading="lazy" decoding="async"></a>
-                        <div class="info-card-content"><h3>Moti Mahal Tandoori Trail</h3><p>Our fine dining restaurant serves legendary Indian, Tandoori & Chinese cuisine. Discover award-winning recipes and timeless flavors in an elegant atmosphere.</p><div class="info-card-actions"><a href="/dining/moti-mahal" class="button-secondary">Learn More</a><a href="/dining/moti-mahal-menu" class="button-primary">View Menu</a></div></div>
+                        <a href="/dining/moti-mahal" aria-label="Learn more about Moti Mahal">
+                             <img src="/assets/images/dining/dining-moti-mahal-seating-900w.webp" 
+                                 srcset="/assets/images/dining/dining-moti-mahal-seating-600w.webp 600w, /assets/images/dining/dining-moti-mahal-seating-900w.webp 900w"
+                                 sizes="(max-width: 992px) 50vw, 33vw"
+                                 alt="Elegant dining area of Moti Mahal Tandoori Trail." loading="lazy" decoding="async">
+                        </a>
+                        <div class="info-card-content">
+                            <h3>Moti Mahal Tandoori Trail</h3>
+                            <p>Our fine dining restaurant serves legendary Indian, Tandoori & Chinese cuisine. Discover award-winning recipes and timeless flavors in an elegant atmosphere.</p>
+                            <div class="info-card-actions">
+                                <a href="/dining/moti-mahal" class="button-secondary">Learn More</a>
+                                <a href="/dining/moti-mahal-menu" class="button-primary">View Menu</a>
+                            </div>
+                        </div>
                     </article>
 
                     <article class="info-card" data-animate style="--animation-delay: 0.1s;">
-                         <a href="/dining/jackson-diner" aria-label="Learn more about Jackson Diner"><img src="/assets/images/dining/dining-jackson-diner-bar-900w.webp" srcset="/assets/images/dining/dining-jackson-diner-bar-600w.webp 600w, /assets/images/dining/dining-jackson-diner-bar-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Vibrant and modern atmosphere at Jackson Diner's bar." loading="lazy" decoding="async"></a>
-                        <div class="info-card-content"><h3>Jackson Diner by Moti Mahal</h3><p>A casual rooftop restaurant offering gourmet mocktails, shakes, pizzas, and pastas in a warm and comfortable ambience with great views.</p><div class="info-card-actions"><a href="/dining/jackson-diner" class="button-secondary">Learn More</a><a href="/dining/jackson-diner-menu" class="button-primary">View Menu</a></div></div>
+                         <a href="/dining/jackson-diner" aria-label="Learn more about Jackson Diner">
+                            <img src="/assets/images/dining/dining-jackson-diner-bar-900w.webp"
+                                 srcset="/assets/images/dining/dining-jackson-diner-bar-600w.webp 600w, /assets/images/dining/dining-jackson-diner-bar-900w.webp 900w"
+                                 sizes="(max-width: 992px) 50vw, 33vw"
+                                 alt="Vibrant and modern atmosphere at Jackson Diner's bar." loading="lazy" decoding="async">
+                        </a>
+                        <div class="info-card-content">
+                            <h3>Jackson Diner by Moti Mahal</h3>
+                            <p>A casual rooftop restaurant offering gourmet mocktails, shakes, pizzas, and pastas in a warm and comfortable ambience with great views.</p>
+                            <div class="info-card-actions">
+                                <a href="/dining/jackson-diner" class="button-secondary">Learn More</a>
+                                <a href="/dining/jackson-diner-menu" class="button-primary">View Menu</a>
+                            </div>
+                        </div>
                     </article>
 
                     <article class="info-card" data-animate style="--animation-delay: 0.2s;">
-                        <a href="/dining/in-room-dining" aria-label="Explore In-Room Dining options"><img src="/assets/images/rooms/room-family-apartment-living-area-900w.webp" srcset="/assets/images/rooms/room-family-apartment-living-area-600w.webp 600w, /assets/images/rooms/room-family-apartment-living-area-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="A comfortable suite seating area, perfect for in-room dining." loading="lazy" decoding="async"></a>
-                        <div class="info-card-content"><h3>In-Room Dining</h3><p>Enjoy a wide range of delectable choices from our restaurant menus, delivered directly to the comfort and privacy of your room, 24/7.</p><div class="info-card-actions"><a href="/dining/in-room-dining" class="button-primary">Explore Options</a></div></div>
+                        <a href="/dining/in-room-dining" aria-label="Explore In-Room Dining options">
+                            <img src="/assets/images/rooms/room-family-apartment-living-area-900w.webp" 
+                                 srcset="/assets/images/rooms/room-family-apartment-living-area-600w.webp 600w, /assets/images/rooms/room-family-apartment-living-area-900w.webp 900w"
+                                 sizes="(max-width: 992px) 50vw, 33vw"
+                                 alt="A comfortable suite seating area, perfect for in-room dining." loading="lazy" decoding="async">
+                        </a>
+                        <div class="info-card-content">
+                            <h3>In-Room Dining</h3>
+                            <p>Enjoy a wide range of delectable choices from our restaurant menus, delivered directly to the comfort and privacy of your room, 24/7.</p>
+                            <div class="info-card-actions">
+                                <a href="/dining/in-room-dining" class="button-primary">Explore Options</a>
+                            </div>
+                        </div>
                     </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- REVISION: Added new reusable FAQ Section -->
-        <section class="faq-section commitment-section">
-            <div class="container" data-animate>
-                <h2 class="section-title text-center">Your Questions, Answered</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1"><span>What are the timings for your restaurants?</span><span class="faq-icon" aria-hidden="true"></span></button>
-                        <div class="faq-answer" id="faq-answer-1"><p>Our fine-dining restaurant, Moti Mahal, and our rooftop restaurant, Jackson Diner, are both open for lunch and dinner. We also offer 24/7 in-room dining service for our resident guests.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2"><span>Can non-resident guests dine at your restaurants?</span><span class="faq-icon" aria-hidden="true"></span></button>
-                        <div class="faq-answer" id="faq-answer-2"><p>Absolutely. We welcome both hotel guests and non-resident visitors to experience the culinary delights at Moti Mahal and Jackson Diner. We recommend making a reservation, especially on weekends.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3"><span>What types of cuisine do you offer?</span><span class="faq-icon" aria-hidden="true"></span></button>
-                        <div class="faq-answer" id="faq-answer-3"><p>We offer a diverse range of culinary experiences. Moti Mahal is renowned for its authentic North Indian, Mughlai, and Tandoori cuisine. Jackson Diner offers a more casual menu featuring gourmet pizzas, pastas, burgers, and shakes.</p></div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -198,12 +185,52 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
-                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
-                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
-                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
+                <div class="footer-col-main">
+                    <a href="/" aria-label="Surya Plaza Hotel Homepage">
+                        <img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50">
+                    </a>
+                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p>
+                </div>
+                <div class="footer-col-links">
+                    <h4>Our Hotel</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">Our Story</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/events">Events & Banquets</a></li>
+                        <li><a href="/attractions">Local Attractions</a></li>
+                        <li><a href="/blog">Our Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-links">
+                    <h4>Accommodations</h4>
+                    <ul class="footer-links">
+                        <li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li>
+                        <li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li>
+                        <li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li>
+                        <li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li>
+                        <li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li>
+                        <li><a href="/rooms/family-apartment">Family Apartment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-links">
+                    <h4>Our Restaurants</h4>
+                    <ul class="footer-links">
+                        <li><a href="/dining/moti-mahal">Moti Mahal</a></li>
+                        <li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li>
+                        <li><a href="/dining/jackson-diner">Jackson Diner</a></li>
+                        <li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
+                <nav class="footer-legal-links">
+                    <a href="/terms">Terms</a>
+                    <a href="/privacy-policy">Privacy</a>
+                    <a href="/cancellation-policy">Cancellation</a>
+                    <a href="/shipping-policy">Shipping</a>
+                </nav>
+            </div>
         </div>
     </footer>
     <!-- END: Consistent FOOTER -->
@@ -211,6 +238,5 @@
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
     <script src="/script.js" defer></script>
-    <script src="/faq.js" defer></script>
 </body>
 </html>
