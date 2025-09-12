@@ -17,7 +17,7 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- SCRIPT TO PREVENT THEME FLASH -->
+    <!-- SCRIPT TO PREVENT THEME FLASH (This should stay at the top) -->
     <script>
       (function() {
         try {
@@ -40,13 +40,14 @@
     
     <!-- Google Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap"></noscript>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Main & FAQ Stylesheets -->
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/faq.css">
+    <!-- FIX: Defer loading of main stylesheet to prevent render-blocking -->
+    <link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/style.css"></noscript>
 
     <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -173,12 +174,12 @@
             </div>
         </section>
         
-        <section id="about" class="about-section">
+        <section id="about" class="about-section" aria-labelledby="about-heading">
             <div class="container">
                 <div class="grid-2-col">
                     <div class="about-content" data-animate>
                         <p class="section-subtitle">A Legacy of Care & Excellence</p>
-                        <h2 class="section-title">Welcome to Surya Plaza Hotel</h2>
+                        <h2 class="section-title" id="about-heading">Welcome to Surya Plaza Hotel</h2>
                         <p>Situated in a central location, Surya Plaza Hotel combines sophisticated comfort with vibrant local culture. Run by a family of doctors, our background in healthcare inspires a unique commitment to precision, cleanliness, and genuine care for our guests.</p>
                         <p>We provide a memorable experience for travellers seeking the comforts of home with contemporary hospitality. Our professional team is dedicated to making your stay truly restorative through a warm ambiance and an array of thoughtful touches.</p>
                         <div class="section-cta-left">
@@ -194,8 +195,11 @@
                 </div>
             </div>
         </section>
-        <section id="amenities" class="amenities-section">
+
+        <section id="amenities" class="amenities-section" aria-labelledby="amenities-heading">
             <div class="container">
+                <!-- FIX: Added a visually hidden H2 for accessibility and proper heading hierarchy -->
+                <h2 id="amenities-heading" class="visually-hidden">Our Hotel Amenities</h2>
                 <div class="grid-4-col">
                     <div class="amenity-item" data-animate><span class="material-icons-outlined" aria-hidden="true">balcony</span><h3>Spacious Rooms & Suites</h3><p>Indulge in rooms with private balconies, river views, and multi-bedroom suites.</p></div>
                     <div class="amenity-item" data-animate style="--animation-delay: 0.15s;"><span class="material-icons-outlined" aria-hidden="true">restaurant</span><h3>Fine Dining</h3><p>Savor authentic Indian cuisine at our renowned on-site Moti Mahal restaurant.</p></div>
@@ -205,18 +209,16 @@
             </div>
         </section>
         
-        <section id="rooms" class="rooms-section">
+        <section id="rooms" class="rooms-section" aria-labelledby="rooms-heading">
             <div class="container">
                 <div data-animate>
                     <p class="section-subtitle text-center">Your Private Sanctuary</p>
-                    <h2 class="section-title text-center">Accommodations for Every Traveler</h2>
+                    <h2 class="section-title text-center" id="rooms-heading">Accommodations for Every Traveler</h2>
                 </div>
                 <div class="grid-3-col">
                     <article class="room-card" data-animate style="--animation-delay: 0.1s;"><a href="/rooms/club-comfort-room" aria-label="View details for the Club Comfort Room"><img src="/assets/images/rooms/room-club-comfort-bed-900w.webp" srcset="/assets/images/rooms/room-club-comfort-bed-600w.webp 600w, /assets/images/rooms/room-club-comfort-bed-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="A cozy and comfortable Club Comfort Room." width="400" height="300" loading="lazy" decoding="async"></a><div class="room-card-content"><h3>Club Comfort Room</h3><p>Our cozy and efficient room, perfect for solo travelers or couples.</p><div class="room-card-price"><span>₹2099</span> / night</div><div class="room-card-actions"><a href="/rooms/club-comfort-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary">Book Now</a></div></div></article>
                     <article class="room-card" data-animate style="--animation-delay: 0.2s;"><a href="/rooms/deluxe-balcony-room" aria-label="View details for the Deluxe Balcony Room"><img src="/assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp" srcset="/assets/images/rooms/room-deluxe-balcony-bed-main-600w.webp 600w, /assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="The Deluxe Balcony Room showing a comfortable bed and private balcony access." width="400" height="300" loading="lazy" decoding="async"></a><div class="room-card-content"><h3>Deluxe Balcony Room</h3><p>Features a private balcony, offering a perfect spot to unwind.</p><div class="room-card-price"><span>₹2399</span> / night</div><div class="room-card-actions"><a href="/rooms/deluxe-balcony-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary">Book Now</a></div></div></article>
                     <article class="room-card" data-animate style="--animation-delay: 0.3s;"><a href="/rooms/executive-balcony-room" aria-label="View details for the Executive Balcony Room"><img src="/assets/images/rooms/room-executive-balcony-bed-main-900w.webp" srcset="/assets/images/rooms/room-executive-balcony-bed-main-600w.webp 600w, /assets/images/rooms/room-executive-balcony-bed-main-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="A spacious Executive Balcony Room with a plush bed and elegant decor." width="400" height="300" loading="lazy" decoding="async"></a><div class="room-card-content"><h3>Executive Balcony Room</h3><p>A larger space complete with a comfortable sofa area for extra relaxation.</p><div class="room-card-price"><span>₹2699</span> / night</div><div class="room-card-actions"><a href="/rooms/executive-balcony-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary">Book Now</a></div></div></article>
-                    
-                    <!-- REVISION: Restored the missing room cards -->
                     <article class="room-card" data-animate style="--animation-delay: 0.4s;">
                         <a href="/rooms/junior-balcony-suite" aria-label="View details for the Junior Balcony Suite">
                             <img src="/assets/images/rooms/room-junior-suite-seating-900w.webp" srcset="/assets/images/rooms/room-junior-suite-seating-600w.webp 600w, /assets/images/rooms/room-junior-suite-seating-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="A Junior Balcony Suite with an extra living area." width="400" height="300" loading="lazy" decoding="async">
@@ -240,28 +242,36 @@
             </div>
         </section>
         
-        <section id="dining" class="other-rooms-section">
+        <section id="dining" class="other-rooms-section" aria-labelledby="dining-heading">
             <div class="container">
-                <div data-animate><p class="section-subtitle text-center">A Culinary Journey</p><h2 class="section-title text-center">Exceptional Dining Experiences</h2></div>
+                <div data-animate><p class="section-subtitle text-center">A Culinary Journey</p><h2 class="section-title text-center" id="dining-heading">Exceptional Dining Experiences</h2></div>
                 <div class="grid-2-col">
-                    <article class="info-card" data-animate style="--animation-delay: 0.1s;"><a href="/dining/moti-mahal" aria-label="Learn more about Moti Mahal"><img src="/assets/images/dining/dining-moti-mahal-tables-900w.webp" srcset="/assets/images/dining/dining-moti-mahal-tables-600w.webp 600w, /assets/images/dining/dining-moti-mahal-tables-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="Elegant dining area of Moti Mahal Tandoori Trail restaurant." width="600" height="400" loading="lazy" decoding="async"></a><div class="info-card-content"><h3>Moti Mahal Tandoori Trail</h3><p>Discover legendary Indian and Tandoori cuisine in a fine dining atmosphere.</p><div class="info-card-actions"><a href="/dining/moti-mahal" class="button-secondary">Learn More</a><a href="/dining/moti-mahal-menu" class="button-primary">View Menu</a></div></div></article>
-                    <article class="info-card" data-animate style="--animation-delay: 0.2s;"><a href="/dining/jackson-diner" aria-label="Learn more about Jackson Diner"><img src="/assets/images/dining/dining-jackson-diner-bar-900w.webp" srcset="/assets/images/dining/dining-jackson-diner-bar-600w.webp 600w, /assets/images/dining/dining-jackson-diner-bar-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="A vibrant and modern rooftop diner atmosphere at Jackson Diner." width="600" height="400" loading="lazy" decoding="async"></a><div class="info-card-content"><h3>Jackson Diner by Moti Mahal</h3><p>A casual rooftop restaurant offering gourmet mocktails, shakes, pizzas, and pastas.</p><div class="info-card-actions"><a href="/dining/jackson-diner" class="button-secondary">Learn More</a><a href="/dining/jackson-diner-menu" class="button-primary">View Menu</a></div></div></article>
+                    <article class="info-card" data-animate style="--animation-delay: 0.1s;"><a href="/dining/moti-mahal" aria-label="Learn more about Moti Mahal"><img src="/assets/images/dining/dining-moti-mahal-tables-900w.webp" srcset="/assets/images/dining/dining-moti-mahal-tables-600w.webp 600w, /assets/images/dining/dining-moti-mahal-tables-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="Elegant dining area of Moti Mahal Tandoori Trail restaurant." width="600" height="400" loading="lazy" decoding="async"></a><div class="info-card-content"><h3>Moti Mahal Tandoori Trail</h3><p>Discover legendary Indian and Tandoori cuisine in a fine dining atmosphere.</p><div class="info-card-actions">
+                        <!-- FIX: Changed generic "Learn More" to descriptive text for SEO -->
+                        <a href="/dining/moti-mahal" class="button-secondary">Explore Moti Mahal</a>
+                        <a href="/dining/moti-mahal-menu" class="button-primary">View Menu</a>
+                    </div></div></article>
+                    <article class="info-card" data-animate style="--animation-delay: 0.2s;"><a href="/dining/jackson-diner" aria-label="Learn more about Jackson Diner"><img src="/assets/images/dining/dining-jackson-diner-bar-900w.webp" srcset="/assets/images/dining/dining-jackson-diner-bar-600w.webp 600w, /assets/images/dining/dining-jackson-diner-bar-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="A vibrant and modern rooftop diner atmosphere at Jackson Diner." width="600" height="400" loading="lazy" decoding="async"></a><div class="info-card-content"><h3>Jackson Diner by Moti Mahal</h3><p>A casual rooftop restaurant offering gourmet mocktails, shakes, pizzas, and pastas.</p><div class="info-card-actions">
+                        <!-- FIX: Changed generic "Learn More" to descriptive text for SEO -->
+                        <a href="/dining/jackson-diner" class="button-secondary">Visit Jackson Diner</a>
+                        <a href="/dining/jackson-diner-menu" class="button-primary">View Menu</a>
+                    </div></div></article>
                 </div>
             </div>
         </section>
         
-        <section id="events" class="about-section">
+        <section id="events" class="about-section" aria-labelledby="events-heading">
             <div class="container">
                 <div class="grid-2-col">
                     <div class="events-image" data-animate><img src="/assets/images/events/events-pearl-banquet-cluster-900w.webp" srcset="/assets/images/events/events-pearl-banquet-cluster-600w.webp 600w, /assets/images/events/events-pearl-banquet-cluster-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="The Pearl Banquet hall at Surya Plaza Hotel set up for a corporate event." width="600" height="450" loading="lazy" decoding="async" class="rounded-image-shadow"></div>
-                    <div class="events-content" data-animate style="--animation-delay: 0.2s;"><p class="section-subtitle">Celebrate in Style</p><h2 class="section-title">The Pearl Banquet Hall</h2><p>Our versatile 1500 sq. ft. venue is ideal for weddings, conferences, and parties for up to 150 guests, offering a stylish setting with modern amenities.</p><div class="section-cta-left"><a href="/events" class="button-secondary">Plan Your Event</a></div></div>
+                    <div class="events-content" data-animate style="--animation-delay: 0.2s;"><p class="section-subtitle">Celebrate in Style</p><h2 class="section-title" id="events-heading">The Pearl Banquet Hall</h2><p>Our versatile 1500 sq. ft. venue is ideal for weddings, conferences, and parties for up to 150 guests, offering a stylish setting with modern amenities.</p><div class="section-cta-left"><a href="/events" class="button-secondary">Plan Your Event</a></div></div>
                 </div>
             </div>
         </section>
         
-        <section class="faq-section commitment-section">
+        <section class="faq-section commitment-section" aria-labelledby="faq-heading">
             <div class="container" data-animate>
-                <h2 class="section-title text-center">Your Questions, Answered</h2>
+                <h2 class="section-title text-center" id="faq-heading">Your Questions, Answered</h2>
                 <div class="faq-container">
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1"><span>How far is your hotel from the Sahibganj railway station?</span><span class="faq-icon" aria-hidden="true"></span></button>
@@ -279,9 +289,9 @@
             </div>
         </section>
 
-        <section id="final-cta" class="final-cta-section">
+        <section id="final-cta" class="final-cta-section" aria-labelledby="cta-heading">
             <div class="container text-center" data-animate>
-                <h2 class="section-title">Your Stay in Sahibganj, Elevated</h2>
+                <h2 class="section-title" id="cta-heading">Your Stay in Sahibganj, Elevated</h2>
                 <p>We invite you to experience the perfect blend of comfort, care, and heartfelt hospitality.</p>
                 <div class="cta-actions">
                     <a href="/contact" class="button-secondary large button-outline-light">Contact Us</a>
@@ -307,7 +317,7 @@
         <span class="material-icons-outlined">arrow_upward</span>
     </a>
     
+    <!-- REMOVED: The script tag for the non-existent faq.js -->
     <script src="/script.js" defer></script>
-    <script src="/faq.js" defer></script>
 </body>
 </html>
