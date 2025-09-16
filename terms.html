@@ -8,7 +8,7 @@
     <title>Terms & Conditions | Surya Plaza Hotel, Sahibganj</title>
     <meta name="description" content="Read the official Terms and Conditions for booking and staying at Surya Plaza Hotel. Information on reservations, check-in, guest conduct, and liability.">
     <link rel="canonical" href="https://suryaplazahotels.com/terms">
-    <meta name="robots" content="noindex, follow"> <!-- Good practice for legal pages -->
+    <meta name="robots" content="noindex, follow">
 
     <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Terms & Conditions | Surya Plaza Hotel">
@@ -34,16 +34,47 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- REVISED: Optimized Google Fonts Loading -->
     <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- REVISION: Added comprehensive JSON-LD Schema for the Terms Page -->
+    <!-- Page-Specific Internal Styles for Legal Pages -->
+    <style>
+        .legal-page-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .legal-page-content h2 {
+            font-size: 1.75rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .legal-page-content p, 
+        .legal-page-content ul {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        .legal-page-content ul {
+            list-style: disc;
+            padding-left: 25px;
+        }
+        .legal-page-content li {
+            margin-bottom: 0.75rem;
+        }
+        .legal-page-content a {
+            font-weight: 600;
+            text-decoration: underline;
+        }
+    </style>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -51,11 +82,7 @@
       "name": "Terms & Conditions",
       "url": "https://suryaplazahotels.com/terms",
       "description": "The official Terms and Conditions for booking and staying at Surya Plaza Hotel, covering reservations, payment, check-in/out, and guest conduct.",
-      "publisher": {
-        "@type": "Hotel",
-        "name": "Surya Plaza Hotel",
-        "url": "https://suryaplazahotels.com/"
-      },
+      "publisher": { "@type": "Hotel", "name": "Surya Plaza Hotel", "url": "https://suryaplazahotels.com/" },
       "mainContentOfPage": {
         "@type": "WebPageElement",
         "name": "Surya Plaza Hotel Terms & Conditions",
@@ -77,7 +104,7 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>

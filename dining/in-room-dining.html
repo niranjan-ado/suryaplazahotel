@@ -35,25 +35,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- REVISED: Optimized Google Fonts Loading -->
     <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- REVISION: Added internal style block for hero text contrast -->
-    <style>
-        .page-header .hero-title,
-        .page-header .section-subtitle {
-            color: var(--text-light);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-    </style>
-
-    <!-- REVISION: Added comprehensive JSON-LD Schema for the Service -->
+    <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -77,22 +69,13 @@
       "hoursAvailable": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
           "opens": "00:00",
           "closes": "23:59"
         }
       ]
     }
     </script>
-
 </head>
 <body>
 
@@ -107,7 +90,7 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining" class="active">Dining</a></li>
                         <li><a href="/events">Events</a></li>
@@ -146,7 +129,6 @@
                         <p>For your convenience and comfort, our In-Room Dining service offers a range of delectable choices. Enjoy the best of our hotel's culinary offerings without leaving the privacy of your room.</p>
                         <p>Whether you're looking for a hearty breakfast, a quiet dinner after a long day, or a late-night snack, our 24/7 service ensures your cravings are always satisfied with delicious, freshly prepared meals.</p>
                     </div>
-                    <!-- REVISION: Added srcset and sizes for image optimization -->
                     <div data-animate style="--animation-delay: 0.1s;">
                         <img src="/assets/images/dining/dining-in-room-service-900w.webp" 
                              srcset="/assets/images/dining/dining-in-room-service-600w.webp 600w, /assets/images/dining/dining-in-room-service-900w.webp 900w"
@@ -161,12 +143,11 @@
         <section id="features" class="about-section">
             <div class="container" data-animate>
                 <h2 class="section-title text-center">The Perks of Dining In</h2>
-                <!-- REVISION: Changed class to 'grid-4-col' for correct layout -->
                 <div class="grid-4-col">
-                    <div class="feature-item"><span class="material-icons-outlined">privacy_tip</span><div><h4>Privacy & Comfort</h4><p class="text-muted">Enjoy a delicious meal in the quiet and comfort of your own personal space.</p></div></div>
-                    <div class="feature-item"><span class="material-icons-outlined">menu_book</span><div><h4>Extensive Menu Selection</h4><p class="text-muted">Order from the full menus of both Moti Mahal and the casual Jackson Diner.</p></div></div>
-                    <div class="feature-item"><span class="material-icons-outlined">schedule</span><div><h4>24/7 Availability</h4><p class="text-muted">Our service is available around the clock to cater to your schedule.</p></div></div>
-                    <div class="feature-item"><span class="material-icons-outlined">restaurant_menu</span><div><h4>Gourmet Quality</h4><p class="text-muted">All dishes are prepared with the same care and quality as in our restaurants.</p></div></div>
+                    <div class="feature-item" data-animate><span class="material-icons-outlined">privacy_tip</span><div><h4>Privacy & Comfort</h4><p class="text-muted">Enjoy a delicious meal in the quiet and comfort of your own personal space.</p></div></div>
+                    <div class="feature-item" data-animate style="--animation-delay: 0.1s;"><span class="material-icons-outlined">menu_book</span><div><h4>Extensive Menu Selection</h4><p class="text-muted">Order from the full menus of both Moti Mahal and the casual Jackson Diner.</p></div></div>
+                    <div class="feature-item" data-animate style="--animation-delay: 0.2s;"><span class="material-icons-outlined">schedule</span><div><h4>24/7 Availability</h4><p class="text-muted">Our service is available around the clock to cater to your schedule.</p></div></div>
+                    <div class="feature-item" data-animate style="--animation-delay: 0.3s;"><span class="material-icons-outlined">restaurant_menu</span><div><h4>Gourmet Quality</h4><p class="text-muted">All dishes are prepared with the same care and quality as in our restaurants.</p></div></div>
                 </div>
             </div>
         </section>
@@ -178,10 +159,9 @@
                     <p class="text-center" style="max-width: 600px; margin: -2rem auto 3rem auto;">Browse the culinary creations from our two distinct restaurants. Find your perfect meal and simply call us from your room to place an order.</p>
                 </div>
                 <div class="grid-2-col">
-                    <!-- REVISION: Added srcset and sizes for image optimization -->
                     <a href="/dining/moti-mahal-menu" class="linked-card" data-animate>
-                        <img src="/assets/images/dining/dining-moti-mahal-experience-900w.webp" 
-                             srcset="/assets/images/dining/dining-moti-mahal-experience-600w.webp 600w, /assets/images/dining/dining-moti-mahal-experience-900w.webp 900w"
+                        <img src="/assets/images/dining/dining-moti-mahal-seating-900w.webp" 
+                             srcset="/assets/images/diningdining-moti-mahal-seating-600w.webp/ 600w, /assets/images/dining/dining-moti-mahal-seating-900w.webp 900w"
                              sizes="(max-width: 768px) 90vw, 580px"
                              alt="Elegant dining area of Moti Mahal Tandoori Trail." 
                              loading="lazy">

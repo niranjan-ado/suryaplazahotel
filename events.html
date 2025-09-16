@@ -54,29 +54,54 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- REVISED: Aligned font loading with other pages for performance -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
     
-    <!-- Main Stylesheet (RESTORED) -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
-        <style>
+
+    <!-- =============================================================== -->
+    <!-- START: Page-Specific Internal Styles                            -->
+    <!-- REVISED: Consolidated and added new styles for page elements.   -->
+    <!-- =============================================================== -->
+    <style>
+        /* --- 1. Page Header & Layout --- */
+        .page-header {
+            padding-top: calc(var(--header-height) + 4rem);
+            padding-bottom: 4rem;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
         .page-header .hero-title,
         .page-header .section-subtitle {
             color: var(--text-light);
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
-    </style>
+        #intro .grid-2-col {
+            align-items: center;
+        }
 
-    <!-- =============================================================== -->
-    <!-- START: Internal CSS for Gallery & Lightbox ONLY                 -->
-    <!-- These styles are specific to the gallery and won't conflict     -->
-    <!-- with your external style.css file.                              -->
-    <!-- =============================================================== -->
-    <style>
-        /* --- Gallery Grid Styling --- */
+        /* --- 2. Features Section Styling --- */
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            text-align: left;
+        }
+        .feature-item .material-icons-outlined {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        .feature-item h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        /* --- 3. Gallery Grid Styling --- */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -84,13 +109,13 @@
         }
         .gallery-grid a {
             display: block;
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px var(--card-shadow-color);
             transition: box-shadow 0.3s ease;
         }
         .gallery-grid a:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 25px var(--card-shadow-hover);
         }
         .gallery-grid img {
             width: 100%;
@@ -103,70 +128,51 @@
             transform: scale(1.05);
         }
         
-        /* --- Lightbox Styling --- */
+        /* --- 4. Lightbox Styling --- */
         .lightbox-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.85);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1000; opacity: 0; visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
             padding: 1rem;
         }
-        .lightbox-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .lightbox-overlay.active { opacity: 1; visibility: visible; }
         .lightbox-image {
-            max-width: 90vw;
-            max-height: 90vh;
-            display: block;
-            object-fit: contain;
-            border-radius: 4px;
-            box-shadow: 0 0 40px rgba(0,0,0,0.5);
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
+            max-width: 90vw; max-height: 90vh; display: block; object-fit: contain;
+            border-radius: 4px; box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            transform: scale(0.9); transition: transform 0.3s ease;
         }
-        .lightbox-overlay.active .lightbox-image {
-            transform: scale(1);
-        }
+        .lightbox-overlay.active .lightbox-image { transform: scale(1); }
         .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2.5rem;
-            line-height: 1;
-            cursor: pointer;
-            opacity: 0.8;
-            transition: opacity 0.2s ease;
+            position: absolute; top: 20px; right: 20px;
+            background: none; border: none; color: white;
+            font-size: 2.5rem; line-height: 1; cursor: pointer;
+            opacity: 0.8; transition: opacity 0.2s ease;
         }
-        .lightbox-close:hover {
-            opacity: 1;
-        }
+        .lightbox-close:hover { opacity: 1; }
 
-        /* --- Style for Renamed CTA Class --- */
-        /* Assuming a similar structure exists in style.css for .hero-actions, */
-        /* this ensures the renamed class also works. If not, this adds the style. */
+        /* --- 5. Final CTA Section Styling --- */
+        .direct-booking-section {
+            background-color: var(--background-surface);
+            text-align: center;
+        }
+        .direct-booking-section p {
+            max-width: 600px;
+            margin-left: auto; margin-right: auto;
+            margin-bottom: 2rem;
+        }
         .cta-actions {
             margin-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+            display: flex; flex-wrap: wrap; gap: 1rem;
             justify-content: center;
+        }
+        .direct-booking-section .button-secondary .material-icons-outlined {
+            margin-right: 0.5rem;
         }
     </style>
     <!-- =============================================================== -->
-    <!-- END: Internal CSS for Gallery                                   -->
+    <!-- END: Page-Specific Internal Styles                              -->
     <!-- =============================================================== -->
 </head>
 <body>
@@ -182,7 +188,7 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events" class="active">Events</a></li>
@@ -205,7 +211,7 @@
     <!-- END: Consistent Header -->
 
     <main id="main-content">
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/events/events-pearl-banquet-buffet-counter-1800w.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/assets/images/events/events-pearl-banquet-buffet-counter-1800w.webp');">
             <div class="container" data-animate>
                 <p class="section-subtitle">Celebrate in Style</p>
                 <h1 class="hero-title">The Pearl Banquet Hall</h1>
@@ -231,10 +237,10 @@
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Why Choose The Pearl?</h2>
                 <div class="grid-4-col">
-                    <div class="feature-item"><span class="material-icons-outlined">fullscreen</span><div><h4>Spacious & Versatile</h4><p class="text-muted">A 1500 sq. ft. multi-functional space that can be adapted to your event's needs.</p></div></div>
-                    <div class="feature-item"><span class="material-icons-outlined">groups</span><div><h4>Flexible Capacity</h4><p class="text-muted">Comfortably accommodates intimate gatherings of 30 up to larger events of 150 guests.</p></div></div>
-                    <div class="feature-item"><span class="material-icons-outlined">celebration</span><div><h4>All Occasions Welcome</h4><p class="text-muted">Ideal for weddings, receptions, corporate meetings, and social parties.</p></div></div>
-                    <div class="feature-item"><span class="material-icons-outlined">settings_suggest</span><div><h4>Modern Amenities</h4><p class="text-muted">Equipped with the necessary facilities to ensure your event runs smoothly.</p></div></div>
+                    <div class="feature-item" data-animate><span class="material-icons-outlined">fullscreen</span><div><h4>Spacious & Versatile</h4><p class="text-muted">A 1500 sq. ft. multi-functional space that can be adapted to your event's needs.</p></div></div>
+                    <div class="feature-item" data-animate style="--animation-delay: 0.1s;"><span class="material-icons-outlined">groups</span><div><h4>Flexible Capacity</h4><p class="text-muted">Comfortably accommodates intimate gatherings of 30 up to larger events of 150 guests.</p></div></div>
+                    <div class="feature-item" data-animate style="--animation-delay: 0.2s;"><span class="material-icons-outlined">celebration</span><div><h4>All Occasions Welcome</h4><p class="text-muted">Ideal for weddings, receptions, corporate meetings, and social parties.</p></div></div>
+                    <div class="feature-item" data-animate style="--animation-delay: 0.3s;"><span class="material-icons-outlined">settings_suggest</span><div><h4>Modern Amenities</h4><p class="text-muted">Equipped with the necessary facilities to ensure your event runs smoothly.</p></div></div>
                 </div>
             </div>
         </section>
@@ -257,7 +263,6 @@
                 <p class="section-subtitle">Let's Get Started</p>
                 <h2 class="section-title">Plan Your Event</h2>
                 <p>Contact our dedicated events team to discuss your requirements, explore our packages, or schedule a visit to the venue.</p>
-                <!-- Renamed class from hero-actions to cta-actions for better semantics -->
                 <div class="cta-actions">
                     <a href="tel:+919264197989" class="button-secondary" aria-label="Call the Event Manager"><span class="material-icons-outlined">call</span><span>Call Event Manager</span></a>
                     <a href="mailto:mmttsahibganj@gmail.com" class="button-secondary" aria-label="Email the Event Manager"><span class="material-icons-outlined">email</span><span>Email Us</span></a>
@@ -288,13 +293,11 @@
         <img src="" alt="" class="lightbox-image" id="lightbox-image">
     </div>
 
-    <!-- Main External Script (RESTORED) -->
+    <!-- Main External Script -->
     <script src="/script.js" defer></script>
 
     <!-- =============================================================== -->
     <!-- START: Internal JavaScript for Gallery Lightbox ONLY            -->
-    <!-- This script adds the pop-up functionality to the gallery. It    -->
-    <!-- runs alongside your main script.js file.                        -->
     <!-- =============================================================== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -314,12 +317,12 @@
                     lightboxImage.setAttribute('src', imageUrl);
                     lightboxImage.setAttribute('alt', imageAlt);
                     lightboxOverlay.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                    document.body.style.overflow = 'hidden';
                 };
 
                 const closeLightbox = () => {
                     lightboxOverlay.classList.remove('active');
-                    document.body.style.overflow = ''; // Restore scrolling
+                    document.body.style.overflow = '';
                 };
                 
                 galleryLinks.forEach(link => {
@@ -328,7 +331,7 @@
 
                 lightboxCloseBtn.addEventListener('click', closeLightbox);
                 lightboxOverlay.addEventListener('click', (e) => {
-                    if (e.target === lightboxOverlay) { // Close only if clicking the background
+                    if (e.target === lightboxOverlay) {
                         closeLightbox();
                     }
                 });

@@ -35,26 +35,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- REVISED: Optimized Google Fonts Loading -->
     <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- REVISION: Added internal style block for hero text contrast -->
-    <style>
-        .page-header .hero-title,
-        .page-header .section-subtitle,
-        .menu-page-header .hero-subtitle {
-            color: var(--text-light);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-    </style>
-
-    <!-- REVISION: Added comprehensive JSON-LD Schema for the Menu -->
+    <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -66,55 +57,39 @@
         "name": "Main Menu",
         "hasMenuSection": [
           {
-            "@type": "MenuSection",
-            "name": "Beverages",
+            "@type": "MenuSection", "name": "Beverages",
             "hasMenuItem": [
-              { "@type": "MenuItem", "name": "Virgin Mojito", "description": "Choice of Mint, Green Apple, Mango, Pineapple, Orange, etc.", "offers": { "@type": "Offer", "price": "129", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Fruit Punch", "description": "Mixed fruit juice, vanilla ice cream, and fresh fruits.", "offers": { "@type": "Offer", "price": "149", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Thick Shakes", "description": "Choice of Oreo, Kitkat, Nutella, or Brownie.", "offers": { "@type": "Offer", "price": "159", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Cold Coffee with Ice Cream", "offers": { "@type": "Offer", "price": "139", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Cold Coffee without Ice Cream", "offers": { "@type": "Offer", "price": "119", "priceCurrency": "INR" } }
+              { "@type": "MenuItem", "name": "Virgin Mojito", "offers": { "@type": "Offer", "price": "129" } },
+              { "@type": "MenuItem", "name": "Thick Shakes", "offers": { "@type": "Offer", "price": "159" } }
             ]
           },
           {
-            "@type": "MenuSection",
-            "name": "Continental Starters",
+            "@type": "MenuSection", "name": "Continental Starters",
             "hasMenuItem": [
-              { "@type": "MenuItem", "name": "Herb Crusted Fried Chicken", "description": "Crispy fried chicken marinated in a fermented spiced batter.", "offers": { "@type": "Offer", "price": "329", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "BBQ Chicken Wings", "description": "Chicken wings grilled and tossed with our signature BBQ sauce.", "offers": { "@type": "Offer", "price": "319", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Panko Fish Finger", "description": "Fresh water fish fingers with spices & lime, coated with panko crumbs.", "offers": { "@type": "Offer", "price": "349", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Peri Peri Mozzarella Cheese Finger", "description": "Crumb fried Peri Peri flavoured mozzarella cheese strips.", "offers": { "@type": "Offer", "price": "279", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Cheese Corn Croquettes", "description": "Processed cheese & fresh American corn kernels mixed with spices, deep fried.", "offers": { "@type": "Offer", "price": "259", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Loaded Cheesy Fries", "description": "French fries loaded with cheese sauce and toppings.", "offers": { "@type": "Offer", "price": "229", "priceCurrency": "INR" } }
+              { "@type": "MenuItem", "name": "Herb Crusted Fried Chicken", "offers": { "@type": "Offer", "price": "329" } },
+              { "@type": "MenuItem", "name": "Peri Peri Mozzarella Cheese Finger", "offers": { "@type": "Offer", "price": "279" } }
             ]
           },
           {
-            "@type": "MenuSection",
-            "name": "Burgers & Pizza",
+            "@type": "MenuSection", "name": "Burgers & Pizza",
             "hasMenuItem": [
-              { "@type": "MenuItem", "name": "Crunchy Chicken Burger", "description": "Crispy fried chicken with caramelised onion, tomatoes, lettuce & cheese. Served with fries.", "offers": { "@type": "Offer", "price": "299", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Tandoori Chicken Tikka Pizza", "description": "Thin crust pizza topped with shredded chicken tikka & mozzarella.", "offers": { "@type": "Offer", "price": "399", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Veggie Burger", "description": "Crispy fried vegetable patty with tomatoes, cucumber, cheese & lettuce. Served with fries.", "offers": { "@type": "Offer", "price": "249", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Farm House Pizza", "description": "Thin crust pizza topped with exotic vegetables, corn kernels & mozzarella.", "offers": { "@type": "Offer", "price": "349", "priceCurrency": "INR" } }
+              { "@type": "MenuItem", "name": "Crunchy Chicken Burger", "offers": { "@type": "Offer", "price": "299" } },
+              { "@type": "MenuItem", "name": "Farm House Pizza", "offers": { "@type": "Offer", "price": "349" } }
             ]
           },
           {
-            "@type": "MenuSection",
-            "name": "Pasta",
+            "@type": "MenuSection", "name": "Pasta",
             "hasMenuItem": [
-              { "@type": "MenuItem", "name": "Pollo Con Fungi (Alfredo)", "description": "Grilled chicken & mushroom in a creamy Alfredo sauce. Choice of Penne or Spaghetti.", "offers": { "@type": "Offer", "price": "399", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Bolognese", "description": "Classic minced mutton with a rich tomato sauce. Choice of Penne or Spaghetti.", "offers": { "@type": "Offer", "price": "429", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Alfredo (Veg)", "description": "Exotic vegetables tossed in a classic creamy Alfredo sauce. Choice of Penne or Spaghetti.", "offers": { "@type": "Offer", "price": "349", "priceCurrency": "INR" } },
-              { "@type": "MenuItem", "name": "Classic Arrabiata", "description": "A spicy and tangy tomato sauce with garlic & pepperoncini. Choice of Penne or Spaghetti.", "offers": { "@type": "Offer", "price": "349", "priceCurrency": "INR" } }
+              { "@type": "MenuItem", "name": "Pollo Con Fungi (Alfredo)", "offers": { "@type": "Offer", "price": "399" } },
+              { "@type": "MenuItem", "name": "Classic Arrabiata", "offers": { "@type": "Offer", "price": "349" } }
             ]
           }
         ]
       }
     }
     </script>
-
 </head>
-<body class="menu-page">
+<body>
 
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
@@ -127,7 +102,7 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining" class="active">Dining</a></li>
                         <li><a href="/events">Events</a></li>
@@ -162,7 +137,7 @@
         <nav class="menu-nav-sticky">
             <div class="container menu-nav-container">
                 <div class="menu-category-nav">
-                    <a href="#beverages" class="active">Beverages</a>
+                    <a href="#beverages">Beverages</a>
                     <a href="#starters">Starters</a>
                     <a href="#burgers-pizza">Burgers & Pizza</a>
                     <a href="#pasta">Pasta</a>
@@ -176,16 +151,15 @@
         </nav>
 
         <div class="container menu-container">
-            <div id="menu-content" class="menu-content-grid" data-filter-show="all">
+            <div id="menu-content">
                 
                 <section id="beverages" class="menu-section" data-animate><h2 class="menu-section-title">Beverages</h2><div class="menu-category-group"><div class="menu-grid"><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>VIRGIN MOJITO</h4><span class="price">₹129</span></div><p class="menu-item-desc">Choice of Mint, Green Apple, Mango, Pineapple, Orange, etc.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>FRUIT PUNCH</h4><span class="price">₹149</span></div><p class="menu-item-desc">Mixed fruit juice, vanilla ice cream, and fresh fruits.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>THICK SHAKES</h4><span class="price">₹159</span></div><p class="menu-item-desc">Choice of Oreo, Kitkat, Nutella, or Brownie.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>COLD COFFEE</h4><span class="price">₹139 / 119</span></div><p class="menu-item-desc">With or Without Ice Cream.</p></div></div></div></section>
-                <section id="starters" class="menu-section" data-animate><h2 class="menu-section-title">Continental Starters</h2><div class="non-veg-section menu-category-group"><h3 class="menu-sub-title">Non-Vegetarian</h3><div class="menu-grid"><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>HERB CRUSTED FRIED CHICKEN</h4><span class="price">₹329</span></div><p class="menu-item-desc">Crispy fried chicken marinated in a fermented spiced batter.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>BBQ CHICKEN WINGS</h4><span class="price">₹319</span></div><p class="menu-item-desc">Chicken wings grilled and tossed with our signature BBQ sauce.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>PANKO FISH FINGER</h4><span class="price">₹349</span></div><p class="menu-item-desc">Fresh water fish fingers with spices & lime, coated with panko crumbs.</p></div></div></div><div class="veg-section menu-category-group"><h3 class="menu-sub-title">Vegetarian</h3><div class="menu-grid"><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>PERI PERI MOZZARELLA CHEESE FINGER</h4><span class="price">₹279</span></div><p class="menu-item-desc">Crumb fried Peri Peri flavoured mozzarella cheese strips.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>CHEESE CORN CROQUETTES</h4><span class="price">₹259</span></div><p class="menu-item-desc">Processed cheese & fresh American corn kernels mixed with spices, deep fried.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>LOADED CHEESY FRIES</h4><span class="price">₹229</span></div><p class="menu-item-desc">French fries loaded with cheese sauce and toppings.</p></div></div></div></section>
+                <section id="starters" class="menu-section" data-animate><h2 class="menu-section-title">Continental Starters</h2><div class="menu-category-group"><h3 class="menu-sub-title">Non-Vegetarian</h3><div class="menu-grid"><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>HERB CRUSTED FRIED CHICKEN</h4><span class="price">₹329</span></div><p class="menu-item-desc">Crispy fried chicken marinated in a fermented spiced batter.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>BBQ CHICKEN WINGS</h4><span class="price">₹319</span></div><p class="menu-item-desc">Chicken wings grilled and tossed with our signature BBQ sauce.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>PANKO FISH FINGER</h4><span class="price">₹349</span></div><p class="menu-item-desc">Fresh water fish fingers with spices & lime, coated with panko crumbs.</p></div></div></div><div class="menu-category-group"><h3 class="menu-sub-title">Vegetarian</h3><div class="menu-grid"><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>PERI PERI MOZZARELLA CHEESE FINGER</h4><span class="price">₹279</span></div><p class="menu-item-desc">Crumb fried Peri Peri flavoured mozzarella cheese strips.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>CHEESE CORN CROQUETTES</h4><span class="price">₹259</span></div><p class="menu-item-desc">Processed cheese & fresh American corn kernels mixed with spices, deep fried.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>LOADED CHEESY FRIES</h4><span class="price">₹229</span></div><p class="menu-item-desc">French fries loaded with cheese sauce and toppings.</p></div></div></div></section>
                 <section id="burgers-pizza" class="menu-section" data-animate><h2 class="menu-section-title">Burgers & Pizza</h2><div class="menu-category-group"><div class="menu-grid"><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>CRUNCHY CHICKEN BURGER</h4><span class="price">₹299</span></div><p class="menu-item-desc">Crispy fried chicken with caramelised onion, tomatoes, lettuce & cheese. Served with fries.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>TANDOORI CHICKEN TIKKA PIZZA</h4><span class="price">₹399</span></div><p class="menu-item-desc">Thin crust pizza topped with shredded chicken tikka & mozzarella.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>VEGGIE BURGER</h4><span class="price">₹249</span></div><p class="menu-item-desc">Crispy fried vegetable patty with tomatoes, cucumber, cheese & lettuce. Served with fries.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>FARM HOUSE PIZZA</h4><span class="price">₹349</span></div><p class="menu-item-desc">Thin crust pizza topped with exotic vegetables, corn kernels & mozzarella.</p></div></div></div></section>
                 <section id="pasta" class="menu-section" data-animate><h2 class="menu-section-title">Pasta</h2><div class="menu-category-group"><p class="text-center" style="margin-top: -1rem; margin-bottom: 2rem;">Choice of Penne or Spaghetti. All pastas are served with garlic bread.</p><div class="menu-grid"><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>POLLO CON FUNGI (ALFREDO)</h4><span class="price">₹399</span></div><p class="menu-item-desc">Grilled chicken & mushroom in a creamy Alfredo sauce.</p></div><div class="menu-item" data-category="non-veg"><div class="menu-item-header"><h4>BOLOGNESE</h4><span class="price">₹429</span></div><p class="menu-item-desc">Classic minced mutton with a rich tomato sauce.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>ALFREDO</h4><span class="price">₹349</span></div><p class="menu-item-desc">Exotic vegetables tossed in a classic creamy Alfredo sauce.</p></div><div class="menu-item" data-category="veg"><div class="menu-item-header"><h4>CLASSIC ARRABIATA</h4><span class="price">₹349</span></div><p class="menu-item-desc">A spicy and tangy tomato sauce with garlic & pepperoncini.</p></div></div></div></section>
             </div>
         </div>
 
-        <!-- REVISION: Added final CTA section for consistency -->
         <section class="direct-booking-section" data-animate>
             <div class="container">
                 <p class="section-subtitle">Plan Your Visit</p>

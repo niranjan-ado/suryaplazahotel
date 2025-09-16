@@ -35,83 +35,38 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Optimized Google Fonts (Non-blocking) -->
     <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- Page-Specific Internal Styles (Hero Text, Map) -->
-    <style>
-        .page-header .hero-title,
-        .page-header .section-subtitle {
-            color: var(--text-light);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-        .map-container {
-            overflow: hidden; border-radius: var(--border-radius); aspect-ratio: 16 / 9;
-            box-shadow: 0 8px 25px var(--card-shadow-color); margin-top: 2rem;
-        }
-        .map-container iframe { width: 100%; height: 100%; border: 0; }
-        .location-address {
-            margin-top: 1.5rem; padding: 1.5rem; background-color: var(--background-surface);
-            border: 1px solid var(--border-color); border-radius: var(--border-radius); font-weight: 600;
-        }
-    </style>
-
-    <!-- SEO Schemas (AboutPage, Hotel, FAQPage) -->
+    <!-- SEO Schemas -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "AboutPage",
-          "url": "https://suryaplazahotels.com/about",
-          "name": "About Us | The Story of Surya Plaza Hotel, Sahibganj",
+          "@type": "AboutPage", "url": "https://suryaplazahotels.com/about", "name": "About Us | The Story of Surya Plaza Hotel, Sahibganj",
           "mainEntity": {
              "@type": "FAQPage",
              "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "Your story mentions the hotel is run by a family of doctors. What does this mean for me as a guest?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "It means that a culture of meticulous care and hygiene is at the core of our operations. Inspired by medical precision, we uphold an exceptional standard of cleanliness and attention to detail, ensuring a safe, comfortable, and genuinely caring environment for all our guests."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "I'm traveling for business. What room do you recommend?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "For our business travelers, we highly recommend the Executive Balcony Room. It provides a larger 220 sqft space complete with a dedicated work desk and a comfortable sofa seating area, offering the perfect environment to be productive and to unwind after a busy day."
-                    }
-                }
+                {"@type": "Question","name": "Your story mentions the hotel is run by a family of doctors. What does this mean for me as a guest?","acceptedAnswer": {"@type": "Answer","text": "It means that a culture of meticulous care and hygiene is at the core of our operations. Inspired by medical precision, we uphold an exceptional standard of cleanliness and attention to detail, ensuring a safe, comfortable, and genuinely caring environment for all our guests."}},
+                {"@type": "Question","name": "I'm traveling for business. What room do you recommend?","acceptedAnswer": {"@type": "Answer","text": "For our business travelers, we highly recommend the Executive Balcony Room. It provides a larger 220 sqft space complete with a dedicated work desk and a comfortable sofa seating area, offering the perfect environment to be productive and to unwind after a busy day."}}
              ]
           }
         },
         {
-          "@type": "Hotel",
-          "name": "Surya Plaza Hotel",
-          "url": "https://suryaplazahotels.com/",
-          "telephone": "+919264197986",
-          "priceRange": "₹₹",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Opp Ray Bahadur Building, J.N Roy Road",
-            "addressLocality": "Sahibganj",
-            "addressRegion": "Jharkhand",
-            "postalCode": "816109",
-            "addressCountry": "IN"
-          }
+          "@type": "Hotel", "name": "Surya Plaza Hotel", "url": "https://suryaplazahotels.com/", "telephone": "+919264197986", "priceRange": "₹₹",
+          "address": {"@type": "PostalAddress", "streetAddress": "Opp Ray Bahadur Building, J.N Roy Road", "addressLocality": "Sahibganj", "addressRegion": "Jharkhand", "postalCode": "816109", "addressCountry": "IN"}
         }
       ]
     }
     </script>
-
 </head>
 <body>
 
@@ -126,7 +81,7 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
@@ -173,18 +128,19 @@
         </section>
         
         <section id="commitment" class="commitment-section">
-            <div class="container" data-animate>
-                <h2 class="section-title text-center">Our Commitment to You</h2>
+            <div class="container">
+                 <div data-animate>
+                    <h2 class="section-title text-center">Our Commitment to You</h2>
+                </div>
                 <div class="grid-4-col">
-                    <div class="commitment-item"><span class="material-icons-outlined">hotel</span><h4>Spacious Comfort</h4><p class="text-muted">We believe in providing ample space, from rooms with private balconies to expansive family apartments with full kitchens.</p></div>
-                    <div class="commitment-item"><span class="material-icons-outlined">restaurant_menu</span><h4>Culinary Excellence</h4><p class="text-muted">Home to the famous Moti Mahal restaurant, we offer legendary Indian cuisine that delights the senses.</p></div>
-                    <div class="commitment-item"><span class="material-icons-outlined">location_on</span><h4>Prime Central Location</h4><p class="text-muted">Our strategic location provides seamless access to the railway station, markets, and key local landmarks.</p></div>
-                     <div class="commitment-item"><span class="material-icons-outlined">support_agent</span><h4>Personalized Service</h4><p class="text-muted">From 24/7 room service to individual climate control, every detail is crafted to cater to your personal comfort.</p></div>
+                    <div class="commitment-item" data-animate><span class="material-icons-outlined">hotel</span><h4>Spacious Comfort</h4><p class="text-muted">We believe in providing ample space, from rooms with private balconies to expansive family apartments with full kitchens.</p></div>
+                    <div class="commitment-item" data-animate style="--animation-delay: 0.1s;"><span class="material-icons-outlined">restaurant_menu</span><h4>Culinary Excellence</h4><p class="text-muted">Home to the famous Moti Mahal restaurant, we offer legendary Indian cuisine that delights the senses.</p></div>
+                    <div class="commitment-item" data-animate style="--animation-delay: 0.2s;"><span class="material-icons-outlined">location_on</span><h4>Prime Central Location</h4><p class="text-muted">Our strategic location provides seamless access to the railway station, markets, and key local landmarks.</p></div>
+                     <div class="commitment-item" data-animate style="--animation-delay: 0.3s;"><span class="material-icons-outlined">support_agent</span><h4>Personalized Service</h4><p class="text-muted">From 24/7 room service to individual climate control, every detail is crafted to cater to your personal comfort.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- REVISION: Added the missing <div class="container"> wrapper -->
         <section id="experience-showcase">
             <div class="container">
                 <div class="showcase-grid">
@@ -225,39 +181,31 @@
             </div>
         </section>
 
-        <section class="faq-section commitment-section">
-            <div class="container" data-animate>
-                <h2 class="section-title text-center">Frequently Asked Questions</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
-                            <span>Your story mentions the hotel is run by a family of doctors. What does this mean for me as a guest?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-answer" id="faq-answer-1">
-                            <p>It means that a culture of meticulous care and hygiene is at the core of our operations. Inspired by medical precision, we uphold an exceptional standard of cleanliness and attention to detail, ensuring a safe, comfortable, and genuinely caring environment for all our guests.</p>
+        <!-- REVISED: Restructured FAQ and Map into a 2-column grid -->
+        <section id="faq-and-map">
+            <div class="container">
+                <div class="grid-2-col">
+                    <div class="faq-section" data-animate>
+                        <h2 class="section-title" style="text-align: left;">Frequently Asked Questions</h2>
+                        <div class="faq-container">
+                            <div class="faq-item">
+                                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1"><span>Your story mentions the hotel is run by a family of doctors. What does this mean for me as a guest?</span><span class="faq-icon" aria-hidden="true"></span></button>
+                                <div class="faq-answer" id="faq-answer-1"><p>It means that a culture of meticulous care and hygiene is at the core of our operations. Inspired by medical precision, we uphold an exceptional standard of cleanliness and attention to detail, ensuring a safe, comfortable, and genuinely caring environment for all our guests.</p></div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2"><span>I'm traveling for business. What room do you recommend?</span><span class="faq-icon" aria-hidden="true"></span></button>
+                                <div class="faq-answer" id="faq-answer-2"><p>For our business travelers, we highly recommend the Executive Balcony Room. It provides a larger 220 sqft space complete with a dedicated work desk and a comfortable sofa seating area, offering the perfect environment to be productive and to unwind after a busy day.</p></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
-                            <span>I'm traveling for business. What room do you recommend?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-answer" id="faq-answer-2">
-                            <p>For our business travelers, we highly recommend the Executive Balcony Room. It provides a larger 220 sqft space complete with a dedicated work desk and a comfortable sofa seating area, offering the perfect environment to be productive and to unwind after a busy day.</p>
+                    <div id="location-map" data-animate style="--animation-delay: 0.1s;">
+                        <h2 class="section-title">Find Us</h2>
+                        <p>We are conveniently located on J.N Roy Road, easily accessible from all major transport hubs in Sahibganj.</p>
+                        <div class="location-address">Opp Ray Bahadur Building, J.N Roy Road, Sahibganj, Jharkhand 816109</div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.7412889247903!2d87.62789517479828!3d25.245637329738067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fa998a3e57abf7%3A0x49c5121bd30cc91f!2sSurya%20Plaza%20Hotel%20Sahibganj%20Jharkhand!5e0!3m2!1sen!2sin!4v1757606016668!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Map location of Surya Plaza Hotel"></iframe>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="location-map">
-            <div class="container text-center" data-animate>
-                <h2 class="section-title">Find Us</h2>
-                <p>We are conveniently located on J.N Roy Road, easily accessible from all major transport hubs in Sahibganj.</p>
-                <div class="location-address">Opp Ray Bahadur Building, J.N Roy Road, Sahibganj, Jharkhand 816109</div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.7412889247903!2d87.62789517479828!3d25.245637329738067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fa998a3e57abf7%3A0x49c5121bd30cc91f!2sSurya%20Plaza%20Hotel%20Sahibganj%20Jharkhand!5e0!3m2!1sen!2sin!4v1757606016668!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Map location of Surya Plaza Hotel"></iframe>
                 </div>
             </div>
         </section>

@@ -27,17 +27,22 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- REVISED: Optimized Google Fonts Loading -->
     <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- REVISION: Added internal style for author image -->
+    <!-- Page-Specific Internal Styles -->
     <style>
+        .author-bio-content {
+            max-width: 750px;
+            margin: 0 auto;
+        }
         .author-image {
             width: 120px;
             height: 120px;
@@ -47,9 +52,40 @@
             border: 4px solid var(--border-color);
             box-shadow: 0 4px 15px var(--card-shadow-color);
         }
+        .author-feature-quote {
+            font-size: 1.25rem;
+            font-style: italic;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+            color: var(--text-muted);
+        }
+        .author-bio-content .section-title {
+            margin-bottom: 1rem;
+        }
+        .author-bio-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .author-connect-link {
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+        /* Using existing blog card styles from main CSS */
+        .blog-card { background-color: var(--background-surface); border-radius: var(--border-radius); border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 4px 15px var(--card-shadow-color); transition: transform 0.4s ease, box-shadow 0.4s ease; }
+        .blog-card a { display: block; color: inherit; text-decoration: none; }
+        .blog-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px var(--card-shadow-hover); }
+        .blog-card-image { overflow: hidden; }
+        .blog-card-image img { width: 100%; aspect-ratio: 16/10; object-fit: cover; transition: transform 0.4s ease; }
+        .blog-card:hover .blog-card-image img { transform: scale(1.05); }
+        .blog-card-content { padding: 1.5rem 1.75rem; }
+        .blog-card-content h3 { font-size: 1.25rem; margin-top: 0.75rem; transition: color 0.3s ease; }
+        .blog-card a:hover h3 { color: var(--primary-color); }
+        .blog-category { display: inline-block; font-size: 0.8rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 50px; background-color: color-mix(in srgb, var(--primary-color) 15%, transparent); color: var(--primary-color); }
+
     </style>
 
-    <!-- REVISION: Added comprehensive JSON-LD Schema for the Author Profile Page -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -61,14 +97,8 @@
         "description": "With a background in digital marketing and content strategy that began in the early 2000s, Niranjan brings a data-driven yet creative approach to storytelling. His work focuses on using high-fidelity photography and clear, helpful content to bridge the gap between a guest's online research and their real-world experience at our hotel.",
         "image": "https://suryaplazahotels.com/assets/images/blog/author-niranjan-ramamurthy.webp",
         "url": "https://suryaplazahotels.com/blog/author/niranjan-ramamurthy",
-        "sameAs": [
-          "https://www.linkedin.com/in/niranjan-ramamurthy/",
-          "https://adostrophe.com/"
-        ],
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Adostrophe"
-        }
+        "sameAs": [ "https://www.linkedin.com/in/niranjan-ramamurthy/", "https://adostrophe.com/" ],
+        "worksFor": { "@type": "Organization", "name": "Adostrophe" }
       },
       "about": {
         "@type": "ItemList",
@@ -95,7 +125,7 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
@@ -125,16 +155,15 @@
             </div>
         </header>
 
-        <section id="author-bio">
+        <section id="author-bio" style="padding-bottom: 0;">
             <div class="container">
                 <div class="author-bio-content text-center" data-animate>
-                    <!-- REVISION: Added author profile image. Please upload an image to this path. -->
                     <img src="/assets/images/blog/author-niranjan-ramamurthy.webp" alt="Profile photo of Niranjan Ramamurthy." class="author-image">
 
+                    <h2 class="section-title">Niranjan Ramamurthy</h2>
                     <blockquote class="author-feature-quote">
                         “My passion lies at the intersection of technology and hospitality. It’s about more than just building a website; it’s about capturing the soul of a place like Surya Plaza Hotel—translating the warmth of its service and the beauty of Sahibganj into a digital experience that helps you, our guest, discover what makes this place special.”
                     </blockquote>
-                    <h2 class="section-title">Niranjan Ramamurthy</h2>
                     <p>With a background in digital marketing and content strategy that began in the early 2000s, Niranjan brings a data-driven yet creative approach to storytelling. His work, through his agency <a href="https://adostrophe.com/" target="_blank" rel="noopener dofollow">Adostrophe</a>, focuses on using high-fidelity photography and clear, helpful content to bridge the gap between a guest's online research and their real-world experience at our hotel.</p>
                     <p class="author-connect-link">
                         <a href="https://www.linkedin.com/in/niranjan-ramamurthy/" target="_blank" rel="noopener">Connect with Niranjan on LinkedIn</a>
@@ -149,7 +178,6 @@
                     <h2 class="section-title text-center">Articles by Niranjan</h2>
                 </div>
                 <div class="grid-3-col" data-animate>
-                    <!-- REVISION: Added srcset and sizes to all blog card images -->
                     <article class="blog-card">
                         <a href="/blog/post-1" aria-label="Read more about A Weekend Guide to Sahibganj's Hidden Gems">
                             <div class="blog-card-image"><img src="/assets/images/blog/blog-ganges-view-800w.webp" srcset="/assets/images/blog/blog-ganges-view-400w.webp 400w, /assets/images/blog/blog-ganges-view-800w.webp 800w" sizes="(max-width: 992px) 50vw, 33vw" alt="A scenic view of the River Ganges at Sahibganj." loading="lazy"></div>
@@ -177,7 +205,7 @@
 
     </main>
 
-    <!-- START: Consistent Footer -->
+    <!-- START: Consistent FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">

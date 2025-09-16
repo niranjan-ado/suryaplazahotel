@@ -34,25 +34,167 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- REVISION START: Aligned font loading with homepage for performance -->
+    <!-- Optimized Google Fonts (Non-blocking) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
+    <!-- REVISION END -->
     
-    <!-- Main & FAQ Stylesheets -->
+    <!-- Main Stylesheet (Shared) -->
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/faq.css">
 
+    <!-- REVISION START: Internal page-specific styles to fix header padding and card layout -->
     <style>
+        /* --- Page Header Padding Fix --- */
+        .page-header {
+            padding: calc(var(--header-height) + 4rem) 0 4rem; /* Adds padding for sticky nav + extra space */
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+        }
+
         .page-header .hero-title,
         .page-header .hero-subtitle {
             color: var(--text-light);
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
-    </style>
 
-    <!-- REVISION: Added comprehensive JSON-LD Schema for the ItemList and FAQs -->
+        .page-header .hero-subtitle {
+            max-width: 600px;
+            margin: 1rem auto 0;
+            opacity: 0.9;
+        }
+
+        /* --- Room Card Styling Fix --- */
+        .room-listing-card {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--background-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 15px var(--card-shadow-color);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .room-listing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px var(--card-shadow-hover);
+        }
+
+        .room-listing-card img {
+            aspect-ratio: 16/10;
+            object-fit: cover;
+            width: 100%;
+            transition: transform 0.4s ease;
+        }
+
+        .room-listing-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .room-listing-card-content {
+            padding: 1.5rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .room-listing-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .room-listing-card-header h3 {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+
+        .room-listing-card:hover h3 {
+            color: var(--primary-color);
+        }
+
+        .room-card-price {
+            font-family: var(--font-body);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        .room-card-price span {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+        }
+
+        .room-description {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            flex-grow: 1; /* Pushes amenities and buttons down */
+        }
+
+        .room-amenities-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .room-amenities-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .room-amenities-list .material-icons-outlined {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+        }
+
+        .room-listing-card-actions {
+            margin-top: auto; /* Ensures buttons align at the bottom */
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .room-listing-card-actions a {
+            flex-grow: 1;
+        }
+        
+        /* --- Other Page Section Styling --- */
+        .direct-booking-section {
+             background-color: var(--background-surface);
+        }
+        
+        .direct-booking-section p {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2rem;
+        }
+        
+        .direct-booking-section .cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .direct-booking-section .button-secondary .material-icons-outlined {
+            margin-right: 0.5rem;
+        }
+    </style>
+    <!-- REVISION END -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -111,7 +253,8 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <!-- REVISION: Changed to multi-page navigation links -->
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms" class="active">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
@@ -135,7 +278,7 @@
 
     <main id="main-content">
 
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/rooms/room-junior-suite-seating-1200w.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/assets/images/rooms/room-junior-suite-seating-1200w.webp');">
             <div class="container" data-animate>
                 <h1 class="hero-title">Our Accommodations</h1>
                 <p class="hero-subtitle">Find the perfect space for your stay, from cozy rooms for solo travelers to expansive suites for the whole family.</p>
@@ -144,7 +287,6 @@
 
         <section id="room-listings" class="room-listing-section">
             <div class="container">
-                <!-- REVISION: Removed redundant links, corrected srcset, and added consistent button CTAs -->
                 <div class="grid-2-col">
                     
                     <article class="room-listing-card" data-animate>
@@ -210,8 +352,8 @@
             </div>
         </section>
 
-        <!-- REVISION: Added new reusable FAQ Section -->
-        <section class="faq-section commitment-section">
+        <!-- REVISION: Re-using the FAQ section from the main stylesheet -->
+        <section class="faq-section commitment-section" style="background-color: var(--background-light);">
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Your Questions, Answered</h2>
                 <div class="faq-container">
@@ -265,7 +407,7 @@
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
+    <!-- REVISION: Simplified to only use the main script. Removed redundant faq.js as main script handles it. -->
     <script src="/script.js" defer></script>
-    <script src="/faq.js" defer></script>
 </body>
 </html>

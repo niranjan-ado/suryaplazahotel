@@ -35,19 +35,20 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- REVISED: Optimized Google Fonts Loading -->
     <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
     
-    <!-- Main & FAQ Stylesheets -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/faq.css">
 
-    <!-- REVISION: Added internal style block for hero text, cards, and categories -->
+    <!-- Page-Specific Internal Styles -->
     <style>
         .page-header .hero-title,
+        .page-header .hero-subtitle,
         .page-header .section-subtitle {
             color: var(--text-light);
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -81,10 +82,10 @@
         }
         .attraction-category h3 {
             margin-bottom: 3rem;
+            text-align: center;
         }
     </style>
 
-    <!-- REVISION: Added comprehensive JSON-LD Schema for ItemList and FAQs -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -94,44 +95,31 @@
           "name": "Local Attractions in Sahibganj",
           "description": "A list of notable tourist attractions, historical monuments, temples, and landmarks in and around Sahibganj, Jharkhand.",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "item": { "@type": "TouristAttraction", "name": "Moti Jharna Waterfall", "description": "A scenic waterfall in the Rajmahal hills, known for its natural beauty." } },
-            { "@type": "ListItem", "position": 2, "item": { "@type": "TouristAttraction", "name": "Shivgadi Dham", "description": "A revered Lord Shiva temple located inside a cave." } },
-            { "@type": "ListItem", "position": 3, "item": { "@type": "TouristAttraction", "name": "Sahibganj Ghati", "description": "A well-known river port on the banks of the Ganga River with historical significance." } },
-            { "@type": "ListItem", "position": 4, "item": { "@type": "TouristAttraction", "name": "Akbari Masjid", "description": "One of the oldest mosques in the region, representing Mughal-era architecture." } },
-            { "@type": "ListItem", "position": 5, "item": { "@type": "TouristAttraction", "name": "Singhi Dalan", "description": "One of the principal remaining sections of Sultan Shah Shuja’s palace." } },
-            { "@type": "ListItem", "position": 6, "item": { "@type": "TouristAttraction", "name": "Baradari", "description": "A palace with 12 doors that was once the residence of a confidant of Emperor Akbar." } },
-            { "@type": "ListItem", "position": 7, "item": { "@type": "TouristAttraction", "name": "Bindabasini Temple", "description": "An ancient Shaktipeeth temple dedicated to the Tridevi." } },
-            { "@type": "ListItem", "position": 8, "item": { "@type": "TouristAttraction", "name": "Jama Masjid, Rajmahal", "description": "Built by Man Singh in the same style as the Delhi Jama Masjid." } },
-            { "@type": "ListItem", "position": 9, "item": { "@type": "TouristAttraction", "name": "Rani Sati Dadi Mandir", "description": "A revered Hindu temple dedicated to Rani Sati Dadi, symbolizing feminine bravery." } },
-            { "@type": "ListItem", "position": 10, "item": { "@type": "TouristAttraction", "name": "Bhagwa Kuan", "description": "A historical well built in 1815 during the British Raj." } },
-            { "@type": "ListItem", "position": 11, "item": { "@type": "TouristAttraction", "name": "Chowk Bazar", "description": "A vibrant and bustling marketplace in the heart of Sahibganj." } },
-            { "@type": "ListItem", "position": 12, "item": { "@type": "TouristAttraction", "name": "Sahibganj Science Centre", "description": "Features interactive exhibits, 3D printing, robotics, and local Jurassic-era fossils." } }
+            { "@type": "ListItem", "position": 1, "item": { "@type": "TouristAttraction", "name": "Moti Jharna Waterfall" } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "TouristAttraction", "name": "Shivgadi Dham" } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "TouristAttraction", "name": "Sahibganj Ghati" } },
+            { "@type": "ListItem", "position": 4, "item": { "@type": "TouristAttraction", "name": "Akbari Masjid" } },
+            { "@type": "ListItem", "position": 5, "item": { "@type": "TouristAttraction", "name": "Singhi Dalan" } },
+            { "@type": "ListItem", "position": 6, "item": { "@type": "TouristAttraction", "name": "Baradari" } },
+            { "@type": "ListItem", "position": 7, "item": { "@type": "TouristAttraction", "name": "Bindabasini Temple" } },
+            { "@type": "ListItem", "position": 8, "item": { "@type": "TouristAttraction", "name": "Jama Masjid, Rajmahal" } },
+            { "@type": "ListItem", "position": 9, "item": { "@type": "TouristAttraction", "name": "Rani Sati Dadi Mandir" } },
+            { "@type": "ListItem", "position": 10, "item": { "@type": "TouristAttraction", "name": "Bhagwa Kuan" } },
+            { "@type": "ListItem", "position": 11, "item": { "@type": "TouristAttraction", "name": "Chowk Bazar" } },
+            { "@type": "ListItem", "position": 12, "item": { "@type": "TouristAttraction", "name": "Sahibganj Science Centre" } }
           ]
         },
         {
           "@type": "FAQPage",
           "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is Sahibganj famous for?",
-              "acceptedAnswer": { "text": "Sahibganj is famous for its unique blend of natural beauty and historical significance. It is known for attractions like the scenic Moti Jharna waterfall, the sacred Shivgadi Dham cave temple, and its historic port on the banks of the River Ganges. The area is also notable for its Jurassic-era fossils." }
-            },
-            {
-              "@type": "Question",
-              "name": "What is the best time to visit Sahibganj?",
-              "acceptedAnswer": { "text": "The best time to visit Sahibganj is during the winter months, from October to March. The weather during this period is pleasant and ideal for sightseeing and exploring the local attractions." }
-            },
-            {
-              "@type": "Question",
-              "name": "How many days are enough for a trip to Sahibganj?",
-              "acceptedAnswer": { "text": "A trip of 2 to 3 days is generally sufficient to explore the main attractions of Sahibganj and the surrounding Rajmahal hills at a comfortable pace. Our hotel's central location makes it an ideal base for your exploration." }
-            }
+            { "@type": "Question", "name": "What is Sahibganj famous for?", "acceptedAnswer": { "@type": "Answer", "text": "Sahibganj is famous for its unique blend of natural beauty and historical significance. It is known for attractions like the scenic Moti Jharna waterfall, the sacred Shivgadi Dham cave temple, and its historic port on the banks of the River Ganges. The area is also notable for its Jurassic-era fossils." } },
+            { "@type": "Question", "name": "What is the best time to visit Sahibganj?", "acceptedAnswer": { "@type": "Answer", "text": "The best time to visit Sahibganj is during the winter months, from October to March. The weather during this period is pleasant and ideal for sightseeing and exploring the local attractions." } },
+            { "@type": "Question", "name": "How many days are enough for a trip to Sahibganj?", "acceptedAnswer": { "@type": "Answer", "text": "A trip of 2 to 3 days is generally sufficient to explore the main attractions of Sahibganj and the surrounding Rajmahal hills at a comfortable pace. Our hotel's central location makes it an ideal base for your exploration." } }
           ]
         }
       ]
     }
     </script>
-
 </head>
 <body>
 
@@ -146,7 +134,7 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
@@ -193,35 +181,34 @@
         <section id="all-attractions">
             <div class="container">
                 <div class="attraction-category" data-animate>
-                    <h3 class="text-center">Historical Monuments</h3>
+                    <h3>Historical Monuments</h3>
                     <div class="grid-3-col">
-                        <div class="attraction-card"><h4>Akbari Masjid</h4><p>One of the oldest mosques in the region, representing Mughal-era architecture from when Rajmahal was the capital of Bengal.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 hr 13 min drive (37.3 km)</div></div>
-                        <div class="attraction-card"><h4>Singhi Dalan</h4><p>Dating from the mid-17th century, this "Hall of Stone" is one of the principal remaining sections of Sultan Shah Shuja’s palace.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 hr 14 min drive (37.4 km)</div></div>
-                        <div class="attraction-card"><h4>Baradari</h4><p>Once the residence of a confidant of Emperor Akbar, this palace with 12 doors sits on the shore of the Ganges and is preserved by the ASI.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 hr 3 min drive (30.9 km)</div></div>
+                        <div class="attraction-card" data-animate><h4>Akbari Masjid</h4><p>One of the oldest mosques in the region, representing Mughal-era architecture from when Rajmahal was the capital of Bengal.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 hr 13 min drive (37.3 km)</div></div>
+                        <div class="attraction-card" data-animate style="--animation-delay: 0.1s;"><h4>Singhi Dalan</h4><p>Dating from the mid-17th century, this "Hall of Stone" is one of the principal remaining sections of Sultan Shah Shuja’s palace.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 hr 14 min drive (37.4 km)</div></div>
+                        <div class="attraction-card" data-animate style="--animation-delay: 0.2s;"><h4>Baradari</h4><p>Once the residence of a confidant of Emperor Akbar, this palace with 12 doors sits on the shore of the Ganges and is preserved by the ASI.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 hr 3 min drive (30.9 km)</div></div>
                     </div>
                 </div>
 
                 <div class="attraction-category" data-animate>
-                    <h3 class="text-center">Temples & Religious Sites</h3>
+                    <h3>Temples & Religious Sites</h3>
                     <div class="grid-3-col">
-                         <div class="attraction-card"><h4>Bindabasini Temple</h4><p>Also known as Bindudham, this ancient temple is a Shaktipeeth dedicated to the Tridevi, with prominence regained by the work of Pahari Baba.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 hr 49 min drive (73.3 km)</div></div>
-                        <div class="attraction-card"><h4>Jama Masjid, Rajmahal</h4><p>Built by Man Singh, governor-general of Akbar, in the same style as the Delhi Jama Masjid. It is located facing the Baradari palace.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 hr 58 min drive (65.7 km)</div></div>
-                        <div class="attraction-card"><h4>Rani Sati Dadi Mandir</h4><p>A revered Hindu temple dedicated to Rani Sati Dadi, symbolizing feminine bravery and devotion. The temple hosts various religious events.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 5 min drive (1.6 km)</div></div>
+                         <div class="attraction-card" data-animate><h4>Bindabasini Temple</h4><p>Also known as Bindudham, this ancient temple is a Shaktipeeth dedicated to the Tridevi, with prominence regained by the work of Pahari Baba.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 hr 49 min drive (73.3 km)</div></div>
+                        <div class="attraction-card" data-animate style="--animation-delay: 0.1s;"><h4>Jama Masjid, Rajmahal</h4><p>Built by Man Singh, governor-general of Akbar, in the same style as the Delhi Jama Masjid. It is located facing the Baradari palace.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 hr 58 min drive (65.7 km)</div></div>
+                        <div class="attraction-card" data-animate style="--animation-delay: 0.2s;"><h4>Rani Sati Dadi Mandir</h4><p>A revered Hindu temple dedicated to Rani Sati Dadi, symbolizing feminine bravery and devotion. The temple hosts various religious events.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 5 min drive (1.6 km)</div></div>
                     </div>
                 </div>
 
                 <div class="attraction-category" data-animate>
-                    <h3 class="text-center">Local Landmarks</h3>
+                    <h3>Local Landmarks</h3>
                     <div class="grid-3-col">
-                        <div class="attraction-card"><h4>Bhagwa Kuan</h4><p>A historical well built in 1815 during the British Raj. It remains a masterpiece of construction and is still functional with drinkable water.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 min drive (130 m)</div></div>
-                        <div class="attraction-card"><h4>Chowk Bazar</h4><p>A vibrant and bustling marketplace in the heart of Sahibganj. It serves as a central hub for shopping, cultural events, and daily city life.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 min drive (290 m)</div></div>
-                        <div class="attraction-card"><h4>Sahibganj Science Centre</h4><p>The second science center in the state, featuring interactive exhibits, 3D printing, robotics, and a unique exhibit on local Jurassic-era fossils.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 8 min drive (1.8 km)</div></div>
+                        <div class="attraction-card" data-animate><h4>Bhagwa Kuan</h4><p>A historical well built in 1815 during the British Raj. It remains a masterpiece of construction and is still functional with drinkable water.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 min drive (130 m)</div></div>
+                        <div class="attraction-card" data-animate style="--animation-delay: 0.1s;"><h4>Chowk Bazar</h4><p>A vibrant and bustling marketplace in the heart of Sahibganj. It serves as a central hub for shopping, cultural events, and daily city life.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 1 min drive (290 m)</div></div>
+                        <div class="attraction-card" data-animate style="--animation-delay: 0.2s;"><h4>Sahibganj Science Centre</h4><p>The second science center in the state, featuring interactive exhibits, 3D printing, robotics, and a unique exhibit on local Jurassic-era fossils.</p><div class="distance"><span class="material-icons-outlined">directions_car</span> 8 min drive (1.8 km)</div></div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- REVISION: Added new reusable FAQ Section -->
         <section class="faq-section commitment-section">
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Visitor Information</h2>
@@ -269,6 +256,5 @@
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
     <script src="/script.js" defer></script>
-    <script src="/faq.js" defer></script>
 </body>
-</html>```
+</html>

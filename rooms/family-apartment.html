@@ -35,24 +35,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- REVISED: Optimized Google Fonts Loading -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <style>
-        .page-header .hero-title,
-        .page-header .hero-subtitle {
-            color: var(--text-light);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-    </style>
-
-    <!-- REVISION: Updated schema to include all 9 gallery images -->
+    <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -70,22 +63,9 @@
         "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-bedroom-balcony-1200w.webp",
         "https://suryaplazahotels.com/assets/images/rooms/bathroom-shower-sink-1200w.webp"
        ],
-      "floorSize": {
-        "@type": "QuantitativeValue",
-        "value": "800",
-        "unitCode": "FTS"
-      },
-      "occupancy": {
-        "@type": "QuantitativeValue",
-        "minValue": "1",
-        "maxValue": "6",
-        "unitText": "persons"
-      },
-      "bed": {
-        "@type": "BedDetails",
-        "typeOfBed": "DoubleBed",
-        "numberOfBeds": "2"
-      },
+      "floorSize": { "@type": "QuantitativeValue", "value": "800", "unitCode": "FTS" },
+      "occupancy": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "6", "unitText": "persons" },
+      "bed": { "@type": "BedDetails", "typeOfBed": "DoubleBed", "numberOfBeds": "2" },
       "amenityFeature": [
         { "@type": "LocationFeatureSpecification", "name": "Full Kitchen" },
         { "@type": "LocationFeatureSpecification", "name": "Two Private Bedrooms" },
@@ -94,19 +74,10 @@
         { "@type": "LocationFeatureSpecification", "name": "Panoramic River & Hill Views" },
         { "@type": "LocationFeatureSpecification", "name": "Sofa Cum Bed" }
       ],
-      "offers": {
-        "@type": "Offer",
-        "price": "4999",
-        "priceCurrency": "INR"
-      },
-      "containedIn": {
-        "@type": "Hotel",
-        "name": "Surya Plaza Hotel",
-        "url": "https://suryaplazahotels.com/"
-      }
+      "offers": { "@type": "Offer", "price": "4999", "priceCurrency": "INR" },
+      "containedIn": { "@type": "Hotel", "name": "Surya Plaza Hotel", "url": "https://suryaplazahotels.com/" }
     }
     </script>
-
 </head>
 <body>
 
@@ -121,7 +92,7 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms" class="active">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
@@ -145,10 +116,10 @@
 
     <main id="main-content">
 
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/images/rooms/room-family-apartment-living-area-1200w.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/assets/images/rooms/room-family-apartment-living-area-1200w.webp');">
             <div class="container" data-animate>
+                <p class="hero-subtitle">Surya Plaza Hotel Accommodations</p>
                 <h1 class="hero-title">Family Apartment with Kitchen</h1>
-                <p class="hero-subtitle">Your ultimate home away from home, with space and amenities for everyone.</p>
             </div>
         </header>
 
@@ -159,17 +130,11 @@
                     <div class="room-gallery-description" data-animate>
                         <div class="room-gallery">
                             <div class="gallery-main-image">
-                                <!-- REVISION: Added srcset and sizes for responsive, high-resolution main image -->
                                 <img id="main-gallery-image" 
                                      src="/assets/images/rooms/room-family-apartment-living-area-900w.webp"
-                                     srcset="/assets/images/rooms/room-family-apartment-living-area-600w.webp 600w,
-                                             /assets/images/rooms/room-family-apartment-living-area-900w.webp 900w,
-                                             /assets/images/rooms/room-family-apartment-living-area-1200w.webp 1200w"
-                                     sizes="(max-width: 768px) 90vw, (max-width: 1200px) 55vw, 710px"
                                      alt="Main view of the Family Apartment's spacious living and dining area." 
-                                     loading="eager" fetchpriority="high">
+                                     fetchpriority="high">
                             </div>
-                            <!-- REVISION: Expanded to 9 thumbnails with data-large-src attributes -->
                             <div class="gallery-thumbnails">
                                 <img src="/assets/images/rooms/room-family-apartment-living-area-600w.webp" data-large-src="/assets/images/rooms/room-family-apartment-living-area-1200w.webp" alt="Spacious living and dining area in the Family Apartment." loading="lazy">
                                 <img src="/assets/images/rooms/room-family-apartment-kitchen-600w.webp" data-large-src="/assets/images/rooms/room-family-apartment-kitchen-1200w.webp" alt="The fully equipped modern kitchen in the Family Apartment." loading="lazy">
@@ -223,35 +188,6 @@
                     <li><span class="material-icons-outlined">soap</span> Complimentary Toiletries</li>
                     <li><span class="material-icons-outlined">room_service</span> 24-hour Room Service</li>
                 </ul>
-            </div>
-        </section>
-
-        <!-- REVISION: Expanded to show all 5 other room types -->
-        <section id="other-rooms">
-            <div class="container" data-animate>
-                <h2 class="section-title text-center">Explore Other Accommodations</h2>
-                <div class="grid-3-col">
-                    <article class="room-card">
-                         <a href="/rooms/club-comfort-room"><img src="/assets/images/rooms/room-club-comfort-bed-900w.webp" srcset="/assets/images/rooms/room-club-comfort-bed-600w.webp 600w, /assets/images/rooms/room-club-comfort-bed-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Club Comfort Room" loading="lazy"></a>
-                        <div class="room-card-content"><h3>Club Comfort Room</h3><p>Our cozy and efficient room, perfect for solo travelers.</p></div>
-                    </article>
-                    <article class="room-card">
-                        <a href="/rooms/deluxe-balcony-room"><img src="/assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp" srcset="/assets/images/rooms/room-deluxe-balcony-bed-main-600w.webp 600w, /assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Deluxe Balcony Room" loading="lazy"></a>
-                        <div class="room-card-content"><h3>Deluxe Balcony Room</h3><p>Features a private balcony, offering a perfect spot to unwind.</p></div>
-                    </article>
-                    <article class="room-card">
-                        <a href="/rooms/executive-balcony-room"><img src="/assets/images/rooms/room-executive-balcony-sofa-900w.webp" srcset="/assets/images/rooms/room-executive-balcony-sofa-600w.webp 600w, /assets/images/rooms/room-executive-balcony-sofa-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Executive Balcony Room" loading="lazy"></a>
-                        <div class="room-card-content"><h3>Executive Balcony Room</h3><p>A larger space with a comfortable sofa seating area.</p></div>
-                    </article>
-                    <article class="room-card">
-                        <a href="/rooms/junior-balcony-suite"><img src="/assets/images/rooms/room-junior-suite-seating-900w.webp" srcset="/assets/images/rooms/room-junior-suite-seating-600w.webp 600w, /assets/images/rooms/room-junior-suite-seating-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Junior Balcony Suite" loading="lazy"></a>
-                        <div class="room-card-content"><h3>Junior Balcony Suite</h3><p>Offers an extra living area for a blend of luxury and space.</p></div>
-                    </article>
-                    <article class="room-card">
-                        <a href="/rooms/two-bedroom-premium-suite"><img src="/assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp" srcset="/assets/images/rooms/room-two-bedroom-suite-living-area-600w.webp 600w, /assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp 900w" sizes="(max-width: 992px) 50vw, 33vw" alt="Two-Bedroom Premium Suite" loading="lazy"></a>
-                        <div class="room-card-content"><h3>Two-Bedroom Premium Suite</h3><p>Ideal for groups, offering two bedrooms and river views.</p></div>
-                    </article>
-                </div>
             </div>
         </section>
 

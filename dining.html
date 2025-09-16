@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials (REVISED for consistency) -->
+    <!-- SEO Essentials -->
     <title>Dining Options | Surya Plaza Hotel | Moti Mahal & Jackson Diner</title>
     <meta name="description" content="Explore exceptional dining at Surya Plaza Hotel. From the legendary Indian cuisine of Moti Mahal Tandoori Trail to the casual rooftop Jackson Diner and convenient in-room dining.">
     <link rel="canonical" href="https://suryaplazahotels.com/dining">
 
-    <!-- Social Media Meta Tags (Added for consistency) -->
+    <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Dining Options | Surya Plaza Hotel | Moti Mahal & Jackson Diner">
     <meta property="og:description" content="Explore exceptional dining at Surya Plaza Hotel, from fine dining to casual rooftop views.">
-    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image-dining.jpg"> <!-- Assumes a specific OG image exists -->
+    <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image-dining.jpg">
     <meta property="og:url" content="https://suryaplazahotels.com/dining">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -29,36 +29,75 @@
       })();
     </script>
 
-    <!-- Favicon (REVISED to use absolute paths) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- REVISED: Aligned font loading with other pages for performance -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
     
-    <!-- Main Stylesheet (REVISED to use absolute path) -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
     <!-- =============================================================== -->
     <!-- START: Page-Specific Internal Style Overrides                   -->
-    <!-- Contains fixes for card button margin and hero text contrast.   -->
+    <!-- REVISED: Added header padding and final section styling.        -->
     <!-- =============================================================== -->
     <style>
-        /* 1. Adds top margin to the card buttons to prevent them from touching the text. */
-        .info-card-actions {
-            margin-top: 1.5rem;
+        /* 1. Page Header: Adds top padding to prevent overlap with sticky nav. */
+        .page-header {
+            padding-top: calc(var(--header-height) + 4rem);
+            padding-bottom: 4rem;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
         }
 
-        /* 2. Forces the header text to be light and adds a shadow for readability. */
         .page-header .hero-title,
         .page-header .hero-subtitle {
             color: var(--text-light);
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .page-header .hero-subtitle {
+            max-width: 600px;
+            margin: 1rem auto 0;
+            opacity: 0.9;
+        }
+
+        /* 2. Info Cards: Adds top margin to buttons to prevent them touching text. */
+        .info-card-actions {
+            margin-top: 1.5rem;
+        }
+
+        /* 3. Final CTA Section: Adds background and centers content. */
+        .direct-booking-section {
+            background-color: var(--background-surface);
+            text-align: center;
+        }
+
+        .direct-booking-section p {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2rem;
+        }
+        
+        .direct-booking-section .cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .direct-booking-section .button-secondary .material-icons-outlined {
+            margin-right: 0.5rem;
         }
     </style>
     <!-- =============================================================== -->
@@ -79,7 +118,7 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining" class="active">Dining</a></li>
                         <li><a href="/events">Events</a></li>
@@ -103,7 +142,7 @@
 
     <main id="main-content">
 
-        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/dining/header-dining-decor-1800w.webp');">
+        <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/assets/images/dining/header-dining-decor-1800w.webp');">
             <div class="container" data-animate>
                 <h1 class="hero-title">A Culinary Journey</h1>
                 <p class="hero-subtitle">Discover exceptional dining experiences to suit every taste and occasion, right here at Surya Plaza Hotel.</p>

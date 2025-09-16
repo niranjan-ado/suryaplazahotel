@@ -35,25 +35,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- REVISED: Optimized Google Fonts Loading -->
     <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- REVISION: Added internal style block for hero text contrast -->
-    <style>
-        .page-header .hero-title,
-        .page-header .section-subtitle {
-            color: var(--text-light);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-    </style>
-
-    <!-- REVISION: Added comprehensive JSON-LD Schema for the Restaurant -->
+    <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -69,30 +61,13 @@
       ],
       "url": "https://suryaplazahotels.com/dining/jackson-diner",
       "telephone": "+919264197988",
-      "servesCuisine": [
-        "Pizza",
-        "Pasta",
-        "Continental",
-        "Fast Food"
-      ],
+      "servesCuisine": [ "Pizza", "Pasta", "Continental", "Fast Food" ],
       "menu": "https://suryaplazahotels.com/dining/jackson-diner-menu",
       "priceRange": "₹₹",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Opp Ray Bahadur Building, J.N Roy Road",
-        "addressLocality": "Sahibganj",
-        "addressRegion": "Jharkhand",
-        "postalCode": "816109",
-        "addressCountry": "IN"
-      },
-      "parentOrganization": {
-        "@type": "Hotel",
-        "name": "Surya Plaza Hotel",
-        "url": "https://suryaplazahotels.com/"
-      }
+      "address": { "@type": "PostalAddress", "streetAddress": "Opp Ray Bahadur Building, J.N Roy Road", "addressLocality": "Sahibganj", "addressRegion": "Jharkhand", "postalCode": "816109", "addressCountry": "IN" },
+      "parentOrganization": { "@type": "Hotel", "name": "Surya Plaza Hotel", "url": "https://suryaplazahotels.com/" }
     }
     </script>
-
 </head>
 <body>
 
@@ -107,7 +82,7 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining" class="active">Dining</a></li>
                         <li><a href="/events">Events</a></li>
@@ -146,7 +121,6 @@
                         <p>Welcome to Jackson Diner, a casual dining restaurant located on the rooftop of Surya Plaza Hotel. Here you can enjoy an array of gourmet offerings in a warm, vibrant, and comfortable ambience.</p>
                         <p>Our menu features a wide variety of mocktails, shakes, sandwiches, burgers, pizzas, and pastas. It's the perfect spot to unwind with friends, enjoy a family meal, or simply relax and take in the view.</p>
                     </div>
-                    <!-- REVISION: Added srcset and sizes for image optimization -->
                     <div data-animate style="--animation-delay: 0.1s;">
                         <img src="/assets/images/dining/dining-jackson-diner-ambience-900w.webp" 
                              srcset="/assets/images/dining/dining-jackson-diner-ambience-600w.webp 600w, /assets/images/dining/dining-jackson-diner-ambience-900w.webp 900w"
@@ -161,17 +135,15 @@
         <section id="features" class="about-section">
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Why Choose Jackson Diner?</h2>
-                <!-- REVISION: Changed class to 'grid-4-col' for correct layout -->
                 <div class="grid-4-col">
-                    <div class="feature-item"><span class="material-icons-outlined">deck</span><div><h4>Stunning Rooftop Ambience</h4><p class="text-muted">Enjoy your meal with a view in our vibrant and cozy rooftop setting.</p></div></div>
-                    <div class="feature-item"><span class="material-icons-outlined">local_pizza</span><div><h4>Gourmet Pizzas & Pastas</h4><p class="text-muted">Indulge in a delicious selection of classic and contemporary continental favorites.</p></div></div>
-                    <div class="feature-item"><span class="material-icons-outlined">liquor</span><div><h4>Signature Mocktails & Shakes</h4><p class="text-muted">A creative menu of handcrafted beverages to complement your meal.</p></div></div>
-                    <div class="feature-item"><span class="material-icons-outlined">mood</span><div><h4>Casual & Relaxed Vibe</h4><p class="text-muted">The perfect spot to unwind, socialize, and enjoy great food with friends and family.</p></div></div>
+                    <div class="feature-item" data-animate><span class="material-icons-outlined">deck</span><div><h4>Stunning Rooftop Ambience</h4><p class="text-muted">Enjoy your meal with a view in our vibrant and cozy rooftop setting.</p></div></div>
+                    <div class="feature-item" data-animate style="--animation-delay: 0.1s;"><span class="material-icons-outlined">local_pizza</span><div><h4>Gourmet Pizzas & Pastas</h4><p class="text-muted">Indulge in a delicious selection of classic and contemporary continental favorites.</p></div></div>
+                    <div class="feature-item" data-animate style="--animation-delay: 0.2s;"><span class="material-icons-outlined">liquor</span><div><h4>Signature Mocktails & Shakes</h4><p class="text-muted">A creative menu of handcrafted beverages to complement your meal.</p></div></div>
+                    <div class="feature-item" data-animate style="--animation-delay: 0.3s;"><span class="material-icons-outlined">mood</span><div><h4>Casual & Relaxed Vibe</h4><p class="text-muted">The perfect spot to unwind, socialize, and enjoy great food with friends and family.</p></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- REVISION: Added new gallery section -->
         <section id="gallery">
             <div class="container">
                 <div data-animate>
@@ -215,7 +187,6 @@
                 <p class="section-subtitle">Plan Your Visit</p>
                 <h2 class="section-title">Table Reservations & Enquiries</h2>
                 <p>Contact our team directly for table bookings at our rooftop diner.</p>
-                <!-- REVISION: Changed class from 'hero-actions' to 'cta-actions' -->
                 <div class="cta-actions">
                     <a href="tel:+919264197988" class="button-secondary" aria-label="Call for table reservations"><span class="material-icons-outlined">call</span><span>Call for Reservations</span></a>
                     <a href="mailto:mmttsahibganj@gmail.com" class="button-secondary" aria-label="Email our dining team"><span class="material-icons-outlined">email</span><span>Email Us</span></a>

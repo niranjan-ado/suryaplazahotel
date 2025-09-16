@@ -19,14 +19,14 @@
 
     <!-- SCRIPT TO PREVENT THEME FLASH -->
     <script>
-      (function() {
+    (function() {
         try {
-          var theme = localStorage.getItem('theme');
-          if (theme === 'dark-theme') {
+        var theme = localStorage.getItem('theme');
+        if (theme === 'dark-theme') {
             document.documentElement.classList.add('dark-theme');
-          }
+        }
         } catch (e) {}
-      })();
+    })();
     </script>
 
     <!-- Favicon -->
@@ -35,63 +35,38 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- Optimized Google Fonts (Non-blocking) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <style>
-        .page-header .hero-title,
-        .page-header .section-subtitle {
-            color: var(--text-light);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-    </style>
-
-    <!-- REVISION: Updated schema to include all gallery images -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "Moti Mahal Tandoori Trail",
-      "description": "Located within Surya Plaza Hotel, Moti Mahal brings an authentic taste of North Indian, Mughlai, and Tandoori cuisine to Sahibganj. Part of the iconic brand famous for introducing Butter Chicken and Dal Makhani to the world.",
-      "image": [
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Moti Mahal Tandoori Trail",
+    "description": "Located within Surya Plaza Hotel, Moti Mahal brings an authentic taste of North Indian, Mughlai, and Tandoori cuisine to Sahibganj. Part of the iconic brand famous for introducing Butter Chicken and Dal Makhani to the world.",
+    "image": [
         "https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-seating-900w.webp",
         "https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-tandoori-platter-900w.webp",
         "https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-butter-chicken-900w.webp",
         "https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-interior-ambience-900w.webp",
         "https://suryaplazahotels.com/assets/images/dining/dining-moti-mahal-mutton-biryani-900w.webp"
-      ],
-      "url": "https://suryaplazahotels.com/dining/moti-mahal",
-      "telephone": "+919264197988",
-      "servesCuisine": [
-        "North Indian",
-        "Mughlai",
-        "Tandoori",
-        "Chinese"
-      ],
-      "menu": "https://suryaplazahotels.com/dining/moti-mahal-menu",
-      "priceRange": "₹₹",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Opp Ray Bahadur Building, J.N Roy Road",
-        "addressLocality": "Sahibganj",
-        "addressRegion": "Jharkhand",
-        "postalCode": "816109",
-        "addressCountry": "IN"
-      },
-      "parentOrganization": {
-        "@type": "Hotel",
-        "name": "Surya Plaza Hotel",
-        "url": "https://suryaplazahotels.com/"
-      }
+    ],
+    "url": "https://suryaplazahotels.com/dining/moti-mahal",
+    "telephone": "+919264197988",
+    "servesCuisine": [ "North Indian", "Mughlai", "Tandoori", "Chinese" ],
+    "menu": "https://suryaplazahotels.com/dining/moti-mahal-menu",
+    "priceRange": "₹₹",
+    "address": { "@type": "PostalAddress", "streetAddress": "Opp Ray Bahadur Building, J.N Roy Road", "addressLocality": "Sahibganj", "addressRegion": "Jharkhand", "postalCode": "816109", "addressCountry": "IN" },
+    "parentOrganization": { "@type": "Hotel", "name": "Surya Plaza Hotel", "url": "https://suryaplazahotels.com/" }
     }
     </script>
-
 </head>
 <body>
 
@@ -106,7 +81,7 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining" class="active">Dining</a></li>
                         <li><a href="/events">Events</a></li>
@@ -159,17 +134,15 @@
         <section id="features" class="about-section">
             <div class="container" data-animate>
                 <h2 class="section-title text-center">Why Dine With Us?</h2>
-                <!-- REVISION: Changed class to 'grid-4-col' for correct layout -->
                 <div class="grid-4-col">
-                    <div class="feature-item"><span class="material-icons-outlined">history_edu</span><div><h4>Legendary Culinary Heritage</h4><p class="text-muted">Part of the iconic brand famous for inventing Butter Chicken and Dal Makhani.</p></div></div>
-                    <div class="feature-item"><span class="material-icons-outlined">outdoor_grill</span><div><h4>Authentic Tandoori Delights</h4><p class="text-muted">Dishes cooked to perfection in traditional clay ovens for a unique, smoky flavor.</p></div></div>
-                    <div class="feature-item"><span class="material-icons-outlined">restaurant</span><div><h4>Royal Mughlai Experience</h4><p class="text-muted">A rich and aromatic selection of curries and slow-cooked biryanis.</p></div></div>
-                    <div class="feature-item"><span class="material-icons-outlined">celebration</span><div><h4>Elegant Ambience</h4><p class="text-muted">A sophisticated yet cozy setting, perfect for any occasion.</p></div></div>
+                    <div class="feature-item" data-animate><span class="material-icons-outlined">history_edu</span><div><h4>Legendary Culinary Heritage</h4><p class="text-muted">Part of the iconic brand famous for inventing Butter Chicken and Dal Makhani.</p></div></div>
+                    <div class="feature-item" data-animate style="--animation-delay: 0.1s;"><span class="material-icons-outlined">outdoor_grill</span><div><h4>Authentic Tandoori Delights</h4><p class="text-muted">Dishes cooked to perfection in traditional clay ovens for a unique, smoky flavor.</p></div></div>
+                    <div class="feature-item" data-animate style="--animation-delay: 0.2s;"><span class="material-icons-outlined">restaurant</span><div><h4>Royal Mughlai Experience</h4><p class="text-muted">A rich and aromatic selection of curries and slow-cooked biryanis.</p></div></div>
+                    <div class="feature-item" data-animate style="--animation-delay: 0.3s;"><span class="material-icons-outlined">celebration</span><div><h4>Elegant Ambience</h4><p class="text-muted">A sophisticated yet cozy setting, perfect for any occasion.</p></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- REVISION: Added new gallery section -->
         <section id="gallery">
             <div class="container">
                 <div data-animate>
@@ -202,7 +175,7 @@
                     <div class="dish-card" data-animate><h4>Tandoori Chicken</h4><p class="text-muted">A classic preparation where chicken is marinated in yogurt and spices, then cooked in a tandoor for a smoky, succulent flavor.</p></div>
                     <div class="dish-card" data-animate style="--animation-delay: 0.1s;"><h4>Mutton Rogan Josh</h4><p class="text-muted">A flavorful curry with tender mutton pieces cooked in a rich, aromatic gravy, known for its deep red color.</p></div>
                 </div>
-                 <div class="section-cta" data-animate>
+                <div class="section-cta" data-animate>
                     <a href="/dining/moti-mahal-menu" class="button-secondary">View The Complete Menu</a>
                 </div>
             </div>

@@ -8,7 +8,7 @@
     <title>Page Not Found | Surya Plaza Hotel, Sahibganj</title>
     <meta name="description" content="Oops! It looks like this page has moved. Let us help you get back on track at Surya Plaza Hotel.">
     <link rel="canonical" href="https://suryaplazahotels.com/404">
-    <meta name="robots" content="noindex, follow"> <!-- Prevents this page from being indexed by Google -->
+    <meta name="robots" content="noindex, follow">
 
     <!-- SCRIPT TO PREVENT THEME FLASH -->
     <script>
@@ -28,48 +28,96 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- REVISED: Optimized Google Fonts Loading -->
     <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    </noscript>
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- REVISION: Added internal styles for the final CTA section and site credit -->
+    <!-- Page-Specific Internal Styles -->
     <style>
-        .final-cta-section {
-            background-color: var(--primary-color);
-            color: var(--text-light);
+        /* --- Responsive Video Wrapper --- */
+        .video-responsive-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 25px var(--card-shadow-color);
         }
-        .dark-theme .final-cta-section {
-            color: #0d1117;
+        .video-responsive-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
-        .final-cta-section .section-title {
-            color: inherit;
+
+        /* --- Blog Cards (Simplified for this page) --- */
+        .blog-card { background-color: var(--background-surface); border-radius: var(--border-radius); border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 4px 15px var(--card-shadow-color); transition: transform 0.4s ease, box-shadow 0.4s ease; }
+        .blog-card a { display: block; color: inherit; text-decoration: none; }
+        .blog-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px var(--card-shadow-hover); }
+        .blog-card-image { overflow: hidden; }
+        .blog-card-image img { width: 100%; aspect-ratio: 16/10; object-fit: cover; transition: transform 0.4s ease; }
+        .blog-card:hover .blog-card-image img { transform: scale(1.05); }
+        .blog-card-content { padding: 1.5rem 1.75rem; }
+        .blog-card-content h3 { font-size: 1.25rem; margin-top: 0.75rem; transition: color 0.3s ease; }
+        .blog-card a:hover h3 { color: var(--primary-color); }
+        .blog-category { display: inline-block; font-size: 0.8rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 50px; background-color: color-mix(in srgb, var(--primary-color) 15%, transparent); color: var(--primary-color); }
+
+        /* --- Search Form --- */
+        .search-form-wrapper { max-width: 500px; margin: 2rem auto; }
+        .search-form-wrapper form { display: flex; gap: 0.5rem; }
+        .search-form-wrapper input {
+            flex-grow: 1; width: 100%; padding: 14px 20px; border: 1px solid var(--border-color);
+            border-radius: 50px; font-family: var(--font-body); font-size: 1rem;
+            background-color: var(--background-light); color: var(--text-dark); transition: all 0.3s ease;
         }
+        .search-form-wrapper input:focus {
+            outline: none; border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 25%, transparent);
+        }
+
+        /* --- Quick Link Cards --- */
+        .quick-link-card {
+            display: block; text-align: center; color: var(--text-dark);
+            background-color: var(--background-surface); border: 1px solid var(--border-color);
+            border-radius: var(--border-radius); padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+        }
+        .quick-link-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--primary-color); color: var(--text-light);
+            border-color: var(--primary-color); box-shadow: 0 8px 25px var(--card-shadow-hover);
+        }
+        .quick-link-card .material-icons-outlined {
+            font-size: 2.75rem; color: var(--primary-color);
+            margin-bottom: 1rem; transition: color 0.3s ease;
+        }
+        .quick-link-card:hover .material-icons-outlined { color: var(--text-light); }
+        .quick-link-card h3 { color: inherit; }
+        .quick-link-card p { color: inherit; }
+        .dark-theme .quick-link-card:hover, .dark-theme .quick-link-card:hover p { color: #0d1117; }
+        .dark-theme .quick-link-card:hover .material-icons-outlined, .dark-theme .quick-link-card:hover h3 { color: inherit; }
+
+        /* --- Final CTA & Credit --- */
         .final-cta-section .button-secondary.button-outline-light {
-            color: var(--text-light);
-            border-color: var(--text-light);
-            background-color: transparent;
+            color: var(--text-light); border-color: rgba(255,255,255,0.5); background-color: transparent;
         }
         .final-cta-section .button-secondary.button-outline-light:hover {
-            background-color: var(--text-light);
-            color: var(--primary-color);
-            border-color: var(--text-light);
+            background-color: var(--text-light); color: var(--primary-color); border-color: var(--text-light);
         }
+        .final-cta-section .button-secondary .material-icons-outlined { margin-right: 0.5rem; }
         .site-credit {
-            background-color: var(--background-surface);
-            padding: 2rem 0;
-            margin-top: -6rem;
-            padding-top: 8rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
+            background-color: var(--background-surface); padding: 2rem 0;
+            margin-top: -6rem; padding-top: 8rem; font-size: 0.9rem;
+            color: var(--text-muted); border-top: 1px solid var(--border-color);
         }
-        .site-credit p {
-            margin-bottom: 0.5rem;
-        }
+        .site-credit p { margin-bottom: 0.5rem; }
     </style>
 </head>
 <body>
@@ -85,7 +133,7 @@
                 </a>
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
-                        <li><a href="/" id="first-menu-link">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
@@ -111,18 +159,18 @@
 
         <header class="page-header" style="background-color: var(--background-surface);">
             <div class="container text-center" data-animate>
-                <h1 class="hero-title" style="color: var(--text-dark);">Oops! It seems you've found a path we're still paving.</h1>
+                <h1 class="hero-title" style="color: var(--text-dark);">Oops! Page Not Found</h1>
                 <p style="font-size: 1.1rem; max-width: 700px; margin: 1rem auto 0; color: var(--text-muted);">
-                    We've recently migrated our website, and some old links may no longer exist. Don't worry, let's get you back on track!
+                    It looks like this page has moved or no longer exists. Don't worry, we can help get you back on track!
                 </p>
             </div>
         </header>
 
         <section id="video-feature" style="padding-top: 3rem; padding-bottom: 3rem;">
             <div class="container" data-animate>
-                <h2 class="section-title text-center">While you're here, take a quick tour of our hotel:</h2>
+                <h2 class="section-title text-center">While you're here, take a quick tour:</h2>
                 <div class="video-responsive-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-k9i4fW_O9A?si=m_1h1u4L_7e8b_0p&autoplay=1&mute=1&loop=1&playlist=-k9i4fW_O9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-k9i4fW_O9A?si=m_1h1u4L_7e8b_0p&autoplay=1&mute=1&loop=1&playlist=-k9i4fW_O9A&controls=0&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
@@ -130,7 +178,7 @@
         <section id="explore-blog" class="about-section">
             <div class="container">
                 <div data-animate>
-                    <h2 class="section-title text-center">Or, Feel Free to Browse Our Latest Stories</h2>
+                    <h2 class="section-title text-center">Or, Explore Our Latest Stories</h2>
                 </div>
                 <div class="grid-3-col" data-animate>
                     <article class="blog-card"><a href="/blog/post-1" aria-label="Read more about A Weekend Guide to Sahibganj's Hidden Gems"><div class="blog-card-image"><img src="/assets/images/blog/blog-ganges-view-800w.webp" srcset="/assets/images/blog/blog-ganges-view-400w.webp 400w, /assets/images/blog/blog-ganges-view-800w.webp 800w" sizes="(max-width: 992px) 50vw, 33vw" alt="A scenic view of the River Ganges at Sahibganj." loading="lazy"></div><div class="blog-card-content"><span class="blog-category">Local Guides</span><h3>A Weekend Guide to Sahibganj's Hidden Gems</h3></div></a></article>
@@ -142,10 +190,9 @@
 
         <section id="search-help">
             <div class="container text-center" data-animate>
-                 <h2 class="section-title">Still can't find what you're looking for?</h2>
+                 <h2 class="section-title">Still can't find it?</h2>
                  <p class="text-muted" style="margin-top: -1.5rem;">Try a search, or choose one of our main pages below.</p>
                  <div class="search-form-wrapper"><form role="search" method="GET" action="/search"><input type="search" name="q" placeholder="Search our site..." aria-label="Search"><button type="submit" class="button-primary">Search</button></form></div>
-                 <p style="font-size: 0.9rem;"><strong>P.S.</strong> We've automatically logged this missing page, and our engineers will look into it. Thanks for helping us improve!</p>
             </div>
         </section>
 
@@ -162,8 +209,7 @@
 
         <section class="final-cta-section">
             <div class="container text-center" data-animate>
-                <h2 class="section-title">If all else fails, we're here to help directly!</h2>
-                <!-- REVISION: Corrected class and removed &nbsp; -->
+                <h2 class="section-title">We're always here to help!</h2>
                 <div class="cta-actions">
                     <a href="tel:+919264197986" class="button-secondary large button-outline-light"><span class="material-icons-outlined">call</span>Call Us</a>
                     <a href="mailto:sbg.suryaplaza@gmail.com" class="button-secondary large button-outline-light"><span class="material-icons-outlined">email</span>Email Us</a>
@@ -180,8 +226,7 @@
         </div>
     </main>
 
-    <!-- START: Consistent Footer -->
-    <footer class="main-footer">
+    <footer class="main-footer" style="margin-top: -6rem; z-index: -1;">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
@@ -192,7 +237,6 @@
             <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
-    <!-- END: Consistent Footer -->
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     

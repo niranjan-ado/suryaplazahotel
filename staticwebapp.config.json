@@ -10,8 +10,6 @@
     "Permissions-Policy": "geolocation=(), microphone=(), camera=()"
   },
   "mimeTypes": {
-    ".webmanifest": "application/manifest+json",
-    ".css": "text/css",
-    ".js": "text/javascript"
+    ".webmanifest": "application/manifest+json"
   }
 }
