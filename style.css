@@ -1,10 +1,10 @@
 /*
 ---
-SURYA PLAZA HOTEL - STYLE.CSS (DEFINITIVE & FINAL VERSION 11.5)
+SURYA PLAZA HOTEL - STYLE.CSS (DEFINITIVE & FINAL VERSION 11.6)
 REVISED AND CONSOLIDATED: 2025-09-16
 ---
 - This is the final, consolidated version of the stylesheet.
-- It includes all features and fixes from previous versions, with all
+- It includes all features and fixes from all previous versions, with all
   code duplication removed for optimal performance and maintainability.
 ---
 */
@@ -127,16 +127,13 @@ section { padding: 6rem 0; }
 .hero-actions { margin-top: 2.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 .hero-actions .button-secondary { color: var(--text-light); border-color: var(--text-light); }
 .hero-actions .button-secondary:hover { background-color: var(--text-light); color: var(--text-dark); }
-
 .about-section { background-color: var(--background-surface); }
 .about-section .grid-2-col { align-items: center; }
 .about-content .section-title, .events-content .section-title { text-align: left; margin-bottom: 1.5rem; }
-
 .amenity-item { text-align: center; }
 .amenity-item .material-icons-outlined { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; display: inline-block; transition: transform var(--transition-speed) ease; }
 .amenity-item:hover .material-icons-outlined { transform: scale(1.15) rotate(-5deg); }
 .amenity-item h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
-
 .room-card-price span { font-size: 1.25rem; font-weight: 700; color: var(--primary-color); }
 .final-cta-section { background-color: var(--primary-color); color: var(--text-light); }
 .final-cta-section p { max-width: 500px; margin: 0 auto 2rem auto; opacity: 0.9; }
@@ -144,6 +141,7 @@ section { padding: 6rem 0; }
 .final-cta-section .button-secondary:hover { background-color: var(--text-light); color: var(--primary-color); }
 
 /* --- FAQ Accordion --- */
+.faq-section { background-color: var(--background-surface); }
 .faq-item { border-bottom: 1px solid var(--border-color); }
 .faq-item:first-of-type { border-top: 1px solid var(--border-color); }
 .faq-question { display: flex; justify-content: space-between; align-items: center; width: 100%; text-align: left; padding: 1.5rem 0.5rem; font-family: var(--font-heading); font-size: 1.25rem; font-weight: 600; color: var(--text-dark); background: none; border: none; cursor: pointer; }
@@ -167,6 +165,7 @@ section { padding: 6rem 0; }
 .footer-links a { color: var(--text-muted); transition: all var(--transition-speed) ease; }
 .footer-links a:hover { color: var(--text-light); padding-left: 8px; }
 .footer-bottom { border-top: 1px solid var(--border-color); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-legal-links { display: flex; gap: 1.5rem; }
 
 .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background-color: var(--primary-color); color: #0d1117; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all var(--transition-speed) ease; z-index: 999; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
 .back-to-top:hover { transform: scale(1.1); }
@@ -177,492 +176,108 @@ section { padding: 6rem 0; }
 /* START: STYLES FOR ROOM DETAIL PAGES                             */
 /* =============================================================== */
 
-/* --- Page Header (Consistent for all internal pages) --- */
-.page-header {
-    padding: calc(var(--header-height) + 4rem) 0 4rem;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    color: var(--text-light);
-}
+.page-header { padding: calc(var(--header-height) + 4rem) 0 4rem; text-align: center; background-size: cover; background-position: center; color: var(--text-light); }
 .page-header .hero-title,
 .page-header .section-subtitle,
-.page-header .hero-subtitle {
-    color: var(--text-light);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-.page-header .hero-subtitle {
-    max-width: 600px;
-    margin: 1rem auto 0;
-    opacity: 0.9;
-}
-
-/* --- Main Room Detail Layout --- */
-.room-detail-layout {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-    align-items: flex-start;
-}
-.room-gallery-description h2 {
-    margin-bottom: 1rem;
-}
-.room-info {
-    position: sticky;
-    top: calc(var(--header-height) + 2rem);
-}
-
-/* --- Image Gallery --- */
-.gallery-main-image {
-    margin-bottom: 1rem;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 8px 25px var(--card-shadow-color);
-}
-.gallery-thumbnails {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 1rem;
-}
-.gallery-thumbnails img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: border-color 0.3s ease, transform 0.3s ease;
-}
-.gallery-thumbnails img:hover {
-    transform: scale(1.05);
-}
-.gallery-thumbnails img.active {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 25%, transparent);
-}
-
-/* --- Key Facts & Booking Widget --- */
-.room-key-facts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem 2rem;
-    margin: 2rem 0;
-    padding: 1.5rem 0;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-.key-fact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-weight: 600;
-}
+.page-header .hero-subtitle { color: var(--text-light); text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+.page-header .hero-subtitle { max-width: 600px; margin: 1rem auto 0; opacity: 0.9; }
+.room-detail-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: flex-start; }
+.room-gallery-description h2 { margin-bottom: 1rem; }
+.room-info { position: sticky; top: calc(var(--header-height) + 2rem); }
+.gallery-main-image { margin-bottom: 1rem; border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 8px 25px var(--card-shadow-color); }
+.gallery-thumbnails { display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 1rem; }
+.gallery-thumbnails img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid transparent; transition: border-color 0.3s ease, transform 0.3s ease; }
+.gallery-thumbnails img:hover { transform: scale(1.05); }
+.gallery-thumbnails img.active { border-color: var(--primary-color); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 25%, transparent); }
+.room-key-facts { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2rem 0; padding: 1.5rem 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+.key-fact-item { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; }
 .key-fact-item .material-icons-outlined { color: var(--primary-color); font-size: 1.75rem; }
-
-.booking-widget {
-    background-color: var(--background-surface);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    text-align: center;
-}
+.booking-widget { background-color: var(--background-surface); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 2rem; text-align: center; }
 .booking-widget .price { font-size: 1.2rem; margin-bottom: 0.5rem; }
 .booking-widget .price span { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--primary-color); }
 .booking-widget p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
 .booking-widget .button-primary { width: 100%; }
-
-/* --- Amenities Grid --- */
-.amenities-grid {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-.amenities-grid li {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: var(--background-surface);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-}
+.amenities-grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.amenities-grid li { display: flex; align-items: center; gap: 1rem; padding: 1rem; background-color: var(--background-surface); border: 1px solid var(--border-color); border-radius: 8px; }
 .amenities-grid .material-icons-outlined { font-size: 1.75rem; color: var(--primary-color); }
-
-/* --- "Other Rooms" Section --- */
-#other-rooms .room-card {
-    box-shadow: 0 4px 15px var(--card-shadow-color);
-}
-#other-rooms .room-card-content {
-    text-align: center;
-    padding: 1.5rem;
-}
-#other-rooms .room-card-content p {
-    display: none;
-}
+#other-rooms .room-card { box-shadow: 0 4px 15px var(--card-shadow-color); }
+#other-rooms .room-card-content { text-align: center; padding: 1.5rem; }
+#other-rooms .room-card-content p { display: none; }
 
 /* =============================================================== */
-/* START: STYLES FOR DETAIL PAGES (DINING, EVENTS, ETC.)         */
+/* START: STYLES FOR DETAIL PAGES (DINING, EVENTS, ABOUT)          */
 /* =============================================================== */
 
-/* --- Intro Section (2-Col Image/Text) --- */
-#intro .grid-2-col {
-    align-items: center;
-}
-
-/* --- Features Section ("Why Choose Us?") --- */
-.feature-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    text-align: left;
-}
-.feature-item .material-icons-outlined {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-}
-.feature-item h4 {
-    margin-bottom: 0.25rem;
-}
-
-/* --- Parallax CTA Section --- */
-.parallax-section {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 8rem 0;
-    text-align: center;
-    color: var(--text-light);
-}
-.parallax-section .section-title {
-    color: var(--text-light);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- Dish/Highlight Cards --- */
-.dish-card {
-    background-color: var(--background-surface);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-}
-.dish-card h4 {
-    margin-bottom: 0.75rem;
-}
-
-/* --- Final CTA Section --- */
-.direct-booking-section {
-    background-color: var(--background-surface);
-    text-align: center;
-}
-.direct-booking-section p {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2rem;
-}
-.direct-booking-section .cta-actions {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-.direct-booking-section .button-secondary .material-icons-outlined {
-    margin-right: 0.5rem;
-}
-/* =============================================================== */
-/* END: STYLES FOR DETAIL PAGES                                    */
-/* =============================================================== */
-/* =============================================================== */
-/* END: STYLES FOR ROOM DETAIL PAGES                               */
-/* =============================================================== */
+#intro .grid-2-col { align-items: center; }
+.feature-item { display: flex; align-items: flex-start; gap: 1rem; text-align: left; }
+.feature-item .material-icons-outlined { font-size: 2.5rem; color: var(--primary-color); }
+.feature-item h4 { margin-bottom: 0.25rem; }
+.parallax-section { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; padding: 8rem 0; text-align: center; color: var(--text-light); }
+.parallax-section .section-title { color: var(--text-light); text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); max-width: 800px; margin-left: auto; margin-right: auto; }
+.dish-card { background-color: var(--background-surface); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 2rem; }
+.dish-card h4 { margin-bottom: 0.75rem; }
+.direct-booking-section { background-color: var(--background-surface); text-align: center; }
+.direct-booking-section p { max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 2rem; }
+.direct-booking-section .cta-actions { margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.direct-booking-section .button-secondary .material-icons-outlined { margin-right: 0.5rem; }
+.showcase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 5rem; }
+.showcase-grid:last-of-type { margin-bottom: 0; }
+.showcase-text .section-title { text-align: left; margin-bottom: 1rem; }
+.showcase-text .button-secondary { margin-top: 1.5rem; }
+.showcase-grid.reversed .showcase-image { order: 2; }
+.commitment-item { text-align: center; }
+.commitment-item .material-icons-outlined { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
+.commitment-item h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.map-container { overflow: hidden; border-radius: var(--border-radius); aspect-ratio: 4 / 3; box-shadow: 0 8px 25px var(--card-shadow-color); }
+.map-container iframe { width: 100%; height: 100%; border: 0; }
+.location-address { margin-top: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background-color: var(--background-surface); border: 1px solid var(--border-color); border-radius: var(--border-radius); font-weight: 600; }
+#location-map .section-title, #location-map p { text-align: left; }
 
 /* =============================================================== */
 /* START: STYLES FOR MENU PAGES                                    */
 /* =============================================================== */
 
-/* --- Sticky Menu Navigation --- */
-.menu-nav-sticky {
-    position: sticky;
-    /* Sticks below the main header */
-    top: var(--header-height);
-    background-color: var(--background-surface);
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 4px 12px var(--card-shadow-color);
-    z-index: 999;
-    padding: 0.75rem 0;
-    transition: background-color 0.3s ease;
-}
-
-.menu-nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* --- Category Links (Left Side) --- */
-.menu-category-nav {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto; /* Allows horizontal scrolling on mobile */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-}
-.menu-category-nav::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-}
-.menu-category-nav a {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    color: var(--text-muted);
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid transparent;
-    transition: color 0.3s ease, border-color 0.3s ease;
-    white-space: nowrap;
-}
-.menu-category-nav a:hover {
-    color: var(--text-dark);
-}
-.menu-category-nav a.active {
-    color: var(--primary-color);
-    border-bottom-color: var(--primary-color);
-}
-
-/* --- Filter Buttons (Right Side) --- */
-.menu-filter {
-    display: flex;
-    gap: 0.5rem;
-    background-color: var(--background-light);
-    padding: 0.25rem;
-    border-radius: 50px;
-    border: 1px solid var(--border-color);
-}
-.menu-filter button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: transparent;
-    border: none;
-    border-radius: 50px;
-    padding: 0.5rem 1rem;
-    font-family: var(--font-body);
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-    color: var(--text-muted);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.menu-filter button .material-icons-outlined {
-    font-size: 1.2rem;
-}
-.menu-filter button.active {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-}
-.dark-theme .menu-filter button.active {
-    color: #0d1117;
-}
-
-/* --- Menu Content Layout --- */
-.menu-container {
-    padding-top: 2rem;
-}
-.menu-section {
-    padding-top: 5rem; /* Offset for sticky nav + extra space */
-    margin-top: -5rem; /* Pull it back up to align with anchor */
-}
-.menu-section-title {
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
-}
-.menu-sub-title {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-}
-.menu-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-}
-.menu-category-group {
-    margin-bottom: 3rem;
-}
-
-/* --- Individual Menu Item --- */
-.menu-item {
-    padding-bottom: 1.5rem;
-    border-bottom: 1px dashed var(--border-color);
-}
-.menu-item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-}
-.menu-item-header h4 {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-}
-.menu-item-header .price {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    color: var(--primary-color);
-    white-space: nowrap;
-}
-.menu-item-desc {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-/* --- Linked Cards (for Menu Links) --- */
-.linked-card {
-    display: block;
-    position: relative;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 8px 25px var(--card-shadow-color);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    color: var(--text-light);
-}
-.linked-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px var(--card-shadow-hover);
-}
-.linked-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-.linked-card:hover img {
-    transform: scale(1.05);
-}
-.linked-card-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 2rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
-}
-.linked-card-content h3 {
-    font-size: 1.75rem;
-    color: var(--text-light);
-}
-.linked-card-content p {
-    color: var(--text-light);
-    opacity: 0.9;
-    margin-bottom: 1.5rem;
-}
-.linked-card-content .button-primary {
-    display: inline-block; /* Make the span behave like a button */
-    pointer-events: none; /* Prevents the button from interfering with the card's link */
-}
-/* =============================================================== */
-/* END: STYLES FOR MENU PAGES                                      */
-/* =============================================================== */
-/* =============================================================== */
-/* START: STYLES FOR ABOUT PAGE & OTHER DETAIL PAGES               */
-/* =============================================================== */
-
-/* --- Showcase Grid (Alternating Image/Text) --- */
-.showcase-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    margin-bottom: 5rem;
-}
-.showcase-grid:last-of-type {
-    margin-bottom: 0;
-}
-.showcase-text .section-title {
-    text-align: left;
-    margin-bottom: 1rem;
-}
-.showcase-text .button-secondary {
-    margin-top: 1.5rem;
-}
-.showcase-grid.reversed .showcase-image {
-    order: 2;
-}
-
-/* --- Commitment Section --- */
-.commitment-item {
-    text-align: center;
-}
-.commitment-item .material-icons-outlined {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-.commitment-item h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-/* --- Map & Location Section (Reusable) --- */
-.map-container {
-    overflow: hidden;
-    border-radius: var(--border-radius);
-    aspect-ratio: 4 / 3; /* Adjusted for better fit in a column */
-    box-shadow: 0 8px 25px var(--card-shadow-color);
-}
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-.location-address {
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background-color: var(--background-surface);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    font-weight: 600;
-}
-#location-map .section-title,
-#location-map p {
-    text-align: left; /* Align text to the left in the new 2-col layout */
-}
-
-.footer-legal-links {
-    display: flex;
-    gap: 1.5rem;
-}
+.menu-nav-sticky { position: sticky; top: var(--header-height); background-color: var(--background-surface); border-bottom: 1px solid var(--border-color); box-shadow: 0 4px 12px var(--card-shadow-color); z-index: 999; padding: 0.75rem 0; transition: background-color 0.3s ease; }
+.menu-nav-container { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.menu-category-nav { display: flex; gap: 1.5rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+.menu-category-nav::-webkit-scrollbar { display: none; }
+.menu-category-nav a { font-family: var(--font-heading); font-weight: 600; color: var(--text-muted); padding-bottom: 0.5rem; border-bottom: 3px solid transparent; transition: color 0.3s ease, border-color 0.3s ease; white-space: nowrap; }
+.menu-category-nav a:hover { color: var(--text-dark); }
+.menu-category-nav a.active { color: var(--primary-color); border-bottom-color: var(--primary-color); }
+.menu-filter { display: flex; gap: 0.5rem; background-color: var(--background-light); padding: 0.25rem; border-radius: 50px; border: 1px solid var(--border-color); }
+.menu-filter button { display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; border-radius: 50px; padding: 0.5rem 1rem; font-family: var(--font-body); font-weight: 700; font-size: 0.9rem; cursor: pointer; color: var(--text-muted); transition: background-color 0.3s ease, color 0.3s ease; }
+.menu-filter button .material-icons-outlined { font-size: 1.2rem; }
+.menu-filter button.active { background-color: var(--primary-color); color: var(--text-light); }
+.dark-theme .menu-filter button.active { color: #0d1117; }
+.menu-container { padding-top: 2rem; }
+.menu-section { padding-top: 5rem; margin-top: -5rem; }
+.menu-section-title { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); }
+.menu-sub-title { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+.menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.menu-category-group { margin-bottom: 3rem; }
+.menu-item { padding-bottom: 1.5rem; border-bottom: 1px dashed var(--border-color); }
+.menu-item-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.5rem; }
+.menu-item-header h4 { font-family: var(--font-heading); font-size: 1.1rem; }
+.menu-item-header .price { font-family: var(--font-heading); font-weight: 700; color: var(--primary-color); white-space: nowrap; }
+.menu-item-desc { font-size: 0.9rem; color: var(--text-muted); }
+.linked-card { display: block; position: relative; border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 8px 25px var(--card-shadow-color); transition: transform 0.4s ease, box-shadow 0.4s ease; color: var(--text-light); }
+.linked-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px var(--card-shadow-hover); }
+.linked-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.linked-card:hover img { transform: scale(1.05); }
+.linked-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%); }
+.linked-card-content h3 { font-size: 1.75rem; color: var(--text-light); }
+.linked-card-content p { color: var(--text-light); opacity: 0.9; margin-bottom: 1.5rem; }
+.linked-card-content .button-primary { display: inline-block; pointer-events: none; }
 
 /* =============================================================== */
-/* END: STYLES FOR ABOUT PAGE & OTHER DETAIL PAGES                 */
+/* START: MEDIA QUERIES                                            */
 /* =============================================================== */
 
-/* --- Media Queries --- */
 @media (max-width: 992px) {
     .footer-grid { grid-template-columns: 1fr 1fr; }
-    
-    .room-card-actions, .info-card-actions {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.75rem;
-    }
-
-    .room-detail-layout {
-        grid-template-columns: 1fr;
-    }
-    .room-info {
-        position: static;
-        margin-top: 2rem;
-    }
+    .room-card-actions, .info-card-actions { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+    .room-detail-layout { grid-template-columns: 1fr; }
+    .room-info { position: static; margin-top: 2rem; }
 }
 
 @media (max-width: 768px) {
@@ -673,54 +288,24 @@ section { padding: 6rem 0; }
     .nav-links-wrapper.active { transform: translateX(0); }
     .nav-links { flex-direction: column; align-items: flex-start; gap: 0; margin-top: 4rem; }
     .nav-links a { display: block; width: 100%; padding: 1rem 2rem; font-size: 1.2rem; }
-    
-    .main-header .nav-links-wrapper.active .nav-links a {
-        color: var(--text-dark);
-    }
-    .dark-theme .main-header .nav-links-wrapper.active .nav-links a {
-        color: var(--text-light);
-    }
-
+    .main-header .nav-links-wrapper.active .nav-links a { color: var(--text-dark); }
+    .dark-theme .main-header .nav-links-wrapper.active .nav-links a { color: var(--text-light); }
     .nav-menu-book-btn-wrapper { display: block; padding: 0 1.5rem 1rem; }
     .about-content,
     .events-content,
     .about-content .section-title,
-    .events-content .section-title {
-        text-align: center;
-    }
+    .events-content .section-title { text-align: center; }
     .about-section .grid-2-col > div:last-child, .events-section .grid-2-col > div:first-child { order: -1; }
     .section-cta-left { text-align: center; }
-    
     .footer-grid { grid-template-columns: 1fr; text-align: center; }
     .footer-col-main .footer-logo, .footer-col-main p { margin-left: auto; margin-right: auto; }
     .footer-bottom { flex-direction: column; text-align: center; }
-        /* Menu Page Responsive Styles */
-    .menu-nav-container {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1rem;
-    }
-    .menu-category-nav {
-        justify-content: space-between;
-    }
-    .menu-filter {
-        justify-content: center;
-    }
-    .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-       /* REVISED: About Page Showcase Grid Responsive Styles */
-    .showcase-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        margin-bottom: 4rem;
-    }
+    .menu-nav-container { flex-direction: column; align-items: stretch; gap: 1rem; }
+    .menu-category-nav { justify-content: space-between; }
+    .menu-filter { justify-content: center; }
+    .menu-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .showcase-grid { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
     .showcase-grid .showcase-text,
-    .showcase-grid .showcase-text .section-title {
-        text-align: center;
-    }
-    .showcase-grid .showcase-image {
-        order: -1 !important; /* Ensures image is always first on mobile */
-    }
+    .showcase-grid .showcase-text .section-title { text-align: center; }
+    .showcase-grid .showcase-image { order: -1 !important; }
 }

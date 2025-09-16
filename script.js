@@ -58,11 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (question && answer) {
                 question.addEventListener('click', () => {
                     const isActive = question.classList.contains('active');
+                    question.classList.toggle('active');
+                    question.setAttribute('aria-expanded', !isActive);
                     if (!isActive) {
-                        question.classList.add('active');
                         answer.style.maxHeight = answer.scrollHeight + 'px';
                     } else {
-                        question.classList.remove('active');
                         answer.style.maxHeight = null;
                     }
                 });
@@ -130,8 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     
     const singlePageNavHandler = () => {
-        const navLinks = document.querySelectorAll('.main-nav a[href^="#"], .nav-menu-book-btn-wrapper a[href^="#"]');
-        if (!navLinks.length) return;
+        const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+        if (!navLinks.length || !document.body.classList.contains('home-page')) return;
 
         navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
@@ -154,7 +154,9 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        const sections = document.querySelectorAll('section[id]');
+        const sections = document.querySelectorAll('main section[id]');
+        if (!sections.length) return;
+
         const headerHeightValue = getComputedStyle(document.documentElement).getPropertyValue('--header-height').trim() || '85px';
         const headerHeight = parseInt(headerHeightValue, 10);
         
@@ -162,9 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
-                    const activeLink = document.querySelector(`.main-nav a[href="#${id}"]`);
-                    
-                    document.querySelectorAll('.main-nav a').forEach(link => link.classList.remove('active'));
+                    const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+                    document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
                     if (activeLink) {
                         activeLink.classList.add('active');
                     }
@@ -181,9 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const mainImage = document.getElementById('main-gallery-image');
         const thumbnails = document.querySelectorAll('.gallery-thumbnails img');
 
-        if (!mainImage || !thumbnails.length) {
-            return;
-        }
+        if (!mainImage || !thumbnails.length) return;
 
         thumbnails[0]?.classList.add('active');
 
@@ -198,13 +197,12 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     };
-        const menuFilterHandler = () => {
+
+    const menuFilterHandler = () => {
         const filterContainer = document.querySelector('.menu-filter');
         const menuContent = document.getElementById('menu-content');
 
-        if (!filterContainer || !menuContent) {
-            return; // Exit if filter elements aren't on this page
-        }
+        if (!filterContainer || !menuContent) return;
 
         const filterButtons = filterContainer.querySelectorAll('button');
         const menuItems = menuContent.querySelectorAll('.menu-item');
@@ -214,20 +212,17 @@ document.addEventListener("DOMContentLoaded", () => {
             button.addEventListener('click', () => {
                 const filterValue = button.dataset.filter;
 
-                // Update active button state
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
 
-                // Filter menu items
                 menuItems.forEach(item => {
                     const itemCategory = item.dataset.category || '';
                     const shouldShow = filterValue === 'all' || itemCategory.includes(filterValue);
                     item.style.display = shouldShow ? 'block' : 'none';
                 });
 
-                // Hide/show entire sections if they become empty
                 menuSections.forEach(section => {
-                    const visibleItems = section.querySelectorAll('.menu-item[style*="display: block"]');
+                    const visibleItems = section.querySelectorAll('.menu-item[style*="display: block"], .menu-item:not([style])');
                     section.style.display = visibleItems.length > 0 ? 'block' : 'none';
                 });
             });
@@ -236,21 +231,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const menuScrollspyHandler = () => {
         const stickyNav = document.querySelector('.menu-nav-sticky');
-        if (!stickyNav) {
-            return; // Exit if sticky nav isn't on this page
-        }
+        if (!stickyNav) return;
 
         const navLinks = stickyNav.querySelectorAll('.menu-category-nav a');
         const sections = document.querySelectorAll('.menu-section');
-        const headerOffset = document.documentElement.style.getPropertyValue('--header-height') || '85px';
+        const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height').trim() || '85px', 10);
         const stickyNavHeight = stickyNav.offsetHeight;
-        const totalOffset = parseInt(headerOffset, 10) + stickyNavHeight + 20; // 20px buffer
+        const totalOffset = headerHeight + stickyNavHeight + 20;
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    const id = entry.target.id;
                     navLinks.forEach(link => {
-                        link.classList.toggle('active', link.getAttribute('href').substring(1) === entry.target.id);
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
                     });
                 }
             });
@@ -260,18 +254,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         sections.forEach(section => observer.observe(section));
 
-        // Add smooth scroll for menu links
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+                const targetElement = document.querySelector(link.getAttribute('href'));
                 if (targetElement) {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
     };
+
     const init = () => {
         mobileNavHandler();
         themeToggleHandler();
@@ -286,7 +279,5 @@ document.addEventListener("DOMContentLoaded", () => {
         menuScrollspyHandler();
     };
 
-
-    
     init();
 });
