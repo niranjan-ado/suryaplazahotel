@@ -36,7 +36,7 @@
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
     <!-- Optimized Google Fonts (Non-blocking) -->
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap" media="print" onload="this.media='all'">
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
@@ -82,13 +82,14 @@
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
                         <li><a href="/">Home</a></li>
+                        <li><a href="/about" class="active">About</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                     <div class="nav-menu-book-btn-wrapper">
-                        <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener" class="button-primary nav-menu-book-btn">Book Now</a>
+                        <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary nav-menu-book-btn">Book Now</a>
                     </div>
                 </div>
                 <div class="header-actions">
@@ -127,7 +128,7 @@
             </div>
         </section>
         
-        <section id="commitment" class="commitment-section">
+        <section id="commitment" class="commitment-section" style="background-color: var(--background-surface);">
             <div class="container">
                  <div data-animate>
                     <h2 class="section-title text-center">Our Commitment to You</h2>
@@ -181,12 +182,11 @@
             </div>
         </section>
 
-        <!-- REVISED: Restructured FAQ and Map into a 2-column grid -->
-        <section id="faq-and-map">
+        <section id="faq-and-map" style="background-color: var(--background-surface);">
             <div class="container">
                 <div class="grid-2-col">
-                    <div class="faq-section" data-animate>
-                        <h2 class="section-title" style="text-align: left;">Frequently Asked Questions</h2>
+                    <div class="faq-section" data-animate style="padding:0;">
+                        <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Frequently Asked Questions</h2>
                         <div class="faq-container">
                             <div class="faq-item">
                                 <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1"><span>Your story mentions the hotel is run by a family of doctors. What does this mean for me as a guest?</span><span class="faq-icon" aria-hidden="true"></span></button>
@@ -199,7 +199,7 @@
                         </div>
                     </div>
                     <div id="location-map" data-animate style="--animation-delay: 0.1s;">
-                        <h2 class="section-title">Find Us</h2>
+                        <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Find Us</h2>
                         <p>We are conveniently located on J.N Roy Road, easily accessible from all major transport hubs in Sahibganj.</p>
                         <div class="location-address">Opp Ray Bahadur Building, J.N Roy Road, Sahibganj, Jharkhand 816109</div>
                         <div class="map-container">
@@ -214,26 +214,28 @@
             <div class="container text-center" data-animate>
                 <h2 class="section-title">Experience the Surya Plaza Difference</h2>
                 <p>We invite you to book your stay and discover the perfect blend of comfort, convenience, and heartfelt hospitality.</p>
-                <a href="https://bookings.suryaplazahotels.com" target="_blank" rel="noopener" class="button-primary large">Book Your Stay Now</a>
+                <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary large">Book Your Stay Now</a>
             </div>
         </section>
     </main>
 
-    <!-- START: Consistent FOOTER -->
+    <!-- START: Consistent Footer -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col-main"><a href="/" aria-label="Surya Plaza Hotel Homepage"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
-                <div class="footer-col-links"><h4>Our Hotel</h4><ul class="footer-links"><li><a href="/about" class="active">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
-                <div class="footer-col-links"><h4>Accommodations</h4><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
-                <div class="footer-col-links"><h4>Our Restaurants</h4><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
+                <div class="footer-col-main"><a href="/"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
+                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about" class="active">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links">Terms<a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
-    <!-- END: Consistent FOOTER -->
+    <!-- END: Consistent Footer -->
 
-    <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
+    <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top">
+        <span class="material-icons-outlined">arrow_upward</span>
+    </a>
     
     <script src="/script.js" defer></script>
 </body>
