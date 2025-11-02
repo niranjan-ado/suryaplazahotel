@@ -47,154 +47,77 @@
 
     <!-- Page-Specific Internal Styles for Blog -->
     <style>
-        .page-header {
-            padding-top: calc(var(--header-height) + 6rem); /* Increased Padding */
-            padding-bottom: 4rem;
-        }
-        .page-header .hero-title,
-        .page-header .section-subtitle {
-            color: var(--text-light);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        /* --- Featured Post --- */
-        .featured-post {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 5rem;
-        }
-        .featured-post-image img {
-            border-radius: var(--border-radius);
-            box-shadow: 0 8px 25px var(--card-shadow-color);
-        }
-        .featured-post-content h2 {
-            font-size: 2.25rem;
-            margin: 0.75rem 0 1rem;
-        }
-        .featured-post-content .button-secondary {
-            margin-top: 1.5rem;
-        }
-
-        /* --- Blog Grid & Cards --- */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-        .blog-card {
-            background-color: var(--background-surface);
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            box-shadow: 0 4px 15px var(--card-shadow-color);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-        .blog-card a {
-            display: block;
-            color: inherit;
-            text-decoration: none;
-        }
-        .blog-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 28px var(--card-shadow-hover);
-        }
-        .blog-card-image {
-            overflow: hidden;
-        }
-        .blog-card-image img {
-            width: 100%;
-            aspect-ratio: 16/10;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        .blog-card:hover .blog-card-image img {
-            transform: scale(1.05);
-        }
-        .blog-card-content {
-            padding: 1.5rem 1.75rem;
-        }
-        .blog-card-content h3 {
-            font-size: 1.25rem;
-            margin: 0.75rem 0;
-            transition: color 0.3s ease;
-        }
-        .blog-card a:hover h3 {
-            color: var(--primary-color);
-        }
-
-        /* --- Blog Category & Pagination --- */
-        .blog-category {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            background-color: color-mix(in srgb, var(--primary-color) 15%, transparent);
-            color: var(--primary-color);
-        }
-        .pagination {
-            margin-top: 4rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .pagination a {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            min-width: 40px;
-            height: 40px;
-            padding: 0 0.5rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-weight: 600;
-            color: var(--text-dark);
-            background-color: var(--background-surface);
-        }
-        .pagination a:hover {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            border-color: var(--primary-color);
-        }
-        .pagination a.current {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            border-color: var(--primary-color);
-        }
-        .pagination a.disabled {
-            color: var(--text-muted);
-            background-color: var(--background-light);
-            pointer-events: none;
-        }
-        
-        /* --- Responsive Adjustments --- */
-        @media (max-width: 768px) {
-            .featured-post {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .featured-post-content h2 {
-                font-size: 1.75rem;
-            }
-        }
+        .page-header { padding-top: calc(var(--header-height) + 6rem); padding-bottom: 4rem; }
+        .page-header .hero-title, .page-header .section-subtitle { color: var(--text-light); text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+        .featured-post { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 5rem; }
+        .featured-post-image img { border-radius: var(--border-radius); box-shadow: 0 8px 25px var(--card-shadow-color); }
+        .featured-post-content h2 { font-size: 2.25rem; margin: 0.75rem 0 1rem; }
+        .featured-post-content .button-secondary { margin-top: 1.5rem; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+        .blog-card { background-color: var(--background-surface); border-radius: var(--border-radius); border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 4px 15px var(--card-shadow-color); transition: transform 0.4s ease, box-shadow 0.4s ease; }
+        .blog-card a { display: block; color: inherit; text-decoration: none; }
+        .blog-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px var(--card-shadow-hover); }
+        .blog-card-image { overflow: hidden; }
+        .blog-card-image img { width: 100%; aspect-ratio: 16/10; object-fit: cover; transition: transform 0.4s ease; }
+        .blog-card:hover .blog-card-image img { transform: scale(1.05); }
+        .blog-card-content { padding: 1.5rem 1.75rem; }
+        .blog-card-content h3 { font-size: 1.25rem; margin: 0.75rem 0; transition: color 0.3s ease; }
+        .blog-card a:hover h3 { color: var(--primary-color); }
+        .blog-category { display: inline-block; font-size: 0.8rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 50px; background-color: color-mix(in srgb, var(--primary-color) 15%, transparent); color: var(--primary-color); }
+        .pagination { margin-top: 4rem; display: flex; justify-content: center; align-items: center; gap: 0.5rem; }
+        .pagination a { display: inline-flex; justify-content: center; align-items: center; min-width: 40px; height: 40px; padding: 0 0.5rem; border: 1px solid var(--border-color); border-radius: 8px; font-weight: 600; color: var(--text-dark); background-color: var(--background-surface); }
+        .pagination a:hover { background-color: var(--primary-color); color: var(--text-light); border-color: var(--primary-color); }
+        .pagination a.current { background-color: var(--primary-color); color: var(--text-light); border-color: var(--primary-color); }
+        .pagination a.disabled { color: var(--text-muted); background-color: var(--background-light); pointer-events: none; }
+        @media (max-width: 768px) { .featured-post { grid-template-columns: 1fr; text-align: center; } .featured-post-content h2 { font-size: 1.75rem; } }
     </style>
 
+    <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "Surya Plaza Hotel Blog",
-      "url": "https://suryaplazahotels.com/blog",
-      "description": "The official blog of Surya Plaza Hotel, featuring news, local travel guides for Sahibganj, and stories about the hotel experience.",
-      "publisher": { "@type": "Organization", "name": "Surya Plaza Hotel", "logo": { "@type": "ImageObject", "url": "https://suryaplazahotels.com/assets/images/logo-dark.svg" } },
-      "blogPost": [
-        { "@type": "BlogPosting", "mainEntityOfPage": "https://suryaplazahotels.com/blog/post-1", "headline": "A Weekend Guide to Sahibganj's Hidden Gems", "image": "https://suryaplazahotels.com/assets/images/blog/blog-ganges-view-800w.webp", "abstract": "Discover the best local spots, from the serene Moti Jharna waterfall to the historic Shivgadi Dham temple, all just a short trip from our hotel." },
-        { "@type": "BlogPosting", "mainEntityOfPage": "https://suryaplazahotels.com/blog/post-2", "headline": "The Story of Butter Chicken: A Moti Mahal Signature", "image": "https://suryaplazahotels.com/assets/images/blog/blog-butter-chicken-dish-800w.webp", "abstract": "Explore the rich history of our most iconic dish, served daily at our renowned Moti Mahal restaurant." },
-        { "@type": "BlogPosting", "mainEntityOfPage": "https://suryaplazahotels.com/blog/post-3", "headline": "Designing for Your Comfort: The Making of Our Suites", "image": "https://suryaplazahotels.com/assets/images/blog/blog-premium-suite-bedroom-800w.webp", "abstract": "A behind-the-scenes look at how we designed our suites to be the perfect blend of luxury and homely comfort." },
-        { "@type": "BlogPosting", "mainEntityOfPage": "https://suryaplazahotels.com/blog/post-4", "headline": "5 Tips for a Productive Business Trip to Sahibganj", "image": "https://suryaplazahotels.com/assets/images/about-reception-desk-900w.webp", "abstract": "Make your next work trip a success with our tips for staying focused and comfortable at our hotel." }
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "url": "https://suryaplazahotels.com/blog",
+          "name": "Our Blog | Stories & Guides from Surya Plaza Hotel, Sahibganj",
+          "description": "Read the latest news, travel guides for Sahibganj, and stories about the hotel experience from the official blog of Surya Plaza Hotel.",
+          "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suryaplazahotels.com/#website",
+          "url": "https://suryaplazahotels.com/",
+          "name": "Surya Plaza Hotel",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://suryaplazahotels.com/#organization",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/",
+          "logo": { "@type": "ImageObject", "url": "https://suryaplazahotels.com/assets/images/logo-dark.svg" }
+        },
+        {
+          "@type": "Blog",
+          "name": "Surya Plaza Hotel Blog",
+          "url": "https://suryaplazahotels.com/blog",
+          "description": "The official blog of Surya Plaza Hotel, featuring news, local travel guides for Sahibganj, and stories about the hotel experience.",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" },
+          "blogPost": [
+            { "@type": "BlogPosting", "mainEntityOfPage": "https://suryaplazahotels.com/blog/post-1", "headline": "A Weekend Guide to Sahibganj's Hidden Gems", "image": "https://suryaplazahotels.com/assets/images/blog/blog-ganges-view-800w.webp", "abstract": "Discover the best local spots, from the serene Moti Jharna waterfall to the historic Shivgadi Dham temple, all just a short trip from our hotel." },
+            { "@type": "BlogPosting", "mainEntityOfPage": "https://suryaplazahotels.com/blog/post-2", "headline": "The Story of Butter Chicken: A Moti Mahal Signature", "image": "https://suryaplazahotels.com/assets/images/blog/blog-butter-chicken-dish-800w.webp", "abstract": "Explore the rich history of our most iconic dish, served daily at our renowned Moti Mahal restaurant." },
+            { "@type": "BlogPosting", "mainEntityOfPage": "https://suryaplazahotels.com/blog/post-3", "headline": "Designing for Your Comfort: The Making of Our Suites", "image": "https://suryaplazahotels.com/assets/images/blog/blog-premium-suite-bedroom-800w.webp", "abstract": "A behind-the-scenes look at how we designed our suites to be the perfect blend of luxury and homely comfort." },
+            { "@type": "BlogPosting", "mainEntityOfPage": "https://suryaplazahotels.com/blog/post-4", "headline": "5 Tips for a Productive Business Trip to Sahibganj", "image": "https://suryaplazahotels.com/assets/images/about-reception-desk-900w.webp", "abstract": "Make your next work trip a success with our tips for staying focused and comfortable at our hotel." }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://suryaplazahotels.com/blog" }
+          ]
+        }
       ]
     }
     </script>
@@ -217,6 +140,7 @@
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
+                        <li><a href="/blog" class="active" aria-current="page">Blog</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                     <div class="nav-menu-book-btn-wrapper">
@@ -303,7 +227,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col-main"><a href="/"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
-                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog" class="active">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog" class="active" aria-current="page">Our Blog</a></li></ul></div>
                 <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
                 <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>

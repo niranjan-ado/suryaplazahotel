@@ -45,45 +45,84 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- Internal Style for Page Header Padding -->
-    <style>
-        .page-header {
-            padding-top: calc(var(--header-height) + 6rem); /* Increased Padding */
-            padding-bottom: 4rem;
-        }
-    </style>
-
-    <!-- JSON-LD Schema -->
+    <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "HotelRoom",
-      "name": "Family Apartment with Kitchen",
-      "description": "Our Family Apartment is the ultimate choice for extended stays or families seeking the comforts of home. This expansive 800 sqft apartment includes two private bedrooms, a separate drawing room with a sofa cum bed, and the unparalleled convenience of a fully equipped kitchen. Enjoy breathtaking panoramic views of the River Ganges and the surrounding hills from your two private balconies.",
-      "image": [
-        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-living-area-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-kitchen-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-living-area-sofa-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-connected-living-kitchen-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-bedroom-1-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-bedroom-2-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-connected-bedrooms-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-bedroom-balcony-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/bathroom-sink-shower-1200w.webp"
-       ],
-      "floorSize": { "@type": "QuantitativeValue", "value": "800", "unitCode": "FTK" },
-      "occupancy": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "6", "unitText": "persons" },
-      "bed": { "@type": "BedDetails", "typeOfBed": "DoubleBed", "numberOfBeds": "2" },
-      "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "Full Kitchen" },
-        { "@type": "LocationFeatureSpecification", "name": "Two Private Bedrooms" },
-        { "@type": "LocationFeatureSpecification", "name": "Separate Drawing Room" },
-        { "@type": "LocationFeatureSpecification", "name": "Two Private Balconies" },
-        { "@type": "LocationFeatureSpecification", "name": "Panoramic River & Hill Views" },
-        { "@type": "LocationFeatureSpecification", "name": "Sofa Cum Bed" }
-      ],
-      "offers": { "@type": "Offer", "price": "4999", "priceCurrency": "INR" },
-      "containedIn": { "@type": "Hotel", "name": "Surya Plaza Hotel", "url": "https://suryaplazahotels.com/" }
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "url": "https://suryaplazahotels.com/rooms/family-apartment",
+          "name": "Family Apartment with Kitchen | Surya Plaza Hotel, Sahibganj",
+          "description": "The perfect choice for extended stays. Our 800 sqft Family Apartment features two bedrooms, a full kitchen, and panoramic river and hill views.",
+          "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suryaplazahotels.com/#website",
+          "url": "https://suryaplazahotels.com/",
+          "name": "Surya Plaza Hotel",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "Hotel",
+          "@id": "https://suryaplazahotels.com/#organization",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/"
+        },
+        {
+          "@type": "HotelRoom",
+          "name": "Family Apartment with Kitchen",
+          "description": "Our Family Apartment is the ultimate choice for extended stays or families seeking the comforts of home. This expansive 800 sqft apartment includes two private bedrooms, a separate drawing room with a sofa cum bed, and the unparalleled convenience of a fully equipped kitchen. Enjoy breathtaking panoramic views of the River Ganges and the surrounding hills from your two private balconies.",
+          "image": [
+            "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-living-area-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-kitchen-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-living-area-sofa-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-connected-living-kitchen-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-bedroom-1-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-bedroom-2-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-connected-bedrooms-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-bedroom-balcony-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/bathroom-sink-shower-1200w.webp"
+           ],
+          "floorSize": { "@type": "QuantitativeValue", "value": "800", "unitCode": "FTK" },
+          "numberOfRooms": 2,
+          "occupancy": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "6", "unitText": "persons" },
+          "bed": { "@type": "BedDetails", "typeOfBed": "DoubleBed", "numberOfBeds": 2 },
+          "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "Full Kitchen", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Two Private Bedrooms", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Separate Drawing Room", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Two Private Balconies", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Panoramic River & Hill Views", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Sofa Cum Bed", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "32\" LED Television", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "High-Speed Wi-Fi", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Attached Bathroom with Shower", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Complimentary Toiletries", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "24-hour Room Service", "value": true }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "4999",
+              "priceCurrency": "INR",
+              "unitText": "night"
+            }
+          },
+          "containedIn": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Rooms", "item": "https://suryaplazahotels.com/rooms" },
+            { "@type": "ListItem", "position": 3, "name": "Family Apartment with Kitchen", "item": "https://suryaplazahotels.com/rooms/family-apartment" }
+          ]
+        }
+      ]
     }
     </script>
 </head>
@@ -173,7 +212,7 @@
                          <div class="booking-widget">
                             <div class="price">Starts from <span>₹4999</span> / night</div>
                             <p>Taxes applicable as per government norms.</p>
-                            <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Check Availability & Book</a>
+                            <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Check availability and book the Family Apartment now">Check Availability & Book</a>
                         </div>
                     </aside>
                 </div>
@@ -208,7 +247,7 @@
             <div class="footer-grid">
                 <div class="footer-col-main"><a href="/"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
                 <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
-                <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment" class="active">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment" class="active" aria-current="page">Family Apartment</a></li></ul></div>
                 <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
             <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>

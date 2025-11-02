@@ -46,52 +46,48 @@
 
     <!-- Page-Specific Internal Styles for Legal Pages -->
     <style>
-        .page-header {
-            padding-top: calc(var(--header-height) + 6rem); /* Increased Padding */
-            padding-bottom: 4rem;
-        }
-        .legal-page-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .legal-page-content h2 {
-            font-size: 1.75rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .legal-page-content p, 
-        .legal-page-content ul {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        .legal-page-content ul {
-            list-style: disc;
-            padding-left: 25px;
-        }
-        .legal-page-content li {
-            margin-bottom: 0.75rem;
-        }
-        .legal-page-content a {
-            font-weight: 600;
-            text-decoration: underline;
-        }
+        .page-header { padding-top: calc(var(--header-height) + 6rem); padding-bottom: 4rem; }
+        .legal-page-content { max-width: 800px; margin: 0 auto; }
+        .legal-page-content h2 { font-size: 1.75rem; margin-top: 2.5rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); }
+        .legal-page-content p, .legal-page-content ul { margin-bottom: 1.5rem; line-height: 1.8; }
+        .legal-page-content ul { list-style: disc; padding-left: 25px; }
+        .legal-page-content li { margin-bottom: 0.75rem; }
+        .legal-page-content a { font-weight: 600; text-decoration: underline; }
     </style>
 
+    <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Terms & Conditions",
-      "url": "https://suryaplazahotels.com/terms",
-      "description": "The official Terms and Conditions for booking and staying at Surya Plaza Hotel, covering reservations, payment, check-in/out, and guest conduct.",
-      "publisher": { "@type": "Hotel", "name": "Surya Plaza Hotel", "url": "https://suryaplazahotels.com/" },
-      "mainContentOfPage": {
-        "@type": "WebPageElement",
-        "name": "Surya Plaza Hotel Terms & Conditions",
-        "text": "These terms govern your use of our website, booking services, and stay at our hotel. Key points include our 24-hour check-in/check-out policy, the requirement of valid government ID, guest responsibility for damages, and our limitation of liability for personal belongings."
-      }
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "url": "https://suryaplazahotels.com/terms",
+          "name": "Terms & Conditions | Surya Plaza Hotel, Sahibganj",
+          "description": "The official Terms and Conditions for booking and staying at Surya Plaza Hotel, covering reservations, payment, check-in/out, and guest conduct.",
+          "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suryaplazahotels.com/#website",
+          "url": "https://suryaplazahotels.com/",
+          "name": "Surya Plaza Hotel",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "Hotel",
+          "@id": "https://suryaplazahotels.com/#organization",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Terms & Conditions", "item": "https://suryaplazahotels.com/terms" }
+          ]
+        }
+      ]
     }
     </script>
 </head>
@@ -189,7 +185,7 @@
                 <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
                 <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms" class="active">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms" class="active" aria-current="page">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
     <!-- END: Consistent FOOTER -->

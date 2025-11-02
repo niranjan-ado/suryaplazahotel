@@ -45,39 +45,79 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- Internal Style for Page Header Padding -->
-    <style>
-        .page-header {
-            padding-top: calc(var(--header-height) + 6rem); /* Increased Padding */
-            padding-bottom: 4rem;
-        }
-    </style>
-
-    <!-- JSON-LD Schema -->
+    <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "HotelRoom",
-      "name": "Deluxe Balcony Room",
-      "description": "Step into our inviting 180 sq. ft. Deluxe Balcony Room and feel instantly at ease. This room offers a relaxing ambiance with a comfortable double bed, a cozy sofa, and the highlight—a private balcony. It’s the perfect spot to enjoy your morning tea or unwind after a day of exploring.",
-      "image": [
-        "https://suryaplazahotels.com/assets/images/rooms/room-deluxe-balcony-bed-main-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-deluxe-balcony-bed-alt-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-deluxe-balcony-bed-2-900w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/bathroom-sink-shower-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/bathroom-wc-geyser-1200w.webp"
-       ],
-      "floorSize": { "@type": "QuantitativeValue", "value": "180", "unitCode": "FTK" },
-      "occupancy": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "3", "unitText": "persons" },
-      "bed": { "@type": "BedDetails", "typeOfBed": "DoubleBed", "numberOfBeds": "1" },
-      "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "Private Balcony" },
-        { "@type": "LocationFeatureSpecification", "name": "Air Conditioning" },
-        { "@type": "LocationFeatureSpecification", "name": "Sofa Seating" },
-        { "@type": "LocationFeatureSpecification", "name": "Work Desk & Chair" }
-      ],
-      "offers": { "@type": "Offer", "price": "2399", "priceCurrency": "INR" },
-      "containedIn": { "@type": "Hotel", "name": "Surya Plaza Hotel", "url": "https://suryaplazahotels.com/" }
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "url": "https://suryaplazahotels.com/rooms/deluxe-balcony-room",
+          "name": "Deluxe Balcony Room | Surya Plaza Hotel, Sahibganj",
+          "description": "Enjoy a stylish 180 sqft room with a private balcony, comfortable double bed, and sofa seating. Perfect for a relaxing stay with modern amenities.",
+          "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suryaplazahotels.com/#website",
+          "url": "https://suryaplazahotels.com/",
+          "name": "Surya Plaza Hotel",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "Hotel",
+          "@id": "https://suryaplazahotels.com/#organization",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/"
+        },
+        {
+          "@type": "HotelRoom",
+          "name": "Deluxe Balcony Room",
+          "description": "Step into our inviting 180 sq. ft. Deluxe Balcony Room and feel instantly at ease. This room offers a relaxing ambiance with a comfortable double bed, a cozy sofa, and the highlight—a private balcony. It’s the perfect spot to enjoy your morning tea or unwind after a day of exploring.",
+          "image": [
+            "https://suryaplazahotels.com/assets/images/rooms/room-deluxe-balcony-bed-main-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/room-deluxe-balcony-bed-alt-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/room-deluxe-balcony-bed-2-900w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/bathroom-sink-shower-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/bathroom-wc-geyser-1200w.webp"
+           ],
+          "floorSize": { "@type": "QuantitativeValue", "value": "180", "unitCode": "FTK" },
+          "occupancy": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "3", "unitText": "persons" },
+          "bed": { "@type": "BedDetails", "typeOfBed": "DoubleBed", "numberOfBeds": 1 },
+          "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "Private Balcony", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "32\" LED Television", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "High-Speed Wi-Fi", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Sofa Seating", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Work Desk & Chair", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Mini Fridge", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Attached Bathroom with Shower", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Telephone Intercom", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Wardrobe/Closet", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Complimentary Toiletries", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "24-hour Room Service", "value": true }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "2399",
+              "priceCurrency": "INR",
+              "unitText": "night"
+            }
+          },
+          "containedIn": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Rooms", "item": "https://suryaplazahotels.com/rooms" },
+            { "@type": "ListItem", "position": 3, "name": "Deluxe Balcony Room", "item": "https://suryaplazahotels.com/rooms/deluxe-balcony-room" }
+          ]
+        }
+      ]
     }
     </script>
 </head>
@@ -161,7 +201,7 @@
                          <div class="booking-widget">
                             <div class="price">Starts from <span>₹2399</span> / night</div>
                             <p>Taxes applicable as per government norms.</p>
-                            <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Check Availability & Book</a>
+                            <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Check availability and book the Deluxe Balcony Room now">Check Availability & Book</a>
                         </div>
                     </aside>
                 </div>
@@ -209,7 +249,7 @@
             <div class="footer-grid">
                 <div class="footer-col-main"><a href="/"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
                 <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
-                <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room" class="active">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room" class="active" aria-current="page">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
                 <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
             <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>

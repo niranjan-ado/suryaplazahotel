@@ -44,72 +44,78 @@
 
     <!-- Page-Specific Internal Styles for Blog Posts -->
     <style>
-        .page-header {
-            padding-top: calc(var(--header-height) + 6rem); /* Increased Padding */
-            padding-bottom: 4rem;
-        }
+        .page-header { padding-top: calc(var(--header-height) + 6rem); padding-bottom: 4rem; }
         .blog-post-container { max-width: 720px; margin: 0 auto; }
         .page-header { text-align: center; }
         .page-header .blog-category { display: inline-block; background-color: rgba(255,255,255,0.15); color: var(--text-light); }
         .page-header .hero-title { font-size: clamp(2rem, 5vw, 3.25rem); }
         .post-meta { margin-top: 1rem; color: var(--text-light); opacity: 0.9; }
         .post-meta a { color: inherit; font-weight: 600; text-decoration: underline; }
-
         .blog-post-content h2 { margin: 2.5rem 0 1rem; font-size: 1.75rem; }
         .blog-post-content h3 { margin: 2rem 0 1rem; font-size: 1.4rem; }
-        .blog-post-content p, 
-        .blog-post-content ul { margin-bottom: 1.5rem; line-height: 1.8; }
+        .blog-post-content p, .blog-post-content ul { margin-bottom: 1.5rem; line-height: 1.8; }
         .blog-post-content ul { list-style: disc; padding-left: 25px; }
         .blog-post-content li { margin-bottom: 0.75rem; }
         .blog-post-content .blog-lead { font-size: 1.2rem; font-weight: 400; color: var(--text-muted); }
         .blog-post-content a { font-weight: 600; text-decoration: underline; }
-
         .blog-image { margin: 2.5rem 0; }
         .blog-image img { border-radius: var(--border-radius); box-shadow: 0 8px 25px var(--card-shadow-color); }
-        .blog-image figcaption {
-            font-size: 0.9rem; color: var(--text-muted); text-align: center;
-            margin-top: 1rem;
-        }
-
+        .blog-image figcaption { font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-top: 1rem; }
         .post-separator { border: 0; height: 1px; background-color: var(--border-color); margin: 3rem 0; }
-        
-        .post-author-byline {
-            display: flex; align-items: center; gap: 1.5rem;
-            background-color: var(--background-surface);
-            padding: 1.5rem; border-radius: var(--border-radius);
-        }
+        .post-author-byline { display: flex; align-items: center; gap: 1.5rem; background-color: var(--background-surface); padding: 1.5rem; border-radius: var(--border-radius); }
         .post-author-byline .author-image { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
         .post-author-byline a { font-weight: 700; }
         .post-author-byline p { margin: 0.25rem 0 0; font-size: 0.9rem; }
-
         .post-share-links { margin-top: 3rem; text-align: center; }
         .post-share-links h4 { margin-bottom: 1rem; }
-        .post-share-links a {
-            display: inline-flex; justify-content: center; align-items: center;
-            width: 44px; height: 44px; border-radius: 50%;
-            background-color: var(--background-surface); color: var(--text-muted);
-            margin: 0 0.25rem; transition: all 0.3s ease;
-        }
+        .post-share-links a { display: inline-flex; justify-content: center; align-items: center; width: 44px; height: 44px; border-radius: 50%; background-color: var(--background-surface); color: var(--text-muted); margin: 0 0.25rem; transition: all 0.3s ease; }
         .post-share-links a:hover { background-color: var(--primary-color); color: var(--text-light); }
         .dark-theme .post-share-links a:hover { color: #0d1117; }
     </style>
-
+    
+    <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://suryaplazahotels.com/blog/post-3" },
-      "headline": "Designing for Comfort: The Making of Our Suites",
-      "description": "A behind-the-scenes look at the design philosophy of our suites, focusing on functional space, private balconies, and creating a comfortable, home-like environment.",
-      "image": [
-        "https://suryaplazahotels.com/assets/images/blog/blog-premium-suite-bedroom-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/blog/blog-junior-suite-living-area-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/blog/blog-family-apartment-kitchen-1200w.webp"
-       ],
-      "author": { "@type": "Person", "name": "Niranjan Ramamurthy", "url": "https://suryaplazahotels.com/blog/author/niranjan-ramamurthy" },
-      "publisher": { "@type": "Organization", "name": "Surya Plaza Hotel", "logo": { "@type": "ImageObject", "url": "https://suryaplazahotels.com/assets/images/logo-dark.svg" } },
-      "datePublished": "2025-09-11",
-      "keywords": "hotel suite design, comfortable hotel rooms, family apartment hotel, hotel rooms with balcony, business travel hotel"
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "mainEntityOfPage": { "@type": "WebPage", "@id": "https://suryaplazahotels.com/blog/post-3" },
+          "headline": "Designing for Comfort: The Making of Our Suites",
+          "description": "A behind-the-scenes look at the design philosophy of our suites, focusing on functional space, private balconies, and creating a comfortable, home-like environment.",
+          "image": [
+            "https://suryaplazahotels.com/assets/images/blog/blog-premium-suite-bedroom-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/blog/blog-junior-suite-living-area-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/blog/blog-family-apartment-kitchen-1200w.webp"
+           ],
+          "author": { "@type": "Person", "name": "Niranjan Ramamurthy", "url": "https://suryaplazahotels.com/blog/author/niranjan-ramamurthy" },
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" },
+          "datePublished": "2025-09-11",
+          "keywords": "hotel suite design, comfortable hotel rooms, family apartment hotel, hotel rooms with balcony, business travel hotel"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suryaplazahotels.com/#website",
+          "url": "https://suryaplazahotels.com/",
+          "name": "Surya Plaza Hotel",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://suryaplazahotels.com/#organization",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/",
+          "logo": { "@type": "ImageObject", "url": "https://suryaplazahotels.com/assets/images/logo-dark.svg" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://suryaplazahotels.com/blog" },
+            { "@type": "ListItem", "position": 3, "name": "Designing for Comfort: The Making of Our Suites" }
+          ]
+        }
+      ]
     }
     </script>
 </head>
@@ -127,6 +133,7 @@
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
+                        <li><a href="/blog" class="active" aria-current="page">Blog</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                     <div class="nav-menu-book-btn-wrapper"><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary nav-menu-book-btn">Book Now</a></div>
@@ -213,7 +220,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col-main"><a href="/"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
-                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog" class="active" aria-current="page">Our Blog</a></li><li><a href="/tariff">Tariff</a></li></ul></div>
                 <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
                 <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>

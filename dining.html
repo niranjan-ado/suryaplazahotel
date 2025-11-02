@@ -47,56 +47,86 @@
 
     <!-- Page-Specific Internal Style Overrides -->
     <style>
-        /* 1. Page Header: Adds top padding to prevent overlap with sticky nav. */
-        .page-header {
-            padding-top: calc(var(--header-height) + 4rem);
-            padding-bottom: 4rem;
-            text-align: center;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .page-header .hero-title,
-        .page-header .hero-subtitle {
-            color: var(--text-light);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-        
-        .page-header .hero-subtitle {
-            max-width: 600px;
-            margin: 1rem auto 0;
-            opacity: 0.9;
-        }
-
-        /* 2. Info Cards: Adds top margin to buttons to prevent them touching text. */
-        .info-card-actions {
-            margin-top: 1.5rem;
-        }
-
-        /* 3. Final CTA Section: Adds background and centers content. */
-        .direct-booking-section {
-            background-color: var(--background-surface);
-            text-align: center;
-        }
-
-        .direct-booking-section p {
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 2rem;
-        }
-        
-        .direct-booking-section .cta-actions {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .direct-booking-section .button-secondary .material-icons-outlined {
-            margin-right: 0.5rem;
-        }
+        .page-header { padding-top: calc(var(--header-height) + 4rem); padding-bottom: 4rem; text-align: center; background-size: cover; background-position: center; }
+        .page-header .hero-title, .page-header .hero-subtitle { color: var(--text-light); text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+        .page-header .hero-subtitle { max-width: 600px; margin: 1rem auto 0; opacity: 0.9; }
+        .info-card-actions { margin-top: 1.5rem; }
+        .direct-booking-section { background-color: var(--background-surface); text-align: center; }
+        .direct-booking-section p { max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 2rem; }
+        .direct-booking-section .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .direct-booking-section .button-secondary .material-icons-outlined { margin-right: 0.5rem; }
     </style>
+
+    <!-- Maximalist JSON-LD Schema for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "url": "https://suryaplazahotels.com/dining",
+          "name": "Dining Options | Surya Plaza Hotel | Moti Mahal & Jackson Diner",
+          "description": "Explore exceptional dining at Surya Plaza Hotel. From the legendary Indian cuisine of Moti Mahal Tandoori Trail to the casual rooftop Jackson Diner and convenient in-room dining.",
+          "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suryaplazahotels.com/#website",
+          "url": "https://suryaplazahotels.com/",
+          "name": "Surya Plaza Hotel",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "Hotel",
+          "@id": "https://suryaplazahotels.com/#organization",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/",
+          "logo": "https://suryaplazahotels.com/assets/images/logo-dark.svg",
+          "foodEstablishment": [
+            { "@id": "#moti-mahal" },
+            { "@id": "#jackson-diner" }
+          ]
+        },
+        {
+          "@type": "FoodEstablishment",
+          "@id": "#moti-mahal",
+          "name": "Moti Mahal Tandoori Trail",
+          "description": "Celebrated for its rich culinary heritage, the legendary Moti Mahal brand has delighted connoisseurs across generations, introducing iconic creations such as Butter Chicken and Dal Makhani to the world. At our Sahibganj outpost, this legacy continues with a thoughtfully curated menu that blends authenticity, artistry, and innovation.",
+          "servesCuisine": ["Indian", "Mughlai", "Tandoori"],
+          "menu": "https://suryaplazahotels.com/dining/moti-mahal-menu",
+          "acceptsReservations": "True",
+          "parentOrganization": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "FoodEstablishment",
+          "@id": "#jackson-diner",
+          "name": "Jackson Diner by Moti Mahal",
+          "description": "Welcome to Jackson Diner, a vibrant rooftop restaurant at Surya Plaza Hotel, where relaxed charm meets refined taste. Our menu presents a thoughtfully curated selection of gourmet favourites ranging from handcrafted mocktails and creamy shakes to artisanal sandwiches, wood-fired pizzas, and freshly tossed pastas.",
+          "servesCuisine": ["Pizza", "Pasta", "Continental", "Mocktails"],
+          "menu": "https://suryaplazahotels.com/dining/jackson-diner-menu",
+          "acceptsReservations": "False",
+          "parentOrganization": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://suryaplazahotels.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Dining",
+              "item": "https://suryaplazahotels.com/dining"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
 </head>
 <body>
@@ -115,7 +145,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/rooms">Rooms</a></li>
-                        <li><a href="/dining" class="active">Dining</a></li>
+                        <li><a href="/dining" class="active" aria-current="page">Dining</a></li>
                         <li><a href="/events">Events</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
@@ -157,7 +187,7 @@
                         </a>
                         <div class="info-card-content">
                             <h3>Moti Mahal Tandoori Trail</h3>
-                            <p>Our fine dining restaurant serves legendary Indian, Tandoori & Chinese cuisine. Discover award-winning recipes and timeless flavors in an elegant atmosphere.</p>
+                            <p>Savour the timeless flavours of North Indian, Mughlai, and Tandoori cuisine in an ambience of understated elegance. Every dish is crafted with the finest ingredients, defining a culinary philosophy that is both indulgent and unforgettable.</p>
                             <div class="info-card-actions">
                                 <a href="/dining/moti-mahal" class="button-secondary">Learn More</a>
                                 <a href="/dining/moti-mahal-menu" class="button-primary">View Menu</a>
@@ -174,7 +204,7 @@
                         </a>
                         <div class="info-card-content">
                             <h3>Jackson Diner by Moti Mahal</h3>
-                            <p>A casual rooftop restaurant offering gourmet mocktails, shakes, pizzas, and pastas in a warm and comfortable ambience with great views.</p>
+                            <p>A vibrant rooftop restaurant where relaxed charm meets refined taste. Enjoy a curated selection of gourmet mocktails, shakes, wood-fired pizzas, and freshly tossed pastas, set against sweeping city views.</p>
                             <div class="info-card-actions">
                                 <a href="/dining/jackson-diner" class="button-secondary">Learn More</a>
                                 <a href="/dining/jackson-diner-menu" class="button-primary">View Menu</a>

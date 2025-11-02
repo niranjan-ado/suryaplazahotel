@@ -45,72 +45,55 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- Page-Specific Internal Styles -->
-    <style>
-        .page-header {
-            padding-top: calc(var(--header-height) + 6rem); /* Increased Padding */
-            padding-bottom: 4rem;
-        }
-        .page-header .hero-title,
-        .page-header .hero-subtitle,
-        .page-header .section-subtitle {
-            color: var(--text-light);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-        .attraction-card {
-            background-color: var(--background-surface);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 2rem 1.75rem;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
-        .attraction-card h4 { font-size: 1.25rem; margin-bottom: 0.75rem; }
-        .attraction-card p { flex-grow: 1; }
-        .attraction-card .distance {
-            margin-top: 1.5rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-        .attraction-category {
-            margin-bottom: 5rem;
-        }
-        .attraction-category:last-of-type {
-            margin-bottom: 0;
-        }
-        .attraction-category h3 {
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-    </style>
-
+    <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "WebPage",
+          "url": "https://suryaplazahotels.com/attractions",
+          "name": "Local Attractions | Places to Visit in Sahibganj, Jharkhand",
+          "description": "Discover the best places to visit near Surya Plaza Hotel, including Moti Jharna waterfall, Shivgadi Dham temple, historical monuments, and the scenic Sahibganj Ghati.",
+          "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suryaplazahotels.com/#website",
+          "url": "https://suryaplazahotels.com/",
+          "name": "Surya Plaza Hotel",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "Hotel",
+          "@id": "https://suryaplazahotels.com/#organization",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/"
+        },
+        {
           "@type": "ItemList",
           "name": "Local Attractions in Sahibganj",
           "description": "A list of notable tourist attractions, historical monuments, temples, and landmarks in and around Sahibganj, Jharkhand.",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "item": { "@type": "TouristAttraction", "name": "Moti Jharna Waterfall" } },
-            { "@type": "ListItem", "position": 2, "item": { "@type": "TouristAttraction", "name": "Shivgadi Dham" } },
-            { "@type": "ListItem", "position": 3, "item": { "@type": "TouristAttraction", "name": "Sahibganj Ghati" } },
-            { "@type": "ListItem", "position": 4, "item": { "@type": "TouristAttraction", "name": "Akbari Masjid" } },
-            { "@type": "ListItem", "position": 5, "item": { "@type": "TouristAttraction", "name": "Singhi Dalan" } },
-            { "@type": "ListItem", "position": 6, "item": { "@type": "TouristAttraction", "name": "Baradari" } },
-            { "@type": "ListItem", "position": 7, "item": { "@type": "TouristAttraction", "name": "Bindabasini Temple" } },
-            { "@type": "ListItem", "position": 8, "item": { "@type": "TouristAttraction", "name": "Jama Masjid, Rajmahal" } },
-            { "@type": "ListItem", "position": 9, "item": { "@type": "TouristAttraction", "name": "Rani Sati Dadi Mandir" } },
-            { "@type": "ListItem", "position": 10, "item": { "@type": "TouristAttraction", "name": "Bhagwa Kuan" } },
-            { "@type": "ListItem", "position": 11, "item": { "@type": "TouristAttraction", "name": "Chowk Bazar" } },
-            { "@type": "ListItem", "position": 12, "item": { "@type": "TouristAttraction", "name": "Sahibganj Science Centre" } }
+            { "@type": "ListItem", "position": 1, "item": { "@type": "TouristAttraction", "name": "Moti Jharna Waterfall", "description": "A scenic waterfall in the Rajmahal hills, known for its natural beauty." } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "TouristAttraction", "name": "Shivgadi Dham", "description": "A revered Lord Shiva temple located inside a natural cave." } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "TouristAttraction", "name": "Sahibganj Ghati", "description": "A historic port on the banks of the Ganga River with beautiful scenic views." } },
+            { "@type": "ListItem", "position": 4, "item": { "@type": "TouristAttraction", "name": "Akbari Masjid", "description": "One of the oldest mosques in the region, representing Mughal-era architecture." } },
+            { "@type": "ListItem", "position": 5, "item": { "@type": "TouristAttraction", "name": "Singhi Dalan", "description": "The principal remaining section of Sultan Shah Shuja’s palace from the mid-17th century." } },
+            { "@type": "ListItem", "position": 6, "item": { "@type": "TouristAttraction", "name": "Baradari", "description": "A historical palace with 12 doors, once the residence of a confidant of Emperor Akbar." } },
+            { "@type": "ListItem", "position": 7, "item": { "@type": "TouristAttraction", "name": "Bindabasini Temple", "description": "An ancient Shaktipeeth temple dedicated to the Tridevi." } },
+            { "@type": "ListItem", "position": 8, "item": { "@type": "TouristAttraction", "name": "Jama Masjid, Rajmahal", "description": "A grand mosque built by Man Singh, governor-general of Akbar." } },
+            { "@type": "ListItem", "position": 9, "item": { "@type": "TouristAttraction", "name": "Rani Sati Dadi Mandir", "description": "A revered Hindu temple dedicated to Rani Sati Dadi." } },
+            { "@type": "ListItem", "position": 10, "item": { "@type": "TouristAttraction", "name": "Bhagwa Kuan", "description": "A historical well built in 1815 during the British Raj, still functional today." } },
+            { "@type": "ListItem", "position": 11, "item": { "@type": "TouristAttraction", "name": "Chowk Bazar", "description": "A vibrant and bustling marketplace in the heart of Sahibganj city." } },
+            { "@type": "ListItem", "position": 12, "item": { "@type": "TouristAttraction", "name": "Sahibganj Science Centre", "description": "A modern science center with interactive exhibits and a unique display on local Jurassic-era fossils." } }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Local Attractions", "item": "https://suryaplazahotels.com/attractions" }
           ]
         },
         {
@@ -143,6 +126,7 @@
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
+                        <li><a href="/attractions" class="active" aria-current="page">Attractions</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                     <div class="nav-menu-book-btn-wrapper">
@@ -249,7 +233,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col-main"><a href="/"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
-                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions" class="active">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions" class="active" aria-current="page">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
                 <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
                 <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>

@@ -1,8 +1,10 @@
-# This file is configured to block ALL search engines from indexing the site.
-# Use this configuration while the site is in development or staging.
+# This file is configured for a live production website.
+# It allows all search engines to index the site and provides the sitemap location.
 
 User-agent: *
-Disallow: /
+
+# Disallow the internal search results page to prevent indexing of duplicate content.
+Disallow: /search
 
 # Sitemap location (canonical version without www)
 Sitemap: https://suryaplazahotels.com/sitemap.xml

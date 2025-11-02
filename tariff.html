@@ -47,16 +47,8 @@
 
     <!-- Page-Specific Internal Styles -->
     <style>
-        .page-header {
-            padding-top: calc(var(--header-height) + 6rem); /* Increased Padding */
-            padding-bottom: 4rem;
-        }
-        /* --- Tariff Card Styling (variant of .room-card) --- */
-        .tariff-card {
-            display: flex; flex-direction: column; background-color: var(--background-surface);
-            border: 1px solid var(--border-color); border-radius: var(--border-radius);
-            overflow: hidden; box-shadow: 0 4px 15px var(--card-shadow-color);
-        }
+        .page-header { padding-top: calc(var(--header-height) + 6rem); padding-bottom: 4rem; }
+        .tariff-card { display: flex; flex-direction: column; background-color: var(--background-surface); border: 1px solid var(--border-color); border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 4px 15px var(--card-shadow-color); }
         .tariff-card img { aspect-ratio: 4/3; object-fit: cover; }
         .tariff-card-content { padding: 1.5rem 1.75rem; display: flex; flex-direction: column; flex-grow: 1; }
         .tariff-card-content h4 { font-size: 1.25rem; margin-bottom: 0.5rem; }
@@ -64,47 +56,70 @@
         .tariff-price { font-size: 2rem; font-family: var(--font-heading); font-weight: 700; color: var(--primary-color); margin-bottom: 1rem; }
         .tariff-price small { font-size: 0.9rem; font-family: var(--font-body); color: var(--text-muted); font-weight: 400; }
         .tariff-card-actions { margin-top: auto; display: flex; gap: 1rem; }
-
-        /* --- Price Toggle Logic --- */
         .price-double { display: none; }
         #tariffGrid.show-double .price-double { display: inline; }
         #tariffGrid.show-double .price-single { display: none; }
-
-        /* --- Occupancy Toggle Styling --- */
-        .content-toggle {
-            display: flex; justify-content: center; margin-bottom: 3rem;
-            background-color: var(--background-surface); border: 1px solid var(--border-color);
-            border-radius: 50px; padding: 0.5rem; max-width: 400px; margin-left: auto; margin-right: auto;
-        }
-        .content-toggle button {
-            flex: 1; background: transparent; border: none; border-radius: 50px;
-            padding: 0.75rem 1rem; font-family: var(--font-heading); font-weight: 600;
-            cursor: pointer; color: var(--text-muted); transition: all 0.3s ease;
-        }
-        .content-toggle button.active {
-            background-color: var(--primary-color); color: var(--text-light);
-            box-shadow: 0 4px 15px color-mix(in srgb, var(--primary-color) 30%, transparent);
-        }
+        .content-toggle { display: flex; justify-content: center; margin-bottom: 3rem; background-color: var(--background-surface); border: 1px solid var(--border-color); border-radius: 50px; padding: 0.5rem; max-width: 400px; margin-left: auto; margin-right: auto; }
+        .content-toggle button { flex: 1; background: transparent; border: none; border-radius: 50px; padding: 0.75rem 1rem; font-family: var(--font-heading); font-weight: 600; cursor: pointer; color: var(--text-muted); transition: all 0.3s ease; }
+        .content-toggle button.active { background-color: var(--primary-color); color: var(--text-light); box-shadow: 0 4px 15px color-mix(in srgb, var(--primary-color) 30%, transparent); }
         .dark-theme .content-toggle button.active { color: #0d1117; }
-
-        /* --- Addon Card Styling --- */
-        .addon-card {
-            background-color: var(--background-surface); border: 1px solid var(--border-color);
-            border-radius: var(--border-radius); padding: 2rem 1.75rem; text-align: center;
-        }
+        .addon-card { background-color: var(--background-surface); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 2rem 1.75rem; text-align: center; }
         .addon-card h4 { font-size: 1.25rem; margin-bottom: 0.75rem; }
-        .addon-card .price {
-            font-size: 1.75rem; font-family: var(--font-heading); font-weight: 700;
-            color: var(--primary-color); margin: 1rem 0 0.25rem;
-        }
+        .addon-card .price { font-size: 1.75rem; font-family: var(--font-heading); font-weight: 700; color: var(--primary-color); margin: 1rem 0 0.25rem; }
     </style>
 
+    <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
-        {"@type": "WebPage","name": "Room Tariff","url": "https://suryaplazahotels.com/tariff","mainEntity": {"@type": "ItemList","name": "Room Rates at Surya Plaza Hotel","itemListElement": [{"@type": "ListItem","position": 1,"item": {"@type": "HotelRoom","name": "Club Comfort Room","offers": [{"@type": "Offer","name": "Single Occupancy","price": "1599"},{"@type": "Offer","name": "Double Occupancy","price": "2099"}]}},{"@type": "ListItem","position": 2,"item": {"@type": "HotelRoom","name": "Deluxe Balcony Room","offers": [{"@type": "Offer","name": "Single Occupancy","price": "1899"},{"@type": "Offer","name": "Double Occupancy","price": "2399"}]}},{"@type": "ListItem","position": 3,"item": {"@type": "HotelRoom","name": "Executive Balcony Room","offers": [{"@type": "Offer","name": "Single Occupancy","price": "2199"},{"@type": "Offer","name": "Double Occupancy","price": "2699"}]}},{"@type": "ListItem","position": 4,"item": {"@type": "HotelRoom","name": "Junior Balcony Suite","offers": [{"@type": "Offer","name": "Single Occupancy","price": "2699"},{"@type": "Offer","name": "Double Occupancy","price": "3199"}]}},{"@type": "ListItem","position": 5,"item": {"@type": "HotelRoom","name": "Two-Bedroom Premium Suite","offers": {"@type": "Offer","price": "3999"}}}, {"@type": "ListItem","position": 6,"item": {"@type": "HotelRoom","name": "Family Apartment with Kitchen","offers": {"@type": "Offer","price": "4999"}}}]}},
-        {"@type": "FAQPage","mainEntity": [{"@type": "Question","name": "Are the listed room rates inclusive of taxes?","acceptedAnswer": {"@type": "Answer","text": "No, the room rates shown are exclusive of applicable government taxes. The final amount, including GST, will be displayed during the booking process."}},{"@type": "Question","name": "What does a 'Room Only (EP)' rate mean?","acceptedAnswer": {"@type": "Answer","text": "'Room Only' or 'European Plan (EP)' means the tariff includes only the cost of the accommodation. All meals and other services are charged separately. You can add one of our meal plans for an additional cost."}},{"@type": "Question","name": "How can I get the best available rate?","acceptedAnswer": {"@type": "Answer","text": "For the best available rates and exclusive offers, we always recommend booking directly through our official website. This ensures you get the most up-to-date pricing and transparent terms."}}]}
+        {
+          "@type": "WebPage",
+          "url": "https://suryaplazahotels.com/tariff",
+          "name": "Room Tariff | Official Rates at Surya Plaza Hotel, Sahibganj",
+          "description": "View the official room tariff for Surya Plaza Hotel. Find transparent pricing for all our room types, meal plans, and additional services.",
+          "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suryaplazahotels.com/#website",
+          "url": "https://suryaplazahotels.com/",
+          "name": "Surya Plaza Hotel",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "Hotel",
+          "@id": "https://suryaplazahotels.com/#organization",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/"
+        },
+        {
+          "@type": "ItemList",
+          "name": "Room Rates at Surya Plaza Hotel",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "item": { "@type": "HotelRoom", "name": "Club Comfort Room", "offers": [{"@type": "Offer","name": "Single Occupancy","price": "1599", "priceCurrency": "INR"},{"@type": "Offer","name": "Double Occupancy","price": "2099", "priceCurrency": "INR"}] } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "HotelRoom", "name": "Deluxe Balcony Room", "offers": [{"@type": "Offer","name": "Single Occupancy","price": "1899", "priceCurrency": "INR"},{"@type": "Offer","name": "Double Occupancy","price": "2399", "priceCurrency": "INR"}] } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "HotelRoom", "name": "Executive Balcony Room", "offers": [{"@type": "Offer","name": "Single Occupancy","price": "2199", "priceCurrency": "INR"},{"@type": "Offer","name": "Double Occupancy","price": "2699", "priceCurrency": "INR"}] } },
+            { "@type": "ListItem", "position": 4, "item": { "@type": "HotelRoom", "name": "Junior Balcony Suite", "offers": [{"@type": "Offer","name": "Single Occupancy","price": "2699", "priceCurrency": "INR"},{"@type": "Offer","name": "Double Occupancy","price": "3199", "priceCurrency": "INR"}] } },
+            { "@type": "ListItem", "position": 5, "item": { "@type": "HotelRoom", "name": "Two-Bedroom Premium Suite", "offers": { "@type": "Offer", "price": "3999", "priceCurrency": "INR" } } },
+            { "@type": "ListItem", "position": 6, "item": { "@type": "HotelRoom", "name": "Family Apartment with Kitchen", "offers": { "@type": "Offer", "price": "4999", "priceCurrency": "INR" } } }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Tariff", "item": "https://suryaplazahotels.com/tariff" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Are the listed room rates inclusive of taxes?", "acceptedAnswer": { "@type": "Answer", "text": "No, the room rates shown are exclusive of applicable government taxes. The final amount, including GST, will be displayed during the booking process." } },
+            { "@type": "Question", "name": "What does a 'Room Only (EP)' rate mean?", "acceptedAnswer": { "@type": "Answer", "text": "'Room Only' or 'European Plan (EP)' means the tariff includes only the cost of the accommodation. All meals and other services are charged separately. You can add one of our meal plans for an additional cost." } },
+            { "@type": "Question", "name": "How can I get the best available rate?", "acceptedAnswer": { "@type": "Answer", "text": "For the best available rates and exclusive offers, we always recommend booking directly through our official website. This ensures you get the most up-to-date pricing and transparent terms." } }
+          ]
+        }
       ]
     }
     </script>
@@ -261,7 +276,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col-main"><a href="/"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
-                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li><li><a href="/tariff" class="active" aria-current="page">Tariff</a></li></ul></div>
                 <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
                 <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>

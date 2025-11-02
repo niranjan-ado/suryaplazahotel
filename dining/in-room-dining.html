@@ -45,41 +45,61 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- Internal Style for Page Header Padding -->
-    <style>
-        .page-header {
-            padding-top: calc(var(--header-height) + 6rem); /* Increased Padding */
-            padding-bottom: 4rem;
-        }
-    </style>
-
-    <!-- JSON-LD Schema -->
+    <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "FoodService",
-      "name": "In-Room Dining (24/7 Room Service)",
-      "description": "Enjoy gourmet meals from our acclaimed restaurants, Moti Mahal and Jackson Diner, delivered directly to the comfort and privacy of your room. Our 24/7 service ensures your cravings are always satisfied with delicious, freshly prepared meals.",
-      "provider": {
-        "@type": "Hotel",
-        "name": "Surya Plaza Hotel",
-        "url": "https://suryaplazahotels.com/"
-      },
-      "serviceType": "Room service",
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "servicePhone": {
-          "@type": "ContactPoint",
-          "telephone": "+91-9264197986",
-          "contactType": "customer support"
-        }
-      },
-      "hoursAvailable": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "00:00",
-          "closes": "23:59"
+          "@type": "WebPage",
+          "url": "https://suryaplazahotels.com/dining/in-room-dining",
+          "name": "In-Room Dining | 24/7 Room Service at Surya Plaza Hotel",
+          "description": "Enjoy gourmet meals from Moti Mahal and Jackson Diner in the comfort of your room. Our 24/7 in-room dining service offers convenience, privacy, and delicious food.",
+          "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suryaplazahotels.com/#website",
+          "url": "https://suryaplazahotels.com/",
+          "name": "Surya Plaza Hotel",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "Hotel",
+          "@id": "https://suryaplazahotels.com/#organization",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/"
+        },
+        {
+          "@type": "FoodService",
+          "name": "In-Room Dining (24/7 Room Service)",
+          "description": "Enjoy gourmet meals from our acclaimed restaurants, Moti Mahal and Jackson Diner, delivered directly to the comfort and privacy of your room. Our 24/7 service ensures your cravings are always satisfied with delicious, freshly prepared meals.",
+          "provider": { "@id": "https://suryaplazahotels.com/#organization" },
+          "serviceType": "Room service",
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "servicePhone": {
+              "@type": "ContactPoint",
+              "telephone": "+91-9264197986",
+              "contactType": "customer support"
+            }
+          },
+          "hoursAvailable": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+              "opens": "00:00",
+              "closes": "23:59"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Dining", "item": "https://suryaplazahotels.com/dining" },
+            { "@type": "ListItem", "position": 3, "name": "In-Room Dining", "item": "https://suryaplazahotels.com/dining/in-room-dining" }
+          ]
         }
       ]
     }
@@ -101,7 +121,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/rooms">Rooms</a></li>
-                        <li><a href="/dining" class="active">Dining</a></li>
+                        <li><a href="/dining" class="active" aria-current="page">Dining</a></li>
                         <li><a href="/events">Events</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
@@ -168,7 +188,7 @@
                     <p class="text-center" style="max-width: 600px; margin: -2rem auto 3rem auto;">Browse the culinary creations from our two distinct restaurants. Find your perfect meal and simply call us from your room to place an order.</p>
                 </div>
                 <div class="grid-2-col">
-                    <a href="/dining/moti-mahal-menu" class="linked-card" data-animate>
+                    <a href="/dining/moti-mahal-menu" class="linked-card" data-animate aria-label="View the Moti Mahal Tandoori Trail Menu">
                         <img src="/assets/images/dining/dining-moti-mahal-seating-900w.webp" 
                              srcset="/assets/images/dining/dining-moti-mahal-seating-600w.webp 600w, /assets/images/dining/dining-moti-mahal-seating-900w.webp 900w"
                              sizes="(max-width: 768px) 90vw, 580px"
@@ -180,7 +200,7 @@
                             <span class="button-primary">View Menu</span>
                         </div>
                     </a>
-                    <a href="/dining/jackson-diner-menu" class="linked-card" data-animate style="--animation-delay: 0.1s;">
+                    <a href="/dining/jackson-diner-menu" class="linked-card" data-animate style="--animation-delay: 0.1s;" aria-label="View the Jackson Diner Menu">
                         <img src="/assets/images/dining/dining-jackson-diner-bar-900w.webp" 
                              srcset="/assets/images/dining/dining-jackson-diner-bar-600w.webp 600w, /assets/images/dining/dining-jackson-diner-bar-900w.webp 900w"
                              sizes="(max-width: 768px) 90vw, 580px"

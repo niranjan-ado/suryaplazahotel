@@ -45,45 +45,51 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- Page-Specific Internal Styles -->
-    <style>
-        .page-header {
-            padding-top: calc(var(--header-height) + 6rem); /* Increased Padding */
-            padding-bottom: 4rem;
-        }
-        .page-header .hero-title,
-        .page-header .section-subtitle {
-            color: var(--text-light);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-        .service-category {
-            margin-bottom: 5rem;
-        }
-        .service-category:last-of-type {
-            margin-bottom: 0;
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-    </style>
-
+    <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "ItemList",
-          "name": "Services at Surya Plaza Hotel",
-          "description": "A list of services and amenities available to guests at Surya Plaza Hotel.",
+          "@type": "WebPage",
+          "url": "https://suryaplazahotels.com/services",
+          "name": "Our Services | Surya Plaza Hotel, Sahibganj",
+          "description": "Explore the wide range of services at Surya Plaza Hotel, including free Wi-Fi, 24/7 power backup, in-room dining, event planning, and travel assistance.",
+          "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suryaplazahotels.com/#website",
+          "url": "https://suryaplazahotels.com/",
+          "name": "Surya Plaza Hotel",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "Hotel",
+          "@id": "https://suryaplazahotels.com/#organization",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/",
+          "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "Free High-Speed Wi-Fi", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "24/7 Power Backup", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Individual Climate Control (AC)", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Daily Housekeeping", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Laundry Service", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Extra Bedding on Request", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "24/7 In-Room Dining", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "On-Site Restaurants", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Special Dietary Meals on Request", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Airport & Railway Station Transfers", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Car Rental Assistance", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Local Sightseeing & Concierge", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Complimentary On-Site Parking", "value": true }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "Free High-Speed Wi-Fi" } },
-            { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "24/7 Power Backup" } },
-            { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "24/7 In-Room Dining", "provider": { "@type": "FoodService" } } },
-            { "@type": "ListItem", "position": 4, "item": { "@type": "Service", "name": "Laundry Service" } },
-            { "@type": "ListItem", "position": 5, "item": { "@type": "Service", "name": "Travel & Concierge" } },
-            { "@type": "ListItem", "position": 6, "item": { "@type": "Service", "name": "Daily Housekeeping" } }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://suryaplazahotels.com/services" }
           ]
         },
         {
@@ -116,6 +122,7 @@
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
+                        <li><a href="/services" class="active" aria-current="page">Services</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                     <div class="nav-menu-book-btn-wrapper">
@@ -222,7 +229,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col-main"><a href="/"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
-                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services" class="active">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services" class="active" aria-current="page">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
                 <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
                 <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>

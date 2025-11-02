@@ -8,6 +8,7 @@
     <title>About the Author: Niranjan Ramamurthy | Surya Plaza Hotel Blog</title>
     <meta name="description" content="Meet Niranjan Ramamurthy, the digital storyteller behind the Surya Plaza Hotel blog. Learn about his passion for technology and hospitality.">
     <link rel="canonical" href="https://suryaplazahotels.com/blog/author/niranjan-ramamurthy">
+    <meta name="robots" content="noindex, follow">
 
     <!-- SCRIPT TO PREVENT THEME FLASH -->
     <script>
@@ -39,44 +40,13 @@
 
     <!-- Page-Specific Internal Styles -->
     <style>
-        .page-header {
-            padding-top: calc(var(--header-height) + 6rem); /* Increased Padding */
-            padding-bottom: 4rem;
-        }
-        .author-bio-content {
-            max-width: 750px;
-            margin: 0 auto;
-        }
-        .author-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 1.5rem auto;
-            border: 4px solid var(--border-color);
-            box-shadow: 0 4px 15px var(--card-shadow-color);
-        }
-        .author-feature-quote {
-            font-size: 1.25rem;
-            font-style: italic;
-            border-left: 4px solid var(--primary-color);
-            padding-left: 2rem;
-            margin: 2rem 0;
-            text-align: left;
-            color: var(--text-muted);
-        }
-        .author-bio-content .section-title {
-            margin-bottom: 1rem;
-        }
-        .author-bio-content p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-        .author-connect-link {
-            margin-top: 2rem;
-            font-weight: 600;
-        }
-        /* Using existing blog card styles from main CSS */
+        .page-header { padding-top: calc(var(--header-height) + 6rem); padding-bottom: 4rem; }
+        .author-bio-content { max-width: 750px; margin: 0 auto; }
+        .author-image { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem auto; border: 4px solid var(--border-color); box-shadow: 0 4px 15px var(--card-shadow-color); }
+        .author-feature-quote { font-size: 1.25rem; font-style: italic; border-left: 4px solid var(--primary-color); padding-left: 2rem; margin: 2rem 0; text-align: left; color: var(--text-muted); }
+        .author-bio-content .section-title { margin-bottom: 1rem; }
+        .author-bio-content p { margin-bottom: 1rem; line-height: 1.8; }
+        .author-connect-link { margin-top: 2rem; font-weight: 600; }
         .blog-card { background-color: var(--background-surface); border-radius: var(--border-radius); border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 4px 15px var(--card-shadow-color); transition: transform 0.4s ease, box-shadow 0.4s ease; }
         .blog-card a { display: block; color: inherit; text-decoration: none; }
         .blog-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px var(--card-shadow-hover); }
@@ -87,32 +57,61 @@
         .blog-card-content h3 { font-size: 1.25rem; margin-top: 0.75rem; transition: color 0.3s ease; }
         .blog-card a:hover h3 { color: var(--primary-color); }
         .blog-category { display: inline-block; font-size: 0.8rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 50px; background-color: color-mix(in srgb, var(--primary-color) 15%, transparent); color: var(--primary-color); }
-
     </style>
 
+    <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfilePage",
-      "mainEntity": {
-        "@type": "Person",
-        "name": "Niranjan Ramamurthy",
-        "jobTitle": "Digital Marketing & Content Strategist",
-        "description": "With a background in digital marketing and content strategy that began in the early 2000s, Niranjan brings a data-driven yet creative approach to storytelling. His work focuses on using high-fidelity photography and clear, helpful content to bridge the gap between a guest's online research and their real-world experience at our hotel.",
-        "image": "https://suryaplazahotels.com/assets/images/blog/author-niranjan-ramamurthy.webp",
-        "url": "https://suryaplazahotels.com/blog/author/niranjan-ramamurthy",
-        "sameAs": [ "https://www.linkedin.com/in/niranjan-ramamurthy/", "https://adostrophe.com/" ],
-        "worksFor": { "@type": "Organization", "name": "Adostrophe" }
-      },
-      "about": {
-        "@type": "ItemList",
-        "name": "Articles by Niranjan Ramamurthy",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "url": "https://suryaplazahotels.com/blog/post-1", "name": "A Weekend Guide to Sahibganj's Hidden Gems" },
-          { "@type": "ListItem", "position": 2, "url": "https://suryaplazahotels.com/blog/post-2", "name": "The Story of Butter Chicken: A Moti Mahal Signature" },
-          { "@type": "ListItem", "position": 3, "url": "https://suryaplazahotels.com/blog/post-3", "name": "Designing for Your Comfort: The Making of Our Suites" }
-        ]
-      }
+      "@graph": [
+        {
+          "@type": "ProfilePage",
+          "url": "https://suryaplazahotels.com/blog/author/niranjan-ramamurthy",
+          "name": "About the Author: Niranjan Ramamurthy | Surya Plaza Hotel Blog",
+          "description": "Meet Niranjan Ramamurthy, the digital storyteller behind the Surya Plaza Hotel blog. Learn about his passion for technology and hospitality.",
+          "isPartOf": { "@id": "https://suryaplazahotels.com/#website" },
+          "mainEntity": {
+            "@type": "Person",
+            "name": "Niranjan Ramamurthy",
+            "jobTitle": "Digital Marketing & Content Strategist",
+            "description": "With a background in digital marketing and content strategy that began in the early 2000s, Niranjan brings a data-driven yet creative approach to storytelling. His work focuses on using high-fidelity photography and clear, helpful content to bridge the gap between a guest's online research and their real-world experience at our hotel.",
+            "image": "https://suryaplazahotels.com/assets/images/blog/author-niranjan-ramamurthy.webp",
+            "url": "https://suryaplazahotels.com/blog/author/niranjan-ramamurthy",
+            "sameAs": [ "https://www.linkedin.com/in/niranjan-ramamurthy/", "https://adostrophe.com/" ],
+            "worksFor": { "@type": "Organization", "name": "Adostrophe" }
+          },
+          "about": {
+            "@type": "ItemList",
+            "name": "Articles by Niranjan Ramamurthy",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "url": "https://suryaplazahotels.com/blog/post-1", "name": "A Weekend Guide to Sahibganj's Hidden Gems" },
+              { "@type": "ListItem", "position": 2, "url": "https://suryaplazahotels.com/blog/post-2", "name": "The Story of Butter Chicken: A Moti Mahal Signature" },
+              { "@type": "ListItem", "position": 3, "url": "https://suryaplazahotels.com/blog/post-3", "name": "Designing for Your Comfort: The Making of Our Suites" }
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suryaplazahotels.com/#website",
+          "url": "https://suryaplazahotels.com/",
+          "name": "Surya Plaza Hotel",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://suryaplazahotels.com/#organization",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://suryaplazahotels.com/blog" },
+            { "@type": "ListItem", "position": 3, "name": "Niranjan Ramamurthy", "item": "https://suryaplazahotels.com/blog/author/niranjan-ramamurthy" }
+          ]
+        }
+      ]
     }
     </script>
 </head>
@@ -134,6 +133,7 @@
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
+                        <li><a href="/blog" class="active" aria-current="page">Blog</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                     <div class="nav-menu-book-btn-wrapper">
@@ -215,7 +215,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col-main"><a href="/"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
-                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog" class="active" aria-current="page">Our Blog</a></li><li><a href="/tariff">Tariff</a></li></ul></div>
                 <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
                 <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>

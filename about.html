@@ -6,15 +6,15 @@
     
     <!-- SEO Essentials -->
     <title>About Us | The Story of Surya Plaza Hotel, Sahibganj</title>
-    <meta name="description" content="Learn about Surya Plaza Hotel, our commitment to comfort, culinary excellence, and sophisticated hospitality in the heart of Sahibganj.">
+    <meta name="description" content="Discover our story. Run by a family of doctors, Surya Plaza Hotel is defined by a unique philosophy of precision, cleanliness, and genuine care.">
     <link rel="canonical" href="https://suryaplazahotels.com/about">
 
     <!-- Social Media Meta Tags -->
     <meta property="og:title" content="About Us | The Story of Surya Plaza Hotel, Sahibganj">
-    <meta property="og:description" content="Learn about our commitment to comfort, culinary excellence, and sophisticated hospitality.">
+    <meta property="og:description" content="Discover our story and our commitment to an uncommon philosophy of hospitality, cleanliness, and care.">
     <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image-about.jpg">
     <meta property="og:url" content="https://suryaplazahotels.com/about">
-    <meta property="og:type" content="website">
+    <meta property="og:type" "website">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- SCRIPT TO PREVENT THEME FLASH -->
@@ -45,24 +45,69 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- SEO Schemas -->
+    <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "AboutPage", "url": "https://suryaplazahotels.com/about", "name": "About Us | The Story of Surya Plaza Hotel, Sahibganj",
-          "mainEntity": {
+          "@type": "AboutPage",
+          "url": "https://suryaplazahotels.com/about",
+          "name": "About Us | The Story of Surya Plaza Hotel, Sahibganj",
+          "description": "Discover our story. Run by a family of doctors, Surya Plaza Hotel is defined by a unique philosophy of precision, cleanliness, and genuine care.",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://suryaplazahotels.com/about"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Surya Plaza Hotel",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://suryaplazahotels.com/assets/images/logo-dark.svg"
+            }
+          }
+        },
+        {
+          "@type": "Hotel",
+          "@id": "https://suryaplazahotels.com/#hotel",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/",
+          "telephone": "+919264197986",
+          "priceRange": "₹₹",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Opp Ray Bahadur Building, J.N Roy Road",
+            "addressLocality": "Sahibganj",
+            "addressRegion": "Jharkhand",
+            "postalCode": "816109",
+            "addressCountry": "IN"
+          },
+          "logo": "https://suryaplazahotels.com/assets/images/logo-dark.svg"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://suryaplazahotels.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "About Us",
+                    "item": "https://suryaplazahotels.com/about"
+                }
+            ]
+        },
+        {
              "@type": "FAQPage",
              "mainEntity": [
                 {"@type": "Question","name": "Your story mentions the hotel is run by a family of doctors. What does this mean for me as a guest?","acceptedAnswer": {"@type": "Answer","text": "It means that a culture of meticulous care and hygiene is at the core of our operations. Inspired by medical precision, we uphold an exceptional standard of cleanliness and attention to detail, ensuring a safe, comfortable, and genuinely caring environment for all our guests."}},
                 {"@type": "Question","name": "I'm traveling for business. What room do you recommend?","acceptedAnswer": {"@type": "Answer","text": "For our business travelers, we highly recommend the Executive Balcony Room. It provides a larger 220 sqft space complete with a dedicated work desk and a comfortable sofa seating area, offering the perfect environment to be productive and to unwind after a busy day."}}
              ]
-          }
-        },
-        {
-          "@type": "Hotel", "name": "Surya Plaza Hotel", "url": "https://suryaplazahotels.com/", "telephone": "+919264197986", "priceRange": "₹₹",
-          "address": {"@type": "PostalAddress", "streetAddress": "Opp Ray Bahadur Building, J.N Roy Road", "addressLocality": "Sahibganj", "addressRegion": "Jharkhand", "postalCode": "816109", "addressCountry": "IN"}
         }
       ]
     }
@@ -82,7 +127,7 @@
                 <div class="nav-links-wrapper" id="nav-links-menu">
                     <ul class="nav-links">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/about" class="active">About</a></li>
+                        <li><a href="/about" class="active" aria-current="page">About</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/dining">Dining</a></li>
                         <li><a href="/events">Events</a></li>
@@ -108,7 +153,7 @@
 
         <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/about-header-facade.webp');">
             <div class="container" data-animate>
-                <p class="section-subtitle">A Legacy of Comfort & Excellence</p>
+                <p class="section-subtitle">A Legacy of Care & Excellence</p>
                 <h1 class="hero-title">About Surya Plaza Hotel</h1>
             </div>
         </header>
@@ -117,9 +162,10 @@
             <div class="container">
                 <div class="showcase-grid">
                     <div class="showcase-text" data-animate>
-                        <h2 class="section-title">Your Sanctuary in Sahibganj</h2>
-                        <p>Run by a family of doctors, Surya Plaza Hotel is inspired by a unique commitment to precision, cleanliness, and genuine care. Situated in the heart of Sahibganj, we blend sophisticated comfort with vibrant local culture, offering an ideal choice for both business and leisure travellers.</p>
-                        <p>Our professional team is dedicated to delivering a warm ambiance and an array of thoughtful touches, ensuring every guest experiences the comforts of home with the sophistication of contemporary hospitality.</p>
+                        <h2 class="section-title">An Uncommon Philosophy of Hospitality</h2>
+                        <p>Situated at the heart of the city, Surya Plaza Hotel is where timeless hospitality meets contemporary comfort. Designed for discerning travellers, the hotel blends elegant modernity with a warm reflection of local culture.</p>
+                        <p>Run by a family of doctors, our roots in healthcare inspire an uncommon philosophy of hospitality—one defined by precision, cleanliness, and genuine care. From the freshness of our linens to the warmth in our service, every detail reflects a deep respect for your well-being, ensuring an experience that is both personal and restorative.</p>
+                        <p>Come, discover a place where hospitality is not just offered; it's practised with heart, discipline, and grace.</p>
                     </div>
                     <div class="showcase-image" data-animate style="--animation-delay: 0.1s;">
                         <img src="/assets/images/about-reception-desk-900w.webp" alt="Elegant reception area of Surya Plaza Hotel with a welcoming front desk." width="600" height="450" loading="lazy" class="rounded-image-shadow">
@@ -228,9 +274,11 @@
                 <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
                 <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining/moti-mahal">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining/jackson-diner">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p>
+                <nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav>
+            </div>
         </div>
-        
     </footer>
     <!-- END: Consistent Footer -->
 

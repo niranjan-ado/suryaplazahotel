@@ -45,40 +45,79 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- Internal Style for Page Header Padding -->
-    <style>
-        .page-header {
-            padding-top: calc(var(--header-height) + 6rem); /* Increased Padding */
-            padding-bottom: 4rem;
-        }
-    </style>
-
-    <!-- JSON-LD Schema -->
+    <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "HotelRoom",
-      "name": "Junior Balcony Suite",
-      "description": "Boasting a generous 234 sqft, our Junior Suite provides an elevated experience for guests seeking more space and luxury. Enjoy a restful night’s sleep in the comfortable double bed and unwind in the separate living area, which features a plush sofa perfect for relaxation. The private balcony adds a touch of serenity, offering a quiet space to enjoy the views.",
-      "image": [
-        "https://suryaplazahotels.com/assets/images/rooms/room-junior-suite-seating-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-junior-suite-bedroom-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-junior-suite-view-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/room-junior-suite-bedroom-detail-1200w.webp",
-        "https://suryaplazahotels.com/assets/images/rooms/bathroom-sink-shower-1200w.webp"
-       ],
-      "floorSize": { "@type": "QuantitativeValue", "value": "234", "unitCode": "FTK" },
-      "occupancy": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "3", "unitText": "persons" },
-      "bed": { "@type": "BedDetails", "typeOfBed": "DoubleBed", "numberOfBeds": "1" },
-      "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "Separate Living Area" },
-        { "@type": "LocationFeatureSpecification", "name": "Private Balcony" },
-        { "@type": "LocationFeatureSpecification", "name": "Sofa Seating" },
-        { "@type": "LocationFeatureSpecification", "name": "Air Conditioning" },
-        { "@type": "LocationFeatureSpecification", "name": "Tea & Coffee Maker" }
-      ],
-      "offers": { "@type": "Offer", "price": "3199", "priceCurrency": "INR" },
-      "containedIn": { "@type": "Hotel", "name": "Surya Plaza Hotel", "url": "https://suryaplazahotels.com/" }
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "url": "https://suryaplazahotels.com/rooms/junior-balcony-suite",
+          "name": "Junior Balcony Suite | Surya Plaza Hotel, Sahibganj",
+          "description": "Experience luxury in our 234 sqft Junior Suite with a separate living area, double bed, private balcony, and serene views.",
+          "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suryaplazahotels.com/#website",
+          "url": "https://suryaplazahotels.com/",
+          "name": "Surya Plaza Hotel",
+          "publisher": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "Hotel",
+          "@id": "https://suryaplazahotels.com/#organization",
+          "name": "Surya Plaza Hotel",
+          "url": "https://suryaplazahotels.com/"
+        },
+        {
+          "@type": "HotelRoom",
+          "name": "Junior Balcony Suite",
+          "description": "Boasting a generous 234 sqft, our Junior Suite provides an elevated experience for guests seeking more space and luxury. Enjoy a restful night’s sleep in the comfortable double bed and unwind in the separate living area, which features a plush sofa perfect for relaxation. The private balcony adds a touch of serenity, offering a quiet space to enjoy the views.",
+          "image": [
+            "https://suryaplazahotels.com/assets/images/rooms/room-junior-suite-seating-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/room-junior-suite-bedroom-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/room-junior-suite-view-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/room-junior-suite-bedroom-detail-1200w.webp",
+            "https://suryaplazahotels.com/assets/images/rooms/bathroom-sink-shower-1200w.webp"
+           ],
+          "floorSize": { "@type": "QuantitativeValue", "value": "234", "unitCode": "FTK" },
+          "occupancy": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "3", "unitText": "persons" },
+          "bed": { "@type": "BedDetails", "typeOfBed": "DoubleBed", "numberOfBeds": 1 },
+          "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "Separate Living Area", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Private Balcony", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Sofa Seating", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "32\" LED Television", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "High-Speed Wi-Fi", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Work Desk & Chair", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Mini Fridge", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Tea & Coffee Maker", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Attached Bathroom with Shower", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Telephone Intercom", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "24-hour Room Service", "value": true }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "3199",
+              "priceCurrency": "INR",
+              "unitText": "night"
+            }
+          },
+          "containedIn": { "@id": "https://suryaplazahotels.com/#organization" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Rooms", "item": "https://suryaplazahotels.com/rooms" },
+            { "@type": "ListItem", "position": 3, "name": "Junior Balcony Suite", "item": "https://suryaplazahotels.com/rooms/junior-balcony-suite" }
+          ]
+        }
+      ]
     }
     </script>
 </head>
@@ -164,7 +203,7 @@
                          <div class="booking-widget">
                             <div class="price">Starts from <span>₹3199</span> / night</div>
                             <p>Taxes applicable as per government norms.</p>
-                            <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Check Availability & Book</a>
+                            <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Check availability and book the Junior Balcony Suite now">Check Availability & Book</a>
                         </div>
                     </aside>
                 </div>
@@ -191,6 +230,19 @@
             </div>
         </section>
 
+        <section id="other-rooms">
+            <div class="container">
+                <div data-animate>
+                    <h2 class="section-title text-center">Explore Other Rooms</h2>
+                </div>
+                <div class="grid-3-col">
+                    <article class="room-card" data-animate style="--animation-delay: 0.1s;"><a href="/rooms/executive-balcony-room"><img src="/assets/images/rooms/room-executive-balcony-bed-main-900w.webp" alt="Executive Balcony Room" loading="lazy"></a><div class="room-card-content"><h3>Executive Balcony Room</h3><div class="room-card-actions"><a href="/rooms/executive-balcony-room" class="button-secondary">View Details</a></div></div></article>
+                    <article class="room-card" data-animate style="--animation-delay: 0.2s;"><a href="/rooms/two-bedroom-premium-suite"><img src="/assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp" alt="Two-Bedroom Premium Suite" loading="lazy"></a><div class="room-card-content"><h3>Two-Bedroom Premium Suite</h3><div class="room-card-actions"><a href="/rooms/two-bedroom-premium-suite" class="button-secondary">View Details</a></div></div></article>
+                    <article class="room-card" data-animate style="--animation-delay: 0.3s;"><a href="/rooms/deluxe-balcony-room"><img src="/assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp" alt="Deluxe Balcony Room" loading="lazy"></a><div class="room-card-content"><h3>Deluxe Balcony Room</h3><div class="room-card-actions"><a href="/rooms/deluxe-balcony-room" class="button-secondary">View Details</a></div></div></article>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- START: Consistent FOOTER -->
@@ -199,7 +251,7 @@
             <div class="footer-grid">
                 <div class="footer-col-main"><a href="/"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a><p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj.</p></div>
                 <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
-                <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite" class="active">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
+                <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite" class="active" aria-current="page">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
                 <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
             <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
