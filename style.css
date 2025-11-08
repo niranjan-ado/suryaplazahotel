@@ -309,3 +309,114 @@ section { padding: 6rem 0; }
     .showcase-grid .showcase-text .section-title { text-align: center; }
     .showcase-grid .showcase-image { order: -1 !important; }
 }
+
+.room-card-price .price-details {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+.room-card-price .price-alternative {
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+/* --- Root Variable for RGBA Color --- */
+/* Add this line inside your existing :root selector */
+:root {
+    --primary-color-rgb: 0, 74, 153; /* This is the RGB version of #004A99 */
+}
+
+/* --- Offer Cards --- */
+.offer-card {
+    background-color: var(--background-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px var(--card-shadow-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px var(--card-shadow-hover);
+}
+
+.offer-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(var(--primary-color-rgb), 0.1); /* Subtle, branded background */
+    margin-bottom: 1.5rem;
+}
+
+.offer-icon .material-icons-outlined {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.offer-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.offer-card p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Ensures cards in a row have same height */
+}
+
+.offer-card p strong {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.offer-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: auto; /* Pushes the CTA to the bottom */
+    position: relative;
+    align-self: flex-start; /* Aligns link to the left */
+}
+
+.offer-cta::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed) ease;
+}
+
+.offer-cta:hover::after {
+    width: 100%;
+}
+
+.offer-cta .material-icons-outlined {
+    font-size: 1.25rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.offer-cta:hover .material-icons-outlined {
+    transform: translateX(4px);
+}
