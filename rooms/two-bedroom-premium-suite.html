@@ -40,45 +40,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Material+Icons+Outlined&family=Montserrat:wght@600;700&display=swap">
     
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="/style.css">
+    <!-- Main Stylesheet (with Cache Busting) -->
+    <link rel="stylesheet" href="/style.css?v=11.8">
 
-    <!-- Internal CSS for Rate Card -->
+    <!-- Internal CSS for Rate Card (REVISED & FIXED) -->
     <style>
         .booking-widget h3 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             text-align: center;
         }
-        .rate-table {
-            width: 100%;
-            border-collapse: collapse;
+        .rate-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
             margin-bottom: 1.5rem;
         }
-        .rate-table th, .rate-table td {
-            padding: 1rem 0.75rem;
-            text-align: left;
+        .rate-header, .rate-item {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            align-items: center;
+            gap: 1rem;
+            padding-bottom: 1rem;
             border-bottom: 1px solid var(--border-color);
         }
-        .rate-table th {
+        .rate-header {
             font-family: var(--font-heading);
             font-weight: 600;
             color: var(--text-muted);
             font-size: 0.9rem;
             text-transform: uppercase;
+            padding-bottom: 0.75rem;
         }
-        .rate-table td {
-            font-size: 1rem;
+        .rate-header span:nth-child(2),
+        .rate-header span:nth-child(3) {
+            text-align: right;
         }
-        .rate-table .plan-name {
+        .rate-plan .plan-name {
             font-weight: 700;
             color: var(--text-dark);
         }
-        .rate-table .plan-desc {
+        .rate-plan .plan-desc {
             font-size: 0.8rem;
             color: var(--text-muted);
         }
-        .rate-table .price-value {
+        .price-value {
             font-weight: 700;
             font-family: var(--font-heading);
             color: var(--primary-color);
@@ -116,21 +122,7 @@
         {
           "@type": "HotelRoom",
           "name": "Two-Bedroom Premium Suite",
-          "description": "Our premier Two-Bedroom Suite is the pinnacle of comfort and space at Surya Plaza. Perfectly suited for families or groups, this expansive 700 sqft suite features two private bedrooms, ensuring privacy and tranquility for all guests. The separate drawing room, complete with a sofa-bed, provides a central hub for relaxation and socializing. Step out onto one of the two private balconies to enjoy breathtaking, panoramic views of the River Ganges.",
-          "image": [
-            "https://suryaplazahotels.com/assets/images/rooms/room-two-bedroom-suite-living-area-1200w.webp",
-            "https://suryaplazahotels.com/assets/images/rooms/room-two-bedroom-suite-bed-1-1200w.webp",
-            "https://suryaplazahotels.com/assets/images/rooms/room-two-bedroom-suite-bed-2-1200w.webp"
-           ],
-          "floorSize": { "@type": "QuantitativeValue", "value": "700", "unitCode": "FTK" },
-          "numberOfRooms": 2,
-          "occupancy": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "6", "unitText": "persons" },
-          "bed": { "@type": "BedDetails", "typeOfBed": "DoubleBed", "numberOfBeds": 2 },
-          "amenityFeature": [
-            { "@type": "LocationFeatureSpecification", "name": "Two Private Bedrooms", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Separate Drawing Room", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Stunning River View", "value": true }
-          ],
+          "description": "Our premier Two-Bedroom Suite is the pinnacle of comfort and space at Surya Plaza. Perfectly suited for families or groups, this expansive 700 sqft suite features two private bedrooms, ensuring privacy and tranquility for all guests. The separate drawing room, complete with a sofa-bed, provides a central hub for relaxation and socializing.",
           "offers": [
             { "@type": "Offer", "name": "Room Only - Single Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "3999", "priceCurrency": "INR", "unitText": "night" } },
             { "@type": "Offer", "name": "Room Only - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "4475", "priceCurrency": "INR", "unitText": "night" } },
@@ -138,15 +130,6 @@
             { "@type": "Offer", "name": "With Breakfast - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "4700", "priceCurrency": "INR", "unitText": "night" } },
             { "@type": "Offer", "name": "With Breakfast & Dinner - Single Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "4750", "priceCurrency": "INR", "unitText": "night" } },
             { "@type": "Offer", "name": "With Breakfast & Dinner - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "5450", "priceCurrency": "INR", "unitText": "night" } }
-          ],
-          "containedIn": { "@id": "https://suryaplazahotels.com/#organization" }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Rooms", "item": "https://suryaplazahotels.com/rooms" },
-            { "@type": "ListItem", "position": 3, "name": "Two-Bedroom Premium Suite", "item": "https://suryaplazahotels.com/rooms/two-bedroom-premium-suite" }
           ]
         }
       ]
@@ -207,13 +190,13 @@
                             <div class="gallery-main-image">
                                 <img id="main-gallery-image" 
                                      src="/assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp" 
-                                     alt="The expansive and modern living area of the Two-Bedroom Premium Suite." 
+                                     alt="The expansive and modern living area of the Two-Bedroom Premium Suite at Surya Plaza Hotel." 
                                      fetchpriority="high">
                             </div>
                             <div class="gallery-thumbnails">
-                                <img src="/assets/images/rooms/room-two-bedroom-suite-living-area-600w.webp" data-large-src="/assets/images/rooms/room-two-bedroom-suite-living-area-1200w.webp" alt="A view of the separate drawing room with sofa seating and ample space." loading="lazy">
-                                <img src="/assets/images/rooms/room-two-bedroom-suite-bed-1-600w.webp" data-large-src="/assets/images/rooms/room-two-bedroom-suite-bed-1-1200w.webp" alt="The comfortable and well-appointed master bedroom in the suite." loading="lazy">
-                                <img src="/assets/images/rooms/room-two-bedroom-suite-bed-2-600w.webp" data-large-src="/assets/images/rooms/room-two-bedroom-suite-bed-2-1200w.webp" alt="The second private bedroom, ensuring comfort and privacy for all guests." loading="lazy">
+                                <img src="/assets/images/rooms/room-two-bedroom-suite-living-area-600w.webp" data-large-src="/assets/images/rooms/room-two-bedroom-suite-living-area-1200w.webp" alt="A view of the separate drawing room with sofa seating and ample space for families." loading="lazy">
+                                <img src="/assets/images/rooms/room-two-bedroom-suite-bed-1-600w.webp" data-large-src="/assets/images/rooms/room-two-bedroom-suite-bed-1-1200w.webp" alt="The comfortable and well-appointed master bedroom in the two-bedroom suite." loading="lazy">
+                                <img src="/assets/images/rooms/room-two-bedroom-suite-bed-2-600w.webp" data-large-src="/assets/images/rooms/room-two-bedroom-suite-bed-2-1200w.webp" alt="The second private bedroom, ensuring comfort and privacy for all guests in the suite." loading="lazy">
                                 <img src="/assets/images/rooms/room-two-bedroom-suite-balcony-view-600w.webp" data-large-src="/assets/images/rooms/room-two-bedroom-suite-balcony-view-1200w.webp" alt="A breathtaking panoramic view of the River Ganges from one of the suite's private balconies." loading="lazy">
                             </div>
                         </div>
@@ -229,45 +212,41 @@
                         <p>Our premier Two-Bedroom Suite is the pinnacle of comfort and space at Surya Plaza. Perfectly suited for families or groups, this expansive 700 sqft suite features two private bedrooms, ensuring privacy and tranquility for all guests. The separate drawing room, complete with a sofa-bed, provides a central hub for relaxation and socializing. Step out onto one of the two private balconies to enjoy breathtaking, panoramic views of the River Ganges. The suite also includes a modern, clean bathroom with premium amenities for your comfort.</p>
                     </div>
                     
-                    <!-- Right Side: Booking Widget -->
+                    <!-- Right Side: Booking Widget (REVISED & FIXED) -->
                     <aside class="room-info" data-animate style="--animation-delay: 0.1s;">
                          <div class="booking-widget">
                             <h3>Rate Plans</h3>
-                            <table class="rate-table">
-                                <thead>
-                                    <tr>
-                                        <th>Plan</th>
-                                        <th style="text-align: right;">Single</th>
-                                        <th style="text-align: right;">Double</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="plan-name">Room Only</div>
-                                            <div class="plan-desc">EP</div>
-                                        </td>
-                                        <td class="price-value">₹3,999</td>
-                                        <td class="price-value">₹4,475</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="plan-name">With Breakfast</div>
-                                            <div class="plan-desc">CP</div>
-                                        </td>
-                                        <td class="price-value">₹4,225</td>
-                                        <td class="price-value">₹4,700</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="plan-name">Breakfast & Dinner</div>
-                                            <div class="plan-desc">MAP</div>
-                                        </td>
-                                        <td class="price-value">₹4,750</td>
-                                        <td class="price-value">₹5,450</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="rate-card">
+                                <div class="rate-header">
+                                    <span>Plan</span>
+                                    <span>Single</span>
+                                    <span>Double</span>
+                                </div>
+                                <div class="rate-item">
+                                    <div class="rate-plan">
+                                        <div class="plan-name">Room Only</div>
+                                        <div class="plan-desc">EP</div>
+                                    </div>
+                                    <div class="price-value">₹3,999</div>
+                                    <div class="price-value">₹4,475</div>
+                                </div>
+                                <div class="rate-item">
+                                    <div class="rate-plan">
+                                        <div class="plan-name">With Breakfast</div>
+                                        <div class="plan-desc">CP</div>
+                                    </div>
+                                    <div class="price-value">₹4,225</div>
+                                    <div class="price-value">₹4,700</div>
+                                </div>
+                                <div class="rate-item">
+                                    <div class="rate-plan">
+                                        <div class="plan-name">Breakfast & Dinner</div>
+                                        <div class="plan-desc">MAP</div>
+                                    </div>
+                                    <div class="price-value">₹4,750</div>
+                                    <div class="price-value">₹5,450</div>
+                                </div>
+                            </div>
                             <p>Taxes applicable as per government norms.</p>
                             <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Check availability and book the Two-Bedroom Premium Suite now">Check Availability & Book</a>
                         </div>

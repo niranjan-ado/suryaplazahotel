@@ -43,42 +43,48 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- Internal CSS for Rate Card -->
+    <!-- Internal CSS for Rate Card (REVISED & FIXED) -->
     <style>
         .booking-widget h3 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             text-align: center;
         }
-        .rate-table {
-            width: 100%;
-            border-collapse: collapse;
+        .rate-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
             margin-bottom: 1.5rem;
         }
-        .rate-table th, .rate-table td {
-            padding: 1rem 0.75rem;
-            text-align: left;
+        .rate-header, .rate-item {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            align-items: center;
+            gap: 1rem;
+            padding-bottom: 1rem;
             border-bottom: 1px solid var(--border-color);
         }
-        .rate-table th {
+        .rate-header {
             font-family: var(--font-heading);
             font-weight: 600;
             color: var(--text-muted);
             font-size: 0.9rem;
             text-transform: uppercase;
+            padding-bottom: 0.75rem;
         }
-        .rate-table td {
-            font-size: 1rem;
+        .rate-header span:nth-child(2),
+        .rate-header span:nth-child(3) {
+            text-align: right;
         }
-        .rate-table .plan-name {
+        .rate-plan .plan-name {
             font-weight: 700;
             color: var(--text-dark);
         }
-        .rate-table .plan-desc {
+        .rate-plan .plan-desc {
             font-size: 0.8rem;
             color: var(--text-muted);
         }
-        .rate-table .price-value {
+        .price-value {
             font-weight: 700;
             font-family: var(--font-heading);
             color: var(--primary-color);
@@ -124,14 +130,6 @@
           "floorSize": { "@type": "QuantitativeValue", "value": "150", "unitCode": "FTK" },
           "occupancy": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "2", "unitText": "persons" },
           "bed": { "@type": "BedDetails", "typeOfBed": "DoubleBed", "numberOfBeds": 1 },
-          "amenityFeature": [
-            { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "32\" LED Television", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "High-Speed Wi-Fi", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Work Desk & Chair", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Mini Fridge", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Attached Bathroom with Shower", "value": true }
-          ],
           "offers": [
             { "@type": "Offer", "name": "Room Only - Single Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "1599", "priceCurrency": "INR", "unitText": "night" } },
             { "@type": "Offer", "name": "Room Only - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2075", "priceCurrency": "INR", "unitText": "night" } },
@@ -228,45 +226,41 @@
                         <p>Perfect for the individual traveler or a couple, our Club Comfort Room offers a relaxing and efficient 150 sq. ft. retreat. The room features a plush double bed for a restful night's sleep and is thoughtfully equipped with all the essentials for a pleasant stay. A dedicated work desk provides a productive space, while the clean, modern attached bathroom includes a refreshing shower and complimentary toiletries. It's the ideal choice for value and convenience in the heart of Sahibganj.</p>
                     </div>
                     
-                    <!-- Right Side: Booking Widget with Rate Card -->
+                    <!-- Right Side: Booking Widget (REVISED & FIXED) -->
                     <aside class="room-info" data-animate style="--animation-delay: 0.1s;">
                          <div class="booking-widget">
                             <h3>Rate Plans</h3>
-                            <table class="rate-table">
-                                <thead>
-                                    <tr>
-                                        <th>Plan</th>
-                                        <th style="text-align: right;">Single</th>
-                                        <th style="text-align: right;">Double</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="plan-name">Room Only</div>
-                                            <div class="plan-desc">EP</div>
-                                        </td>
-                                        <td class="price-value">₹1,599</td>
-                                        <td class="price-value">₹2,075</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="plan-name">With Breakfast</div>
-                                            <div class="plan-desc">CP</div>
-                                        </td>
-                                        <td class="price-value">₹1,825</td>
-                                        <td class="price-value">₹2,300</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="plan-name">Breakfast & Dinner</div>
-                                            <div class="plan-desc">MAP</div>
-                                        </td>
-                                        <td class="price-value">₹2,350</td>
-                                        <td class="price-value">₹3,050</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="rate-card">
+                                <div class="rate-header">
+                                    <span>Plan</span>
+                                    <span>Single</span>
+                                    <span>Double</span>
+                                </div>
+                                <div class="rate-item">
+                                    <div class="rate-plan">
+                                        <div class="plan-name">Room Only</div>
+                                        <div class="plan-desc">EP</div>
+                                    </div>
+                                    <div class="price-value">₹1,599</div>
+                                    <div class="price-value">₹2,075</div>
+                                </div>
+                                <div class="rate-item">
+                                    <div class="rate-plan">
+                                        <div class="plan-name">With Breakfast</div>
+                                        <div class="plan-desc">CP</div>
+                                    </div>
+                                    <div class="price-value">₹1,825</div>
+                                    <div class="price-value">₹2,300</div>
+                                </div>
+                                <div class="rate-item">
+                                    <div class="rate-plan">
+                                        <div class="plan-name">Breakfast & Dinner</div>
+                                        <div class="plan-desc">MAP</div>
+                                    </div>
+                                    <div class="price-value">₹2,350</div>
+                                    <div class="price-value">₹3,050</div>
+                                </div>
+                            </div>
                             <p>Taxes applicable as per government norms.</p>
                             <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Check availability and book the Club Comfort Room now">Check Availability & Book</a>
                         </div>

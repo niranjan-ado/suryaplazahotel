@@ -40,45 +40,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Material+Icons+Outlined&family=Montserrat:wght@600;700&display=swap">
     
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="/style.css">
+    <!-- Main Stylesheet (with Cache Busting) -->
+    <link rel="stylesheet" href="/style.css?v=11.8">
 
-    <!-- Internal CSS for Rate Card -->
+    <!-- Internal CSS for Rate Card (REVISED & FIXED) -->
     <style>
         .booking-widget h3 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             text-align: center;
         }
-        .rate-table {
-            width: 100%;
-            border-collapse: collapse;
+        .rate-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
             margin-bottom: 1.5rem;
         }
-        .rate-table th, .rate-table td {
-            padding: 1rem 0.75rem;
-            text-align: left;
+        .rate-header, .rate-item {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            align-items: center;
+            gap: 1rem;
+            padding-bottom: 1rem;
             border-bottom: 1px solid var(--border-color);
         }
-        .rate-table th {
+        .rate-header {
             font-family: var(--font-heading);
             font-weight: 600;
             color: var(--text-muted);
             font-size: 0.9rem;
             text-transform: uppercase;
+            padding-bottom: 0.75rem;
         }
-        .rate-table td {
-            font-size: 1rem;
+        .rate-header span:nth-child(2),
+        .rate-header span:nth-child(3) {
+            text-align: right;
         }
-        .rate-table .plan-name {
+        .rate-plan .plan-name {
             font-weight: 700;
             color: var(--text-dark);
         }
-        .rate-table .plan-desc {
+        .rate-plan .plan-desc {
             font-size: 0.8rem;
             color: var(--text-muted);
         }
-        .rate-table .price-value {
+        .price-value {
             font-weight: 700;
             font-family: var(--font-heading);
             color: var(--primary-color);
@@ -117,20 +123,6 @@
           "@type": "HotelRoom",
           "name": "Executive Balcony Room",
           "description": "Our spacious 220 sq. ft. Executive Room offers a premium stay, perfect for travelers desiring extra room to stretch out and relax. Step out onto your private balcony and enjoy the view. The room is thoughtfully furnished with a comfortable sofa, providing an additional area for lounging or informal meetings.",
-          "image": [
-            "https://suryaplazahotels.com/assets/images/rooms/room-executive-balcony-bed-main-1200w.webp",
-            "https://suryaplazahotels.com/assets/images/rooms/room-executive-balcony-sofa-900w.webp",
-            "https://suryaplazahotels.com/assets/images/rooms/bathroom-wc-geyser-1200w.webp"
-           ],
-          "floorSize": { "@type": "QuantitativeValue", "value": "220", "unitCode": "FTK" },
-          "occupancy": { "@type": "QuantitativeValue", "minValue": "1", "maxValue": "3", "unitText": "persons" },
-          "bed": { "@type": "BedDetails", "typeOfBed": "DoubleBed", "numberOfBeds": 1 },
-          "amenityFeature": [
-            { "@type": "LocationFeatureSpecification", "name": "Private Balcony", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Sofa Seating Area", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Attached Bathroom with Shower", "value": true }
-          ],
           "offers": [
             { "@type": "Offer", "name": "Room Only - Single Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2199", "priceCurrency": "INR", "unitText": "night" } },
             { "@type": "Offer", "name": "Room Only - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2675", "priceCurrency": "INR", "unitText": "night" } },
@@ -138,15 +130,6 @@
             { "@type": "Offer", "name": "With Breakfast - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2900", "priceCurrency": "INR", "unitText": "night" } },
             { "@type": "Offer", "name": "With Breakfast & Dinner - Single Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2950", "priceCurrency": "INR", "unitText": "night" } },
             { "@type": "Offer", "name": "With Breakfast & Dinner - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "3650", "priceCurrency": "INR", "unitText": "night" } }
-          ],
-          "containedIn": { "@id": "https://suryaplazahotels.com/#organization" }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suryaplazahotels.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Rooms", "item": "https://suryaplazahotels.com/rooms" },
-            { "@type": "ListItem", "position": 3, "name": "Executive Balcony Room", "item": "https://suryaplazahotels.com/rooms/executive-balcony-room" }
           ]
         }
       ]
@@ -229,45 +212,41 @@
                         <p>Our spacious 220 sq. ft. Executive Room offers a premium stay, perfect for business travelers or couples desiring extra room to stretch out. Step out onto your private balcony to enjoy the city view. The room is thoughtfully furnished with a comfortable sofa, providing an additional area for lounging or informal meetings. A dedicated work desk and a well-appointed, modern bathroom with a full shower ensure you have everything you need for a productive and relaxing stay.</p>
                     </div>
                     
-                    <!-- Right Side: Booking Widget -->
+                    <!-- Right Side: Booking Widget (REVISED & FIXED) -->
                     <aside class="room-info" data-animate style="--animation-delay: 0.1s;">
                          <div class="booking-widget">
                             <h3>Rate Plans</h3>
-                            <table class="rate-table">
-                                <thead>
-                                    <tr>
-                                        <th>Plan</th>
-                                        <th style="text-align: right;">Single</th>
-                                        <th style="text-align: right;">Double</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="plan-name">Room Only</div>
-                                            <div class="plan-desc">EP</div>
-                                        </td>
-                                        <td class="price-value">₹2,199</td>
-                                        <td class="price-value">₹2,675</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="plan-name">With Breakfast</div>
-                                            <div class="plan-desc">CP</div>
-                                        </td>
-                                        <td class="price-value">₹2,425</td>
-                                        <td class="price-value">₹2,900</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="plan-name">Breakfast & Dinner</div>
-                                            <div class="plan-desc">MAP</div>
-                                        </td>
-                                        <td class="price-value">₹2,950</td>
-                                        <td class="price-value">₹3,650</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="rate-card">
+                                <div class="rate-header">
+                                    <span>Plan</span>
+                                    <span>Single</span>
+                                    <span>Double</span>
+                                </div>
+                                <div class="rate-item">
+                                    <div class="rate-plan">
+                                        <div class="plan-name">Room Only</div>
+                                        <div class="plan-desc">EP</div>
+                                    </div>
+                                    <div class="price-value">₹2,199</div>
+                                    <div class="price-value">₹2,675</div>
+                                </div>
+                                <div class="rate-item">
+                                    <div class="rate-plan">
+                                        <div class="plan-name">With Breakfast</div>
+                                        <div class="plan-desc">CP</div>
+                                    </div>
+                                    <div class="price-value">₹2,425</div>
+                                    <div class="price-value">₹2,900</div>
+                                </div>
+                                <div class="rate-item">
+                                    <div class="rate-plan">
+                                        <div class="plan-name">Breakfast & Dinner</div>
+                                        <div class="plan-desc">MAP</div>
+                                    </div>
+                                    <div class="price-value">₹2,950</div>
+                                    <div class="price-value">₹3,650</div>
+                                </div>
+                            </div>
                             <p>Taxes applicable as per government norms.</p>
                             <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Check availability and book the Executive Balcony Room now">Check Availability & Book</a>
                         </div>
