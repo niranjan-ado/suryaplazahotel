@@ -213,44 +213,104 @@
                     </div>
                     
                     <!-- Right Side: Booking Widget (REVISED & FIXED) -->
-                    <aside class="room-info" data-animate style="--animation-delay: 0.1s;">
-                         <div class="booking-widget">
-                            <h3>Rate Plans</h3>
-                            <div class="rate-card">
-                                <div class="rate-header">
-                                    <span>Plan</span>
-                                    <span>Single</span>
-                                    <span>Double</span>
-                                </div>
-                                <div class="rate-item">
-                                    <div class="rate-plan">
-                                        <div class="plan-name">Room Only</div>
-                                        <div class="plan-desc">EP</div>
-                                    </div>
-                                    <div class="price-value">₹3,999</div>
-                                    <div class="price-value">₹4,475</div>
-                                </div>
-                                <div class="rate-item">
-                                    <div class="rate-plan">
-                                        <div class="plan-name">With Breakfast</div>
-                                        <div class="plan-desc">CP</div>
-                                    </div>
-                                    <div class="price-value">₹4,225</div>
-                                    <div class="price-value">₹4,700</div>
-                                </div>
-                                <div class="rate-item">
-                                    <div class="rate-plan">
-                                        <div class="plan-name">Breakfast & Dinner</div>
-                                        <div class="plan-desc">MAP</div>
-                                    </div>
-                                    <div class="price-value">₹4,750</div>
-                                    <div class="price-value">₹5,450</div>
-                                </div>
-                            </div>
-                            <p>Taxes applicable as per government norms.</p>
-                            <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Check availability and book the Two-Bedroom Premium Suite now">Check Availability & Book</a>
-                        </div>
-                    </aside>
+                    <!-- Right Side: Booking Widget (DEFINITIVE FIX) -->
+<aside class="room-info" data-animate style="--animation-delay: 0.1s;">
+     <div class="booking-widget">
+        <h3>Rate Plans</h3>
+
+        <!-- MOBILE-FRIENDLY LAYOUT (Visible by default) -->
+        <div class="rate-card-mobile">
+            <div class="rate-mobile-item">
+                <div class="rate-plan">
+                    <div class="plan-name">Room Only</div>
+                    <div class="plan-desc">EP</div>
+                </div>
+                <div class="rate-prices">
+                    <div class="rate-price-pair">
+                        <span class="rate-label">Single</span>
+                        <span class="price-value">₹3,999</span>
+                    </div>
+                    <div class="rate-price-pair">
+                        <span class="rate-label">Double</span>
+                        <span class="price-value">₹4,475</span>
+                    </div>
+                </div>
+            </div>
+            <div class="rate-mobile-item">
+                <div class="rate-plan">
+                    <div class="plan-name">With Breakfast</div>
+                    <div class="plan-desc">CP</div>
+                </div>
+                <div class="rate-prices">
+                    <div class="rate-price-pair">
+                        <span class="rate-label">Single</span>
+                        <span class="price-value">₹4,225</span>
+                    </div>
+                    <div class="rate-price-pair">
+                        <span class="rate-label">Double</span>
+                        <span class="price-value">₹4,700</span>
+                    </div>
+                </div>
+            </div>
+            <div class="rate-mobile-item">
+                <div class="rate-plan">
+                    <div class="plan-name">Breakfast & Dinner</div>
+                    <div class="plan-desc">MAP</div>
+                </div>
+                <div class="rate-prices">
+                    <div class="rate-price-pair">
+                        <span class="rate-label">Single</span>
+                        <span class="price-value">₹4,750</span>
+                    </div>
+                    <div class="rate-price-pair">
+                        <span class="rate-label">Double</span>
+                        <span class="price-value">₹5,450</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESKTOP TABLE LAYOUT (Hidden by default) -->
+        <table class="rate-card-desktop">
+            <thead>
+                <tr>
+                    <th>Plan</th>
+                    <th style="text-align: right;">Single</th>
+                    <th style="text-align: right;">Double</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="plan-name">Room Only</div>
+                        <div class="plan-desc">EP</div>
+                    </td>
+                    <td class="price-value">₹3,999</td>
+                    <td class="price-value">₹4,475</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="plan-name">With Breakfast</div>
+                        <div class="plan-desc">CP</div>
+                    </td>
+                    <td class="price-value">₹4,225</td>
+                    <td class="price-value">₹4,700</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="plan-name">Breakfast & Dinner</div>
+                        <div class="plan-desc">MAP</div>
+                    </td>
+                    <td class="price-value">₹4,750</td>
+                    <td class="price-value">₹5,450</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Taxes applicable as per government norms.</p>
+        <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Check availability and book the Two-Bedroom Premium Suite now">Check Availability & Book</a>
+    </div>
+</aside>
                 </div>
             </div>
         </section>
