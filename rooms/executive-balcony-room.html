@@ -45,6 +45,50 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
+    <!-- Internal CSS for Rate Card -->
+    <style>
+        .booking-widget h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .rate-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        .rate-table th, .rate-table td {
+            padding: 1rem 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .rate-table th {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        .rate-table td {
+            font-size: 1rem;
+        }
+        .rate-table .plan-name {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        .rate-table .plan-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .rate-table .price-value {
+            font-weight: 700;
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            text-align: right;
+            white-space: nowrap;
+        }
+    </style>
+
     <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
@@ -55,6 +99,7 @@
           "url": "https://suryaplazahotels.com/rooms/executive-balcony-room",
           "name": "Executive Balcony Room | Surya Plaza Hotel, Sahibganj",
           "description": "Our spacious 220 sqft Executive Room features a double bed, private balcony, and a comfortable sofa area for a premium stay experience.",
+          "dateModified": "2025-11-08",
           "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
         },
         {
@@ -98,15 +143,14 @@
             { "@type": "LocationFeatureSpecification", "name": "Complimentary Toiletries", "value": true },
             { "@type": "LocationFeatureSpecification", "name": "24-hour Room Service", "value": true }
           ],
-          "offers": {
-            "@type": "Offer",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "2699",
-              "priceCurrency": "INR",
-              "unitText": "night"
-            }
-          },
+          "offers": [
+            { "@type": "Offer", "name": "Room Only - Single Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2199", "priceCurrency": "INR", "unitText": "night" } },
+            { "@type": "Offer", "name": "Room Only - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2675", "priceCurrency": "INR", "unitText": "night" } },
+            { "@type": "Offer", "name": "With Breakfast - Single Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2425", "priceCurrency": "INR", "unitText": "night" } },
+            { "@type": "Offer", "name": "With Breakfast - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2900", "priceCurrency": "INR", "unitText": "night" } },
+            { "@type": "Offer", "name": "With Breakfast & Dinner - Single Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2950", "priceCurrency": "INR", "unitText": "night" } },
+            { "@type": "Offer", "name": "With Breakfast & Dinner - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "3650", "priceCurrency": "INR", "unitText": "night" } }
+          ],
           "containedIn": { "@id": "https://suryaplazahotels.com/#organization" }
         },
         {
@@ -181,7 +225,6 @@
                             <div class="gallery-thumbnails">
                                 <img src="/assets/images/rooms/room-executive-balcony-bed-main-600w.webp" data-large-src="/assets/images/rooms/room-executive-balcony-bed-main-1200w.webp" alt="View of the king-size bed and decor in the Executive room." loading="lazy">
                                 <img src="/assets/images/rooms/room-executive-balcony-sofa-600w.webp" data-large-src="/assets/images/rooms/room-executive-balcony-sofa-900w.webp" alt="Sofa seating area with a view from the balcony." loading="lazy">
-                                
                                 <img src="/assets/images/rooms/room-executive-balcony-desk-600w.webp" data-large-src="/assets/images/rooms/room-executive-balcony-desk-1200w.webp" alt="Dedicated work desk area in the Executive Room." loading="lazy">
                                 <img src="/assets/images/rooms/bathroom-wc-geyser-600w.webp" data-large-src="/assets/images/rooms/bathroom-wc-geyser-1200w.webp" alt="Clean and modern attached bathroom." loading="lazy">
                             </div>
@@ -201,7 +244,42 @@
                     <!-- Right Side: Booking Widget -->
                     <aside class="room-info" data-animate style="--animation-delay: 0.1s;">
                          <div class="booking-widget">
-                            <div class="price">Starts from <span>₹2699</span> / night</div>
+                            <h3>Rate Plans</h3>
+                            <table class="rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Plan</th>
+                                        <th style="text-align: right;">Single</th>
+                                        <th style="text-align: right;">Double</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="plan-name">Room Only</div>
+                                            <div class="plan-desc">EP</div>
+                                        </td>
+                                        <td class="price-value">₹2,199</td>
+                                        <td class="price-value">₹2,675</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="plan-name">With Breakfast</div>
+                                            <div class="plan-desc">CP</div>
+                                        </td>
+                                        <td class="price-value">₹2,425</td>
+                                        <td class="price-value">₹2,900</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="plan-name">Breakfast & Dinner</div>
+                                            <div class="plan-desc">MAP</div>
+                                        </td>
+                                        <td class="price-value">₹2,950</td>
+                                        <td class="price-value">₹3,650</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             <p>Taxes applicable as per government norms.</p>
                             <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Check availability and book the Executive Balcony Room now">Check Availability & Book</a>
                         </div>

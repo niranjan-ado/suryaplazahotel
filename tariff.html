@@ -78,6 +78,7 @@
           "url": "https://suryaplazahotels.com/tariff",
           "name": "Room Tariff | Official Rates at Surya Plaza Hotel, Sahibganj",
           "description": "View the official room tariff for Surya Plaza Hotel. Find transparent pricing for all our room types, meal plans, and additional services.",
+          "dateModified": "2025-11-08",
           "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
         },
         {
@@ -95,14 +96,25 @@
         },
         {
           "@type": "ItemList",
-          "name": "Room Rates at Surya Plaza Hotel",
+          "name": "Room Only (EP) Rates at Surya Plaza Hotel",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "item": { "@type": "HotelRoom", "name": "Club Comfort Room", "offers": [{"@type": "Offer","name": "Single Occupancy","price": "1599", "priceCurrency": "INR"},{"@type": "Offer","name": "Double Occupancy","price": "2099", "priceCurrency": "INR"}] } },
-            { "@type": "ListItem", "position": 2, "item": { "@type": "HotelRoom", "name": "Deluxe Balcony Room", "offers": [{"@type": "Offer","name": "Single Occupancy","price": "1899", "priceCurrency": "INR"},{"@type": "Offer","name": "Double Occupancy","price": "2399", "priceCurrency": "INR"}] } },
-            { "@type": "ListItem", "position": 3, "item": { "@type": "HotelRoom", "name": "Executive Balcony Room", "offers": [{"@type": "Offer","name": "Single Occupancy","price": "2199", "priceCurrency": "INR"},{"@type": "Offer","name": "Double Occupancy","price": "2699", "priceCurrency": "INR"}] } },
-            { "@type": "ListItem", "position": 4, "item": { "@type": "HotelRoom", "name": "Junior Balcony Suite", "offers": [{"@type": "Offer","name": "Single Occupancy","price": "2699", "priceCurrency": "INR"},{"@type": "Offer","name": "Double Occupancy","price": "3199", "priceCurrency": "INR"}] } },
-            { "@type": "ListItem", "position": 5, "item": { "@type": "HotelRoom", "name": "Two-Bedroom Premium Suite", "offers": { "@type": "Offer", "price": "3999", "priceCurrency": "INR" } } },
-            { "@type": "ListItem", "position": 6, "item": { "@type": "HotelRoom", "name": "Family Apartment with Kitchen", "offers": { "@type": "Offer", "price": "4999", "priceCurrency": "INR" } } }
+            { "@type": "ListItem", "position": 1, "item": { "@type": "HotelRoom", "name": "Club Comfort Room", "offers": [{"@type": "Offer","name": "Single Occupancy (EP)","priceSpecification": { "@type": "UnitPriceSpecification", "price": "1599", "priceCurrency": "INR"}},{"@type": "Offer","name": "Double Occupancy (EP)","priceSpecification": { "@type": "UnitPriceSpecification", "price": "2075", "priceCurrency": "INR"}}] } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "HotelRoom", "name": "Deluxe Balcony Room", "offers": [{"@type": "Offer","name": "Single Occupancy (EP)","priceSpecification": { "@type": "UnitPriceSpecification", "price": "1899", "priceCurrency": "INR"}},{"@type": "Offer","name": "Double Occupancy (EP)","priceSpecification": { "@type": "UnitPriceSpecification", "price": "2375", "priceCurrency": "INR"}}] } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "HotelRoom", "name": "Executive Balcony Room", "offers": [{"@type": "Offer","name": "Single Occupancy (EP)","priceSpecification": { "@type": "UnitPriceSpecification", "price": "2199", "priceCurrency": "INR"}},{"@type": "Offer","name": "Double Occupancy (EP)","priceSpecification": { "@type": "UnitPriceSpecification", "price": "2675", "priceCurrency": "INR"}}] } },
+            { "@type": "ListItem", "position": 4, "item": { "@type": "HotelRoom", "name": "Junior Balcony Suite", "offers": [{"@type": "Offer","name": "Single Occupancy (EP)","priceSpecification": { "@type": "UnitPriceSpecification", "price": "2699", "priceCurrency": "INR"}},{"@type": "Offer","name": "Double Occupancy (EP)","priceSpecification": { "@type": "UnitPriceSpecification", "price": "3175", "priceCurrency": "INR"}}] } },
+            { "@type": "ListItem", "position": 5, "item": { "@type": "HotelRoom", "name": "Two-Bedroom Premium Suite", "offers": [{"@type": "Offer","name": "Single Occupancy (EP)","priceSpecification": { "@type": "UnitPriceSpecification", "price": "3999", "priceCurrency": "INR"}},{"@type": "Offer","name": "Double Occupancy (EP)","priceSpecification": { "@type": "UnitPriceSpecification", "price": "4475", "priceCurrency": "INR"}}] } },
+            { "@type": "ListItem", "position": 6, "item": { "@type": "HotelRoom", "name": "Family Apartment with Kitchen", "offers": [{"@type": "Offer","name": "Single Occupancy (EP)","priceSpecification": { "@type": "UnitPriceSpecification", "price": "4999", "priceCurrency": "INR"}},{"@type": "Offer","name": "Double Occupancy (EP)","priceSpecification": { "@type": "UnitPriceSpecification", "price": "5475", "priceCurrency": "INR"}}] } }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "name": "Add-on Services",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "Breakfast Plan (CP)", "offers": { "@type": "Offer", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "225", "priceCurrency": "INR", "unitText": "per person" } } } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "Breakfast & Dinner Plan (MAP)", "offers": { "@type": "Offer", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "750", "priceCurrency": "INR", "unitText": "per person" } } } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "All Meals Plan (AP)", "offers": { "@type": "Offer", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "1250", "priceCurrency": "INR", "unitText": "per person" } } } },
+            { "@type": "ListItem", "position": 4, "item": { "@type": "Product", "name": "Extra Adult Charge", "description": "Includes extra bedding and breakfast.", "offers": { "@type": "Offer", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "700", "priceCurrency": "INR" } } } },
+            { "@type": "ListItem", "position": 5, "item": { "@type": "Product", "name": "Extra Child Charge (5-12 years)", "description": "Includes extra bedding.", "offers": { "@type": "Offer", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "500", "priceCurrency": "INR" } } } }
           ]
         },
         {
@@ -172,8 +184,8 @@
         <section id="tariff-main">
             <div class="container">
                 <div class="content-toggle" data-animate>
-                    <button data-toggle-target="#tariffGrid" data-toggle-class="show-double" class="active">Single Occupancy</button>
-                    <button data-toggle-target="#tariffGrid" data-toggle-class="show-double">Double Occupancy</button>
+                    <button id="singleBtn" data-toggle-target="#tariffGrid" data-toggle-class="show-double" class="active">Single Occupancy</button>
+                    <button id="doubleBtn" data-toggle-target="#tariffGrid" data-toggle-class="show-double">Double Occupancy</button>
                 </div>
 
                 <div class="grid-3-col" id="tariffGrid">
@@ -182,7 +194,7 @@
                         <div class="tariff-card-content">
                             <h4>Club Comfort Room</h4>
                             <p>An efficient and comfortable space, ideal for solo travellers seeking value.</p>
-                            <div class="tariff-price"><span class="price-single">₹1599</span><span class="price-double">₹2099</span><small> / night + taxes</small></div>
+                            <div class="tariff-price"><span class="price-single">₹1,599</span><span class="price-double">₹2,075</span><small> / night + taxes</small></div>
                             <div class="tariff-card-actions"><a href="/rooms/club-comfort-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
                         </div>
                     </div>
@@ -191,7 +203,7 @@
                         <div class="tariff-card-content">
                             <h4>Deluxe Balcony Room</h4>
                             <p>Features a private balcony, offering a perfect spot to unwind and enjoy the air.</p>
-                            <div class="tariff-price"><span class="price-single">₹1899</span><span class="price-double">₹2399</span><small> / night + taxes</small></div>
+                            <div class="tariff-price"><span class="price-single">₹1,899</span><span class="price-double">₹2,375</span><small> / night + taxes</small></div>
                             <div class="tariff-card-actions"><a href="/rooms/deluxe-balcony-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
                         </div>
                     </div>
@@ -200,7 +212,7 @@
                         <div class="tariff-card-content">
                             <h4>Executive Balcony Room</h4>
                             <p>A larger space complete with a comfortable sofa area for extra relaxation.</p>
-                            <div class="tariff-price"><span class="price-single">₹2199</span><span class="price-double">₹2699</span><small> / night + taxes</small></div>
+                            <div class="tariff-price"><span class="price-single">₹2,199</span><span class="price-double">₹2,675</span><small> / night + taxes</small></div>
                             <div class="tariff-card-actions"><a href="/rooms/executive-balcony-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
                         </div>
                     </div>
@@ -209,7 +221,7 @@
                         <div class="tariff-card-content">
                             <h4>Junior Balcony Suite</h4>
                             <p>Offers an extra living area, providing a perfect blend of luxury and space.</p>
-                             <div class="tariff-price"><span class="price-single">₹2699</span><span class="price-double">₹3199</span><small> / night + taxes</small></div>
+                             <div class="tariff-price"><span class="price-single">₹2,699</span><span class="price-double">₹3,175</span><small> / night + taxes</small></div>
                             <div class="tariff-card-actions"><a href="/rooms/junior-balcony-suite" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
                         </div>
                     </div>
@@ -218,7 +230,7 @@
                         <div class="tariff-card-content">
                             <h4>Two-Bedroom Premium Suite</h4>
                             <p>Ideal for groups, offering two bedrooms, a drawing room, and river views.</p>
-                             <div class="tariff-price"><span class="price-single">₹3999</span><span class="price-double">₹3999</span><small> / night + taxes</small></div>
+                             <div class="tariff-price"><span class="price-single">₹3,999</span><span class="price-double">₹4,475</span><small> / night + taxes</small></div>
                             <div class="tariff-card-actions"><a href="/rooms/two-bedroom-premium-suite" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
                         </div>
                     </div>
@@ -227,7 +239,7 @@
                         <div class="tariff-card-content">
                             <h4>Family Apartment with Kitchen</h4>
                             <p>The ultimate choice for extended stays, with a full kitchen and panoramic views.</p>
-                             <div class="tariff-price"><span class="price-single">₹4999</span><span class="price-double">₹4999</span><small> / night + taxes</small></div>
+                             <div class="tariff-price"><span class="price-single">₹4,999</span><span class="price-double">₹5,475</span><small> / night + taxes</small></div>
                             <div class="tariff-card-actions"><a href="/rooms/family-apartment" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
                         </div>
                     </div>
@@ -238,13 +250,13 @@
         <section class="about-section">
             <div class="container">
                 <div data-animate>
-                    <h2 class="section-title text-center">Meal Plans & Extra Person Charges</h2>
+                    <h2 class="section-title text-center">Meal Plans & Add-on Charges</h2>
                 </div>
                 <div class="grid-4-col" data-animate>
-                    <div class="addon-card"><h4>Breakfast (CP)</h4><p class="text-muted">Add breakfast to your stay.</p><div class="price">₹250</div><p class="text-muted">per person</p></div>
+                    <div class="addon-card"><h4>Breakfast (CP)</h4><p class="text-muted">Add breakfast to your stay.</p><div class="price">₹225</div><p class="text-muted">per person</p></div>
                     <div class="addon-card"><h4>Breakfast & One Meal (MAP)</h4><p class="text-muted">Breakfast and lunch or dinner.</p><div class="price">₹750</div><p class="text-muted">per person</p></div>
-                    <div class="addon-card"><h4>All Meals (AP)</h4><p class="text-muted">Breakfast, lunch, and dinner.</p><div class="price">₹1250</div><p class="text-muted">per person</p></div>
-                    <div class="addon-card"><h4>Extra Person</h4><p class="text-muted">Adult / Child (5-12 yrs).</p><div class="price">₹700 / ₹500</div><p class="text-muted">+ taxes</p></div>
+                    <div class="addon-card"><h4>All Meals (AP)</h4><p class="text-muted">Breakfast, lunch, and dinner.</p><div class="price">₹1,250</div><p class="text-muted">per person</p></div>
+                    <div class="addon-card"><h4>Extra Person Charges</h4><p class="text-muted">Adult (incl. Breakfast) / Child (5-12 yrs)</p><div class="price">₹700 / ₹500</div><p class="text-muted">+ taxes</p></div>
                 </div>
             </div>
         </section>
@@ -293,27 +305,22 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const toggleButtons = document.querySelectorAll('.content-toggle button');
+            const singleBtn = document.getElementById('singleBtn');
+            const doubleBtn = document.getElementById('doubleBtn');
 
-            toggleButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const targetId = button.dataset.toggleTarget;
-                    const targetClass = button.dataset.toggleClass;
-                    const targetElement = document.querySelector(targetId);
+            const updateState = (isDouble) => {
+                const targetElement = document.querySelector(singleBtn.dataset.toggleTarget);
+                const targetClass = singleBtn.dataset.toggleClass;
 
-                    if (targetElement) {
-                        // Toggle the class on the target element
-                        if (button.textContent.toLowerCase().includes('double')) {
-                            targetElement.classList.add(targetClass);
-                        } else {
-                            targetElement.classList.remove(targetClass);
-                        }
+                if (targetElement) {
+                    targetElement.classList.toggle(targetClass, isDouble);
+                    singleBtn.classList.toggle('active', !isDouble);
+                    doubleBtn.classList.toggle('active', isDouble);
+                }
+            };
 
-                        // Update active state on buttons
-                        toggleButtons.forEach(btn => btn.classList.remove('active'));
-                        button.classList.add('active');
-                    }
-                });
-            });
+            singleBtn.addEventListener('click', () => updateState(false));
+            doubleBtn.addEventListener('click', () => updateState(true));
         });
     </script>
 </body>

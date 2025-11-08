@@ -45,6 +45,50 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
+    <!-- Internal CSS for Rate Card -->
+    <style>
+        .booking-widget h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .rate-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        .rate-table th, .rate-table td {
+            padding: 1rem 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .rate-table th {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        .rate-table td {
+            font-size: 1rem;
+        }
+        .rate-table .plan-name {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        .rate-table .plan-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .rate-table .price-value {
+            font-weight: 700;
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            text-align: right;
+            white-space: nowrap;
+        }
+    </style>
+
     <!-- Maximalist JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
@@ -55,6 +99,7 @@
           "url": "https://suryaplazahotels.com/rooms/deluxe-balcony-room",
           "name": "Deluxe Balcony Room | Surya Plaza Hotel, Sahibganj",
           "description": "Enjoy a stylish 180 sqft room with a private balcony, comfortable double bed, and sofa seating. Perfect for a relaxing stay with modern amenities.",
+          "dateModified": "2025-11-08",
           "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
         },
         {
@@ -98,15 +143,14 @@
             { "@type": "LocationFeatureSpecification", "name": "Complimentary Toiletries", "value": true },
             { "@type": "LocationFeatureSpecification", "name": "24-hour Room Service", "value": true }
           ],
-          "offers": {
-            "@type": "Offer",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "2399",
-              "priceCurrency": "INR",
-              "unitText": "night"
-            }
-          },
+          "offers": [
+            { "@type": "Offer", "name": "Room Only - Single Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "1899", "priceCurrency": "INR", "unitText": "night" } },
+            { "@type": "Offer", "name": "Room Only - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2375", "priceCurrency": "INR", "unitText": "night" } },
+            { "@type": "Offer", "name": "With Breakfast - Single Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2125", "priceCurrency": "INR", "unitText": "night" } },
+            { "@type": "Offer", "name": "With Breakfast - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2600", "priceCurrency": "INR", "unitText": "night" } },
+            { "@type": "Offer", "name": "With Breakfast & Dinner - Single Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2650", "priceCurrency": "INR", "unitText": "night" } },
+            { "@type": "Offer", "name": "With Breakfast & Dinner - Double Occupancy", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "3350", "priceCurrency": "INR", "unitText": "night" } }
+          ],
           "containedIn": { "@id": "https://suryaplazahotels.com/#organization" }
         },
         {
@@ -199,7 +243,42 @@
                     <!-- Right Side: Booking Widget -->
                     <aside class="room-info" data-animate style="--animation-delay: 0.1s;">
                          <div class="booking-widget">
-                            <div class="price">Starts from <span>₹2399</span> / night</div>
+                            <h3>Rate Plans</h3>
+                            <table class="rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Plan</th>
+                                        <th style="text-align: right;">Single</th>
+                                        <th style="text-align: right;">Double</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="plan-name">Room Only</div>
+                                            <div class="plan-desc">EP</div>
+                                        </td>
+                                        <td class="price-value">₹1,899</td>
+                                        <td class="price-value">₹2,375</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="plan-name">With Breakfast</div>
+                                            <div class="plan-desc">CP</div>
+                                        </td>
+                                        <td class="price-value">₹2,125</td>
+                                        <td class="price-value">₹2,600</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="plan-name">Breakfast & Dinner</div>
+                                            <div class="plan-desc">MAP</div>
+                                        </td>
+                                        <td class="price-value">₹2,650</td>
+                                        <td class="price-value">₹3,350</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             <p>Taxes applicable as per government norms.</p>
                             <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Check availability and book the Deluxe Balcony Room now">Check Availability & Book</a>
                         </div>
@@ -252,7 +331,7 @@
                 <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room" class="active" aria-current="page">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
                 <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining">Jackson Diner</a></li><li><a href="/dining/jackson-diner-menu">Jackson Diner Menu</a></li></ul></div>
             </div>
-            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p<nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
         </div>
     </footer>
     <!-- END: Consistent FOOTER -->

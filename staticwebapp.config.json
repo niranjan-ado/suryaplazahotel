@@ -3,7 +3,7 @@
     "rewrite": "/404.html"
   },
   "globalHeaders": {
-    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self' https://www.google.com https://www.youtube.com;",
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'sha256-HASH_FOR_THEME_SCRIPT' 'sha256-HASH_FOR_TARIFF_PAGE_SCRIPT'; style-src 'self' https://fonts.googleapis.com 'sha256-HASH_FOR_RATE_CARD_STYLES'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self' https://www.google.com https://www.youtube.com;",
     "X-Frame-Options": "SAMEORIGIN",
     "X-Content-Type-Options": "nosniff",
     "Referrer-Policy": "strict-origin-when-cross-origin",

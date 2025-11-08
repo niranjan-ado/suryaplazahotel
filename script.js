@@ -265,6 +265,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    // --- NEW: VIDEO FACADE HANDLER ---
+    const videoFacadeHandler = () => {
+        const videoFacade = document.getElementById('videoFacade');
+        if (videoFacade) {
+            videoFacade.addEventListener('click', () => {
+                const videoId = videoFacade.dataset.videoid;
+                if (!videoId) {
+                    console.error('Video ID not found. Please add a data-videoid attribute.');
+                    return;
+                }
+                const iframe = document.createElement('iframe');
+                iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`);
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', '');
+                videoFacade.innerHTML = '';
+                videoFacade.appendChild(iframe);
+            }, { once: true }); // Use { once: true } so the event listener is removed after first click
+        }
+    };
+
     const init = () => {
         mobileNavHandler();
         themeToggleHandler();
@@ -277,6 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
         roomGalleryHandler();
         menuFilterHandler();
         menuScrollspyHandler();
+        videoFacadeHandler(); // <-- NEW: Initialize the video handler
     };
 
     init();

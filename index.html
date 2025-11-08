@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials -->
-    <title>Surya Plaza Hotel | Quality Hotel in Sahibganj, Jharkhand</title>
-    <meta name="description" content="Setting a higher standard of comfort, care, and gracious hospitality in the heart of Sahibganj.">
+    <!-- SEO Essentials (REVISED) -->
+    <title>Surya Plaza Hotel | Hotel Near Sahibganj Railway Station</title>
+    <meta name="description" content="Experience comfort and hospitality at Surya Plaza Hotel, a top-rated hotel in Sahibganj. Located just 800m from the railway station, we offer premium rooms, fine dining, and exclusive offers. Book your stay today.">
     <link rel="canonical" href="https://suryaplazahotels.com/">
 
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Surya Plaza Hotel | Quality Hotel in Sahibganj, Jharkhand">
-    <meta property="og:description" content="Setting a higher standard of comfort, care, and gracious hospitality in the heart of Sahibganj.">
+    <meta property="og:title" content="Surya Plaza Hotel | Hotel Near Sahibganj Railway Station">
+    <meta property="og:description" content="Top-rated hotel in Sahibganj, just minutes from the railway station. Enjoy our premium rooms and direct booking offers.">
     <meta property="og:image" content="https://suryaplazahotels.com/assets/images/og-image.jpg">
     <meta property="og:url" content="https://suryaplazahotels.com/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- SCRIPT TO PREVENT THEME FLASH (This should stay at the top) -->
+    <!-- SCRIPT TO PREVENT THEME FLASH -->
     <script>
       (function() {
         try {
@@ -47,8 +47,49 @@
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
+    
+    <!-- Internal CSS for Video Facade -->
+    <style>
+        .video-facade {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 25px var(--card-shadow-color);
+            aspect-ratio: 16/9;
+        }
+        .video-facade img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 0;
+        }
+        .video-facade .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, color 0.3s ease;
+            pointer-events: none;
+        }
+        .video-facade:hover .play-button {
+            transform: translate(-50%, -50%) scale(1.1);
+            color: #fff;
+        }
+        .video-facade iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
 
-    <!-- Maximalist JSON-LD Schema for SEO -->
+    <!-- Maximalist JSON-LD Schema for SEO (REVISED) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -56,7 +97,7 @@
         {
           "@type": "Hotel",
           "name": "Surya Plaza Hotel",
-          "description": "Setting a higher standard of comfort, care, and gracious hospitality in the heart of Sahibganj.",
+          "description": "Setting a higher standard of comfort, care, and gracious hospitality in the heart of Sahibganj, conveniently located near the railway station.",
           "dateModified": "2025-11-08",
           "telephone": "+919264197986",
           "email": "reservations@suryaplazahotels.com",
@@ -83,112 +124,7 @@
             "ratingValue": "4.6",
             "bestRating": "5",
             "ratingCount": "43"
-          },
-          "checkinTime": "12:00",
-          "checkoutTime": "11:00",
-          "paymentAccepted": ["Cash", "Credit Card", "Debit Card"],
-          "availableLanguage": ["en", "hi"],
-          "petsAllowed": false,
-          "amenityFeature": [
-            { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Free Parking", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Room Service", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Family Rooms", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Restaurant", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Banquet Hall", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Private Balcony", "value": true }
-          ],
-          "potentialAction": {
-            "@type": "ReserveAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "https://bookings.suryaplazahotels.com/?propertyId=11281",
-              "actionPlatform": [
-                "https://schema.org/DesktopWebPlatform",
-                "https://schema.org/IOSPlatform",
-                "https://schema.org/AndroidPlatform"
-              ]
-            },
-            "result": { "@type": "Reservation", "name": "Book a Room" }
-          },
-          "containsPlace": [
-            { "@id": "moti-mahal" },
-            { "@id": "jackson-diner" },
-            { "@id": "pearl-banquet" }
-          ]
-        },
-        {
-          "@type": "FoodEstablishment",
-          "@id": "moti-mahal",
-          "name": "Moti Mahal Tandoori Trail",
-          "description": "Located within Surya Plaza Hotel, Moti Mahal Tandoori Trail invites you to savour the timeless flavours of North Indian, Mughlai, and Tandoori cuisine in an ambience of understated elegance.",
-          "servesCuisine": ["Indian", "Mughlai", "Tandoori"],
-          "menu": "https://suryaplazahotels.com/dining/moti-mahal-menu",
-          "acceptsReservations": true,
-          "parentOrganization": { "@type": "Hotel", "name": "Surya Plaza Hotel" }
-        },
-        {
-          "@type": "FoodEstablishment",
-          "@id": "jackson-diner",
-          "name": "Jackson Diner by Moti Mahal",
-          "description": "Our upcoming rooftop restaurant. A vibrant space where relaxed charm will meet refined taste, offering gourmet favourites under the open sky.",
-          "servesCuisine": ["Pizza", "Pasta", "Continental"],
-          "acceptsReservations": false,
-          "parentOrganization": { "@type": "Hotel", "name": "Surya Plaza Hotel" }
-        },
-        {
-            "@type": "EventVenue",
-            "@id": "pearl-banquet",
-            "name": "The Pearl Banquet Hall",
-            "description": "Our versatile 1500 sq. ft. venue is ideal for weddings, conferences, and parties for up to 150 guests, offering a stylish setting with modern amenities.",
-            "maximumAttendeeCapacity": 150,
-            "parentOrganization": { "@type": "Hotel", "name": "Surya Plaza Hotel" }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {"@type": "Question","name": "Do you offer railway station pick-up or drop-off services?","acceptedAnswer": {"@type": "Answer","text": "Yes, we can arrange a private transfer for you upon request. Please contact us in advance (at least 24 hours before arrival) with your train number and arrival time, and we'll confirm the pick-up details and charges (if any)."}},
-            {"@type": "Question","name": "Is early check-in or late check-out possible?","acceptedAnswer": {"@type": "Answer","text": "Subject to availability, yes. We strive to accommodate early arrivals and late departures. If you would like to request an early check-in or late check-out, please let us know when booking or at least 12 hours prior; additional charges may apply depending on room occupancy."}},
-            {"@type": "Question","name": "Do you have accessibility / wheelchair-friendly rooms and common areas?","acceptedAnswer": {"@type": "Answer","text": "Yes, certain room categories are accessible, and our public areas are designed with ramps, wide corridors, and elevator access. Please let us know ahead of your booking so we can allocate the appropriate room and help you with any mobility assistance."}},
-            {"@type": "Question","name": "What is your policy on children staying in the same room?","acceptedAnswer": {"@type": "Answer","text": "Children up to 5 or 6 years can stay free in their parents' room using existing bedding. For older children or additional beds, extra charges may apply. Please mention child occupancy during booking so we can arrange appropriate bedding or cots."}},
-            {"@type": "Question","name": "Can I host meetings or small events in your hotel, and what facilities do you offer?","acceptedAnswer": {"@type": "Answer","text": "Yes, we offer The Pearl Banquet Hall (approx. 1,500 sq. ft., capacity up to ~150 guests) equipped for weddings, conferences, and events. We also provide audio-visual setup, catering, and event planning support."}}
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "name": "Surya Plaza Hotel",
-          "url": "https://suryaplazahotels.com/",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "https://suryaplazahotels.com/search?q={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
           }
-        },
-        {
-            "@type": "Organization",
-            "name": "Surya Plaza Hotel",
-            "url": "https://suryaplazahotels.com/",
-            "logo": "https://suryaplazahotels.com/assets/images/logo-dark.svg",
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+919264197986",
-                "contactType": "reservations",
-                "areaServed": "IN",
-                "availableLanguage": ["English", "Hindi"]
-            }
-        },
-        {
-            "@type": "BreadcrumbList",
-            "itemListElement": [{
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://suryaplazahotels.com/"
-            }]
         }
       ]
     }
@@ -210,7 +146,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#rooms">Rooms</a></li>
                         <li><a href="#dining">Dining</a></li>
-                        <li><a href="#events">Events</a></li>
+                        <li><a href="#location">Location</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                     <div class="nav-menu-book-btn-wrapper">
@@ -288,28 +224,17 @@
                     <h2 class="section-title text-center" id="offers-heading">Benefits of Booking With Us</h2>
                 </div>
                 <div class="grid-2-col">
-                    <!-- Offer Card 1: Last-Minute Deal -->
                     <div class="offer-card" data-animate style="--animation-delay: 0.1s;">
-                        <div class="offer-icon">
-                            <span class="material-icons-outlined">schedule</span>
-                        </div>
+                        <div class="offer-icon"><span class="material-icons-outlined">schedule</span></div>
                         <h3>Last-Minute Deal</h3>
                         <p>Planning a spontaneous trip? Book your stay one day in advance and receive a <strong>10% discount</strong> on your reservation.</p>
-                        <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="offer-cta">
-                            Check Availability <span class="material-icons-outlined">arrow_forward</span>
-                        </a>
+                        <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="offer-cta">Check Availability <span class="material-icons-outlined">arrow_forward</span></a>
                     </div>
-
-                    <!-- Offer Card 2: Extended Stay -->
                     <div class="offer-card" data-animate style="--animation-delay: 0.2s;">
-                        <div class="offer-icon">
-                            <span class="material-icons-outlined">luggage</span>
-                        </div>
+                        <div class="offer-icon"><span class="material-icons-outlined">luggage</span></div>
                         <h3>Extended Stay Discount</h3>
                         <p>Settle in and save. Enjoy a <strong>10% discount</strong> on your entire stay when you book for three or more consecutive nights.</p>
-                        <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="offer-cta">
-                            Book Your Stay <span class="material-icons-outlined">arrow_forward</span>
-                        </a>
+                        <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="offer-cta">Book Your Stay <span class="material-icons-outlined">arrow_forward</span></a>
                     </div>
                 </div>
             </div>
@@ -321,129 +246,56 @@
                     <p class="section-subtitle text-center">Your Private Sanctuary</p>
                     <h2 class="section-title text-center" id="rooms-heading">Accommodations for Every Traveler</h2>
                 </div>
-                    <div class="grid-3-col">
-                        <article class="room-card" data-animate style="--animation-delay: 0.1s;">
-                            <a href="/rooms/club-comfort-room" aria-label="View details for Club Comfort Room">
-                                <img src="/assets/images/rooms/room-club-comfort-bed-900w.webp" 
-                                    srcset="/assets/images/rooms/room-club-comfort-bed-600w.webp 600w, /assets/images/rooms/room-club-comfort-bed-900w.webp 900w" 
-                                    sizes="(max-width: 992px) 50vw, 33vw" 
-                                    alt="A cozy and comfortable Club Comfort Room." width="400" height="300" loading="lazy" decoding="async">
-                            </a>
-                            <div class="room-card-content">
-                                <h3>Club Comfort Room</h3>
-                                <p>Our cozy and efficient room, perfect for solo travelers or couples.</p>
-                                <div class="room-card-price">
-                                    <span>₹1825</span> / night
-                                    <p class="price-details">Single Occupancy, with Breakfast</p>
-                                    <p class="price-alternative">Or Room Only from ₹1599</p>
-                                </div>
-                                <div class="room-card-actions">
-                                    <a href="/rooms/club-comfort-room" class="button-secondary">View Details</a>
-                                    <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Book the Club Comfort Room now">Book Now</a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="room-card" data-animate style="--animation-delay: 0.2s;">
-                            <a href="/rooms/deluxe-balcony-room" aria-label="View details for Deluxe Balcony Room">
-                                <img src="/assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp" 
-                                    srcset="/assets/images/rooms/room-deluxe-balcony-bed-main-600w.webp 600w, /assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp 900w" 
-                                    sizes="(max-width: 992px) 50vw, 33vw" 
-                                    alt="The Deluxe Balcony Room showing a comfortable bed and private balcony access." width="400" height="300" loading="lazy" decoding="async">
-                            </a>
-                            <div class="room-card-content">
-                                <h3>Deluxe Balcony Room</h3>
-                                <p>Features a private balcony, offering a perfect spot to unwind.</p>
-                                <div class="room-card-price">
-                                    <span>₹2125</span> / night
-                                    <p class="price-details">Single Occupancy, with Breakfast</p>
-                                </div>
-                                <div class="room-card-actions">
-                                    <a href="/rooms/deluxe-balcony-room" class="button-secondary">View Details</a>
-                                    <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Book the Deluxe Balcony Room now">Book Now</a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="room-card" data-animate style="--animation-delay: 0.3s;">
-                            <a href="/rooms/executive-balcony-room" aria-label="View details for Executive Balcony Room">
-                                <img src="/assets/images/rooms/room-executive-balcony-bed-main-900w.webp" 
-                                    srcset="/assets/images/rooms/room-executive-balcony-bed-main-600w.webp 600w, /assets/images/rooms/room-executive-balcony-bed-main-900w.webp 900w" 
-                                    sizes="(max-width: 992px) 50vw, 33vw" 
-                                    alt="A spacious Executive Balcony Room with a plush bed and elegant decor." width="400" height="300" loading="lazy" decoding="async">
-                            </a>
-                            <div class="room-card-content">
-                                <h3>Executive Balcony Room</h3>
-                                <p>A larger space complete with a comfortable sofa area for extra relaxation.</p>
-                                <div class="room-card-price">
-                                    <span>₹2425</span> / night
-                                    <p class="price-details">Single Occupancy, with Breakfast</p>
-                                </div>
-                                <div class="room-card-actions">
-                                    <a href="/rooms/executive-balcony-room" class="button-secondary">View Details</a>
-                                    <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Book the Executive Balcony Room now">Book Now</a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="room-card" data-animate style="--animation-delay: 0.1s;">
-                            <a href="/rooms/junior-balcony-suite" aria-label="View details for Junior Balcony Suite">
-                                <img src="/assets/images/rooms/room-junior-suite-bedroom-900w.webp" 
-                                    srcset="/assets/images/rooms/room-junior-suite-bedroom-600w.webp 600w, /assets/images/rooms/room-junior-suite-bedroom-900w.webp 900w, /assets/images/rooms/room-junior-suite-bedroom-1200w.webp 1200w" 
-                                    sizes="(max-width: 992px) 50vw, 33vw" 
-                                    alt="Luxurious Junior Balcony Suite." width="400" height="300" loading="lazy" decoding="async">
-                            </a>
-                            <div class="room-card-content">
-                                <h3>Junior Balcony Suite</h3>
-                                <p>Features a separate living area, balcony, and enhanced amenities.</p>
-                                <div class="room-card-price">
-                                    <span>₹2925</span> / night
-                                    <p class="price-details">Single Occupancy, with Breakfast</p>
-                                </div>
-                                <div class="room-card-actions">
-                                    <a href="/rooms/junior-balcony-suite" class="button-secondary">View Details</a>
-                                    <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Book the Junior Balcony Suite now">Book Now</a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="room-card" data-animate style="--animation-delay: 0.2s;">
-                            <a href="/rooms/two-bedroom-premium-suite" aria-label="View details for Two-Bedroom Premium Suite">
-                                <img src="/assets/images/rooms/room-two-bedroom-suite-bed-1-900w.webp" 
-                                    srcset="/assets/images/rooms/room-two-bedroom-suite-bed-1-600w.webp 600w, /assets/images/rooms/room-two-bedroom-suite-bed-1-900w.webp 900w, /assets/images/rooms/room-two-bedroom-suite-bed-1-1200w.webp 1200w" 
-                                    sizes="(max-width: 992px) 50vw, 33vw" 
-                                    alt="Expansive Two-Bedroom Premium Suite with river view." width="400" height="300" loading="lazy" decoding="async">
-                            </a>
-                            <div class="room-card-content">
-                                <h3>Two-Bedroom Premium Suite</h3>
-                                <p>Ideal for families, with two bedrooms, living room, and stunning river views.</p>
-                                <div class="room-card-price">
-                                    <span>₹4700</span> / night
-                                    <p class="price-details">Double Occupancy, with Breakfast</p>
-                                </div>
-                                <div class="room-card-actions">
-                                    <a href="/rooms/two-bedroom-premium-suite" class="button-secondary">View Details</a>
-                                    <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Book the Two-Bedroom Premium Suite now">Book Now</a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="room-card" data-animate style="--animation-delay: 0.3s;">
-                            <a href="/rooms/family-apartment" aria-label="View details for Family Apartment with Kitchen">
-                                <img src="/assets/images/rooms/room-family-apartment-bedroom-balcony-900w.webp" 
-                                    srcset="/assets/images/rooms/room-family-apartment-bedroom-balcony-600w.webp 600w, /assets/images/rooms/room-family-apartment-bedroom-balcony-900w.webp 900w, /assets/images/rooms/room-family-apartment-bedroom-balcony-1200w.webp 1200w" 
-                                    sizes="(max-width: 992px) 50vw, 33vw" 
-                                    alt="Spacious Family Apartment with a full kitchen." width="400" height="300" loading="lazy" decoding="async">
-                            </a>
-                            <div class="room-card-content">
-                                <h3>Family Apartment with Kitchen</h3>
-                                <p>The ultimate long-stay option with two bedrooms and a fully-equipped kitchen.</p>
-                                <div class="room-card-price">
-                                    <span>₹5700</span> / night
-                                    <p class="price-details">Double Occupancy, with Breakfast</p>
-                                </div>
-                                <div class="room-card-actions">
-                                    <a href="/rooms/family-apartment" class="button-secondary">View Details</a>
-                                    <a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary" aria-label="Book the Family Apartment with Kitchen now">Book Now</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
+                <div class="grid-3-col">
+                    <article class="room-card" data-animate style="--animation-delay: 0.1s;">
+                        <a href="/rooms/club-comfort-room" aria-label="View details for Club Comfort Room"><img src="/assets/images/rooms/room-club-comfort-bed-900w.webp" alt="A cozy and well-lit Club Comfort Room with a double bed at Surya Plaza Hotel."></a>
+                        <div class="room-card-content">
+                            <h3>Club Comfort Room</h3><p>Our cozy and efficient room, perfect for solo travelers or couples.</p>
+                            <div class="room-card-price"><span>₹1825</span> / night<p class="price-details">Single Occupancy, with Breakfast</p><p class="price-alternative">Or Room Only from ₹1599</p></div>
+                            <div class="room-card-actions"><a href="/rooms/club-comfort-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
+                        </div>
+                    </article>
+                    <article class="room-card" data-animate style="--animation-delay: 0.2s;">
+                        <a href="/rooms/deluxe-balcony-room" aria-label="View details for Deluxe Balcony Room"><img src="/assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp" alt="The Deluxe Balcony Room at Surya Plaza, showing a comfortable bed and private balcony access."></a>
+                        <div class="room-card-content">
+                            <h3>Deluxe Balcony Room</h3><p>Features a private balcony, offering a perfect spot to unwind.</p>
+                            <div class="room-card-price"><span>₹2125</span> / night<p class="price-details">Single Occupancy, with Breakfast</p></div>
+                            <div class="room-card-actions"><a href="/rooms/deluxe-balcony-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
+                        </div>
+                    </article>
+                    <article class="room-card" data-animate style="--animation-delay: 0.3s;">
+                        <a href="/rooms/executive-balcony-room" aria-label="View details for Executive Balcony Room"><img src="/assets/images/rooms/room-executive-balcony-bed-main-900w.webp" alt="A spacious Executive Balcony Room with a plush bed and elegant decor."></a>
+                        <div class="room-card-content">
+                            <h3>Executive Balcony Room</h3><p>A larger space complete with a comfortable sofa area for extra relaxation.</p>
+                            <div class="room-card-price"><span>₹2425</span> / night<p class="price-details">Single Occupancy, with Breakfast</p></div>
+                            <div class="room-card-actions"><a href="/rooms/executive-balcony-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
+                        </div>
+                    </article>
+                    <article class="room-card" data-animate style="--animation-delay: 0.1s;">
+                        <a href="/rooms/junior-balcony-suite" aria-label="View details for Junior Balcony Suite"><img src="/assets/images/rooms/room-junior-suite-bedroom-900w.webp" alt="Luxurious Junior Balcony Suite with a separate living area."></a>
+                        <div class="room-card-content">
+                            <h3>Junior Balcony Suite</h3><p>Features a separate living area, balcony, and enhanced amenities.</p>
+                            <div class="room-card-price"><span>₹2925</span> / night<p class="price-details">Single Occupancy, with Breakfast</p></div>
+                            <div class="room-card-actions"><a href="/rooms/junior-balcony-suite" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
+                        </div>
+                    </article>
+                    <article class="room-card" data-animate style="--animation-delay: 0.2s;">
+                        <a href="/rooms/two-bedroom-premium-suite" aria-label="View details for Two-Bedroom Premium Suite"><img src="/assets/images/rooms/room-two-bedroom-suite-bed-1-900w.webp" alt="Expansive Two-Bedroom Premium Suite with river view, ideal for families."></a>
+                        <div class="room-card-content">
+                            <h3>Two-Bedroom Premium Suite</h3><p>Ideal for families, with two bedrooms, living room, and stunning river views.</p>
+                            <div class="room-card-price"><span>₹4700</span> / night<p class="price-details">Double Occupancy, with Breakfast</p></div>
+                            <div class="room-card-actions"><a href="/rooms/two-bedroom-premium-suite" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
+                        </div>
+                    </article>
+                    <article class="room-card" data-animate style="--animation-delay: 0.3s;">
+                        <a href="/rooms/family-apartment" aria-label="View details for Family Apartment with Kitchen"><img src="/assets/images/rooms/room-family-apartment-bedroom-balcony-900w.webp" alt="Spacious Family Apartment with a full kitchen, perfect for long stays."></a>
+                        <div class="room-card-content">
+                            <h3>Family Apartment with Kitchen</h3><p>The ultimate long-stay option with two bedrooms and a fully-equipped kitchen.</p>
+                            <div class="room-card-price"><span>₹5700</span> / night<p class="price-details">Double Occupancy, with Breakfast</p></div>
+                            <div class="room-card-actions"><a href="/rooms/family-apartment" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
+                        </div>
+                    </article>
+                </div>
                 <div class="section-cta" data-animate><a href="/rooms" class="button-primary">View All Room Details</a></div>
             </div>
         </section>
@@ -453,52 +305,58 @@
                 <div data-animate><p class="section-subtitle text-center">A Culinary Journey</p><h2 class="section-title text-center" id="dining-heading">Exceptional Dining Experiences</h2></div>
                 <div class="grid-2-col">
                     <article class="info-card" data-animate style="--animation-delay: 0.1s;">
-                        <a href="/dining/moti-mahal"><img src="/assets/images/dining/dining-moti-mahal-seating-900w.webp" srcset="/assets/images/dining/dining-moti-mahal-seating-600w.webp 450w, /assets/images/dining/dining-moti-mahal-seating-600w.webp 600w, /assets/images/dining/dining-moti-mahal-seating-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="A freshly prepared dish from Moti Mahal Tandoori Trail." width="600" height="400" loading="lazy" decoding="async"></a>
+                        <a href="/dining/moti-mahal"><img src="/assets/images/dining/dining-moti-mahal-seating-900w.webp" alt="Elegant interior and seating at Moti Mahal Tandoori Trail restaurant."></a>
                         <div class="info-card-content">
-                            <h3>Moti Mahal Tandoori Trail</h3>
-                            <p>Savour the timeless flavours of North Indian, Mughlai, and Tandoori cuisine in an ambience of understated elegance.</p>
-                            <div class="info-card-actions">
-                                <a href="/dining/moti-mahal" class="button-secondary">Explore Moti Mahal</a>
-                                <a href="/dining/moti-mahal-menu" class="button-primary">View Menu</a>
-                            </div>
+                            <h3>Moti Mahal Tandoori Trail</h3><p>Savour the timeless flavours of North Indian, Mughlai, and Tandoori cuisine in an ambience of understated elegance.</p>
+                            <div class="info-card-actions"><a href="/dining/moti-mahal" class="button-secondary">Explore Moti Mahal</a><a href="/dining/moti-mahal-menu" class="button-primary">View Menu</a></div>
                         </div>
                     </article>
                     <article class="info-card" data-animate style="--animation-delay: 0.2s;">
-                        <a href="/dining/jackson-diner"><img src="/assets/images/dining/dining-jackson-diner-bar-900w.webp" srcset="/assets/images/dining/dining-jackson-diner-bar-450w.webp 450w, /assets/images/dining/dining-jackson-diner-bar-600w.webp 600w, /assets/images/dining/dining-jackson-diner-bar-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="A vibrant and modern rooftop diner atmosphere at Jackson Diner." width="600" height="400" loading="lazy" decoding="async"></a>
+                        <a href="/dining/jackson-diner"><img src="/assets/images/dining/dining-jackson-diner-bar-900w.webp" alt="A vibrant and modern rooftop atmosphere at the upcoming Jackson Diner."></a>
                         <div class="info-card-content">
-                            <h3>Jackson Diner by Moti Mahal</h3>
-                            <p>Our upcoming rooftop restaurant. A vibrant space where relaxed charm will meet refined taste, offering gourmet favourites under the open sky.</p>
-                            <div class="info-card-actions">
-                                <div style="background-color: var(--primary-color); color: var(--text-light); text-align: center; padding: 12px 16px; border-radius: 50px; font-weight: 600; font-family: var(--font-heading); width: 100%; box-sizing: border-box;">Opening Soon</div>
-                            </div>
+                            <h3>Jackson Diner by Moti Mahal</h3><p>Our upcoming rooftop restaurant. A vibrant space where relaxed charm will meet refined taste, offering gourmet favourites under the open sky.</p>
+                            <div class="info-card-actions"><div style="background-color: var(--primary-color); color: var(--text-light); text-align: center; padding: 12px 16px; border-radius: 50px; font-weight: 600; font-family: var(--font-heading); width: 100%; box-sizing: border-box;">Opening Soon</div></div>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
         
-        <section id="events" class="about-section" aria-labelledby="events-heading">
+        <section id="events" aria-labelledby="events-heading">
             <div class="container">
                 <div class="grid-2-col">
-                    <div class="events-image" data-animate><img src="/assets/images/events/events-pearl-banquet-cluster-900w.webp" srcset="/assets/images/events/events-pearl-banquet-cluster-450w.webp 450w, /assets/images/events/events-pearl-banquet-cluster-600w.webp 600w, /assets/images/events/events-pearl-banquet-cluster-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="The Pearl Banquet hall at Surya Plaza Hotel set up for a corporate event." width="600" height="450" loading="lazy" decoding="async" class="rounded-image-shadow"></div>
+                    <div class="events-image" data-animate><img src="/assets/images/events/events-pearl-banquet-cluster-900w.webp" alt="The Pearl Banquet hall at Surya Plaza Hotel set up for a corporate event."></div>
                     <div class="events-content" data-animate style="--animation-delay: 0.2s;"><p class="section-subtitle">Celebrate in Style</p><h2 class="section-title" id="events-heading">The Pearl Banquet Hall</h2><p>Our versatile 1500 sq. ft. venue is ideal for weddings, conferences, and parties for up to 150 guests, offering a stylish setting with modern amenities.</p><div class="section-cta-left"><a href="/events" class="button-secondary">Plan Your Event</a></div></div>
                 </div>
             </div>
         </section>
-        
-        <section class="faq-section">
-            <div class="container" data-animate>
-                <h2 class="section-title text-center">Your Questions, Answered</h2>
-                <div class="faq-container">
-                    <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Do you offer railway station pick-up or drop-off services?</span><span class="faq-icon"></span></button><div class="faq-answer"><p>Yes, we can arrange a private transfer for you upon request. Please contact us in advance (at least 24 hours before arrival) with your train number and arrival time, and we'll confirm the pick-up details and charges (if any).</p></div></div>
-                    <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Is early check-in or late check-out possible?</span><span class="faq-icon"></span></button><div class="faq-answer"><p>Subject to availability, yes. We strive to accommodate early arrivals and late departures. If you would like to request an early check-in or late check-out, please let us know when booking or at least 12 hours prior; additional charges may apply depending on room occupancy.</p></div></div>
-                    <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Do you have accessibility / wheelchair-friendly rooms and common areas?</span><span class="faq-icon"></span></button><div class="faq-answer"><p>Yes, certain room categories are accessible, and our public areas are designed with ramps, wide corridors, and elevator access. Please let us know ahead of your booking so we can allocate the appropriate room and help you with any mobility assistance.</p></div></div>
-                    <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>What is your policy on children staying in the same room?</span><span class="faq-icon"></span></button><div class="faq-answer"><p>Children up to 5 or 6 years can stay free in their parents' room using existing bedding. For older children or additional beds, extra charges may apply. Please mention child occupancy during booking so we can arrange appropriate bedding or cots.</p></div></div>
-                    <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Can I host meetings or small events in your hotel, and what facilities do you offer?</span><span class="faq-icon"></span></button><div class="faq-answer"><p>Yes, we offer The Pearl Banquet Hall (approx. 1,500 sq. ft., capacity up to ~150 guests) equipped for weddings, conferences, and events. We also provide audio-visual setup, catering, and event planning support.</p></div></div>
+
+        <!-- START: REVISED LOCATION & VIDEO SECTION -->
+        <section id="location" class="about-section">
+            <div class="container">
+                <div class="grid-2-col">
+                    <div class="location-content" data-animate>
+                        <p class="section-subtitle">Conveniently Located</p>
+                        <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">At the Heart of Sahibganj</h2>
+                        <p style="margin-bottom: 2.5rem;">Our central location on J.N Roy Road places you minutes away from key transport hubs and local points of interest, making your stay both comfortable and convenient.</p>
+                        <div class="grid-2-col" style="gap: 2rem;">
+                            <div class="feature-item"><span class="material-icons-outlined">train</span><div><h4>Sahibganj Railway Station</h4><p>Just an 800-meter walk or a 2-minute drive away, perfect for travelers arriving by train.</p></div></div>
+                            <div class="feature-item"><span class="material-icons-outlined">water</span><div><h4>Ganga River Ghat</h4><p>The serene banks of the River Ganges are just a short, relaxing stroll from our doorstep.</p></div></div>
+                            <div class="feature-item"><span class="material-icons-outlined">storefront</span><div><h4>Local Market & Town Center</h4><p>Explore the main bazaar, shops, and administrative offices, all within easy reach.</p></div></div>
+                             <div class="feature-item"><span class="material-icons-outlined">directions_bus</span><div><h4>Main Bus Stand</h4><p>The city's primary bus terminal is conveniently located just 1 km away from the hotel.</p></div></div>
+                        </div>
+                    </div>
+                    <div class="video-facade-wrapper" data-animate style="--animation-delay: 0.1s;">
+                        <div class="video-facade" id="videoFacade" data-videoid="j_9i3H1_w2U">
+                            <img src="/assets/images/header-attractions-ganges-view-1800w.webp" alt="A preview thumbnail of the Surya Plaza Hotel virtual tour video, click to play.">
+                            <span class="material-icons-outlined play-button">play_circle</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
+        <!-- END: REVISED LOCATION & VIDEO SECTION -->
+        
         <section id="contact" class="final-cta-section" aria-labelledby="cta-heading">
             <div class="container text-center" data-animate>
                 <h2 class="section-title" id="cta-heading">Your Stay in Sahibganj, Elevated</h2>
@@ -516,13 +374,13 @@
             <div class="footer-grid">
                 <div class="footer-col-main">
                     <a href="/"><img src="/assets/images/logo-light.svg" alt="Surya Plaza Hotel Logo" class="footer-logo" width="180" height="50"></a>
-                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj. Find our precise location on <a href="https://maps.app.goo.gl/jxcrYQURXrbTL9cU9" target="_blank" rel="noopener">Google Maps</a>.</p>
+                    <p>A higher standard of comfort, care, and hospitality. Your ideal choice for business and leisure in the heart of Sahibganj. Find us near the <a href="https://maps.app.goo.gl/jxcrYQURXrbTL9cU9" target="_blank" rel="noopener">Sahibganj Railway Station</a>.</p>
                 </div>
-                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/services">Services</a></li><li><a href="#events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
+                <div class="footer-col-links"><h3>Our Hotel</h3><ul class="footer-links"><li><a href="/about">Our Story</a></li><li><a href="/offers">Offers</a></li><li><a href="/events">Events & Banquets</a></li><li><a href="/attractions">Local Attractions</a></li><li><a href="/blog">Our Blog</a></li></ul></div>
                 <div class="footer-col-links"><h3>Accommodations</h3><ul class="footer-links"><li><a href="/rooms/club-comfort-room">Club Comfort Room</a></li><li><a href="/rooms/deluxe-balcony-room">Deluxe Balcony Room</a></li><li><a href="/rooms/executive-balcony-room">Executive Balcony Room</a></li><li><a href="/rooms/junior-balcony-suite">Junior Balcony Suite</a></li><li><a href="/rooms/two-bedroom-premium-suite">Two-Bedroom Suite</a></li><li><a href="/rooms/family-apartment">Family Apartment</a></li></ul></div>
-                <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="#dining">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="#dining">Jackson Diner</a></li></ul></div>
+                <div class="footer-col-links"><h3>Our Restaurants</h3><ul class="footer-links"><li><a href="/dining">Moti Mahal</a></li><li><a href="/dining/moti-mahal-menu">Moti Mahal Menu</a></li><li><a href="/dining">Jackson Diner</a></li></ul></div>
             </div>
-            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a><a href="/shipping-policy">Shipping</a></nav></div>
+            <div class="footer-bottom"><p>&copy; <span id="year">2025</span> Surya Plaza Hotel. All Rights Reserved.</p><nav class="footer-legal-links"><a href="/terms">Terms</a><a href="/privacy-policy">Privacy</a><a href="/cancellation-policy">Cancellation</a></nav></div>
         </div>
     </footer>
 

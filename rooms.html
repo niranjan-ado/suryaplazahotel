@@ -54,11 +54,12 @@
         .room-listing-card img { aspect-ratio: 16/10; object-fit: cover; width: 100%; transition: transform 0.4s ease; }
         .room-listing-card:hover img { transform: scale(1.05); }
         .room-listing-card-content { padding: 1.5rem 1.75rem; display: flex; flex-direction: column; flex-grow: 1; }
-        .room-listing-card-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.75rem; }
+        .room-listing-card-header { display: flex; flex-direction: column; align-items: flex-start; gap: 0.25rem; margin-bottom: 0.75rem; }
         .room-listing-card-header h3 { font-size: 1.25rem; color: var(--text-dark); transition: color 0.3s ease; }
         .room-listing-card:hover h3 { color: var(--primary-color); }
         .room-card-price { font-family: var(--font-body); font-weight: 700; white-space: nowrap; }
         .room-card-price span { font-size: 1.25rem; color: var(--primary-color); }
+        .room-card-price .price-details { font-size: 0.8rem; font-weight: 400; color: var(--text-muted); line-height: 1.4; margin-top: 2px; }
         .room-description { color: var(--text-muted); margin-bottom: 1rem; flex-grow: 1; }
         .room-amenities-list { list-style: none; padding: 0; margin: 0 0 1.5rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem; color: var(--text-muted); font-size: 0.9rem; }
         .room-amenities-list li { display: flex; align-items: center; gap: 0.5rem; }
@@ -69,6 +70,11 @@
         .direct-booking-section p { max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 2rem; }
         .direct-booking-section .cta-actions { display: flex; justify-content: center; gap: 1rem; }
         .direct-booking-section .button-secondary .material-icons-outlined { margin-right: 0.5rem; }
+        
+        @media (min-width: 500px) {
+            .room-listing-card-header { flex-direction: row; justify-content: space-between; align-items: baseline; }
+            .room-card-price .price-details { text-align: right; }
+        }
     </style>
 
     <!-- Maximalist JSON-LD Schema for SEO -->
@@ -81,6 +87,7 @@
           "url": "https://suryaplazahotels.com/rooms",
           "name": "Our Rooms & Suites | Surya Plaza Hotel, Sahibganj",
           "description": "Explore our range of accommodations, from comfortable Club Rooms to spacious Family Apartments with kitchens. Find the perfect room for your stay in Sahibganj.",
+          "dateModified": "2025-11-08",
           "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
         },
         {
@@ -101,12 +108,12 @@
           "name": "Accommodations at Surya Plaza Hotel",
           "description": "A complete list of our available rooms and suites.",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "item": { "@type": "HotelRoom", "name": "Club Comfort Room", "url": "https://suryaplazahotels.com/rooms/club-comfort-room", "image": "https://suryaplazahotels.com/assets/images/rooms/room-club-comfort-bed-900w.webp", "description": "An efficient 150 sqft space, ideal for solo travellers seeking value and convenience.", "bed": {"@type": "BedDetails", "typeOfBed": "Queen", "numberOfBeds": 1}, "occupancy": {"@type": "QuantitativeValue", "maxValue": 2, "unitText": "adults"}, "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true}] } },
-            { "@type": "ListItem", "position": 2, "item": { "@type": "HotelRoom", "name": "Deluxe Balcony Room", "url": "https://suryaplazahotels.com/rooms/deluxe-balcony-room", "image": "https://suryaplazahotels.com/assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp", "description": "A 180 sqft room featuring a private balcony, offering a perfect spot to unwind.", "bed": {"@type": "BedDetails", "typeOfBed": "Queen", "numberOfBeds": 1}, "occupancy": {"@type": "QuantitativeValue", "maxValue": 2, "unitText": "adults"}, "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Private Balcony", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true}] } },
-            { "@type": "ListItem", "position": 3, "item": { "@type": "HotelRoom", "name": "Executive Balcony Room", "url": "https://suryaplazahotels.com/rooms/executive-balcony-room", "image": "https://suryaplazahotels.com/assets/images/rooms/room-executive-balcony-sofa-900w.webp", "description": "A larger 220 sqft space complete with a comfortable sofa seating area for extra relaxation.", "bed": {"@type": "BedDetails", "typeOfBed": "King", "numberOfBeds": 1}, "occupancy": {"@type": "QuantitativeValue", "maxValue": 3, "unitText": "adults"}, "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Private Balcony", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Sofa Seating Area", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Work Desk", "value": true}] } },
-            { "@type": "ListItem", "position": 4, "item": { "@type": "HotelRoom", "name": "Junior Balcony Suite", "url": "https://suryaplazahotels.com/rooms/junior-balcony-suite", "image": "https://suryaplazahotels.com/assets/images/rooms/room-junior-suite-seating-900w.webp", "description": "Offers an extra living area in a 234 sqft layout, providing a perfect blend of luxury and space.", "bed": {"@type": "BedDetails", "typeOfBed": "King", "numberOfBeds": 1}, "occupancy": {"@type": "QuantitativeValue", "maxValue": 3, "unitText": "adults"}, "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Private Balcony", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Separate Living Area", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Tea & Coffee Maker", "value": true}] } },
-            { "@type": "ListItem", "position": 5, "item": { "@type": "HotelRoom", "name": "Two-Bedroom Premium Suite", "url": "https://suryaplazahotels.com/rooms/two-bedroom-premium-suite", "image": "https://suryaplazahotels.com/assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp", "description": "A 700 sqft suite ideal for groups, offering two bedrooms, a drawing room, and river views.", "numberOfRooms": 2, "bed": {"@type": "BedDetails", "typeOfBed": "King", "numberOfBeds": 2}, "occupancy": {"@type": "QuantitativeValue", "maxValue": 6, "unitText": "people"}, "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Two Bedrooms", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Separate Drawing Room", "value": true}, {"@type": "LocationFeatureSpecification", "name": "River View", "value": true}] } },
-            { "@type": "ListItem", "position": 6, "item": { "@type": "HotelRoom", "name": "Family Apartment with Kitchen", "url": "https://suryaplazahotels.com/rooms/family-apartment", "image": "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-living-area-900w.webp", "description": "An expansive 800 sqft apartment, perfect for extended stays with a full kitchen and panoramic views.", "numberOfRooms": 2, "bed": {"@type": "BedDetails", "typeOfBed": "King", "numberOfBeds": 2}, "occupancy": {"@type": "QuantitativeValue", "maxValue": 6, "unitText": "people"}, "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Full Kitchen", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Two Bedrooms", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Panoramic Views", "value": true}] } }
+            { "@type": "ListItem", "position": 1, "item": { "@type": "HotelRoom", "name": "Club Comfort Room", "url": "https://suryaplazahotels.com/rooms/club-comfort-room", "image": "https://suryaplazahotels.com/assets/images/rooms/room-club-comfort-bed-900w.webp", "description": "An efficient 150 sqft space, ideal for solo travellers seeking value and convenience.", "offers": {"@type": "Offer", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "1825", "priceCurrency": "INR", "unitText": "night"}} } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "HotelRoom", "name": "Deluxe Balcony Room", "url": "https://suryaplazahotels.com/rooms/deluxe-balcony-room", "image": "https://suryaplazahotels.com/assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp", "description": "A 180 sqft room featuring a private balcony, offering a perfect spot to unwind.", "offers": {"@type": "Offer", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "2125", "priceCurrency": "INR", "unitText": "night"}} } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "HotelRoom", "name": "Executive Balcony Room", "url": "https://suryaplazahotels.com/rooms/executive-balcony-room", "image": "https://suryaplazahotels.com/assets/images/rooms/room-executive-balcony-sofa-900w.webp", "description": "A larger 220 sqft space complete with a comfortable sofa seating area for extra relaxation.", "offers": {"@type": "Offer", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "2425", "priceCurrency": "INR", "unitText": "night"}} } },
+            { "@type": "ListItem", "position": 4, "item": { "@type": "HotelRoom", "name": "Junior Balcony Suite", "url": "https://suryaplazahotels.com/rooms/junior-balcony-suite", "image": "https://suryaplazahotels.com/assets/images/rooms/room-junior-suite-seating-900w.webp", "description": "Offers an extra living area in a 234 sqft layout, providing a perfect blend of luxury and space.", "offers": {"@type": "Offer", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "2925", "priceCurrency": "INR", "unitText": "night"}} } },
+            { "@type": "ListItem", "position": 5, "item": { "@type": "HotelRoom", "name": "Two-Bedroom Premium Suite", "url": "https://suryaplazahotels.com/rooms/two-bedroom-premium-suite", "image": "https://suryaplazahotels.com/assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp", "description": "A 700 sqft suite ideal for groups, offering two bedrooms, a drawing room, and river views.", "offers": {"@type": "Offer", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "4700", "priceCurrency": "INR", "unitText": "night"}} } },
+            { "@type": "ListItem", "position": 6, "item": { "@type": "HotelRoom", "name": "Family Apartment with Kitchen", "url": "https://suryaplazahotels.com/rooms/family-apartment", "image": "https://suryaplazahotels.com/assets/images/rooms/room-family-apartment-living-area-900w.webp", "description": "An expansive 800 sqft apartment, perfect for extended stays with a full kitchen and panoramic views.", "offers": {"@type": "Offer", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "5700", "priceCurrency": "INR", "unitText": "night"}} } }
           ]
         },
         {
@@ -119,7 +126,7 @@
         {
           "@type": "FAQPage",
           "mainEntity": [
-            {"@type": "Question", "name": "What are your check-in and check-out times?", "acceptedAnswer": { "@type": "Answer", "text": "Our standard check-in and check-out time is 12:00 PM (noon). We operate on a 24-hour policy, meaning your check-out time is 24 hours after your check-in time." }},
+            {"@type": "Question", "name": "What are your check-in and check-out times?", "acceptedAnswer": { "@type": "Answer", "text": "Our standard check-in time is 12:00 PM (noon) and check-out is at 11:00 AM. Early check-in or late check-out may be available upon request and subject to availability." }},
             {"@type": "Question", "name": "Which room is best for a business traveler?", "acceptedAnswer": { "@type": "Answer", "text": "For business travelers, we highly recommend our Executive Balcony Room. It provides a larger 220 sqft space complete with a dedicated work desk and a comfortable sofa seating area, offering the perfect environment to be productive and to unwind." }},
             {"@type": "Question", "name": "Do all rooms have balconies?", "acceptedAnswer": { "@type": "Answer", "text": "Most of our rooms, including the Deluxe, Executive, Junior Suite, Two-Bedroom Suite, and Family Apartment, feature private balconies. Only our Club Comfort Room does not include a balcony." }},
             {"@type": "Question", "name": "Can I book a room for a large group or family?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. For larger groups and families, our Two-Bedroom Premium Suite and our Family Apartment with a full kitchen are the ideal choices, accommodating up to 6 guests with multiple private sleeping areas." }}
@@ -180,7 +187,10 @@
                     <article class="room-listing-card" data-animate>
                         <a href="/rooms/club-comfort-room" aria-label="View details for the Club Comfort Room"><img src="/assets/images/rooms/room-club-comfort-bed-900w.webp" srcset="/assets/images/rooms/room-club-comfort-bed-600w.webp 600w, /assets/images/rooms/room-club-comfort-bed-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="A cozy and well-equipped Club Comfort Room." loading="lazy" decoding="async"></a>
                         <div class="room-listing-card-content">
-                            <div class="room-listing-card-header"><h3>Club Comfort Room</h3><div class="room-card-price">from <span>₹2099</span></div></div>
+                            <div class="room-listing-card-header">
+                                <h3>Club Comfort Room</h3>
+                                <div class="room-card-price">from <span>₹1825</span><p class="price-details">Single, incl. Breakfast</p></div>
+                            </div>
                             <p class="room-description">An efficient 150 sqft space, ideal for solo travellers seeking value and convenience.</p>
                             <ul class="room-amenities-list"><li><span class="material-icons-outlined">tv</span> 32" Television</li><li><span class="material-icons-outlined">wifi</span> High-Speed Wi-Fi</li><li><span class="material-icons-outlined">ac_unit</span> Air Conditioning</li></ul>
                             <div class="room-listing-card-actions"><a href="/rooms/club-comfort-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
@@ -190,7 +200,10 @@
                     <article class="room-listing-card" data-animate style="--animation-delay: 0.1s;">
                          <a href="/rooms/deluxe-balcony-room" aria-label="View details for the Deluxe Balcony Room"><img src="/assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp" srcset="/assets/images/rooms/room-deluxe-balcony-bed-main-600w.webp 600w, /assets/images/rooms/room-deluxe-balcony-bed-main-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="Comfortable bed and private balcony access in the Deluxe Balcony Room." loading="lazy" decoding="async"></a>
                         <div class="room-listing-card-content">
-                            <div class="room-listing-card-header"><h3>Deluxe Balcony Room</h3><div class="room-card-price">from <span>₹2399</span></div></div>
+                            <div class="room-listing-card-header">
+                                <h3>Deluxe Balcony Room</h3>
+                                <div class="room-card-price">from <span>₹2125</span><p class="price-details">Single, incl. Breakfast</p></div>
+                            </div>
                             <p class="room-description">A 180 sqft room featuring a private balcony, offering a perfect spot to unwind.</p>
                              <ul class="room-amenities-list"><li><span class="material-icons-outlined">balcony</span> Private Balcony</li><li><span class="material-icons-outlined">tv</span> 32" Television</li><li><span class="material-icons-outlined">wifi</span> High-Speed Wi-Fi</li></ul>
                             <div class="room-listing-card-actions"><a href="/rooms/deluxe-balcony-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
@@ -200,7 +213,10 @@
                     <article class="room-listing-card" data-animate>
                         <a href="/rooms/executive-balcony-room" aria-label="View details for the Executive Balcony Room"><img src="/assets/images/rooms/room-executive-balcony-sofa-900w.webp" srcset="/assets/images/rooms/room-executive-balcony-sofa-600w.webp 600w, /assets/images/rooms/room-executive-balcony-sofa-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="Spacious Executive Balcony Room with a plush bed and elegant decor." loading="lazy" decoding="async"></a>
                         <div class="room-listing-card-content">
-                             <div class="room-listing-card-header"><h3>Executive Balcony Room</h3><div class="room-card-price">from <span>₹2699</span></div></div>
+                             <div class="room-listing-card-header">
+                                <h3>Executive Balcony Room</h3>
+                                <div class="room-card-price">from <span>₹2425</span><p class="price-details">Single, incl. Breakfast</p></div>
+                            </div>
                             <p class="room-description">A larger 220 sqft space complete with a comfortable sofa seating area for extra relaxation.</p>
                              <ul class="room-amenities-list"><li><span class="material-icons-outlined">balcony</span> Private Balcony</li><li><span class="material-icons-outlined">weekend</span> Sofa Seating Area</li><li><span class="material-icons-outlined">desk</span> Work Desk</li></ul>
                             <div class="room-listing-card-actions"><a href="/rooms/executive-balcony-room" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
@@ -210,7 +226,10 @@
                     <article class="room-listing-card" data-animate style="--animation-delay: 0.1s;">
                         <a href="/rooms/junior-balcony-suite" aria-label="View details for the Junior Balcony Suite"><img src="/assets/images/rooms/room-junior-suite-seating-900w.webp" srcset="/assets/images/rooms/room-junior-suite-seating-600w.webp 600w, /assets/images/rooms/room-junior-suite-seating-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="Sophisticated furnishings in the Junior Balcony Suite seating area." loading="lazy" decoding="async"></a>
                         <div class="room-listing-card-content">
-                            <div class="room-listing-card-header"><h3>Junior Balcony Suite</h3><div class="room-card-price">from <span>₹3199</span></div></div>
+                            <div class="room-listing-card-header">
+                                <h3>Junior Balcony Suite</h3>
+                                <div class="room-card-price">from <span>₹2925</span><p class="price-details">Single, incl. Breakfast</p></div>
+                            </div>
                             <p class="room-description">Offers an extra living area in a 234 sqft layout, providing a perfect blend of luxury and space.</p>
                              <ul class="room-amenities-list"><li><span class="material-icons-outlined">balcony</span> Private Balcony</li><li><span class="material-icons-outlined">living</span> Separate Living Area</li><li><span class="material-icons-outlined">coffee_maker</span> Tea & Coffee Maker</li></ul>
                             <div class="room-listing-card-actions"><a href="/rooms/junior-balcony-suite" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
@@ -220,7 +239,10 @@
                     <article class="room-listing-card" data-animate>
                         <a href="/rooms/two-bedroom-premium-suite" aria-label="View details for the Two-Bedroom Premium Suite"><img src="/assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp" srcset="/assets/images/rooms/room-two-bedroom-suite-living-area-600w.webp 600w, /assets/images/rooms/room-two-bedroom-suite-living-area-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="Spacious and modern living area of the Two-Bedroom Premium Suite." loading="lazy" decoding="async"></a>
                         <div class="room-listing-card-content">
-                            <div class="room-listing-card-header"><h3>Two-Bedroom Premium Suite</h3><div class="room-card-price">from <span>₹3999</span></div></div>
+                            <div class="room-listing-card-header">
+                                <h3>Two-Bedroom Premium Suite</h3>
+                                <div class="room-card-price">from <span>₹4700</span><p class="price-details">Double, incl. Breakfast</p></div>
+                            </div>
                             <p class="room-description">A 700 sqft suite ideal for groups, offering two bedrooms, a drawing room, and river views.</p>
                              <ul class="room-amenities-list"><li><span class="material-icons-outlined">bed</span> Two Bedrooms</li><li><span class="material-icons-outlined">living</span> Separate Drawing Room</li><li><span class="material-icons-outlined">water</span> Stunning River View</li></ul>
                             <div class="room-listing-card-actions"><a href="/rooms/two-bedroom-premium-suite" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
@@ -230,7 +252,10 @@
                     <article class="room-listing-card" data-animate style="--animation-delay: 0.1s;">
                         <a href="/rooms/family-apartment" aria-label="View details for the Family Apartment with Kitchen"><img src="/assets/images/rooms/room-family-apartment-living-area-900w.webp" srcset="/assets/images/rooms/room-family-apartment-living-area-600w.webp 600w, /assets/images/rooms/room-family-apartment-living-area-900w.webp 900w" sizes="(max-width: 768px) 100vw, 50vw" alt="A spacious Family Apartment with a full kitchen." loading="lazy" decoding="async"></a>
                         <div class="room-listing-card-content">
-                            <div class="room-listing-card-header"><h3>Family Apartment with Kitchen</h3><div class="room-card-price">from <span>₹4999</span></div></div>
+                            <div class="room-listing-card-header">
+                                <h3>Family Apartment with Kitchen</h3>
+                                <div class="room-card-price">from <span>₹5700</span><p class="price-details">Double, incl. Breakfast</p></div>
+                            </div>
                             <p class="room-description">An expansive 800 sqft apartment, perfect for extended stays with a full kitchen and panoramic views.</p>
                              <ul class="room-amenities-list"><li><span class="material-icons-outlined">kitchen</span> Full Kitchen</li><li><span class="material-icons-outlined">bed</span> Two Bedrooms</li><li><span class="material-icons-outlined">landscape</span> Panoramic Views</li></ul>
                             <div class="room-listing-card-actions"><a href="/rooms/family-apartment" class="button-secondary">View Details</a><a href="https://bookings.suryaplazahotels.com/?propertyId=11281" target="_blank" rel="noopener" class="button-primary">Book Now</a></div>
@@ -246,7 +271,7 @@
                 <div class="faq-container">
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1"><span>What are your check-in and check-out times?</span><span class="faq-icon" aria-hidden="true"></span></button>
-                        <div class="faq-answer" id="faq-answer-1"><p>Our standard check-in and check-out time is 12:00 PM (noon). We operate on a 24-hour policy, meaning your check-out time is 24 hours after your check-in time.</p></div>
+                        <div class="faq-answer" id="faq-answer-1"><p>Our standard check-in time is 12:00 PM (noon) and check-out is at 11:00 AM. Early check-in or late check-out may be available upon request and subject to availability.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2"><span>Which room is best for a business traveler?</span><span class="faq-icon" aria-hidden="true"></span></button>
