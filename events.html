@@ -42,6 +42,9 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&family=Material+Icons+Outlined&display=swap">
     </noscript>
     
+    <!-- FontAwesome for WhatsApp Icon (Added 30 Nov 2025) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
@@ -68,6 +71,67 @@
         .direct-booking-section p { max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 2rem; }
         .cta-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
         .direct-booking-section .button-secondary .material-icons-outlined { margin-right: 0.5rem; }
+        
+        /* WhatsApp Floating Icon Styles */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            left: 25px; /* Left side to prevent conflict with Back-to-Top */
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: whatsapp-pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        /* Tooltip Text on Hover */
+        .whatsapp-float::after {
+            content: "Chat with Event Manager";
+            position: absolute;
+            left: 70px;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .whatsapp-float:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @keyframes whatsapp-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        /* Mobile adjustment */
+        @media (max-width: 480px) {
+            .whatsapp-float { width: 50px; height: 50px; font-size: 28px; bottom: 20px; left: 20px; }
+        }
     </style>
 
     <!-- Maximalist JSON-LD Schema for SEO -->
@@ -80,6 +144,7 @@
           "url": "https://suryaplazahotels.com/events",
           "name": "Events & Banquets | Pearl Banquet Hall at Surya Plaza Hotel",
           "description": "Host your perfect event at the Pearl Banquet Hall. Our versatile 1500 sq ft venue is ideal for weddings, conferences, and parties for 30-150 guests in Sahibganj.",
+          "dateModified": "2025-11-30",
           "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
         },
         {
@@ -262,6 +327,11 @@
         </div>
     </footer>
     <!-- END: Consistent FOOTER -->
+
+    <!-- WhatsApp Button (Left aligned - Banquet Number) -->
+    <a href="https://wa.me/919264197989" class="whatsapp-float" target="_blank" aria-label="Chat with Event Manager on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     

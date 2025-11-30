@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Essentials (REVISED) -->
+    <!-- SEO Essentials -->
     <title>Hotel Rooms in Sahibganj | Book Your Stay at Surya Plaza</title>
     <meta name="description" content="Explore our range of hotel rooms in Sahibganj, from cozy Club Rooms to spacious Family Apartments. Find the perfect accommodation for your trip and book your stay at Surya Plaza Hotel today.">
     <link rel="canonical" href="https://suryaplazahotels.com/rooms">
@@ -34,11 +34,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     
-    <!-- Google Fonts (Reliable Method) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Material+Icons+Outlined&family=Montserrat:wght@600;700&display=swap">
     
+    <!-- FontAwesome for WhatsApp Icon (Added 30 Nov 2025) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Main Stylesheet (Shared) -->
     <link rel="stylesheet" href="/style.css">
 
@@ -69,9 +72,70 @@
         .direct-booking-section .cta-actions { display: flex; justify-content: center; gap: 1rem; }
         .direct-booking-section .button-secondary .material-icons-outlined { margin-right: 0.5rem; }
         
+        /* WhatsApp Floating Icon Styles - Added 30 Nov 2025 */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            left: 25px; /* Left side to prevent conflict with Back-to-Top */
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: whatsapp-pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        /* Tooltip Text on Hover */
+        .whatsapp-float::after {
+            content: "Chat with Reservations";
+            position: absolute;
+            left: 70px;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .whatsapp-float:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @keyframes whatsapp-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
         @media (min-width: 500px) {
             .room-listing-card-header { flex-direction: row; justify-content: space-between; align-items: baseline; }
             .room-card-price .price-details { text-align: right; }
+        }
+        
+        /* Mobile adjustment for WhatsApp icon to avoid overlap with bottom bars if present */
+        @media (max-width: 480px) {
+            .whatsapp-float { width: 50px; height: 50px; font-size: 28px; bottom: 20px; left: 20px; }
         }
     </style>
 
@@ -85,7 +149,7 @@
           "url": "https://suryaplazahotels.com/rooms",
           "name": "Hotel Rooms in Sahibganj | Book Your Stay at Surya Plaza",
           "description": "Explore our range of hotel rooms in Sahibganj, from cozy Club Rooms to spacious Family Apartments. Find the perfect accommodation for your trip and book your stay at Surya Plaza Hotel today.",
-          "dateModified": "2025-11-08",
+          "dateModified": "2025-11-30",
           "isPartOf": { "@id": "https://suryaplazahotels.com/#website" }
         },
         {
@@ -99,7 +163,8 @@
           "@type": "Hotel",
           "@id": "https://suryaplazahotels.com/#organization",
           "name": "Surya Plaza Hotel",
-          "url": "https://suryaplazahotels.com/"
+          "url": "https://suryaplazahotels.com/",
+          "telephone": "+919264197986"
         },
         {
           "@type": "ItemList",
@@ -314,6 +379,11 @@
         </div>
     </footer>
     <!-- END: Consistent FOOTER -->
+
+    <!-- WhatsApp Button (Left aligned) -->
+    <a href="https://wa.me/919264197986" class="whatsapp-float" target="_blank" aria-label="Chat with Reservations on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <a href="#" class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top"><span class="material-icons-outlined">arrow_upward</span></a>
     
