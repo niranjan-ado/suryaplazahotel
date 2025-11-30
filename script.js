@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // --- NEW: VIDEO FACADE HANDLER ---
+    // --- VIDEO FACADE HANDLER (Confirmed Addition) ---
     const videoFacadeHandler = () => {
         const videoFacade = document.getElementById('videoFacade');
         if (videoFacade) {
@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 iframe.setAttribute('allowfullscreen', '');
                 videoFacade.innerHTML = '';
                 videoFacade.appendChild(iframe);
-            }, { once: true }); // Use { once: true } so the event listener is removed after first click
+            }, { once: true });
         }
     };
 
@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
         roomGalleryHandler();
         menuFilterHandler();
         menuScrollspyHandler();
-        videoFacadeHandler(); // <-- NEW: Initialize the video handler
+        videoFacadeHandler(); 
     };
 
     init();

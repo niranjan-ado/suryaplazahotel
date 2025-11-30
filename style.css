@@ -1,12 +1,9 @@
 /*
 ---
-SURYA PLAZA HOTEL - STYLE.CSS (DEFINITIVE & FINAL VERSION 11.8)
-REVISED AND CONSOLIDATED: 2025-11-08
+SURYA PLAZA HOTEL - STYLE.CSS (DEFINITIVE & FINAL VERSION 12.0)
+REVISED AND CONSOLIDATED: 2025-11-30
 ---
-- This is the final, consolidated version of the stylesheet.
-- It includes all features and fixes from all previous versions, with all
-  code duplication removed for optimal performance and maintainability.
-- Adds styling for room price details, homepage offer cards, and video facade.
+- Includes all core styles, mobile responsiveness, and new WhatsApp float.
 ---
 */
 
@@ -306,6 +303,63 @@ section { padding: 6rem 0; }
 .back-to-top:hover { transform: scale(1.1); }
 .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-to-top .material-icons-outlined { font-size: 24px; }
+
+/* --- WhatsApp Floating Icon Styles (ADDED V12.0) --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    left: 25px; /* Left side to prevent conflict with Back-to-Top */
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: whatsapp-pulse 2s infinite;
+}
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    color: #fff;
+}
+/* Tooltip Text on Hover */
+.whatsapp-float::after {
+    content: "Chat with us";
+    position: absolute;
+    left: 70px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+}
+.whatsapp-float:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+@keyframes whatsapp-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+/* Mobile adjustment */
+@media (max-width: 480px) {
+    .whatsapp-float { width: 50px; height: 50px; font-size: 28px; bottom: 20px; left: 20px; }
+}
+
 
 /* =============================================================== */
 /* START: STYLES FOR ROOM DETAIL PAGES                             */
